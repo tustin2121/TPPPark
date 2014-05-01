@@ -20,5 +20,18 @@ body {
 	position: absolute;
 	width: 256px; height: 256px;
 	background-repeat: no-repeat;
+	z-index: -10;
+}
+
+.event-base {
+	position: absolute;
+	width: 16px; height:16px;
+	margin: -1px;
+	border: 1px solid gray;
+}
+
+.event-base img {
+	position: absolute;
+	bottom: 0px;
 }
 
