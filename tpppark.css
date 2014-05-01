@@ -1,0 +1,24 @@
+/* CSS */
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	overflow: hidden;
+}
+
+#anchor {
+	position: absolute;
+	overflow: visible;
+	width: 16px; height: 16px;
+	top: 48%; left:48%;
+}
+
+.bgsection {
+	position: absolute;
+	width: 256px; height: 256px;
+	background-repeat: no-repeat;
+}
+
