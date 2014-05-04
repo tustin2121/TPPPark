@@ -1,5 +1,6 @@
 /* CSS */
 
+/* --- Base CSS --- */
 html {
 	height: 100%;
 	overflow: hidden;
@@ -10,6 +11,7 @@ body {
 	overflow: hidden;
 }
 
+/* --- Map Items --- */
 #anchor {
 	position: absolute;
 	overflow: visible;
@@ -24,6 +26,8 @@ body {
 	z-index: -100000;
 }
 
+/* --- Event Items --- */
+
 .event-base {
 	position: absolute;
 	width: 16px; height:16px;
@@ -37,6 +41,223 @@ body {
 }
 
 
+/* --- Status Screen --- */
+
+#status-screen {
+	position: absolute;
+	width: 280px; height: 200px;
+	background-image: url("img/ui/status_screen.png");
+}
+
+#status-screen section {
+	display: block;
+	font-family: PokemonScreen;
+	font-size: 16px;
+	margin: 0px 0px;
+	line-height: 14px;
+}
+
+
+#status-screen .info-screen {
+	position: absolute;
+	top: 36px; left: 86px;
+	display: none;
+	width: 185px; height: 149px;
+	background-image: url("img/ui/status_screen.png");
+}
+
+#status-screen .info-screen.profile {
+	background-position: -95px -200px;
+}
+#status-screen .info-screen.ribbon {
+	background-position: -95px -349px;
+}
+#status-screen .info-screen.description {
+	background-position: -95px -498px;
+}
+#status-screen .info-screen.screen4 {
+	background-position: -95px -647px;
+}
+
+#status-screen.tab1 .info-screen.profile {
+	display: block;
+}
+#status-screen.tab2 .info-screen.ribbon {
+	display: block;
+}
+#status-screen.tab3 .info-screen.description {
+	display: block;
+}
+#status-screen.tab4 .info-screen.screen4 {
+	display: block;
+}
+
+
+#status-screen .btn-close {
+	position: absolute;
+	bottom: 17px; left: 7px;
+	width: 77px; height: 22px;
+}
+#status-screen .btn-next {
+	position: absolute;
+	top: 7px; right: 12px;
+	width: 70px; height: 22px;
+}
+#status-screen .btn-prev {
+	position: absolute;
+	top: 7px; left: 7px;
+	width: 70px; height: 22px;
+}
+
+#status-screen .sidebar {
+	position: absolute;
+	top: 31px; left: 5px;
+	width: 80px; height: 128px;
+}
+
+#status-screen .sidebar .sprite {
+	position: absolute;
+	top: 16px; left: 8px;
+	width: 64px; height: 64px;
+}
+
+#status-screen .sidebar .common-name {
+	position: absolute;
+	top: 3px; left: 6px;
+	width: 75px; height: 12px;
+}
+
+#status-screen .sidebar .game-name {
+	position: absolute;
+	top: 80px; left: 6px;
+	width: 75px; height: 12px;
+}
+
+#status-screen .sidebar .spec-name {
+	position: absolute;
+	top: 92px; left: 6px;
+	width: 75px; height: 12px;
+}
+#status-screen .sidebar .spec-name:before {
+	content: "/";
+}
+
+#status-screen .sidebar .level {
+	position: absolute;
+	top: 113px; right: 3px;
+	width: 40px; height: 12px;
+	text-align: right;
+}
+#status-screen .sidebar .level:before {
+	content: "Lvl ";
+}
+
+
+#status-screen .sidebar .ball {
+	position: absolute;
+	top: 111px; left: 6px;
+	width: 16px; height: 16px;
+	background-image: url("img/ui/status_screen.png");
+	background-position: -70px -200px; /* Default: Pokeball; */
+}
+#status-screen .sidebar .ball.poke 		{ background-position: -70px -200px; }
+#status-screen .sidebar .ball.great		{ background-position: -70px -216px; }
+#status-screen .sidebar .ball.ultra 	{ background-position: -70px -232px; }
+#status-screen .sidebar .ball.master	{ background-position: -70px -248px; }
+#status-screen .sidebar .ball.premiere	{ background-position: -70px -264px; }
+#status-screen .sidebar .ball.cherish	{ background-position: -70px -280px; }
+#status-screen .sidebar .ball.luxury	{ background-position: -70px -296px; }
+#status-screen .sidebar .ball.nest 		{ background-position: -70px -312px; }
+#status-screen .sidebar .ball.net 		{ background-position: -70px -328px; }
+#status-screen .sidebar .ball.dive		{ background-position: -70px -344px; }
+#status-screen .sidebar .ball.repeat	{ background-position: -70px -360px; }
+#status-screen .sidebar .ball.timer		{ background-position: -70px -376px; }
+#status-screen .sidebar .ball.safari	{ background-position: -70px -392px; }
+#status-screen .sidebar .ball.quick 	{ background-position: -70px -408px; }
+#status-screen .sidebar .ball.dusk 		{ background-position: -70px -424px; }
+#status-screen .sidebar .ball.heal 		{ background-position: -70px -440px; }
+
+
+#status-screen .info-screen.profile .ot {
+	position: absolute;
+	top: 13px; left: 7px;
+	width: 174px; height: 12px;
+}
+#status-screen .info-screen.profile .ot:before {
+	content: "OT/";
+}
+
+#status-screen .info-screen.profile .caught {
+	position: absolute;
+	top: 28px; left: 7px;
+	width: 174px; height: 12px;
+}
+
+#status-screen .info-screen.profile .nicknames {
+	position: absolute;
+	top: 53px; left: 7px;
+	width: 174px; height: 26px;
+}
+
+#status-screen .info-screen.profile .memo {
+	position: absolute;
+	top: 94px; left: 7px;
+	width: 174px; height: 53px;
+	overflow: hidden;
+}
+
+
+#status-screen .info-screen.ribbon {
+	padding: 12px 2px 1px 4px;
+	width: 179px; height:136px; /* Respecify size due to padding */
+	overflow: hidden;
+}
+#status-screen .info-screen.ribbon section {
+	position: static;
+	height: 31px; width: 179px;
+	margin: 0px;
+	padding: 3px 0px 0px 0px;
+}
+#status-screen .info-screen.ribbon section:before {
+	content: "";
+	float: left;
+	width: 32px; height: 34px;
+	margin-top: -3px;
+	background-image: url("img/ui/status_screen.png");
+}
+#status-screen .info-screen.ribbon section:after {
+	content: "";
+	clear: both;
+}
+
+#status-screen .info-screen.ribbon section.rb-purple:before			{ background-position: -1px -201px; }
+#status-screen .info-screen.ribbon section.rb-hallfame:before		{ background-position: -34px -201px; }
+#status-screen .info-screen.ribbon section.rb-starter:before		{ background-position: -1px -236px; }
+#status-screen .info-screen.ribbon section.rb-record:before			{ background-position: -34px -236px; }
+#status-screen .info-screen.ribbon section.rb-traded:before			{ background-position: -1px -271px; }
+#status-screen .info-screen.ribbon section.rb-bloodysunday:before	{ background-position: -34px -271px; }
+#status-screen .info-screen.ribbon section.rb-ribbon7:before		{ background-position: -1px -306px; }
+#status-screen .info-screen.ribbon section.rb-ribbon8:before		{ background-position: -34px -306px; }
+#status-screen .info-screen.ribbon section.rb-ribbon9:before		{ background-position: -1px -341px; }
+#status-screen .info-screen.ribbon section.rb-ribbon10:before		{ background-position: -34px -341px; }
+#status-screen .info-screen.ribbon section.rb-ribbon11:before		{ background-position: -1px -376px; }
+#status-screen .info-screen.ribbon section.rb-ribbon12:before		{ background-position: -34px -376px; }
+
+
+/*----------------------------------
+  Fonts
+----------------------------------*/
+
+@font-face {
+	font-family: PokemonScreen;
+	src: url("img/ui/PokemonDPPt.ttf");
+}
+
+/*----------------------------------
+  Animations 
+----------------------------------*/
+
+/* --- Event Animations --- */
 .anim-float {
 	-webkit-animation: animation_floating 0.7s alternate infinite ease-in-out;
 	animation: animation_floating 0.7s alternate infinite ease-in-out;
@@ -62,3 +283,5 @@ body {
 	0% {bottom: 0;}
 	100% {bottom: -2;}
 }
+
+
