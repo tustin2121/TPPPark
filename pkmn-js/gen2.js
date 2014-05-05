@@ -34,7 +34,11 @@ addEvent(new MultiEvent({
 })).addSubEvent("2,19,33,40", new Pokemon({
 	name : "LazorGator",
 	
+	dex : "img/pkdx/dex_lazorgator.png",
+	dexsource : "http://www.reddit.com/r/twitchplayspokemon/comments/20iaxx/i_made_it_anybody_want_to_use_these_sprites/",
+	
 	OT: "AJDNNW",
+	gender : 1,
 	gamename : "AAAAAtttta",
 	pokename : "Feraligatr",
 	level : 84,
@@ -49,6 +53,7 @@ addEvent(new MultiEvent({
 	name : "Omelette",
 	
 	OT: "AJDNNW",
+	gender : 1,
 	gamename : "Togepi",
 	pokename : "Togepi",
 	level : 12,
@@ -60,3 +65,43 @@ addEvent(new MultiEvent({
 	],	
 }))
 );
+
+
+// Oxxy Ozzworm
+addEvent(new Pokemon({
+	name : "Ozzworm",
+	img: "img/pkmn/ozzyozworm.png",
+	x: 7, y: -35,
+	
+	//dex : "img/pkdx/tpp10_dux.gif",
+	//dexsource : "http://hamigakimomo.tumblr.com/post/78067393358/ive-updated-omanytes-sprite-to-omastar-i-also",
+	
+	OT: "AJDNNW",
+	gender : 2,
+	gamename : "OXXOZZ -:",
+	pokename : "Metapod",
+	nickname : "Oxxy Ozzworm<br/>Lovebug",
+	level : function() {
+		//Oxxy left at 3d 18h 37m -- March 6th 18:37 UTC
+		var timeSince = (new Date().getTime()) - (new Date(2014, 3, 18, 18, 37).getTime());
+		//convert timeSince to seconds, and divide by estimated movement
+		var expSince = (timeSince / 1000) * 0.1667; //1 step per 6 seconds, with battling accounting for a lot
+		
+		// Medium Fast equation: EXP = n^3
+		// Considerably easier to solve for N, but for consistancy, stick with Gastly's method
+		// Solve for a level and loop until we don't have enough exp to be that level
+		
+		// Start at level 55, since we know she was that if you pick her up in the save file.
+		for (var i = 50; i < 256; i++) { //limit to level 255
+			var exp = Math.pow(i, 3);
+			if (expSince <= exp) return i-1; //Found a level!
+		}
+		return "255+";
+	},
+	memo : "Left at the Johto Daycare at Level 8. Never retrieved.",
+	
+	ribbons : [
+		new Daycare_Ribbon("Forevermore"),
+	],
+}));
+// There's also the zubat left with Oxxy, but no one seems to care about it...

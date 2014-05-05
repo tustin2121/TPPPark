@@ -47,6 +47,7 @@ body {
 	position: absolute;
 	width: 280px; height: 200px;
 	background-image: url("img/ui/status_screen.png");
+	z-index : 20000; /* Float OVER pokemon */
 }
 
 #status-screen section {
@@ -75,7 +76,7 @@ body {
 #status-screen .info-screen.description {
 	background-position: -95px -498px;
 }
-#status-screen .info-screen.screen4 {
+#status-screen .info-screen.sources {
 	background-position: -95px -647px;
 }
 
@@ -88,7 +89,7 @@ body {
 #status-screen.tab3 .info-screen.description {
 	display: block;
 }
-#status-screen.tab4 .info-screen.screen4 {
+#status-screen.tab4 .info-screen.sources {
 	display: block;
 }
 
@@ -109,6 +110,7 @@ body {
 	width: 70px; height: 22px;
 }
 
+
 #status-screen .sidebar {
 	position: absolute;
 	top: 31px; left: 5px;
@@ -121,9 +123,13 @@ body {
 	width: 64px; height: 64px;
 }
 
+#status-screen .sidebar .sprite img {
+	position: absolute;
+}
+
 #status-screen .sidebar .common-name {
 	position: absolute;
-	top: 3px; left: 6px;
+	top: 2px; left: 6px;
 	width: 75px; height: 12px;
 }
 
@@ -152,13 +158,27 @@ body {
 	content: "Lvl ";
 }
 
+#status-screen .sidebar .gender {
+	position: absolute;
+	top: 80px; right: 3px;
+	width: 10px; height: 12px;
+	text-align: right;
+}
+#status-screen .sidebar .gender.male:after {
+	content: "\2642";
+	/*color: #40c8f8;*/
+}
+#status-screen .sidebar .gender.female:after {
+	content: "\2640";
+	/*color: #f89890;*/
+}
 
 #status-screen .sidebar .ball {
 	position: absolute;
 	top: 111px; left: 6px;
 	width: 16px; height: 16px;
 	background-image: url("img/ui/status_screen.png");
-	background-position: -70px -200px; /* Default: Pokeball; */
+	background-position: -70px -200px; /* Default: Pokeball */
 }
 #status-screen .sidebar .ball.poke 		{ background-position: -70px -200px; }
 #status-screen .sidebar .ball.great		{ background-position: -70px -216px; }
@@ -236,13 +256,18 @@ body {
 #status-screen .info-screen.ribbon section.rb-record:before			{ background-position: -34px -236px; }
 #status-screen .info-screen.ribbon section.rb-traded:before			{ background-position: -1px -271px; }
 #status-screen .info-screen.ribbon section.rb-bloodysunday:before	{ background-position: -34px -271px; }
-#status-screen .info-screen.ribbon section.rb-ribbon7:before		{ background-position: -1px -306px; }
+#status-screen .info-screen.ribbon section.rb-daycare:before		{ background-position: -1px -306px; }
 #status-screen .info-screen.ribbon section.rb-ribbon8:before		{ background-position: -34px -306px; }
 #status-screen .info-screen.ribbon section.rb-ribbon9:before		{ background-position: -1px -341px; }
 #status-screen .info-screen.ribbon section.rb-ribbon10:before		{ background-position: -34px -341px; }
 #status-screen .info-screen.ribbon section.rb-ribbon11:before		{ background-position: -1px -376px; }
 #status-screen .info-screen.ribbon section.rb-ribbon12:before		{ background-position: -34px -376px; }
 
+#status-screen .info-screen.sources {
+	padding: 12px 4px 1px 6px;
+	width: 175px; height:136px; /* Respecify size due to padding */
+	overflow: hidden;
+}
 
 /*----------------------------------
   Fonts
@@ -259,29 +284,29 @@ body {
 
 /* --- Event Animations --- */
 .anim-float {
-	-webkit-animation: animation_floating 0.7s alternate infinite ease-in-out;
-	animation: animation_floating 0.7s alternate infinite ease-in-out;
+	/*-webkit-animation: animation_floating 0.7s alternate infinite ease-in-out;
+	animation: animation_floating 0.7s alternate infinite ease-in-out;*/
 }
 @-webkit-keyframes animation_floating {
 	0% {bottom: 0;}
-	100% {bottom: -4;}
+	100% {bottom: -4px;}
 }
 @keyframes animation_floating {
 	0% {bottom: 0;}
-	100% {bottom: -4;}
+	100% {bottom: -4px;}
 }
 
 .anim-breathe {
-	-webkit-animation: animation_breathe 0.6s alternate infinite ease-in-out;
-	animation: animation_breathe 0.6s alternate infinite ease-in-out;
+	-webkit-animation: animation_breathe 0.7s alternate infinite steps(2);
+	animation: animation_breathe 0.7s alternate infinite steps(2);
 }
 @-webkit-keyframes animation_breathe {
 	0% {bottom: 0;}
-	100% {bottom: -2;}
+	100% {bottom: -2px;}
 }
 @keyframes animation_breathe {
 	0% {bottom: 0;}
-	100% {bottom: -2;}
+	100% {bottom: -2px;}
 }
 
 

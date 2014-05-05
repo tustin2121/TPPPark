@@ -135,6 +135,8 @@ addEvent(new Pokemon({
 // DigRat
 addEvent(new Pokemon({
 	name: "DigRat",
+	img: "img/pkmn/digrat.png",
+	x: 36, y: -1,
 	
 	dex : "img/pkdx/tpp11_digrat.gif",
 	dexsource : "http://hamigakimomo.tumblr.com/post/78067393358/ive-updated-omanytes-sprite-to-omastar-i-also",
@@ -155,6 +157,8 @@ addEvent(new Pokemon({
 // DUX!
 addEvent(new Pokemon({
 	name : "DUX",
+	img: "img/pkmn/dux.png",
+	x: -33, y: -11,
 	
 	dex : "img/pkdx/tpp10_dux.gif",
 	dexsource : "http://hamigakimomo.tumblr.com/post/78067393358/ive-updated-omanytes-sprite-to-omastar-i-also",
@@ -172,3 +176,86 @@ addEvent(new Pokemon({
 		new BloodySunday_Ribbon(),
 	],
 }));
+
+// Jay Leno!
+addEvent(new Pokemon({
+	name : "Jay Leno",
+	img: "img/pkmn/jayleno.png",
+	x: 4, y: -28,
+	
+	dex : "img/pkdx/jayleno.gif",
+	// dexsource : "Some tumblr somewhere, could not find! :(",
+	
+	OT: "Red",
+	gamename : "JLVWNNOOOO",
+	pokename : "Ratatta",
+	level : 13,
+	memo : "The very first pokemon ever released.",
+	
+	ribbons : [
+		new Released_Ribbon("4d 8h 50m"),
+		new Record_Ribbon("First Pokemon TPP Released"),
+	],
+}));
+
+// Rick Gastly (no h...)
+addEvent(new Pokemon({
+	name : "Rick Gastly",
+	img: "img/pkmn/rickghastly.gif",
+	x: 11, y: -34,
+	breathe: false,
+	
+	//dex : "img/pkdx/tpp10_dux.gif",
+	//dexsource : "http://hamigakimomo.tumblr.com/post/78067393358/ive-updated-omanytes-sprite-to-omastar-i-also",
+	
+	OT: "Red",
+	gamename : "Gastly",
+	pokename : "Gastly",
+	level : function() {
+		//Gastly left at 11d 1h 30m -- Feb 24th 03:11 UTC
+		var timeSince = (new Date().getTime()) - (new Date(2014, 2, 24, 3, 11).getTime());
+		//convert timeSince to seconds, and divide by estimated movement
+		var expSince = (timeSince / 1000) * 0.1; //1 step per 10 seconds, with battling accounting for a lot
+		
+		// Medium Slow equation: EXP = (6/5)*n^3 - 15n^2 + 100n - 140;
+		// Solve for n?? o_O   https://www.wolframalpha.com/input/?i=x+%3D+%286%2F5%29*y^3+-+15y^2+%2B+100y+-+140
+		// Instead, let's just solve for a level and loop until we don't have enough exp to be that level
+		
+		// Start at level 50, since we know he was that if you pick him up in the save file.
+		for (var i = 50; i < 256; i++) { //limit to level 255
+			var exp = (6/5)*Math.pow(i, 3) - 15*i*i + 100*i - 140;
+			if (expSince <= exp) return i-1; //Found a level!
+		}
+		return "255+";
+	},
+	memo : "Left at the Kanto Daycare at Level 23. Still there, haunting it.",
+	
+	ribbons : [
+		new Daycare_Ribbon("Forevermore"),
+	],
+}));
+
+// C3KO
+addEvent(new Pokemon({
+	name : "C3KO",
+	// img: "img/pkmn/jayleno.png",
+	// x: -33, y: -11,
+	
+	// dex : "img/pkdx/tpp10_dux.gif",
+	// dexsource : "http://hamigakimomo.tumblr.com/post/78067393358/ive-updated-omanytes-sprite-to-omastar-i-also",
+	
+	OT: "Red",
+	gamename : "CCC",
+	pokename : "Hitmonlee",
+	nicknames : "Triple C",
+	level : 30,
+	caught: "Recieved from Fighting Dojo 6d 22h 4m",
+	memo : "Never saw the light of day.",
+	
+	ribbons : [
+		new Released_Ribbon("6d 22h 40m"),
+		new Record_Ribbon("Fastest Pokemon Release: 36m"),
+	],
+}));
+
+
