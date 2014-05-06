@@ -40,6 +40,26 @@ body {
 	bottom: 0px;
 }
 
+.event-base .person {
+	position: absolute;
+	width: 16px; height: 22px;
+	bottom: 0px; left: 0px;
+}
+
+/* --- Dialog Box --- */
+
+#dialog-box {
+	position: absolute;
+	background-image: url("img/ui/dialogbox.png");
+	padding: 7px;
+	width: 238px; height: 30px; /* After adjustments for padding */
+	font-family: PokemonScreen;
+	line-height: 15px;
+	z-index : 20000; /* Float OVER pokemon */
+	display: none;
+	overflow: hidden;
+}
+
 
 /* --- Status Screen --- */
 

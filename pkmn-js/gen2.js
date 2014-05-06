@@ -1,25 +1,18 @@
 // gen2.js
 // File for TPP Crystal events
 // 
-/*
-addEvent(new Pokemon({
-	name: "Battle of Mt Silver",
-	OT: "Red",
-	img: "img/pkmn/MtSilverBattle.gif",
-	breathe : false,
-	x : -4, y : -16, z:-6,
-}));
-*/
 
 addEvent(new MultiEvent({
 	name : "Battle of Mt Silver",
-	img: "img/pkmn/MtSilverBattle.gif",
+	sprite: "img/pkmn/MtSilverBattle.gif",
 	x : -4, y : -16, z:-6,
 }).addSubEvent("47,17,75,40", new Pokemon({
 	name : "Lord Helix",
 	
 	dex : "img/pkdx/tpp8_omastar.gif",
-	dexsource : "http://hamigakimomo.tumblr.com/post/78067393358/ive-updated-omanytes-sprite-to-omastar-i-also",
+	sources : {
+		"Pokedex Image by /u/Fiirewaffle" : "http://hamigakimomo.tumblr.com/post/78067393358/ive-updated-omanytes-sprite-to-omastar-i-also",
+	},
 	
 	OT: "Red",
 	gamename : "Omastar",
@@ -66,15 +59,41 @@ addEvent(new MultiEvent({
 }))
 );
 
+// The Admiral
+addEvent(new Pokemon({
+	name : "The Admiral",
+	sprite: "img/pkmn/admiral.png",
+	x: -20, y: -34,
+	
+	dex : "img/pkdx/dex_admiral.png",
+	sources : {
+		"Pokedex Image by /u/Parkmayn" : "http://www.reddit.com/r/twitchplayspokemon/comments/1zczao/i_made_some_lasergator_and_admiral_sentret_sprites/",
+	},
+	
+	OT: "AJDNNW",
+	gender: 1,
+	gamename : "VV",
+	pokename : "Sentret",
+	nicknames : "Admiral Vivi",
+	level : 7,
+	memo : "First pokemon to be released in AJ's journey.",
+	
+	ribbons : [
+		new Released_Ribbon("1d 8h 21m"),
+	],
+}));
+
 
 // Oxxy Ozzworm
 addEvent(new Pokemon({
 	name : "Ozzworm",
-	img: "img/pkmn/ozzyozworm.png",
+	sprite: "img/pkmn/ozzyozworm.png",
 	x: 7, y: -35,
 	
-	//dex : "img/pkdx/tpp10_dux.gif",
-	//dexsource : "http://hamigakimomo.tumblr.com/post/78067393358/ive-updated-omanytes-sprite-to-omastar-i-also",
+	// dex : "img/pkdx/tpp10_dux.gif",
+	// sources : {
+	// 	"Pokedex Image by " : "",
+	// },
 	
 	OT: "AJDNNW",
 	gender : 2,

@@ -5,11 +5,13 @@
 // Flameslash
 addEvent(new Pokemon({
 	name : "Flameslash",
-	img: "img/pkmn/flameslash.png",
+	sprite: "img/pkmn/flameslash.png",
 	x: 28, y: -18,
 	
 	dex : "img/pkdx/frdex_flameslash.png",
-	dexsource : "http://www.reddit.com/r/twitchplayspokemon/comments/24ouwj/i_drew_flameslash_in_sprite_form_inspired_by_the/",
+	sources : {
+		"Pokedex Image by /u/bboyskullkid" : "http://www.reddit.com/r/twitchplayspokemon/comments/24ouwj/i_drew_flameslash_in_sprite_form_inspired_by_the/",
+	},
 	
 	OT: "Alice",
 	gender: 2,
@@ -28,7 +30,7 @@ addEvent(new Pokemon({
 // DJ Slaking
 addEvent(new Pokemon({
 	name : "Stalinking",
-	// img: "img/pkmn/flameslash.png",
+	// sprite: "img/pkmn/flameslash.png",
 	// x: 28, y: -18,
 	
 	// dex : "img/pkdx/frdex_flameslash.png",
@@ -52,10 +54,10 @@ addEvent(new Pokemon({
 // Hyperbug
 addEvent(new Pokemon({
 	name : "Hyperbug",
-	img: "img/pkmn/hyperbug_ev.png",
+	sprite: "img/pkmn/hyperbug_ev.png",
 	shadow: "img/pkmn/generic-shadow.png",
 	x: 16, y: -25, z: 16,
-	floating: true,
+	animation: "floating",
 	
 	// dex : "img/pkdx/frdex_flameslash.png",
 	// dexsource : "http://www.reddit.com/r/twitchplayspokemon/comments/24ouwj/i_drew_flameslash_in_sprite_form_inspired_by_the/",
@@ -77,7 +79,7 @@ addEvent(new Pokemon({
 // Shellock Holmes
 addEvent(new Pokemon({
 	name : "Shellock",
-	// img: "img/pkmn/hyperbug_ev.png",
+	// sprite: "img/pkmn/hyperbug_ev.png",
 	x: 16, y: -25,
 	
 	// dex : "img/pkdx/frdex_flameslash.png",
@@ -100,7 +102,7 @@ addEvent(new Pokemon({
 // Mew
 addEvent(new Pokemon({
 	name : "Marc",
-	// img: "img/pkmn/hyperbug_ev.png",
+	// sprite: "img/pkmn/hyperbug_ev.png",
 	// x: 16, y: -25,
 	
 	// dex : "img/pkdx/frdex_flameslash.png",
@@ -127,9 +129,9 @@ addEvent(new Pokemon({
 // Snorlax/Glalie
 addEvent(new Pokemon({
 	name : "Glalax",
-	img: "img/pkmn/galie_snorlax.png",
+	sprite: "img/pkmn/galie_snorlax.png",
 	x: -22, y: 3,
-	breathe: false,
+	animation: false,
 	
 	// dex : "img/pkdx/frdex_flameslash.png",
 	// dexsource : "http://www.reddit.com/r/twitchplayspokemon/comments/24ouwj/i_drew_flameslash_in_sprite_form_inspired_by_the/",

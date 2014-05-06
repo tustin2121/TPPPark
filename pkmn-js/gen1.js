@@ -5,20 +5,24 @@
 // Bird Jesus and his Church of Helix
 addEvent(new Building({
 	name: "The Church of Helix",
-	img: "img/bld/church.png",
+	sprite: "img/bld/church.png",
 	x : 8, y : 8,
+	warp_x: 32, warp_y: 67,
 }));
 
 addEvent(new Pokemon({
 	name: "Bird Jesus",
-	floating: true,
-	img: "img/pkmn/bird-jesus.png",
+	animation: "floating",
+	sprite: "img/pkmn/bird-jesus.png",
 	shadow : "img/pkmn/bird-jesus-shadow.png",
 	x : 10, y : 8, z: 20,
 	
 	dex : "img/pkdx/tpp1_birdjesus.gif",
-	dexsource : "http://hamigakimomo.tumblr.com/post/77911455524/i-decided-to-make-custom-r-b-sprites-for-the",
-	
+	sources : {
+		"Pokedex Image by /u/Fiirewaffle" : "http://hamigakimomo.tumblr.com/post/77911455524/i-decided-to-make-custom-r-b-sprites-for-the",
+		"Sprite by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/1yx0gx/i_madealtered_flairs_suggestions_or_corrections/",
+	},
+		
 	OT: "Red",
 	gamename: "aaabaaaajss",
 	pokename: "Pidgeot",
@@ -40,8 +44,11 @@ addEvent(new Pokemon({
 	name : "ATV",
 	
 	dex : "img/pkdx/tpp2_atv.gif",
-	dexsource : "http://hamigakimomo.tumblr.com/post/77911455524/i-decided-to-make-custom-r-b-sprites-for-the",
-	
+	sources : {
+		"Pokedex Image by /u/Fiirewaffle" : "http://hamigakimomo.tumblr.com/post/77911455524/i-decided-to-make-custom-r-b-sprites-for-the",
+		"Sprite by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/1yx0gx/i_madealtered_flairs_suggestions_or_corrections/",
+	},
+		
 	OT: "Red",
 	gamename : "AATTVVV",
 	pokename : "Venomoth",
@@ -59,8 +66,11 @@ addEvent(new Pokemon({
 	name : "King Fonz",
 	
 	dex : "img/pkdx/tpp3_fonz.gif",
-	dexsource : "http://hamigakimomo.tumblr.com/post/77911455524/i-decided-to-make-custom-r-b-sprites-for-the",
-	
+	sources : {
+		"Pokedex Image by /u/Fiirewaffle" : "http://hamigakimomo.tumblr.com/post/77911455524/i-decided-to-make-custom-r-b-sprites-for-the",
+		"Sprite by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/1yx0gx/i_madealtered_flairs_suggestions_or_corrections/",
+	},
+		
 	OT: "Red",
 	gamename : "AAAAAAAAAA",
 	pokename : "Nidoking",
@@ -79,12 +89,15 @@ addEvent(new Pokemon({
 	name : "Air",
 	
 	dex : "img/pkdx/tpp6_air.gif",
-	dexsource : "http://hamigakimomo.tumblr.com/post/77911455524/i-decided-to-make-custom-r-b-sprites-for-the",
-	
+	sources : {
+		"Pokedex Image by /u/Fiirewaffle" : "http://hamigakimomo.tumblr.com/post/77911455524/i-decided-to-make-custom-r-b-sprites-for-the",
+		"Sprite by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/1yx0gx/i_madealtered_flairs_suggestions_or_corrections/",
+	},
+		
 	OT: "Red",
 	gamename : "AIIIIIIRRR",
 	pokename : "Lapras",
-	nicknames : "Air Jordan<br/>Fresh Prince of Bel AIR",
+	nicknames : "Air Jordan<br/>Fresh Prince of Shell Air",
 	level : 31,
 	
 	ribbons : [
@@ -97,12 +110,15 @@ addEvent(new Pokemon({
 	name : "Battery Jesus",
 	
 	dex : "img/pkdx/tpp5_zapdos.gif",
-	dexsource : "http://hamigakimomo.tumblr.com/post/77911455524/i-decided-to-make-custom-r-b-sprites-for-the",
-	
+	sources : {
+		"Pokedex Image by /u/Fiirewaffle" : "http://hamigakimomo.tumblr.com/post/77911455524/i-decided-to-make-custom-r-b-sprites-for-the",
+		"Sprite by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/1yx0gx/i_madealtered_flairs_suggestions_or_corrections/",
+	},
+		
 	OT: "Red",
 	gamename : "AA-j",
 	pokename : "Zapdos",
-	nicknames : "Double-A Jay<br/>Archangel of Justice",
+	nicknames : "Double-A Jay, Archangel of Justice, John the Zaptist",
 	level : 81,
 	caught : "With Masterball 10d 7h 49m",
 	ball : "master",
@@ -116,12 +132,15 @@ addEvent(new Pokemon({
 // Red's Abby
 addEvent(new Pokemon({
 	name: "Abby",
-	img: "img/pkmn/abby-gen1.png",
+	sprite: "img/pkmn/abby-gen1.png",
 	x : -14, y : -34,
 	
 	dex : "img/pkdx/tpp9_abby.gif",
-	dexsource : "http://hamigakimomo.tumblr.com/post/78067393358/ive-updated-omanytes-sprite-to-omastar-i-also",
-	
+	sources : {
+		"Pokedex Image by /u/Fiirewaffle" : "http://hamigakimomo.tumblr.com/post/78067393358/ive-updated-omanytes-sprite-to-omastar-i-also",
+		"Sprite by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/1yx0gx/i_madealtered_flairs_suggestions_or_corrections/",
+	},
+		
 	OT: "Red",
 	gamename : "ABBBBBBK",
 	pokename : "Charmelion",
@@ -135,12 +154,15 @@ addEvent(new Pokemon({
 // DigRat
 addEvent(new Pokemon({
 	name: "DigRat",
-	img: "img/pkmn/digrat.png",
+	sprite: "img/pkmn/digrat.png",
 	x: 36, y: -1,
 	
 	dex : "img/pkdx/tpp11_digrat.gif",
-	dexsource : "http://hamigakimomo.tumblr.com/post/78067393358/ive-updated-omanytes-sprite-to-omastar-i-also",
-	
+	sources : {
+		"Pokedex Image by /u/Fiirewaffle" : "http://hamigakimomo.tumblr.com/post/78067393358/ive-updated-omanytes-sprite-to-omastar-i-also",
+		"Sprite by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/1yx0gx/i_madealtered_flairs_suggestions_or_corrections/",
+	},
+		
 	OT: "Red",
 	gamename : "AAJST(???",
 	pokename : "Raticate",
@@ -157,12 +179,15 @@ addEvent(new Pokemon({
 // DUX!
 addEvent(new Pokemon({
 	name : "DUX",
-	img: "img/pkmn/dux.png",
+	sprite: "img/pkmn/dux.png",
 	x: -33, y: -11,
 	
 	dex : "img/pkdx/tpp10_dux.gif",
-	dexsource : "http://hamigakimomo.tumblr.com/post/78067393358/ive-updated-omanytes-sprite-to-omastar-i-also",
-	
+	sources : {
+		"Pokedex Image by /u/Fiirewaffle" : "http://hamigakimomo.tumblr.com/post/78067393358/ive-updated-omanytes-sprite-to-omastar-i-also",
+		"Sprite by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/1yx0gx/i_madealtered_flairs_suggestions_or_corrections/",
+	},
+		
 	OT: "Red",
 	gamename : "DUX",
 	pokename : "Farfetch'd",
@@ -180,12 +205,15 @@ addEvent(new Pokemon({
 // Jay Leno!
 addEvent(new Pokemon({
 	name : "Jay Leno",
-	img: "img/pkmn/jayleno.png",
+	sprite: "img/pkmn/jayleno.png",
 	x: 4, y: -28,
 	
 	dex : "img/pkdx/jayleno.gif",
-	// dexsource : "Some tumblr somewhere, could not find! :(",
-	
+	dexsource : "Some tumblr somewhere, could not find! :(",
+	sources : {
+		"Sprite by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/1yx0gx/i_madealtered_flairs_suggestions_or_corrections/",
+	},
+		
 	OT: "Red",
 	gamename : "JLVWNNOOOO",
 	pokename : "Ratatta",
@@ -198,12 +226,60 @@ addEvent(new Pokemon({
 	],
 }));
 
+// Original Cabbage
+addEvent(new Pokemon({
+	name : "Cabbage",
+	sprite: "img/pkmn/cabbage_grey.png",
+	x: 8, y: -26,
+	
+	// dex : "img/pkdx/jayleno.gif",
+	sources : {
+		"Sprite by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/1yx0gx/i_madealtered_flairs_suggestions_or_corrections/",
+	},
+		
+	OT: "Red",
+	gamename : "x(araggbaj",
+	pokename : "Gloom",
+	level : 31,
+	nicknames : "xCabbage<br/>Seed of Hope",
+	
+	ribbons : [
+		new Released_Ribbon("10d 12h 43m"),
+		new BloodySunday_Ribbon(),
+	],
+}));
+
+// The Keeper, keeping the Pokemon Center
+addEvent(new Building({
+	name: "Pokemon Center",
+	sprite: "img/bld/pokecenter.png",
+	x : -17, y : 29,
+	warp_x: 28, warp_y: 58,
+}));
+
+addEvent(new Pokemon({
+	name : "The Keeper",
+	sprite: "img/pkmn/thekeeper.png",
+	x: -17, y: 30,
+	
+	// dex : "img/pkdx/jayleno.gif",
+	sources : {
+		"Sprite by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/1yx0gx/i_madealtered_flairs_suggestions_or_corrections/",
+	},
+		
+	OT: "Red",
+	gamename : "Drowzee",
+	pokename : "Drowzee",
+	level : 30,
+	memo : "Keeper of the PC",
+}));
+
 // Rick Gastly (no h...)
 addEvent(new Pokemon({
 	name : "Rick Gastly",
-	img: "img/pkmn/rickghastly.gif",
+	sprite: "img/pkmn/rickghastly.gif",
 	x: 11, y: -34,
-	breathe: false,
+	animation: false,
 	
 	//dex : "img/pkdx/tpp10_dux.gif",
 	//dexsource : "http://hamigakimomo.tumblr.com/post/78067393358/ive-updated-omanytes-sprite-to-omastar-i-also",
@@ -238,24 +314,62 @@ addEvent(new Pokemon({
 // C3KO
 addEvent(new Pokemon({
 	name : "C3KO",
-	// img: "img/pkmn/jayleno.png",
-	// x: -33, y: -11,
+	sprite: "img/pkmn/c3ko.png",
+	x: 25, y: 26,
 	
 	// dex : "img/pkdx/tpp10_dux.gif",
 	// dexsource : "http://hamigakimomo.tumblr.com/post/78067393358/ive-updated-omanytes-sprite-to-omastar-i-also",
+	sources : {
+		"Sprite by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/1yx0gx/i_madealtered_flairs_suggestions_or_corrections/",
+	},
 	
 	OT: "Red",
 	gamename : "CCC",
 	pokename : "Hitmonlee",
 	nicknames : "Triple C",
 	level : 30,
-	caught: "Recieved from Fighting Dojo 6d 22h 4m",
+	caught: "Fighting Dojo 6d 22h 4m",
 	memo : "Never saw the light of day.",
 	
 	ribbons : [
 		new Released_Ribbon("6d 22h 40m"),
-		new Record_Ribbon("Fastest Pokemon Release: 36m"),
+		new Record_Ribbon("Fastest Release: 36m"),
 	],
 }));
 
 
+
+// And finally, Red himself, stuck behind the burgler
+addEvent(new Person({
+	name : "Burglur",
+	spritesheet : "img/trainers/burgler.png",
+	x: -10, y: -36,
+	
+	behavior: behavior.look,
+	
+	dialog : [
+		"I wonder where my partner went.",
+	],
+}));
+
+
+
+// And the clingy girl and her pokemart
+addEvent(new Building({
+	name: "Pokemart",
+	sprite: "img/bld/mart.png",
+	x : -5, y : 21,
+	warp_x: 16, warp_y: 46,
+}));
+
+addEvent(new Person({
+	name : "Clingy Girl",
+	spritesheet : "img/trainers/clingy-girl.png",
+	x: -5, y: 22,
+	
+	behavior: behavior.look,
+	
+	dialog : [
+		"REVIVE is costly, but it revives fainted POK&eacute;MON!",
+	],
+}));
