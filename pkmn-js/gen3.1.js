@@ -53,7 +53,7 @@ addEvent(new Pokemon({
 addEvent(new Pokemon({
 	name : "Hyperbug",
 	img: "img/pkmn/hyperbug_ev.png",
-	//shadow : "",
+	shadow: "img/pkmn/generic-shadow.png",
 	x: 16, y: -25, z: 16,
 	floating: true,
 	

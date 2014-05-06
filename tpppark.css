@@ -48,6 +48,7 @@ body {
 	width: 280px; height: 200px;
 	background-image: url("img/ui/status_screen.png");
 	z-index : 20000; /* Float OVER pokemon */
+	display: none;
 }
 
 #status-screen section {
@@ -92,6 +93,24 @@ body {
 #status-screen.tab4 .info-screen.sources {
 	display: block;
 }
+
+
+#status-screen .topbar {
+	position: absolute;
+	top: 5px; left: 5px;
+	width: 265px; height: 26px;
+}
+
+#status-screen .topbar .tabindicator {
+	margin: 0 auto;
+	width: 70px; height: 26px;
+	background-image: url("img/ui/status_screen.png");
+}
+/*#status-screen.tab0 .topbar .tabindicator { background-position: -14px -666px; }*/
+#status-screen.tab1 .topbar .tabindicator { background-position: -14px -692px; }
+#status-screen.tab2 .topbar .tabindicator { background-position: -14px -718px; }
+#status-screen.tab3 .topbar .tabindicator { background-position: -14px -744px; }
+#status-screen.tab4 .topbar .tabindicator { background-position: -14px -770px; }
 
 
 #status-screen .btn-close {

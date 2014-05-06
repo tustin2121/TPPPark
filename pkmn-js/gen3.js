@@ -6,7 +6,8 @@
 addEvent(new Pokemon({
 	name : "Zexinja",
 	img: "img/pkmn/shedinja_zexxy.png",
-	x: 31, y: -11,
+	shadow: "img/pkmn/generic-shadow.png",
+	x: 31, y: -11, z: 16,
 	
 	dex : "img/pkdx/emdex_shedinja.png",
 	dexsource : "http://www.reddit.com/r/twitchplayspokemon/comments/21g0da/was_inspired_by_my_flair_and_drew_zexxys_soul/",
