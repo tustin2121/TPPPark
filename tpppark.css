@@ -43,7 +43,7 @@ body {
 .event-base .person {
 	position: absolute;
 	width: 16px; height: 22px;
-	bottom: 0px; left: 0px;
+	bottom: 3px; left: 0px;
 }
 
 /* --- Dialog Box --- */
@@ -347,5 +347,23 @@ body {
 	0% {bottom: 0;}
 	100% {bottom: -2px;}
 }
+/*
+.anim-walk-down {
+	-webkit-animation: animation_walk_down 1s infinite steps(2, end);
+	animation: animation_walk_down 1s infinite steps(5, end);
+}
+@-webkit-keyframes animation_walk_down {
+	0% {background-position: 0px 0px;}
+	25% {background-position: 0px 0px;}
+	50% {background-position: 0px -22px;}
+	75% {background-position: 0px 0px;}
+	100% {background-position: 0px -44px;}
+}
 
-
+@keyframes animation_walk_down {
+	0% {background-position: 0px -22px;}
+	25% {background-position: 0px 0px;}
+	50% {background-position: 0px -44px;}
+	75% {background-position: 0px 0px;}
+	100% {background-position: 0px 0px;}
+}*/

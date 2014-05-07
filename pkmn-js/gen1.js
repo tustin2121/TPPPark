@@ -61,8 +61,11 @@ addEvent(new Pokemon({
 	],	
 }));
 
-//The Fonz
-addEvent(new Pokemon({
+addEvent(new MultiEvent({
+	name : "B-Ball Game",
+	sprite: "img/pkmn/bballgame.gif",
+	x : 0, y : 38, z:-8,
+}).addSubEvent("2,24,32,52", new Pokemon({
 	name : "King Fonz",
 	
 	dex : "img/pkdx/tpp3_fonz.gif",
@@ -82,10 +85,7 @@ addEvent(new Pokemon({
 	ribbons : [
 		new HallOfFame_Ribbon("16d 7h 45m"),
 	],	
-}));
-
-//Air
-addEvent(new Pokemon({
+})).addSubEvent("61,20,91,48", new Pokemon({
 	name : "Air",
 	
 	dex : "img/pkdx/tpp6_air.gif",
@@ -103,7 +103,13 @@ addEvent(new Pokemon({
 	ribbons : [
 		new HallOfFame_Ribbon("16d 7h 45m"),
 	],	
-}));
+})));
+
+//The Fonz
+addEvent();
+
+//Air
+addEvent();
 
 // Zapdos
 addEvent(new Pokemon({
@@ -352,9 +358,21 @@ addEvent(new Person({
 	],
 }));
 
+addEvent(new Trainer({
+	name : "Red",
+	spritesheet : "img/trainers/red.png",
+	x: -10, y: -37,
+	
+	behavior: behavior.meander,
+	behavArg : {
+		"left" : -10, "top" : -38,
+		"right": -10, "bottom": -37,
+	},
+}));
 
 
-// And the clingy girl and her pokemart
+
+// And the clingy/revive girl and her pokemart
 addEvent(new Building({
 	name: "Pokemart",
 	sprite: "img/bld/mart.png",
@@ -367,7 +385,11 @@ addEvent(new Person({
 	spritesheet : "img/trainers/clingy-girl.png",
 	x: -5, y: 22,
 	
-	behavior: behavior.look,
+	behavior: behavior.meander,
+	behavArg : {
+		"left" : -9, "top" : 22,
+		"right": 0, "bottom" : 23,
+	},
 	
 	dialog : [
 		"REVIVE is costly, but it revives fainted POK&eacute;MON!",

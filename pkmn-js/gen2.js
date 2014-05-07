@@ -124,3 +124,24 @@ addEvent(new Pokemon({
 	],
 }));
 // There's also the zubat left with Oxxy, but no one seems to care about it...
+
+
+// 
+addEvent(new Pokemon({
+	name : "AAAAAAAAAA",
+	sprite: "img/pkmn/aaaaa_ponyta.png",
+	x: 23, y: 19,
+	
+	// dex : "img/pkdx/dex_admiral.png",
+	// sources : {
+	// 	"Pokedex Image by /u/Parkmayn" : "http://www.reddit.com/r/twitchplayspokemon/comments/1zczao/i_made_some_lasergator_and_admiral_sentret_sprites/",
+	// },
+	
+	OT: "AJDNNW",
+	gender: 1,
+	gamename : "AAAAAAA",
+	pokename : "Ponyta",
+	nicknames : "A9",
+	level : 32,
+	memo : "Always screaming...",
+}));
