@@ -70,5 +70,6 @@ addEvent(new Person({
 		"Wahahahahaha!",
 		"WAHAHAHAHAHAHAHAHAHAHAHA!",
 		"Wahahahahahahaha!",
+		"Wahahahahahahahahaha! See you again soon!",
 	],
 }));
