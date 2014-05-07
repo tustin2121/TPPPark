@@ -359,9 +359,33 @@ addEvent(new Person({
 }));
 
 addEvent(new Trainer({
-	name : "Red",
+	name : "RED",
 	spritesheet : "img/trainers/red.png",
 	x: -10, y: -37,
+	
+	dex : "img/pkdx/trainer_red.png",
+	nickname : "Red",
+	playtime: "16d 7h 45m",
+	pokedex : "30 own/132 seen",
+	releasecount : 16,
+	idnum : "00000",
+	
+	info_html : 
+		"Number of E4 Attempts: 22<br/>"+
+		"Times Blacked Out: ???<br/>"+
+		"<br/>"+
+		"<br/>"+
+		"",
+	icons : [
+		"img/icn/helix_fossil.png",
+		"img/icn/ss_ticket.png",
+		"img/icn/lift_key.png",
+		"img/icn/poke_flute.png",
+		"img/icn/rocket_pad.png",
+		"img/icn/master_ball.png",
+	],
+	
+	badge_html : "",
 	
 	behavior: behavior.meander,
 	behavArg : {

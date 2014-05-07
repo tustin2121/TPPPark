@@ -146,3 +146,100 @@ addEvent(new Pokemon({
 	memo : "The Snorlax on Route 12 was a Galie in disguse",
 	
 }));
+
+
+//POKE DUDE!! (aka, Primo)
+addEvent(new Person({
+	name : "PokeDude",
+	spritesheet : "img/trainers/pokedude.png",
+	x: -22, y: 9,
+	
+	behavior: behavior.meander,
+	behavArg : {
+		"left" : -27, "top" : 4,
+		"right": -20, "bottom" : 14,
+	},
+	
+	dialog : [
+		"Remember, Trainers, a good deed a day brings happiness to stay!",
+		"Remember, Trainers, a good deed a day brings happiness to stay!", //2x as likely to appear
+		"Come on, let me here you! HELLO, TRAINERS! It's me, the POK&eacute; DUDE!",
+		"If a POK&eacute;MON develops a status problem, heal it right away!",
+		"Keep your eyes glued to the super POK&eacute; DUDE SHOW!",
+		"If your first POK&eacute; BALL fails to catch the POK&eacute;MON, don't give up! Keep throwing POK&eacute; BALLS... It's bound to work sometime!",
+		"If you don't know how type matchups work, battles will be tough!",
+		"For the COOL-type POK&eacute; DUDE, AWESOME-type kids like you match up perfectly!",
+		"FOCUS PUNCH doesn't sound like anything a bird or fish POK&eacute;MON can learn. So, try using it on a POK&eacute;MON with arms that can throw punches!",
+		"You've given yourself one-touch access to TEACHY TV! That kind of attention is a little embarrasing!",
+	],
+}));
+
+//And some Randomized Pokemon to prove Poke Dude wrong on that Focus Punch point
+addEvent(new Event({
+	name : "Punching Taillow",
+	sprite : "img/pkmn/taillow_punching.png",
+	x: -28, y: 13,
+	
+	animation: "breathe",
+	
+	doClick : Person.fn.doClick,
+	updateImage : function(){},
+	
+	dialog_assignment : "random",
+	dialog : [
+		"Wild TAILLOW used MEGA PUNCH!",
+	],
+}));
+
+addEvent(new Event({
+	name : "Kicking Diglett",
+	sprite : "img/pkmn/diglett.gif",
+	x: -30, y: 16,
+	
+	doClick : Person.fn.doClick,
+	updateImage : function(){},
+	
+	dialog_assignment : "random",
+	dialog : [
+		"Wild DIGLETT used HIGH JUMP KICK!",
+	],
+}));
+
+
+// And finally, Alice!
+addEvent(new Trainer({
+	name : "A",
+	spritesheet : "img/trainers/aj.png",
+	x: 18, y: 2,
+	
+	dex : "img/pkdx/trainer_alice.png",
+	nickname : "Alice",
+	playtime: "15d 2h 2m",
+	pokedex : "56 own/303 seen",
+	releasecount : 1,
+	idnum : "56171",
+	
+	info_html : 
+		"Number of E4 Attempts: 8<br/>"+
+		"Times Blacked Out: 89+<br/>"+
+		"<br/>"+
+		"<br/>"+
+		"<a href='http://www.reddit.com/r/twitchplayspokemon/comments/23tl7o/made_a_sprite_for_aalice_this_is_more_of_a_wip/'>Alice Sprite by /u/KingdomXathers</a>",
+	icons : [
+		"img/icn/teachy_tv.png",
+		"img/icn/dome_fossil.png",
+		"img/icn/poke_doll.png",
+		"img/icn/amber_charizard.png",
+		"img/pkmn/potato.png",
+		null,// "img/icn/slowpoke_tail.png",
+	],
+	
+	badge_html : "",
+	
+	behavior: null,
+	// behavior: behavior.meander,
+	// behavArg : {
+	// 	"left" : -10, "top" : -38,
+	// 	"right": -10, "bottom": -37,
+	// },
+}));

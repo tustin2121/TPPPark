@@ -145,3 +145,42 @@ addEvent(new Pokemon({
 	level : 32,
 	memo : "Always screaming...",
 }));
+
+
+
+// And finally, AJ and Joey <3
+addEvent(new Trainer({
+	name : "AJDNNW",
+	spritesheet : "img/trainers/aj.png",
+	x: 18, y: -1,
+	
+	nickname : "AJ Downs",
+	playtime: "13d 2h 2m",
+	pokedex : "32 own/200 seen",
+	releasecount : 4,
+	idnum : "00000",
+	
+	info_html : 
+		"Number of E4 Attempts: 38<br/>"+
+		"Times Blacked Out: 41<br/>"+
+		"<br/>"+
+		"<br/>"+
+		"",
+	icons : [
+		"img/icn/slowpoke_search.png",
+		"img/icn/expshare.png",
+		"img/icn/leftovers.png",
+		"img/icn/joey_head.png",
+		"img/icn/tiny_mushroom.png",
+		"img/icn/slowpoke_tail.png",
+	],
+	
+	badge_html : "",
+	
+	behavior: null,
+	// behavior: behavior.meander,
+	// behavArg : {
+	// 	"left" : -10, "top" : -38,
+	// 	"right": -10, "bottom": -37,
+	// },
+}));

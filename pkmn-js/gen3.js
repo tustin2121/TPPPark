@@ -70,6 +70,48 @@ addEvent(new Person({
 		"Wahahahahaha!",
 		"WAHAHAHAHAHAHAHAHAHAHAHA!",
 		"Wahahahahahahaha!",
-		"Wahahahahahahahahaha! See you again soon!",
+		"Wahahahahahahahahaha! See you again soon!", //OmegaRuby and AlphaSapphire!
 	],
 }));
+
+
+
+// And finally, May (the M is silent)!
+addEvent(new MultiEvent({
+	name : "Pooch Swingset",
+	sprite: "img/pkmn/may_swingset.gif",
+	x : 9, y : 23, z:-6,
+}).addSubEvent("15,19,28,42", new Trainer({
+	name : "A",
+	
+	nickname : "<strike>M</strike>ay (M = Silent)",
+	playtime: "21d 19h 27m",
+	pokedex : "40 own/164 seen",
+	releasecount : 5,
+	idnum : "00000",
+	
+	info_html : 
+		"Number of E4 Attempts: 103<br/>"+
+		"Times Blacked Out: 89+<br/>"+
+		"Oddish Caught: 29<br/>"+
+		"Poochyena Caught: 7<br/>"+
+		"",
+	icons : [
+		"img/icn/good_rod.png",
+		"img/icn/goggles.png",
+		"img/pkmn/oddish_1.png",
+		"img/icn/cat_head.png",
+		"img/icn/contest_pass.png",
+		"img/icn/clock.png",
+	],
+	
+	badge_html : "",
+})).addSubEvent("16,1,30,13", new Pokemon({ //top pooch
+	name : "Pooch 1",
+	
+})).addSubEvent("34,22,47,42", new Pokemon({ //swinging pooch
+	name : "Pooch 2",
+	
+}))
+);
+
