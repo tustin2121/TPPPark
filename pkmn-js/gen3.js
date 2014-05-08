@@ -158,6 +158,7 @@ addEvent(new Pokemon({
 	level : 33,
 	memo : "Promising young recruit, captured in his prime by Apostropi.",
 }));
+
 addEvent(new Pokemon({
 	name : "Apostropi",
 	// sprite: "img/pkmn/.png",
@@ -176,13 +177,14 @@ addEvent(new Pokemon({
 	level : 26,
 	memo : "Seen as an imposter, taking Minun's place.",
 }));
+
 addEvent(new Pokemon({
 	name : "Bird Cop",
 	// sprite: "img/pkmn/.png",
 	// x: -37, y: -25,
 	
 	dex : "img/pkdx/emdex_birdcop.png",
-	sources : {
+	sources : { 
 		"Pokedex Image by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/252a2b/tpp_sprites/",
 	},
 	
