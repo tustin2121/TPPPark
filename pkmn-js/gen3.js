@@ -171,7 +171,7 @@ addEvent(new Pokemon({
 	
 	OT: "<strike>M</strike>Ay",
 	gender: 2,
-	gamename : "\\'"
+	gamename : "\\'",
 	pokename : "Pikachu",
 	nicknames : "Apostrachu",
 	level : 26,

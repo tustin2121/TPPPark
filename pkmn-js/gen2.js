@@ -28,9 +28,9 @@ addEvent(new MultiEvent({
 	name : "LazorGator",
 	
 	dex : "img/pkdx/dex_lazorgator.png",
-	sources : [
+	sources : {
 		"Pokedex Image by /u/Aleksandair" : "http://www.reddit.com/r/twitchplayspokemon/comments/20iaxx/i_made_it_anybody_want_to_use_these_sprites/",
-	]
+	},
 	
 	OT: "AJDNNW",
 	gender : 1,
