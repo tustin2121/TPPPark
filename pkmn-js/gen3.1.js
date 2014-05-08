@@ -33,7 +33,10 @@ addEvent(new Pokemon({
 	// sprite: "img/pkmn/flameslash.png",
 	// x: 28, y: -18,
 	
-	// dex : "img/pkdx/frdex_flameslash.png",
+	dex : "img/pkdx/frdex_slaking.png",
+	sources : {
+		"Pokedex Image by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/252a2b/tpp_sprites/",
+	},
 	
 	OT: "Alice",
 	gender: 1,
@@ -58,7 +61,10 @@ addEvent(new Pokemon({
 	x: 16, y: -25, z: 16,
 	animation: "floating",
 	
-	// dex : "img/pkdx/frdex_flameslash.png",
+	dex : "img/pkdx/frdex_hyperbug.png",
+	sources : {
+		"Pokedex Image by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/252a2b/tpp_sprites/",
+	},
 	
 	OT: "Alice",
 	gender: 1,
@@ -102,8 +108,10 @@ addEvent(new Pokemon({
 	// sprite: "img/pkmn/hyperbug_ev.png",
 	// x: 16, y: -25,
 	
-	// dex : ""
-	// dexsource : "",
+	dex : "img/pkdx/frdex_marc.png",
+	sources : {
+		"Pokedex Image by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/252a2b/tpp_sprites/",
+	},
 	
 	OT: "Alice",
 	gender: 1,

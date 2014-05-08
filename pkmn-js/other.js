@@ -10,6 +10,24 @@ addEvent(new Building({
 	warp_x: 24, warp_y: -6,
 }));
 
+// Creepy eyes! >:3
+addEvent(new Event({
+	name : "Cave Eyes",
+	sprite : "img/pkmn/cave_eyes.png",
+	x: -20, y: -36, z: 0,
+	
+	doClick : function() {
+		var eyes = $(this.domElement).find("img.main");
+		eyes.delay(1400) //blink eyes
+			.hide(10).delay(100).show(10).delay(100)
+			.hide(10).delay(100).show(10).delay(100)
+			.delay(600)
+			.hide(200);
+		
+		this.doClick = function(){}; //remove this function
+	},
+}));
+
 
 //SHIPPING APP!
 /*

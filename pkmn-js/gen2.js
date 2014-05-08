@@ -145,10 +145,10 @@ addEvent(new Pokemon({
 	sprite: "img/pkmn/aaaaa_ponyta.png",
 	x: 23, y: 19,
 	
-	dex : "http://cdn.bulbagarden.net/upload/1/13/Spr_2c_077.gif", //Bulbapedia
-	// sources : {
-	// 	"Pokedex Image by " : "",
-	// },
+	dex : "img/pkdx/dex_aaaaa.png",
+	sources : {
+		"Pokedex Image by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/252a2b/tpp_sprites/",
+	},
 	
 	OT: "AJDNNW",
 	gender: 1,
