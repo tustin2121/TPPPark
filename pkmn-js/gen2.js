@@ -28,7 +28,9 @@ addEvent(new MultiEvent({
 	name : "LazorGator",
 	
 	dex : "img/pkdx/dex_lazorgator.png",
-	dexsource : "http://www.reddit.com/r/twitchplayspokemon/comments/20iaxx/i_made_it_anybody_want_to_use_these_sprites/",
+	sources : [
+		"Pokedex Image by /u/Aleksandair" : "http://www.reddit.com/r/twitchplayspokemon/comments/20iaxx/i_made_it_anybody_want_to_use_these_sprites/",
+	]
 	
 	OT: "AJDNNW",
 	gender : 1,
@@ -45,6 +47,11 @@ addEvent(new MultiEvent({
 })).addSubEvent("13,3,28,19", new Pokemon({
 	name : "Omelette",
 	
+	dex: "img/pkdx/dex_omelette.png",
+	sources : {
+		"Pokedex Image by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/252a2b/tpp_sprites/",
+	},
+	
 	OT: "AJDNNW",
 	gender : 1,
 	gamename : "Togepi",
@@ -58,6 +65,11 @@ addEvent(new MultiEvent({
 	],	
 }))
 );
+
+
+///Katie
+//"Pokedex Image by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/252a2b/tpp_sprites/",
+
 
 // The Admiral
 addEvent(new Pokemon({
@@ -90,6 +102,7 @@ addEvent(new Pokemon({
 	sprite: "img/pkmn/ozzyozworm.png",
 	x: 7, y: -35,
 	
+	dex : "http://cdn.bulbagarden.net/upload/1/10/Spr_2c_010.gif", //Blubapedia
 	// dex : "img/pkdx/tpp10_dux.gif",
 	// sources : {
 	// 	"Pokedex Image by " : "",
@@ -132,9 +145,9 @@ addEvent(new Pokemon({
 	sprite: "img/pkmn/aaaaa_ponyta.png",
 	x: 23, y: 19,
 	
-	// dex : "img/pkdx/dex_admiral.png",
+	dex : "http://cdn.bulbagarden.net/upload/1/13/Spr_2c_077.gif", //Bulbapedia
 	// sources : {
-	// 	"Pokedex Image by /u/Parkmayn" : "http://www.reddit.com/r/twitchplayspokemon/comments/1zczao/i_made_some_lasergator_and_admiral_sentret_sprites/",
+	// 	"Pokedex Image by " : "",
 	// },
 	
 	OT: "AJDNNW",

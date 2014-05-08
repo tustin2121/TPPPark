@@ -34,7 +34,6 @@ addEvent(new Pokemon({
 	// x: 28, y: -18,
 	
 	// dex : "img/pkdx/frdex_flameslash.png",
-	// dexsource : "http://www.reddit.com/r/twitchplayspokemon/comments/24ouwj/i_drew_flameslash_in_sprite_form_inspired_by_the/",
 	
 	OT: "Alice",
 	gender: 1,
@@ -60,7 +59,6 @@ addEvent(new Pokemon({
 	animation: "floating",
 	
 	// dex : "img/pkdx/frdex_flameslash.png",
-	// dexsource : "http://www.reddit.com/r/twitchplayspokemon/comments/24ouwj/i_drew_flameslash_in_sprite_form_inspired_by_the/",
 	
 	OT: "Alice",
 	gender: 1,
@@ -83,7 +81,6 @@ addEvent(new Pokemon({
 	x: 16, y: -25,
 	
 	// dex : "img/pkdx/frdex_flameslash.png",
-	// dexsource : "http://www.reddit.com/r/twitchplayspokemon/comments/24ouwj/i_drew_flameslash_in_sprite_form_inspired_by_the/",
 	
 	OT: "Alice",
 	gender: 1,
@@ -105,8 +102,8 @@ addEvent(new Pokemon({
 	// sprite: "img/pkmn/hyperbug_ev.png",
 	// x: 16, y: -25,
 	
-	// dex : "img/pkdx/frdex_flameslash.png",
-	// dexsource : "http://www.reddit.com/r/twitchplayspokemon/comments/24ouwj/i_drew_flameslash_in_sprite_form_inspired_by_the/",
+	// dex : ""
+	// dexsource : "",
 	
 	OT: "Alice",
 	gender: 1,
@@ -133,8 +130,7 @@ addEvent(new Pokemon({
 	x: -22, y: 3,
 	animation: false,
 	
-	// dex : "img/pkdx/frdex_flameslash.png",
-	// dexsource : "http://www.reddit.com/r/twitchplayspokemon/comments/24ouwj/i_drew_flameslash_in_sprite_form_inspired_by_the/",
+	dex : "http://bulbapedia.bulbagarden.net/wiki/File:Spr_3e_362.gif", //Bulbapedia
 	
 	OT: "Alice",
 	gender: 2,

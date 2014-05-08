@@ -20,8 +20,182 @@ addEvent(new Pokemon({
 	nicknames : "ZexyNinja",
 	level : 26,
 	caught : "Appeared 3d 23h 3m",
-	memo : "Thought to hold the soul of Zexxy after his release.",
+	memo : "Thought to hold the soul of Zexy after his release.",
 	
+}));
+
+addEvent(new Pokemon({
+	name: "Zexy",
+	sprite: "img/pkmn/zexxy.png",
+	x : -14, y : -29,
+	
+	dex : "img/pkdx/emdex_zexy.png",
+	sources : {
+		"Pokedex Image by /u/NoPenNameGirl" : "http://www.reddit.com/r/twitchplayspokemon/comments/22d7zw/request_done_zexy_the_torchic_sprite/",
+	},
+		
+	OT: "<strike>M</strike>Ay",
+	gender: 1,
+	gamename : "zyyxyy",
+	pokename : "Torchic",
+	level : 38,
+	ribbons : [
+		new Starter_Ribbon(),
+		new Released_Ribbon("3d 23h 9m"),
+	],
+}));
+
+addEvent(new Pokemon({
+	name : "M4",
+	// sprite: "img/pkmn/cabbage_white.png",
+	// x: -37, y: -25,
+	
+	dex : "img/pkdx/emdex_M4.png",
+	sources : {
+		"Pokedex Image by /u/NoPenNameGirl" : "http://www.reddit.com/r/twitchplayspokemon/comments/22kx4y/the_ateam_sprite/",
+	},
+	
+	OT: "<strike>M</strike>Ay",
+	gender: 2,
+	gamename : "M ---/'/'4",
+	pokename : "Azumarill",
+	nicknames : "M4rill, Moe,<br/>Virgin Marill",
+	level : 100,
+	memo : "Known for her signiture move: Rollout.",
+	
+	ribbons : [
+		new Record_Ribbon("Only Lvl 100 Mon"),
+		new HallOfFame_Ribbon("21d 19h 27m"),
+	],
+}));
+
+addEvent(new Pokemon({
+	name : "Cruella",
+	sprite: "img/pkmn/cruella_water.png",
+	x: -1, y: -1,
+	
+	dex : "img/pkdx/emdex_cruella.png",
+	sources : {
+		"Pokedex Image by /u/NoPenNameGirl" : "http://www.reddit.com/r/twitchplayspokemon/comments/22kx4y/the_ateam_sprite/",
+	},
+	
+	OT: "<strike>M</strike>Ay",
+	gender: 2,
+	gamename : "GJKLFFZ",
+	pokename : "Tentacruel",
+	nicknames : "GJK<br/>The Kraken",
+	level : 79,
+	memo : "Great tank. Hidden Power: Electric.",
+	
+	ribbons : [
+		new HallOfFame_Ribbon("21d 19h 27m"),
+	],
+}));
+
+addEvent(new Pokemon({
+	name : "5'7",
+	// sprite: "img/pkmn/cabbage_white.png",
+	// x: -37, y: -25,
+	
+	dex : "img/pkdx/emdex_57.png",
+	sources : {
+		"Pokedex Image by /u/NoPenNameGirl" : "http://www.reddit.com/r/twitchplayspokemon/comments/22kx4y/the_ateam_sprite/",
+	},
+	
+	OT: "<strike>M</strike>Ay",
+	gender: 2,
+	gamename : '-5""7"Y',
+	pokename : "Graveler",
+	nicknames : "Five Feet",
+	level : 68,
+	memo : "Knew Explosion at one point, where she would use indiscriminately.",
+	
+	ribbons : [
+		new HallOfFame_Ribbon("21d 19h 27m"),
+	],
+}));
+
+addEvent(new Pokemon({
+	name : "Annie",
+	// sprite: "img/pkmn/cabbage_white.png",
+	// x: -37, y: -25,
+	
+	dex : "img/pkdx/emdex_annie.png",
+	sources : {
+		"Pokedex Image by /u/NoPenNameGirl" : "http://www.reddit.com/r/twitchplayspokemon/comments/22kx4y/the_ateam_sprite/",
+	},
+	
+	OT: "<strike>M</strike>Ay",
+	gender: 2,
+	gamename : 'A♀NIIIIc33',
+	pokename : "Hariyama",
+	nicknames : 'Anice<br/>"A Girl, <em>Nice</em>"',
+	level : 78,
+	caught: "In victory road.",
+	memo : "Consistantly swept 2-3 of the E4 every run.",
+	
+	ribbons : [
+		new HallOfFame_Ribbon("21d 19h 27m"),
+	],
+}));
+
+
+addEvent(new Pokemon({
+	name : "C3",
+	// sprite: "img/pkmn/.png",
+	// x: -37, y: -25,
+	
+	dex : "img/pkdx/emdex_c3.png",
+	sources : {
+		"Pokedex Image by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/252a2b/tpp_sprites/",
+	},
+	
+	OT: "<strike>M</strike>Ay",
+	gender: 1,
+	gamename : "CCC",
+	pokename : "Minun",
+	nicknames : "Pvt. C3",
+	level : 33,
+	memo : "Promising young recruit, captured in his prime by Apostropi.",
+}));
+addEvent(new Pokemon({
+	name : "Apostropi",
+	// sprite: "img/pkmn/.png",
+	// x: -37, y: -25,
+	
+	dex : "img/pkdx/emdex_apostropi.png",
+	sources : {
+		"Pokedex Image by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/252a2b/tpp_sprites/",
+	},
+	
+	OT: "<strike>M</strike>Ay",
+	gender: 2,
+	gamename : "\\'"
+	pokename : "Pikachu",
+	nicknames : "Apostrachu",
+	level : 26,
+	memo : "Seen as an imposter, taking Minun's place.",
+}));
+addEvent(new Pokemon({
+	name : "Bird Cop",
+	// sprite: "img/pkmn/.png",
+	// x: -37, y: -25,
+	
+	dex : "img/pkdx/emdex_birdcop.png",
+	sources : {
+		"Pokedex Image by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/252a2b/tpp_sprites/",
+	},
+	
+	OT: "<strike>M</strike>Ay",
+	gender: 2,
+	gamename : "BDCIOPP",
+	pokename : "Wingull",
+	level : 26,
+	memo : "Consistantly swept 2-3 of the E4 every run.",
+	
+	ribbons : [
+		new Released_Ribbon("9d 8h 53m "),
+	],
 }));
 
 
@@ -38,10 +212,10 @@ addEvent(new Pokemon({
 	sprite: "img/pkmn/cabbage_white.png",
 	x: -37, y: -25,
 	
-	// dex : "img/pkdx/emdex_shedinja.png",
-	// sources : {
-	// 	"Pokedex Image by /u/bboyskullkid" : "http://www.reddit.com/r/twitchplayspokemon/comments/21g0da/was_inspired_by_my_flair_and_drew_zexxys_soul/",
-	// },
+	dex : "img/pkdx/emdex_cabbage_white.png",
+	sources : {
+		"Pokedex Image by /u/NoPenNameGirl" : "http://www.reddit.com/r/twitchplayspokemon/comments/22kx4y/the_ateam_sprite/",
+	},
 	
 	OT: "<strike>M</strike>Ay",
 	gender: 2,
@@ -50,8 +224,70 @@ addEvent(new Pokemon({
 	nicknames : "Cabbage the White",
 	level : 49,
 	ball : "safari",
+	
+	ribbons : [
+		new HallOfFame_Ribbon("21d 19h 27m"),
+	],
 }));
 
+addEvent(new Pokemon({
+	name : "Oddish",
+	sprite: "img/pkmn/oddish_1.png",
+	x: -33, y: -23,
+	
+	dex : "http://cdn.bulbagarden.net/upload/d/dc/Spr_3e_043.gif", //Bulbapedia
+	
+	OT: "<strike>M</strike>Ay",
+	gender: 1,
+	gamename : "Oddish",
+	pokename : "Oddish",
+	level : 25, //No one cares about the oddish's levels
+	ball : "safari",
+	memo : "Proud father of a daycare baby.",
+	
+	ribbons : [
+		new Daycare_Ribbon("Forevermore"),
+	],
+}));
+addEvent(new Pokemon({
+	name : "Oddish",
+	sprite: "img/pkmn/oddish_2.png",
+	x: -35, y: -23,
+	
+	dex : "http://cdn.bulbagarden.net/upload/d/dc/Spr_3e_043.gif", //Bulbapedia
+	
+	OT: "<strike>M</strike>Ay",
+	gender: 2,
+	gamename : "Oddish",
+	pokename : "Oddish",
+	level : 25, //No one cares about the oddish's levels
+	ball : "safari",
+	memo : "Proud mother of a daycare baby.",
+	
+	ribbons : [
+		new Daycare_Ribbon("Forevermore"),
+	],
+}));
+addEvent(new Pokemon({
+	name : "Oddish Egg",
+	sprite: "img/pkmn/egg.png",
+	x: -34, y: -23, z: -3,
+	animation: null,
+	
+	dex : "http://cdn.bulbagarden.net/upload/d/dc/Spr_3r_Egg.png", //Bulbapedia
+	
+	OT: "<strike>M</strike>Ay",
+	gender: 0,
+	gamename : "???",
+	pokename : "Egg",
+	level : 1, //No one cares about the oddish's levels
+	memo : "Unhatched baby of a daycare family.",
+	
+	ribbons : [
+		new Daycare_Ribbon("Forevermore"),
+		new Record_Ribbon("First Egg of TPP"),
+	],
+}));
 
 
 
@@ -115,3 +351,42 @@ addEvent(new MultiEvent({
 }))
 );
 
+addEvent(new Pokemon({
+	name : "Mightydoge",
+	// sprite: "img/pkmn/cabbage_white.png",
+	// x: -37, y: -25,
+	
+	dex : "img/pkdx/emdex_mightydoge.png",
+	sources : {
+		"Pokedex Image by /u/NoPenNameGirl" : "http://www.reddit.com/r/twitchplayspokemon/comments/22kx4y/the_ateam_sprite/",
+	},
+	
+	OT: "<strike>M</strike>Ay",
+	gender: 1,
+	gamename : "Mightyena",
+	pokename : "Mightyena",
+	nicknames : "Mighty Cop",
+	level : 50,
+	
+	ribbons : [
+		new HallOfFame_Ribbon("21d 19h 27m"),
+	],
+}));
+
+addEvent(new Pokemon({
+	name : "ATM",
+	sprite: "img/pkmn/doge_atm.png",
+	x: 5, y: 25,
+	
+	// dex : "img/pkdx/emdex_mightydoge.png",
+	// sources : {
+	// 	"Pokedex Image by /u/NoPenNameGirl" : "http://www.reddit.com/r/twitchplayspokemon/comments/22kx4y/the_ateam_sprite/",
+	// },
+	
+	OT: "<strike>M</strike>Ay",
+	gender: 2,
+	gamename : "ATMMMGMGG",
+	pokename : "Poochyena",
+	nicknames : "All Terrain Doge",
+	level : 14,
+}));

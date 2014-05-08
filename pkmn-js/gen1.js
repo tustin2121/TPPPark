@@ -105,15 +105,11 @@ addEvent(new MultiEvent({
 	],	
 })));
 
-//The Fonz
-addEvent();
-
-//Air
-addEvent();
-
 // Zapdos
 addEvent(new Pokemon({
 	name : "Battery Jesus",
+	sprite: "img/pkmn/zapdos.png",
+	x : -5, y : 0,
 	
 	dex : "img/pkdx/tpp5_zapdos.gif",
 	sources : {
@@ -139,7 +135,7 @@ addEvent(new Pokemon({
 addEvent(new Pokemon({
 	name: "Abby",
 	sprite: "img/pkmn/abby-gen1.png",
-	x : -14, y : -34,
+	x : -13, y : -30,
 	
 	dex : "img/pkdx/tpp9_abby.gif",
 	sources : {
@@ -255,18 +251,19 @@ addEvent(new Pokemon({
 	],
 }));
 
+
 // The Keeper, keeping the Pokemon Center
 addEvent(new Building({
 	name: "Pokemon Center",
 	sprite: "img/bld/pokecenter.png",
-	x : -17, y : 29,
+	x : -17, y : 12,
 	warp_x: 28, warp_y: 58,
 }));
 
 addEvent(new Pokemon({
 	name : "The Keeper",
 	sprite: "img/pkmn/thekeeper.png",
-	x: -17, y: 30,
+	x: -17, y: 13,
 	
 	// dex : "img/pkdx/jayleno.gif",
 	sources : {
@@ -280,6 +277,14 @@ addEvent(new Pokemon({
 	memo : "Keeper of the PC",
 }));
 
+addEvent(new Building({
+	name: "PC Power Cord",
+	sprite: "img/bld/pc_power.png",
+	x : -3, y : 1,
+	warp_x: 208, warp_y: -2,
+}));
+
+
 // Rick Gastly (no h...)
 addEvent(new Pokemon({
 	name : "Rick Gastly",
@@ -287,8 +292,10 @@ addEvent(new Pokemon({
 	x: 11, y: -34,
 	animation: false,
 	
-	//dex : "img/pkdx/tpp10_dux.gif",
-	//dexsource : "http://hamigakimomo.tumblr.com/post/78067393358/ive-updated-omanytes-sprite-to-omastar-i-also",
+	dex : "http://cdn.bulbagarden.net/upload/c/ce/Spr_1b_092.png", //Bulbapedia
+	// sources : {
+	// 	"Sprite by " : "",
+	// },
 	
 	OT: "Red",
 	gamename : "Gastly",
