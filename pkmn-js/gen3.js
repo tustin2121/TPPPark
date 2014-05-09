@@ -331,8 +331,16 @@ addEvent(new MultiEvent({
 })).addSubEvent("16,1,30,13", new Pokemon({ //top pooch
 	name : "Pooch 1",
 	
+	sources : {
+		"Swingset Sprite by /u/Bayoeen" : "http://www.reddit.com/r/twitchplayspokemon/comments/21gzza/banner_doge_improvements/",
+	},
+	
 })).addSubEvent("34,22,47,42", new Pokemon({ //swinging pooch
 	name : "Pooch 2",
+	
+	sources : {
+		"Swingset Sprite by /u/Bayoeen" : "http://www.reddit.com/r/twitchplayspokemon/comments/21gzza/banner_doge_improvements/",
+	},
 	
 }))
 );

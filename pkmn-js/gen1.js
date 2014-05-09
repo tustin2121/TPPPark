@@ -140,8 +140,9 @@ addEvent(new Pokemon({
 // DigRat
 addEvent(new Pokemon({
 	name: "DigRat",
-	sprite: "img/pkmn/digrat.png",
+	sprite: "img/pkmn/digrat.gif",
 	x: 36, y: -1,
+	animation: null,
 	
 	dex : "img/pkdx/tpp11_digrat.gif",
 	sources : {
@@ -194,9 +195,9 @@ addEvent(new Pokemon({
 	sprite: "img/pkmn/jayleno.png",
 	x: 4, y: -28,
 	
-	dex : "img/pkdx/jayleno.gif",
-	dexsource : "Some tumblr somewhere, could not find! :(",
+	dex : "img/pkdx/tpp12_jayleno.gif",
 	sources : {
+		"Pokedex Image by /u/Firewaffle" : "http://hamigakimomo.tumblr.com/post/78455477855/finally-did-a-jay-leno-and-cabbage-sprite",
 		"Sprite by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/1yx0gx/i_madealtered_flairs_suggestions_or_corrections/",
 	},
 		
@@ -218,8 +219,9 @@ addEvent(new Pokemon({
 	sprite: "img/pkmn/cabbage_grey.png",
 	x: 8, y: -26,
 	
-	// dex : "img/pkdx/jayleno.gif",
+	dex : "img/pkdx/tpp13_cabbage.gif",
 	sources : {
+		"Pokedex Image by /u/Firewaffle" : "http://hamigakimomo.tumblr.com/post/78455477855/finally-did-a-jay-leno-and-cabbage-sprite",
 		"Sprite by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/1yx0gx/i_madealtered_flairs_suggestions_or_corrections/",
 	},
 		

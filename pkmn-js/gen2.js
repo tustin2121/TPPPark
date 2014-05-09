@@ -6,6 +6,10 @@ addEvent(new MultiEvent({
 	name : "Battle of Mt Silver",
 	sprite: "img/pkmn/MtSilverBattle.gif",
 	x : -4, y : -16, z:-6,
+	
+	reflection: true,
+	refl_adj_y: -12,
+	
 }).addSubEvent("47,17,75,40", new Pokemon({
 	name : "Lord Helix",
 	

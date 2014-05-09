@@ -9,6 +9,7 @@ html {
 body {
 	height: 100%;
 	overflow: hidden;
+	background-color: #60a0d8;
 }
 
 /* --- Map Items --- */
@@ -43,7 +44,7 @@ body.x2 #anchor {
 .event-base {
 	position: absolute;
 	width: 16px; height:16px;
-	margin: -1px;
+	/*margin: -1px;*/
 	/*border: 1px solid gray;*/
 }
 
@@ -56,6 +57,21 @@ body.x2 #anchor {
 	position: absolute;
 	width: 16px; height: 22px;
 	bottom: 3px; left: 0px;
+}
+
+.event-reflection {
+	position: absolute;
+	width: 16px; height:16px;
+	/*margin: -1px;*/
+	/*border: 1px solid gray;*/
+}
+.reflection {
+	position: absolute;
+	opacity: 0.6;
+	
+	transform: scale(1, -1);
+	-ms-transform: scale(1, -1);
+	-webkit-transform: scale(1, -1);
 }
 
 /* --- Dialog Box --- */

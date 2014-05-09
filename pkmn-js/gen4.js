@@ -59,6 +59,7 @@ addEvent(new Pokemon({
 	ribbons : [
 		new Record_Ribbon("First to catch PkRS"),
 		new Pokerus_Ribbon(),
+		//new Daycare_Ribbon("To Learn Something"),
 	],
 }));
 
@@ -199,6 +200,6 @@ addEvent(new Pokemon({
 	
 	ribbons : [
 		new Daycare_Ribbon("Common Resident"),
-		// new Pokerus_Ribbon(),
+		new Pokerus_Ribbon(),
 	],
 }));

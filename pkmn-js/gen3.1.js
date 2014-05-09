@@ -7,6 +7,8 @@ addEvent(new Pokemon({
 	name : "Flameslash",
 	sprite: "img/pkmn/flameslash.png",
 	x: 28, y: -18,
+	reflection: true,
+	refl_adj_y: -6,
 	
 	dex : "img/pkdx/frdex_flameslash.png",
 	sources : {
@@ -106,8 +108,8 @@ addEvent(new Pokemon({
 // Mew
 addEvent(new Pokemon({
 	name : "Marc",
-	// sprite: "img/pkmn/hyperbug_ev.png",
-	// x: 16, y: -25,
+	sprite: "img/pkmn/marc-mew.png",
+	x: -29, y: 34, z: 32,
 	
 	dex : "img/pkdx/frdex_marc.png",
 	sources : {
@@ -115,18 +117,39 @@ addEvent(new Pokemon({
 	},
 	
 	OT: "Alice",
-	gender: 1,
-	gamename : "TTABCIJIJD",
-	pokename : "Blastoise",
+	gender: 0,
+	gamename : "MARC",
+	pokename : "Mew",
 	nicknames : "Karl Marc<br/>Mewgneto",
-	level : 58,
-	caught : "Caught from ",
+	level : 57,
+	caught : "Traded for Nidoran&#x2642;",
 	memo : "Ability: Magnet Pull.",
 	
 	ribbons : [
 		new Traded_Ribbon("For Nidoran&#x2642; 9d 8h 14m"),
 		new HallOfFame_Ribbon("15d 2h 2m"),
 	],
+}));
+
+addEvent(new Pokemon({
+	name : "Meow Zedong",
+	sprite: "img/pkmn/meow_zedong.gif",
+	x: -27, y: 35, z: 32,
+	animation : null,
+	adj_x : 4.5, adj_y : 1,
+	
+	// dex : "img/pkdx/frdex_marc.png",
+	// sources : {
+	// 	"Pokedex Image by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/252a2b/tpp_sprites/",
+	// },
+	
+	OT: "Alice",
+	gender: 1,
+	gamename : "ZDNNNG",
+	pokename : "Skitty",
+	nicknames : "Chairman Meow",
+	level : 39,
+	memo : "Ability: Magma Armor. Head of the Meowist Party.",
 }));
 
 
@@ -139,7 +162,7 @@ addEvent(new Pokemon({
 	x: -22, y: 3,
 	animation: false,
 	
-	dex : "http://bulbapedia.bulbagarden.net/wiki/File:Spr_3e_362.gif", //Bulbapedia
+	dex : "http://cdn.bulbagarden.net/upload/0/06/Spr_3e_362.gif", //Bulbapedia
 	
 	OT: "Alice",
 	gender: 2,
@@ -148,7 +171,7 @@ addEvent(new Pokemon({
 	level : 30,
 	ball: "great",
 	caught : "",
-	memo : "The Snorlax on Route 12 was a Galie in disguse",
+	memo : "The Snorlax on Route 12 was a Galie in disguise",
 	
 }));
 
