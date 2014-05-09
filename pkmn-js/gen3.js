@@ -24,26 +24,10 @@ addEvent(new Pokemon({
 	
 }));
 
-addEvent(new Pokemon({
-	name: "Zexy",
-	sprite: "img/pkmn/zexxy.png",
-	x : -14, y : -29,
-	
-	dex : "img/pkdx/emdex_zexy.png",
-	sources : {
-		"Pokedex Image by /u/NoPenNameGirl" : "http://www.reddit.com/r/twitchplayspokemon/comments/22d7zw/request_done_zexy_the_torchic_sprite/",
-	},
-		
-	OT: "<strike>M</strike>Ay",
-	gender: 1,
-	gamename : "zyyxyy",
-	pokename : "Torchic",
-	level : 38,
-	ribbons : [
-		new Starter_Ribbon(),
-		new Released_Ribbon("3d 23h 9m"),
-	],
-}));
+//
+// Note: Zexy is attached to the Released Starter Campfire multi-event 
+// defined in the "other" events file. See there for his event definition.
+//
 
 addEvent(new Pokemon({
 	name : "M4",

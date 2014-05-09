@@ -131,27 +131,11 @@ addEvent(new Pokemon({
 	],	
 }));
 
-// Red's Abby
-addEvent(new Pokemon({
-	name: "Abby",
-	sprite: "img/pkmn/abby-gen1.png",
-	x : -13, y : -30,
-	
-	dex : "img/pkdx/tpp9_abby.gif",
-	sources : {
-		"Pokedex Image by /u/Fiirewaffle" : "http://hamigakimomo.tumblr.com/post/78067393358/ive-updated-omanytes-sprite-to-omastar-i-also",
-		"Sprite by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/1yx0gx/i_madealtered_flairs_suggestions_or_corrections/",
-	},
-		
-	OT: "Red",
-	gamename : "ABBBBBBK",
-	pokename : "Charmelion",
-	level : 34,
-	ribbons : [
-		new Starter_Ribbon(),
-		new Released_Ribbon("4d 8h 53m"),
-	],
-}));
+
+//
+// Note: Abby is attached to the Released Starter Campfire multi-event 
+// defined in the "other" events file. See there for her event definition.
+//
 
 // DigRat
 addEvent(new Pokemon({

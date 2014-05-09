@@ -6,31 +6,10 @@
 
 // Released Pokemon: Their stories are finished, they can enter the Park
 
-addEvent(new Pokemon({
-	name : "Chimchar",
-	sprite: "img/pkmn/chimchar.png",
-	x: -12, y: -29,
-	
-	// dex : "img/pkdx/emdex_cruella.png",
-	// sources : {
-	// 	"Pokedex Image by /u/NoPenNameGirl" : "http://www.reddit.com/r/twitchplayspokemon/comments/22kx4y/the_ateam_sprite/",
-	// },
-	
-	OT: "nqpppnl",
-	gender: 2,
-	gamename : "Chimchar",
-	pokename : "Chimchar",
-	nicknames : "LazorApe",
-	level : 15,
-	// memo : "",
-	
-	ribbons : [
-		new Starter_Ribbon(),
-		new Released_Ribbon("0d 12h 33m"),
-		new Record_Ribbon("Fastest Released Starter"),
-	],
-}));
-
+//
+// Note: Chimchar is attached to the Released Starter Campfire multi-event 
+// defined in the "other" events file. See there for her event definition.
+//
 
 addEvent(new Pokemon({
 	name : "Oreo",
@@ -101,7 +80,8 @@ addEvent(new Pokemon({
 	memo : "Evolved via Rare Candy by anti-evolution trolls spamming the menu button.",
 	
 	ribbons : [
-		// new Pokerus_Ribbon(),
+		new Daycare_Ribbon("To Learn Petal Dance"),
+		new Pokerus_Ribbon(),
 	],
 }));
 
@@ -125,6 +105,100 @@ addEvent(new Pokemon({
 	ball : "heal",	
 	
 	ribbons : [
+		new Daycare_Ribbon("To Learn Discharge"),
+		new Pokerus_Ribbon(),
+	],
+}));
+
+addEvent(new Pokemon({
+	name : "Flareon",
+	// sprite: "img/pkmn/sunshine_shinx.png",
+	// x: -37, y: -25,
+	
+	// dex : "img/pkdx/emdex_cruella.png",
+	// sources : {
+	// 	"Pokedex Image by /u/NoPenNameGirl" : "http://www.reddit.com/r/twitchplayspokemon/comments/22kx4y/the_ateam_sprite/",
+	// },
+	
+	OT: "nqpppnl",
+	gender: 2,
+	// gamename : "O_o",
+	pokename : "Flareon",
+	nicknames : "",
+	// level : 5,
+	// memo : "",
+	
+	ribbons : [
+		new Pokerus_Ribbon(),
+	],
+}));
+
+addEvent(new Pokemon({
+	name : "Bidoof",
+	// sprite: "img/pkmn/sunshine_shinx.png",
+	// x: -37, y: -25,
+	
+	// dex : "img/pkdx/emdex_cruella.png",
+	// sources : {
+	// 	"Pokedex Image by /u/NoPenNameGirl" : "http://www.reddit.com/r/twitchplayspokemon/comments/22kx4y/the_ateam_sprite/",
+	// },
+	
+	OT: "nqpppnl",
+	gender: 2,
+	// gamename : "O_o",
+	pokename : "Bidoof",
+	nicknames : "",
+	// level : 5,
+	// memo : "",
+	
+	ribbons : [
+		new Pokerus_Ribbon(),
+	],
+}));
+
+addEvent(new Pokemon({
+	name : "Golbat",
+	// sprite: "img/pkmn/sunshine_shinx.png",
+	// x: -37, y: -25,
+	
+	// dex : "img/pkdx/emdex_cruella.png",
+	// sources : {
+	// 	"Pokedex Image by /u/NoPenNameGirl" : "http://www.reddit.com/r/twitchplayspokemon/comments/22kx4y/the_ateam_sprite/",
+	// },
+	
+	OT: "nqpppnl",
+	gender: 2,
+	// gamename : "O_o",
+	pokename : "Golbat",
+	nicknames : "",
+	// level : 5,
+	// memo : "",
+	
+	ribbons : [
+		new Pokerus_Ribbon(),
+	],
+}));
+
+addEvent(new Pokemon({
+	name : "Togepi",
+	// sprite: "img/pkmn/sunshine_shinx.png",
+	// x: -37, y: -25,
+	
+	// dex : "img/pkdx/emdex_cruella.png",
+	// sources : {
+	// 	"Pokedex Image by /u/NoPenNameGirl" : "http://www.reddit.com/r/twitchplayspokemon/comments/22kx4y/the_ateam_sprite/",
+	// },
+	
+	OT: "nqpppnl",
+	gender: 2,
+	// gamename : "O_o",
+	pokename : "Togepi",
+	nicknames : "",
+	// level : 5,
+	// memo : "",
+	
+	ribbons : [
+		new Daycare_Ribbon("Common Resident"),
 		// new Pokerus_Ribbon(),
 	],
 }));

@@ -31,7 +31,7 @@ addEvent(new Pokemon({
 addEvent(new Pokemon({
 	name : "Stalinking",
 	sprite: "img/pkmn/slaking.gif",
-	x: 15, y: -36,
+	x: 17, y: -35,
 	animation : null,
 	
 	dex : "img/pkdx/frdex_slaking.png",

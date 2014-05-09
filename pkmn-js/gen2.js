@@ -167,6 +167,8 @@ addEvent(new Trainer({
 	spritesheet : "img/trainers/aj.png",
 	x: 18, y: -1,
 	
+	dex: "img/pkdx/trainer_aj.png",
+	
 	nickname : "AJ Downs",
 	playtime: "13d 2h 2m",
 	pokedex : "32 own/200 seen",
