@@ -169,7 +169,7 @@ addEvent(new Person({
 		"Remember, Trainers, a good deed a day brings happiness to stay!", //2x as likely to appear
 		"Come on, let me here you! HELLO, TRAINERS! It's me, the POK&eacute; DUDE!",
 		"If a POK&eacute;MON develops a status problem, heal it right away!",
-		"Keep your eyes glued to the super POK&eacute; DUDE SHOW!",
+		"Keep your eyes glued to the super<br/>POK&eacute; DUDE SHOW!",
 		"If your first POK&eacute; BALL fails to catch the POK&eacute;MON, don't give up! Keep throwing POK&eacute; BALLS... It's bound to work sometime!",
 		"If you don't know how type matchups work, battles will be tough!",
 		"For the COOL-type POK&eacute; DUDE, AWESOME-type kids like you match up perfectly!",
