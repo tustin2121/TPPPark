@@ -30,8 +30,9 @@ addEvent(new Pokemon({
 // DJ Slaking
 addEvent(new Pokemon({
 	name : "Stalinking",
-	// sprite: "img/pkmn/flameslash.png",
-	// x: 28, y: -18,
+	sprite: "img/pkmn/slaking.gif",
+	x: 15, y: -36,
+	animation : null,
 	
 	dex : "img/pkdx/frdex_slaking.png",
 	sources : {
