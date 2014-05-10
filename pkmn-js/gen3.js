@@ -21,7 +21,30 @@ addEvent(new Pokemon({
 	level : 26,
 	caught : "Appeared 3d 23h 3m",
 	memo : "Thought to hold the soul of Zexy after his release.",
+}));
+
+addEvent(new Pokemon({
+	name : "Dotty",
+	sprite: "img/pkmn/dotty.png",
+	shadow: "img/pkmn/generic-shadow.png",
+	x: 33, y: -10, z: 22,
 	
+	// dex : "img/pkdx/emdex_shedinja.png",
+	// sources : {
+	// 	"Pokedex Image by /u/bboyskullkid" : "http://www.reddit.com/r/twitchplayspokemon/comments/21g0da/was_inspired_by_my_flair_and_drew_zexxys_soul/",
+	// },
+	
+	OT: "<strike>M</strike>Ay",
+	gamename : ". TT",
+	pokename : "Ninjask",
+	nicknames : "(Inappropriate names)",
+	level : 20,
+	caught : "Appeared 3d 23h 3m",
+	memo : "Thought to hold the soul of Zexy after his release.",
+	
+	ribbons : [
+		new Released_Ribbon("7d 15h 36m"),
+	],
 }));
 
 //
@@ -164,8 +187,10 @@ addEvent(new Pokemon({
 
 addEvent(new Pokemon({
 	name : "Bird Cop",
-	// sprite: "img/pkmn/.png",
-	// x: -37, y: -25,
+	sprite: "img/pkmn/birdcop.png",
+	shadow: "img/pkmn/generic-shadow.png",
+	x: -28, y: -7, z: 32,
+	animation: "custom",
 	
 	dex : "img/pkdx/emdex_birdcop.png",
 	sources : { 
@@ -177,11 +202,24 @@ addEvent(new Pokemon({
 	gamename : "BDCIOPP",
 	pokename : "Wingull",
 	level : 26,
-	memo : "Consistantly swept 2-3 of the E4 every run.",
 	
 	ribbons : [
-		new Released_Ribbon("9d 8h 53m "),
+		new Released_Ribbon("9d 8h 53m"),
 	],
+	
+	behavior : function(){
+		if (!this.domImg) this.domImg = $(this.domElement).find(".main");
+		if (!this.domSdw) this.domSdw = $(this.domElement).find(".shadow");
+		if (!this.animStep) this.animStep = 0;
+		
+		var i = this.animStep++;
+		
+		var x = Math.sin(i*0.32) * 16;
+		var y = Math.cos(i*0.75) * 6;
+		
+		this.domImg.animate({ bottom: y, left: x }, { duration: 500 });
+		this.domSdw.animate({ bottom: y/2, left: x }, { duration: 500 });
+	}
 }));
 
 

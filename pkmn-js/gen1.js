@@ -412,3 +412,39 @@ addEvent(new Person({
 		"REVIVE is costly, but it revives fainted POK&eacute;MON!",
 	],
 }));
+
+
+//Fatman Island
+addEvent(new Person({
+	name : "Fatman 1",
+	spritesheet : "img/trainers/fatman.png",
+	x: -6, y: -6,
+	
+	behavior: behavior.meander,
+	behavArg : {
+		"left" : -8, "top" : -6,
+		"right": -6, "bottom" : -4,
+		avoidEvent: "Fatman 2",
+	},
+	
+	// dialog : [
+	// 	"REVIVE is costly, but it revives fainted POK&eacute;MON!",
+	// ],
+}));
+
+addEvent(new Person({
+	name : "Fatman 2",
+	spritesheet : "img/trainers/fatman.png",
+	x: -8, y: -6,
+	
+	behavior: behavior.meander,
+	behavArg : {
+		"left" : -8, "top" : -6,
+		"right": -6, "bottom" : -4,
+		avoidEvent: "Fatman 1",
+	},
+	
+	// dialog : [
+	// 	"REVIVE is costly, but it revives fainted POK&eacute;MON!",
+	// ],
+}));
