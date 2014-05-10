@@ -75,6 +75,43 @@ addEvent(new MultiEvent({
 //"Pokedex Image by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/252a2b/tpp_sprites/",
 
 
+addEvent(new MovingPokemon({
+	name : "Brian",
+	spritesheet: "img/pkmn/brian_biking.png",
+	x: -4, y: 14,
+	
+	dex : "img/pkdx/dex_brian.png",
+	sources : {
+		"Pokedex Image by /u/Aleksandair" : "http://www.reddit.com/r/twitchplayspokemon/comments/20iaxx/i_made_it_anybody_want_to_use_these_sprites/",
+	},
+	
+	OT: "AJDNNW",
+	gender: 1,
+	gamename : "BBBBBD",
+	pokename : "Pidgeot",
+	level : 64,
+	memo : "Lived in the shadow of Bird Jesus",
+	
+	ribbons : [
+		new HallOfFame_Ribbon("9d 21h 24m"),
+	],
+	
+	behavior : behavior.movePath,
+	behavArg : {
+		run : true,
+		path : [
+			0,  14,
+			0,  30,
+			-22, 30,
+			-22, 14,
+		],
+	},
+	frame_width : 32,
+	frame_height : 26,
+}));
+
+
+
 // The Admiral
 addEvent(new Pokemon({
 	name : "The Admiral",
@@ -142,7 +179,6 @@ addEvent(new Pokemon({
 }));
 // There's also the zubat left with Oxxy, but no one seems to care about it...
 
-
 // 
 addEvent(new Pokemon({
 	name : "AAAAAAAAAA",
@@ -196,10 +232,20 @@ addEvent(new Trainer({
 	
 	badge_html : "",
 	
-	behavior: null,
-	// behavior: behavior.meander,
-	// behavArg : {
-	// 	"left" : -10, "top" : -38,
-	// 	"right": -10, "bottom": -37,
-	// },
+	// behavior: null,
+	behavior: behavior.movePath,
+	behavArg : {
+		path : [
+			18,  3,
+			12,  3,
+			12, -8,
+			18, -8,
+		],
+		ledges : [
+			18, -4,
+			18,  2,
+		],
+	},
 }));
+
+

@@ -313,8 +313,9 @@ addEvent(new Pokemon({
 // C3KO
 addEvent(new Pokemon({
 	name : "C3KO",
-	sprite: "img/pkmn/c3ko.png",
+	sprite: "img/pkmn/c3ko.gif",
 	x: 25, y: 26,
+	animation: null,
 	
 	// dex : "img/pkdx/tpp10_dux.gif",
 	// dexsource : "http://hamigakimomo.tumblr.com/post/78067393358/ive-updated-omanytes-sprite-to-omastar-i-also",

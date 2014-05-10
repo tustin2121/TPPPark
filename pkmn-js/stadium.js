@@ -159,11 +159,11 @@
 						var n = array[i];
 						switch(Math.floor(n)%6) {
 							case 0:
-							case 1: ctx.fillStyle = "#e8e8e8"; break; //red
-							case 2: ctx.fillStyle = "#7f718d"; break; //crystal
-							case 3: ctx.fillStyle = "#2ca277"; break; //emerald
-							case 4: ctx.fillStyle = "#c8884d"; break; //firered
-							case 5: ctx.fillStyle = "#70726d"; break; //platinum
+							case 1: ctx.fillStyle = "#ffffff"; break; //red
+							case 2: ctx.fillStyle = "#ac7fc9"; break; //crystal
+							case 3: ctx.fillStyle = "#25c36e"; break; //emerald
+							case 4: ctx.fillStyle = "#f1993e"; break; //firered
+							case 5: ctx.fillStyle = "#7e8080"; break; //platinum
 						}
 						
 						var nameW = Math.floor((1/30)*(n % 20)*(n % 25)+5); //(n % 20)+5;
@@ -171,6 +171,8 @@
 						
 						ctx.fillStyle = "white";
 						ctx.fillRect(SCREEN_W/2-4, i, 3, 1);
+						
+						//gained or lost: #bbbbbb
 						
 						ctx.fillStyle = "#777777";
 						ctx.fillRect(SCREEN_W/2-7, i, 3, 1);

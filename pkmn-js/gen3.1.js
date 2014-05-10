@@ -185,7 +185,7 @@ addEvent(new Person({
 	behavior: behavior.meander,
 	behavArg : {
 		"left" : -27, "top" : 4,
-		"right": -20, "bottom" : 14,
+		"right": -20, "bottom" : 13,
 	},
 	
 	dialog : [
@@ -238,7 +238,7 @@ addEvent(new Event({
 addEvent(new Trainer({
 	name : "A",
 	spritesheet : "img/trainers/aj.png",
-	x: 18, y: 2,
+	x: 20, y: 2,
 	
 	dex : "img/pkdx/trainer_alice.png",
 	nickname : "Alice",

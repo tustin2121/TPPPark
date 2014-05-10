@@ -147,6 +147,44 @@ addEvent(new Pokemon({
 }));
 
 
+addEvent(new MovingPokemon({
+	name : "Alpha",
+	spritesheet: "img/pkmn/kadabra_biking.png",
+	x: -8, y: 14,
+	
+	dex : "http://cdn.bulbagarden.net/upload/9/97/Spr_3e_064.gif", //Bulbapedia
+	// sources : {
+	// 	"Pokedex Image by /u/Aleksandair" : "http://www.reddit.com/r/twitchplayspokemon/comments/20iaxx/i_made_it_anybody_want_to_use_these_sprites/",
+	// },
+	
+	OT: "AJDNNW",
+	gender: 1,
+	gamename : "apf uojkyy",
+	pokename : "Pidgeot",
+	level : 29,
+	nicknames : "Apfel<br/>Fap Junky",
+	memo : '"How did we get a Kadabra?!"',
+	
+	ribbons : [
+		new Record_Ribbon("TPP's First Abra"),
+	],
+	
+	behavior : behavior.movePath,
+	behavArg : {
+		run : true,
+		path : [
+			0,  14,
+			0,  30,
+			-22, 30,
+			-22, 14,
+		],
+	},
+	frame_width : 32,
+	frame_height : 42,
+}));
+
+
+
 addEvent(new Pokemon({
 	name : "C3",
 	// sprite: "img/pkmn/.png",
@@ -254,10 +292,15 @@ addEvent(new Pokemon({
 	],
 }));
 
-addEvent(new Pokemon({
+
+addEvent(new MultiEvent({
+	name : "An Odd(ish) Family",
+	sprite : "img/pkmn/oddish_kiss.gif",
+	x: -34, y: -23,
+}).addSubEvent("0,3,19,26", new Pokemon({
 	name : "Oddish",
-	sprite: "img/pkmn/oddish_1.png",
-	x: -33, y: -23,
+	// sprite: "img/pkmn/oddish_1.png",
+	// x: -33, y: -23,
 	
 	dex : "http://cdn.bulbagarden.net/upload/d/dc/Spr_3e_043.gif", //Bulbapedia
 	
@@ -272,11 +315,11 @@ addEvent(new Pokemon({
 	ribbons : [
 		new Daycare_Ribbon("Forevermore"),
 	],
-}));
-addEvent(new Pokemon({
+	
+})).addSubEvent("34,0,48,20", new Pokemon({
 	name : "Oddish",
-	sprite: "img/pkmn/oddish_2.png",
-	x: -35, y: -23,
+	// sprite: "img/pkmn/oddish_2.png",
+	// x: -35, y: -23,
 	
 	dex : "http://cdn.bulbagarden.net/upload/d/dc/Spr_3e_043.gif", //Bulbapedia
 	
@@ -291,12 +334,12 @@ addEvent(new Pokemon({
 	ribbons : [
 		new Daycare_Ribbon("Forevermore"),
 	],
-}));
-addEvent(new Pokemon({
+	
+})).addSubEvent("20,14,35,25", new Pokemon({
 	name : "Oddish Egg",
-	sprite: "img/pkmn/egg.png",
-	x: -34, y: -23, z: -3,
-	animation: null,
+	// sprite: "img/pkmn/egg.png",
+	// x: -34, y: -23, z: -3,
+	// animation: null,
 	
 	dex : "http://cdn.bulbagarden.net/upload/d/dc/Spr_3r_Egg.png", //Bulbapedia
 	
@@ -311,8 +354,8 @@ addEvent(new Pokemon({
 		new Daycare_Ribbon("Forevermore"),
 		new Record_Ribbon("First Egg of TPP"),
 	],
-}));
-
+}))
+);
 
 
 
