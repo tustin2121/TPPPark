@@ -150,8 +150,8 @@ addEvent(new Pokemon({
 
 addEvent(new Pokemon({
 	name : "Bidoof",
-	// sprite: "img/pkmn/sunshine_shinx.png",
-	// x: -37, y: -25,
+	// sprite: "img/pkmn/bidoof.png",
+	x: 7, y: -24,
 	
 	// dex : "img/pkdx/emdex_cruella.png",
 	// sources : {
@@ -168,6 +168,7 @@ addEvent(new Pokemon({
 	
 	ribbons : [
 		new Pokerus_Ribbon(),
+		new Released_Ribbon("8d 14h 35m"),
 	],
 }));
 
