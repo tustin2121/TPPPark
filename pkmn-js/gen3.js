@@ -187,7 +187,7 @@ addEvent(new MovingPokemon({
 
 addEvent(new Pokemon({
 	name : "C3",
-	// sprite: "img/pkmn/.png",
+	// sprite: "img/pkmn/c3.png",
 	// x: -37, y: -25,
 	
 	dex : "img/pkdx/emdex_c3.png",
@@ -206,7 +206,7 @@ addEvent(new Pokemon({
 
 addEvent(new Pokemon({
 	name : "Apostropi",
-	// sprite: "img/pkmn/.png",
+	// sprite: "img/pkmn/apostropi.png",
 	// x: -37, y: -25,
 	
 	dex : "img/pkdx/emdex_apostropi.png",
@@ -225,9 +225,9 @@ addEvent(new Pokemon({
 
 addEvent(new Pokemon({
 	name : "Bird Cop",
-	sprite: "img/pkmn/birdcop.png",
+	sprite: "img/pkmn/birdcop_soaring.gif",
 	shadow: "img/pkmn/generic-shadow.png",
-	x: -28, y: -7, z: 32,
+	x: -31, y: 4, z: 32,
 	animation: "custom",
 	
 	dex : "img/pkdx/emdex_birdcop.png",
@@ -358,6 +358,23 @@ addEvent(new MultiEvent({
 );
 
 
+addEvent(new Pokemon({
+	name: "Chinchou",
+	sprite: "img/pkmn/shiny-chinchou.gif",
+	x: -40, y: -8,
+	
+	dex: "http://cdn.bulbagarden.net/upload/f/ff/Spr_3e_170_s.gif", //Bulbapedia
+	
+	OT: "--",
+	gamename: "--",
+	pokename: "Chinchou",
+	level: "???",
+	memo: "TPP's first random shiny, killed in battle.",
+	
+	ribbons : [
+		new Record_Ribbon("First Shiny Encounter"),
+	],
+}));
 
 // Wattson! <3
 addEvent(new Person({

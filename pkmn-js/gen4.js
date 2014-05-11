@@ -35,6 +35,20 @@ addEvent(new Pokemon({
 	],
 }));
 
+addEvent(new Pokemon({
+	name: "Geodude",
+	sprite: "img/pkmn/shiny-geodude.gif",
+	x: -43, y: -10,
+	
+	dex: "http://cdn.bulbagarden.net/upload/b/b0/Spr_4p_074_s.png", //Bulbapedia
+	
+	OT: "--",
+	gamename: "--",
+	pokename: "Geodude",
+	level: "???",
+	memo: "TPP's third random shiny, killed in battle.",
+}));
+
 
 // Current Party Pokemon: DO NOT uncomment sprites until they win the Hall of Fame ribbon!
 

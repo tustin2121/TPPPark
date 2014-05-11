@@ -11,15 +11,27 @@
 	var STATE_BATTLING = 20;
 	var STATE_WINNINGS = 30;
 	
+	var RANDOM_NAMES = [
+	];
+	
+	var NAMED_PATRONS = {
+		"tustin2121" : 0,
+		"carlotta4th" : 0,
+		
+	};
+	
 	var redside = [];
 	var blueside = [];
 	
 	var currState = 0;
 	var countdown = 0;
 	
+	var eventlist = [];
 	
 	function doStadium() {
 		if (countdown > 0) countdown--;
+		
+		if (currState == 0) doInit();
 		
 		switch(currState) {
 			case STATE_VOTING: doVoting(); break;
@@ -28,8 +40,43 @@
 		}
 	}
 	
-	function doVoting() {
+	function doInit() {
+		//Create people randomly!
+		for (var x = 70; x <= 95; x++) {
+			//Skip stairs
+			if (x == 71 || x == 79 || x == 86 || x == 94) continue;
+			for (var y = -37; y <= -31; y++) {
+				if (x > 79 && x < 86 && y < -34) continue; //skip screen area
+				
+				if (Math.random() > 0.85) continue; //randomly skip patrons
+				
+				var patron = new Patron({
+					style : Math.floor(Math.random()*44),
+					x: x, y: y,
+				});
+				
+				addEvent(patron);
+				eventlist.push(patron);
+			}
+		}
 		
+		setInterval(fireStadiumBehaviors, 250);
+		
+		goToState(STATE_VOTING);
+	}
+	
+	function fireStadiumBehaviors() {
+		$.each(eventlist, function(i, obj){
+			if (!obj.stadiumBehavior || !$.isFunction(obj.stadiumBehavior)) return;
+			obj.stadiumBehavior();
+		});
+	}
+	
+	function doVoting() {
+		// placeBet(true);
+		// placeBet(false);
+		
+		if (countdown <= 0) goToState(STATE_BATTLING);
 	}
 	
 	function doBattle() {
@@ -67,9 +114,97 @@
 		}
 	}
 	
-	for (var i = 0; i < 200; i++) placeBet(true);
-	for (var i = 0; i < 180; i++) placeBet(false);
+	// for (var i = 0; i < 200; i++) placeBet(true);
+	// for (var i = 0; i < 180; i++) placeBet(false);
 	
+	/////////// Patron Definition ////////////
+	
+	function Patron(opts) {
+		if (!(this instanceof Patron))
+			return new Patron(opts);
+		
+		Event.call(this, opts);
+	}
+	
+	Patron.fn = Patron.prototype = new Event({
+		name : "<Patron>",
+		sprite: 1, 
+		
+		direction : 0, //0 = down, 1 = up, 2 = left, 3 = right
+		style : 0,
+		
+		delayBehaviorTimer : 0,
+		domImage : null,
+		vote : null, //1 = red, 2 = blue
+		
+		updateImage : function() {
+			var x = -this.direction * 16;
+			var y = -this.style * 22;
+			
+			this.domImage.css({
+				"background-position" : x+"px "+y+"px",
+			});
+		},
+		
+		stadiumBehavior : function() {
+			switch(currState) {
+				case STATE_VOTING:
+					this.delayBehaviorTimer--;
+					if (this.delayBehaviorTimer > 0) break;
+					
+					if (this.vote) {
+						this.direction = 0;
+						break;
+					} 
+					
+					var r = Math.floor(Math.random()*8);
+					this.direction = (r < 4)?r:0;
+					
+					var bet = Math.random();
+					// console.log(bet, (countdown/120));
+					if (bet > (countdown/120.0)*2) {
+						this.vote = Math.floor((bet * 3019) % 2)+1;
+						placeBet(this.vote-1);
+					}
+					
+					this.delayBehaviorTimer = Math.random()*10;
+					break;
+				
+				case STATE_BATTLING:
+					this.direction = 0;
+					break;
+			}
+			
+			this.updateImage();
+		},
+		
+		getDomElement : function() {
+			if (this.domElement) return this.domElement;
+			
+			var base = $("<div>").addClass("event-base").attr("name", this.name);
+			var img = this._createImageTag();
+			
+			base.append(img);
+			
+			this._applyShadow(base);
+			
+			this.domImage = img;
+			this._storeElement(base);
+			return base;
+		},
+		
+		_createImageTag : function() {
+			var eventobj = this;
+			
+			var img = $("<div>").addClass("main person")
+				.css({
+					position : "absolute",
+					"background-image": "url(img/trainers/stadium_patrons.png)",
+					bottom: -2,
+				});
+			return img;
+		},
+	});
 	
 	/////// Screen event definition ///////
 	
@@ -199,10 +334,17 @@
 	}));
 	
 	addEvent(new Building({
-		name: "Pokemon Stadium 2 (Int)",
-		sprite: "img/bld/stadium_int.png",
+		name: "Pokemon Stadium 2 (Seating)",
+		sprite: "img/bld/stadium_seating.png",
 		x : 80, y : -39,
 		warp_x: 192, warp_y: 0,
+	}));
+	
+	addEvent(new Building({
+		name: "Pokemon Stadium 2 (Arena)",
+		sprite: "img/bld/stadium_arena.png",
+		x : 79, y : -30,
+		warp_x: 176, warp_y: 8,
 	}));
 	
 	addEvent(new Building({

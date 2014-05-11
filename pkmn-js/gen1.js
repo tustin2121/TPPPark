@@ -167,7 +167,7 @@ addEvent(new Pokemon({
 addEvent(new Pokemon({
 	name : "DUX",
 	sprite: "img/pkmn/dux.png",
-	x: -33, y: -11,
+	x: -35, y: 24,
 	
 	dex : "img/pkdx/tpp10_dux.gif",
 	sources : {
@@ -406,7 +406,7 @@ addEvent(new Person({
 	behavior: behavior.meander,
 	behavArg : {
 		"left" : -9, "top" : 22,
-		"right": 0, "bottom" : 23,
+		"right": -1, "bottom" : 23,
 	},
 	
 	dialog : [

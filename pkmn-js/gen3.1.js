@@ -5,10 +5,13 @@
 // Flameslash
 addEvent(new Pokemon({
 	name : "Flameslash",
-	sprite: "img/pkmn/flameslash.png",
-	x: 28, y: -18,
+	// sprite: "img/pkmn/flameslash.png",
+	// x: 28, y: -18,
+	sprite: "img/pkmn/flamesplash.gif",
+	x: -11, y: -9,
+	animation: null,
 	reflection: true,
-	refl_adj_y: -6,
+	refl_adj_y: -17,
 	
 	dex : "img/pkdx/frdex_flameslash.png",
 	sources : {
@@ -59,7 +62,8 @@ addEvent(new Pokemon({
 // Hyperbug
 addEvent(new Pokemon({
 	name : "Hyperbug",
-	sprite: "img/pkmn/hyperbug_ev.png",
+	//sprite: "img/pkmn/hyperbug_ev.png",
+	sprite: "img/pkmn/hyperbug_fast.gif",
 	shadow: "img/pkmn/generic-shadow.png",
 	x: 16, y: -25, z: 16,
 	animation: "floating",
@@ -231,6 +235,21 @@ addEvent(new Event({
 	dialog : [
 		"Wild DIGLETT used HIGH JUMP KICK!",
 	],
+}));
+
+
+addEvent(new Pokemon({
+	name: "Pikachu",
+	sprite: "img/pkmn/shiny-pikachu.gif",
+	x: -36, y: -9,
+	
+	dex: "http://cdn.bulbagarden.net/upload/9/96/Spr_3f_025_s.png", //Bulbapedia
+	
+	OT: "--",
+	gamename: "--",
+	pokename: "Pikachu",
+	level: "???",
+	memo: "TPP's second random shiny, killed in battle.",
 }));
 
 
