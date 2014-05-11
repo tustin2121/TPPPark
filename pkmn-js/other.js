@@ -80,6 +80,13 @@ addEvent(new MultiEvent({
 	],
 })));
 
+addEvent(new Building({
+	name : "Shiny House",
+	sprite : "img/bld/shiny2.png",
+	x: -38, y: -13,
+	
+	warp_x: 32, warp_y: 54,
+}));
 
 // Creepy eyes! >:3
 addEvent(new Event({

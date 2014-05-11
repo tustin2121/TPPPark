@@ -328,28 +328,28 @@
 	//definitions of events!
 	addEvent(new Building({
 		name: "Pokemon Stadium 2 (Ext)",
-		sprite: "img/bld/stadium_ext.png",
+		sprite: "img/bld/Stadium_ext.png",
 		x : 76, y : -17,
 		warp_x: 176, warp_y: 368,
 	}));
 	
 	addEvent(new Building({
 		name: "Pokemon Stadium 2 (Seating)",
-		sprite: "img/bld/stadium_seating.png",
+		sprite: "img/bld/Stadium_seating.png",
 		x : 80, y : -39,
 		warp_x: 192, warp_y: 0,
 	}));
 	
 	addEvent(new Building({
 		name: "Pokemon Stadium 2 (Arena)",
-		sprite: "img/bld/stadium_arena.png",
+		sprite: "img/bld/Stadium_arena.png",
 		x : 79, y : -30,
 		warp_x: 176, warp_y: 8,
 	}));
 	
 	addEvent(new Building({
 		name: "Pokemon Stadium 2 (Entrance)",
-		sprite: "img/bld/stadium_entrance.png",
+		sprite: "img/bld/Stadium_entrance.png",
 		x : 82, y : -14,
 		warp_x: 144, warp_y: 48,
 		
