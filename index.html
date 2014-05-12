@@ -2,6 +2,9 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="tpppark.css">
 	<script src="lib/jquery.min.js"></script>
+	<script src="lib/jquery.cookie.js"></script>
+	<script src="lib/jquery.mobile.touch.min.js"></script>
+	<script src="lib/jquery-ui-1.10.4.effectscore.min.js"></script>
 	<script src="lib/tpppark.js"></script>
 	<script src="lib/pokedata.js"></script>
 	
@@ -16,7 +19,32 @@
 	<meta property="og:image" content="screens/fight.png" />
 </head>
 <body>
-	<noscript>The fact that you can see this means you don't have Javascript enabled. This is a must for this site to function. Please allow an exception for this site.</noscript>
+	
+	<div id="start-screen">
+		<div class="shove"></div>
+		<div class="content">
+			<strong>Tustin2121 and Carlotta4th</strong><br/>
+			present<br/>
+			<img alt="Twitch Plays Pokemon Park" width="190" height="200"
+				src="img/ui/park_logo.png" />
+		</div>
+		<noscript>This site is compleately powered by Javascript, and your browser has it disabled right now. Please allow an exception in your script-blocking extension for this site. Thank you.</noscript>
+	</div>
+	<div id="start-skrim"></div>
+	
+	<div class="ui sidebar">
+		<img id="uibtn-center" src="img/ui/helix_center.png" alt="Center on Church of Helix" title="Center on Church of Helix" />
+		<img id="uibtn-zoom" src="img/ui/zoom-in.png" alt="Toggle Zoom" title="Toggle Zoom" />
+		<img id="uibtn-pin" src="img/ui/pin_btn.png" alt="Pin Tile" title="Pin Tile" />
+		<div class="spacer"></div>
+	</div>
+	<div class="ui footnote"></div>
+	<div class="ui creditnote">
+		Code by /u/Tustin2121. Custom Pokemon Sprites by /u/Carlotta4th.<br/>
+		<span id="curr-sources">Tilemap ripped from Emerald and FireRed.</span>
+	</div>
+	
+	
 	<div id="anchor">
 		<div id="dialog-box"></div>
 	</div>
