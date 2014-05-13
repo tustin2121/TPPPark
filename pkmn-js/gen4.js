@@ -6,11 +6,6 @@
 
 // Released Pokemon: Their stories are finished, they can enter the Park
 
-//
-// Note: Chimchar is attached to the Released Starter Campfire multi-event 
-// defined in the "other" events file. See there for her event definition.
-//
-
 addEvent(new Pokemon({
 	name : "Oreo",
 	sprite: "img/pkmn/bidoof-oreo.png",
@@ -35,6 +30,35 @@ addEvent(new Pokemon({
 	],
 }));
 
+//
+// Note: Chimchar is attached to the Released Starter Campfire multi-event 
+// defined in the "other" events file. See there for her event definition.
+//
+
+addEvent(new Pokemon({
+	name : "Bidoof",
+	// sprite: "img/pkmn/bidoof.png",
+	x: 7, y: -24,
+	
+	// dex : "img/pkdx/emdex_cruella.png",
+	// sources : {
+	// 	"Pokedex Image by /u/NoPenNameGirl" : "http://www.reddit.com/r/twitchplayspokemon/comments/22kx4y/the_ateam_sprite/",
+	// },
+	
+	OT: "nqpppnl",
+	gender: 2,
+	// gamename : "O_o",
+	pokename : "Bidoof",
+	nicknames : "",
+	// level : 5,
+	// memo : "",
+	
+	ribbons : [
+		new Pokerus_Ribbon(),
+		new Released_Ribbon("8d 14h 35m"),
+	],
+}));
+
 addEvent(new Pokemon({
 	name: "Geodude",
 	sprite: "img/pkmn/shiny-geodude.gif",
@@ -53,8 +77,8 @@ addEvent(new Pokemon({
 // Current Party Pokemon: DO NOT uncomment sprites until they win the Hall of Fame ribbon!
 
 addEvent(new Pokemon({
-	name : "Bronzor",
-	// sprite: "img/pkmn/bronzor.png",
+	name : "Steve",
+	// sprite: "img/pkmn/bronzong.png",
 	// x: -37, y: -25,
 	
 	// dex : "img/pkdx/emdex_cruella.png",
@@ -64,11 +88,11 @@ addEvent(new Pokemon({
 	
 	OT: "nqpppnl",
 	gender: 0,
-	// gamename : "Bronzor",
-	pokename : "Bronzor",
-	// nicknames : "",
+	// gamename : "Bronzong",
+	pokename : "Bronzong",
+	nicknames : "Captain America",
 	// level : 5,
-	// memo : "",
+	memo : "First to contract the Pokerus virus, named Captain America for this feat.",
 	
 	ribbons : [
 		new Record_Ribbon("First to catch PkRS"),
@@ -136,7 +160,7 @@ addEvent(new Pokemon({
 	// },
 	
 	OT: "nqpppnl",
-	gender: 2,
+	gender: 1,
 	// gamename : "O_o",
 	pokename : "Flareon",
 	nicknames : "",
@@ -149,8 +173,8 @@ addEvent(new Pokemon({
 }));
 
 addEvent(new Pokemon({
-	name : "Bidoof",
-	// sprite: "img/pkmn/bidoof.png",
+	name : "Agent 006",
+	// sprite: "img/pkmn/agent_bibarel.png",
 	x: 7, y: -24,
 	
 	// dex : "img/pkdx/emdex_cruella.png",
@@ -160,15 +184,14 @@ addEvent(new Pokemon({
 	
 	OT: "nqpppnl",
 	gender: 2,
-	// gamename : "O_o",
-	pokename : "Bidoof",
+	gamename : "00&nbsp;&nbsp;00&nbsp;06",
+	pokename : "Bibarel",
 	nicknames : "",
 	// level : 5,
 	// memo : "",
 	
 	ribbons : [
-		new Pokerus_Ribbon(),
-		new Released_Ribbon("8d 14h 35m"),
+		// new Pokerus_Ribbon(), //caught after the outbreak
 	],
 }));
 

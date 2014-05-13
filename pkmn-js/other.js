@@ -88,6 +88,11 @@ addEvent(new Building({
 	warp_x: 32, warp_y: 54,
 }));
 
+addEvent(new SignPost({
+	name : "Park Sign",
+	x: 5, y: 9,
+}));
+
 // Creepy eyes! >:3
 addEvent(new Event({
 	name : "Cave Eyes",

@@ -2,6 +2,7 @@
 // File for the general Pantheon of TPP at Mt. Pantheon!
 // 
 
+//Fossils
 addEvent(new Event({
 	name : "Deity Amber Fossil",
 	sprite : "img/pkmn/!deity_amber_fossil.png",
@@ -21,7 +22,7 @@ addEvent(new Event({
 }));
 
 
-
+//Deities
 addEvent(new Event({
 	name : "Deity Amber",
 	sprite : "img/pkmn/!deity_amber_pkmn.png",
@@ -49,4 +50,36 @@ addEvent(new Event({
 	sprite : "img/pkmn/!deity_amber_guardian.png",
 	x: -145, y:-74,
 	animation: "breathe",
+}));
+
+
+//Sign
+addEvent(new SignPost({
+	name : "Pantheon Sign",
+	x: -152, y:-53,
+	
+	message: "<strong>Mt. Pantheon</strong><br/>Where the Gods come to Rest"
+}));
+
+//Warp Points
+addEvent(new WarpTile({
+	name : "To Pantheon Warp 1",
+	x: -38, y:-39,
+	warp_to_x: -145, warp_to_y: -64,
+}));
+addEvent(new WarpTile({
+	name : "To Pantheon Warp 2",
+	x: -37, y:-39,
+	warp_to_x: -145, warp_to_y: -64,
+}));
+
+addEvent(new WarpTile({
+	name : "From Pantheon Warp 1",
+	x: -132, y: -77,
+	warp_to_x: -33, warp_to_y: -31,
+}));
+addEvent(new WarpTile({
+	name : "From Pantheon Warp 2",
+	x: -131, y: -77,
+	warp_to_x: -33, warp_to_y: -31,
 }));

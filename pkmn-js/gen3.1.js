@@ -260,6 +260,10 @@ addEvent(new Trainer({
 	x: 20, y: 2,
 	
 	dex : "img/pkdx/trainer_alice.png",
+	sources : {
+		"Alice Sprite by /u/KingdomXathers":"http://www.reddit.com/r/twitchplayspokemon/comments/23tl7o/made_a_sprite_for_aalice_this_is_more_of_a_wip/", 
+	},
+	
 	nickname : "Alice",
 	playtime: "15d 2h 2m",
 	pokedex : "56 own/303 seen",
@@ -271,7 +275,7 @@ addEvent(new Trainer({
 		"Times Blacked Out: 89+<br/>"+
 		"<br/>"+
 		"<br/>"+
-		"<a href='http://www.reddit.com/r/twitchplayspokemon/comments/23tl7o/made_a_sprite_for_aalice_this_is_more_of_a_wip/'>Alice Sprite by /u/KingdomXathers</a>",
+		"",
 	icons : [
 		"img/icn/teachy_tv.png",
 		"img/icn/dome_fossil.png",

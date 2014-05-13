@@ -96,6 +96,13 @@ body.x2 #anchor {
 	line-height: 14px;
 }
 
+#curr-sources a {
+	color: #75C2FF;
+}
+#curr-sources:empty:before {
+	content: "Tilemap ripped from Emerald and FireRed.";
+}
+
 
 #start-skrim {
 	position: fixed;
@@ -151,6 +158,9 @@ body.x2 #anchor {
 	width: 16px; height: 22px;
 	bottom: 3px; left: 0px;
 }
+
+.event-base img.warp { display: none; }
+.event-base:hover img.warp { display: block; }
 
 .event-reflection {
 	position: absolute;
