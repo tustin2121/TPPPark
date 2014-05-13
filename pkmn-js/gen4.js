@@ -69,6 +69,7 @@ addEvent(new Pokemon({
 	OT: "--",
 	gamename: "--",
 	pokename: "Geodude",
+	caught: "Encountered by nqpppnl.",
 	level: "???",
 	memo: "TPP's third random shiny, killed in battle.",
 }));
@@ -240,4 +241,47 @@ addEvent(new Pokemon({
 		new Daycare_Ribbon("Common Resident"),
 		new Pokerus_Ribbon(),
 	],
+}));
+
+
+// And finally, Nepoleon himself!
+addEvent(new Trainer({
+	name : "nqpppnl",
+	// spritesheet : "img/trainers/aj.png",
+	// x: 20, y: 2,
+	
+	dex : "http://cdn.bulbagarden.net/upload/6/6b/Spr_Pt_Lucas.png",
+	sources : {
+		"Lucas Sprite from Bulbapedia":"", 
+	},
+	
+	nickname : "Napoleon",
+	// playtime: "15d 2h 2m",
+	// pokedex : "56 own/303 seen",
+	// releasecount : 4,
+	idnum : "12339",
+	
+	info_html : 
+		"Number of E4 Attempts: ?<br/>"+
+		"Times Blacked Out: ?<br/>"+
+		"Number of Wooper Caught: 17<br/>"+
+		"Bibarel: 16, Bidoof: 11<br/>"+
+		"",
+	icons : [
+		null,//"img/icn/teachy_tv.png",
+		null,//"img/icn/dome_fossil.png",
+		null,//"img/icn/poke_doll.png",
+		null,//"img/icn/amber_charizard.png",
+		null,//"img/pkmn/potato.png",
+		null,//"img/icn/slowpoke_tail.png",
+	],
+	
+	badge_html : "",
+	
+	behavior: null,
+	// behavior: behavior.meander,
+	// behavArg : {
+	// 	"left" : -10, "top" : -38,
+	// 	"right": -10, "bottom": -37,
+	// },
 }));

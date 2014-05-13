@@ -39,27 +39,11 @@ addEvent(new Pokemon({
 // in the Gen 2 file. See there for his event definition.
 //
 
-// ATV
-addEvent(new Pokemon({
-	name : "ATV",
-	
-	dex : "img/pkdx/tpp2_atv.gif",
-	sources : {
-		"Pokedex Image by /u/Fiirewaffle" : "http://hamigakimomo.tumblr.com/post/77911455524/i-decided-to-make-custom-r-b-sprites-for-the",
-		"Sprite by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/1yx0gx/i_madealtered_flairs_suggestions_or_corrections/",
-	},
-		
-	OT: "Red",
-	gamename : "AATTVVV",
-	pokename : "Venomoth",
-	level : 39,
-	nicknames : "All-Terrain Venomoth<br/>The Dragonslayer",
-	memo : "Once took down Lance's Dragonite singlehandedly.",
-	
-	ribbons : [
-		new HallOfFame_Ribbon("16d 7h 45m"),
-	],	
-}));
+//
+// Note: ATV is attached to the Dragonslayer Battle multi-event defined
+// in the Gen 2 file. See there for his event definition.
+//
+
 
 addEvent(new MultiEvent({
 	name : "B-Ball Game",

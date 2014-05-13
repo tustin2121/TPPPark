@@ -248,6 +248,7 @@ addEvent(new Pokemon({
 	OT: "--",
 	gamename: "--",
 	pokename: "Pikachu",
+	caught: "Encountered by Alice.",
 	level: "???",
 	memo: "TPP's second random shiny, killed in battle.",
 }));

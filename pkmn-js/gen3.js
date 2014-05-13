@@ -52,7 +52,11 @@ addEvent(new Pokemon({
 // defined in the "other" events file. See there for his event definition.
 //
 
-addEvent(new Pokemon({
+addEvent(new MultiEvent({
+	name: "M4 Bowling",
+	sprite: "img/pkmn/m4_bowling.gif",
+	x: -10, y: 5, z:5,
+}).addSubEvent("34,9,95,30", new Pokemon({
 	name : "M4",
 	// sprite: "img/pkmn/cabbage_white.png",
 	// x: -37, y: -25,
@@ -74,7 +78,31 @@ addEvent(new Pokemon({
 		new Record_Ribbon("Only Lvl 100 Mon"),
 		new HallOfFame_Ribbon("21d 19h 27m"),
 	],
-}));
+})).addSubEvent("0,0,32,30", new Pokemon({
+	name : "5'7",
+	// sprite: "img/pkmn/cabbage_white.png",
+	// x: -37, y: -25,
+	
+	dex : "img/pkdx/emdex_57.png",
+	sources : {
+		"Pokedex Image by /u/NoPenNameGirl" : "http://www.reddit.com/r/twitchplayspokemon/comments/22kx4y/the_ateam_sprite/",
+	},
+	
+	OT: "<strike>M</strike>Ay",
+	gender: 2,
+	gamename : '-5""7"Y',
+	pokename : "Graveler",
+	nicknames : "Five Feet",
+	level : 68,
+	memo : "Knew Explosion at one point, where she would use indiscriminately.",
+	
+	ribbons : [
+		new HallOfFame_Ribbon("21d 19h 27m"),
+	],
+}))
+);
+
+
 
 addEvent(new Pokemon({
 	name : "Cruella",
@@ -93,29 +121,6 @@ addEvent(new Pokemon({
 	nicknames : "GJK<br/>The Kraken",
 	level : 79,
 	memo : "Great tank. Hidden Power: Electric.",
-	
-	ribbons : [
-		new HallOfFame_Ribbon("21d 19h 27m"),
-	],
-}));
-
-addEvent(new Pokemon({
-	name : "5'7",
-	// sprite: "img/pkmn/cabbage_white.png",
-	// x: -37, y: -25,
-	
-	dex : "img/pkdx/emdex_57.png",
-	sources : {
-		"Pokedex Image by /u/NoPenNameGirl" : "http://www.reddit.com/r/twitchplayspokemon/comments/22kx4y/the_ateam_sprite/",
-	},
-	
-	OT: "<strike>M</strike>Ay",
-	gender: 2,
-	gamename : '-5""7"Y',
-	pokename : "Graveler",
-	nicknames : "Five Feet",
-	level : 68,
-	memo : "Knew Explosion at one point, where she would use indiscriminately.",
 	
 	ribbons : [
 		new HallOfFame_Ribbon("21d 19h 27m"),
@@ -368,6 +373,7 @@ addEvent(new Pokemon({
 	OT: "--",
 	gamename: "--",
 	pokename: "Chinchou",
+	caught: "Encountered by <strike>M</strike>Ay.",
 	level: "???",
 	memo: "TPP's first random shiny, killed in battle.",
 	
@@ -403,6 +409,12 @@ addEvent(new MultiEvent({
 	x : 9, y : 23, z:-6,
 }).addSubEvent("15,19,28,42", new Trainer({
 	name : "A",
+	
+	dex : "img/pkdx/trainer_may_Variis.png",
+	sources: {
+		"Trainer Sprite by /u/CyberDork35" : "http://www.reddit.com/r/twitchplayspokemon/comments/230qbl/im_making_custom_twitch_plays_pokemon_trainer/",
+		"Sprite based on Artwork by /u/Variis" : "http://www.reddit.com/r/twitchplayspokemon/comments/215jvk/dark_rituals/",
+	},
 	
 	nickname : "<strike>M</strike>ay (M = Silent)",
 	playtime: "21d 19h 27m",

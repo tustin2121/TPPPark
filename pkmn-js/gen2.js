@@ -70,9 +70,48 @@ addEvent(new MultiEvent({
 }))
 );
 
-
-///Katie
-//"Pokedex Image by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/252a2b/tpp_sprites/",
+addEvent(new MultiEvent({
+	name: "Dragonslayer Battle",
+	sprite: "img/pkmn/atv_katie_battle.gif",
+	x: 30, y: 20,
+}).addSubEvent("0,8,39,37", new Pokemon({
+	name : "ATV",
+	
+	dex : "img/pkdx/tpp2_atv.gif",
+	sources : {
+		"Pokedex Image by /u/Fiirewaffle" : "http://hamigakimomo.tumblr.com/post/77911455524/i-decided-to-make-custom-r-b-sprites-for-the",
+	},
+		
+	OT: "Red",
+	gamename : "AATTVVV",
+	pokename : "Venomoth",
+	level : 39,
+	nicknames : "All-Terrain Venomoth<br/>The Dragonslayer",
+	memo : "Once took down Lance's Dragonite singlehandedly.",
+	
+	ribbons : [
+		new HallOfFame_Ribbon("16d 7h 45m"),
+	],	
+})).addSubEvent("1,64,94,34", new Pokemon({
+	name : "Katie",
+	
+	dex : "img/pkdx/dex_katie.png",
+	sources : {
+		"Pokedex Image by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/252a2b/tpp_sprites/",
+	},
+		
+	OT: "AJDNNW",
+	gender: 2,
+	gamename : "KT",
+	pokename : "Dragonite",
+	level : 62,
+	memo : "Only girl in the final Hall of Fame party.",
+	
+	ribbons : [
+		new HallOfFame_Ribbon("9d 21h 24m"),
+	],	
+}))
+);
 
 
 addEvent(new MovingPokemon({
@@ -145,9 +184,9 @@ addEvent(new Pokemon({
 	
 	dex : "http://cdn.bulbagarden.net/upload/1/10/Spr_2c_010.gif", //Blubapedia
 	// dex : "img/pkdx/tpp10_dux.gif",
-	// sources : {
-	// 	"Pokedex Image by " : "",
-	// },
+	sources : {
+		"Pokedex Image from Bulbapedia" : "",
+	},
 	
 	OT: "AJDNNW",
 	gender : 2,
@@ -208,6 +247,9 @@ addEvent(new Trainer({
 	x: 18, y: -1,
 	
 	dex: "img/pkdx/trainer_aj.png",
+	sources: {
+		"Trainer Sprite by /u/CyberDork35" : "http://www.reddit.com/r/twitchplayspokemon/comments/230qbl/im_making_custom_twitch_plays_pokemon_trainer/",
+	},
 	
 	nickname : "AJ Downs",
 	playtime: "13d 2h 2m",
