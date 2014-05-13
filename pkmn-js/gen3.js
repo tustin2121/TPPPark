@@ -174,6 +174,11 @@ addEvent(new MovingPokemon({
 		new Record_Ribbon("TPP's First Abra"),
 	],
 	
+	activeZone: {
+		left: -22, right: 0,
+		top: 14, bottom: 30,
+	},
+	
 	behavior : behavior.movePath,
 	behavArg : {
 		run : true,

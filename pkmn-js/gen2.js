@@ -135,6 +135,11 @@ addEvent(new MovingPokemon({
 		new HallOfFame_Ribbon("9d 21h 24m"),
 	],
 	
+	activeZone: {
+		left: -22, right: 0,
+		top: 14, bottom: 30,
+	},
+	
 	behavior : behavior.movePath,
 	behavArg : {
 		run : true,
@@ -274,7 +279,11 @@ addEvent(new Trainer({
 	
 	badge_html : "",
 	
-	// behavior: null,
+	activeZone: {
+		left: 12, right: 18,
+		top: -8, bottom: 3,
+	},
+	
 	behavior: behavior.movePath,
 	behavArg : {
 		path : [

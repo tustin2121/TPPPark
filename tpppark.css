@@ -104,6 +104,8 @@ body.x2 #anchor {
 }
 
 
+/* --- Startup Screen --- */
+
 #start-skrim {
 	position: fixed;
 	top: 0; bottom: 0;
@@ -137,6 +139,20 @@ body.x2 #anchor {
 	width: 300px; 
 	margin: 0 auto;
 	text-align: center;
+}
+
+#start-screen .sprite.tustin2121 {
+	display: inline-block;
+	width: 16px; height: 22px;
+	background-image: url("img/trainers/custom_patrons.png");
+	background-position: 0px -22px;
+}
+
+#start-screen .sprite.carlotta4th {
+	display: inline-block;
+	width: 16px; height: 22px;
+	background-image: url("img/trainers/custom_patrons.png");
+	background-position: 0px 0px;
 }
 
 /* --- Event Items --- */
@@ -198,6 +214,13 @@ body.x2 #anchor {
 	bottom: 0px; left: 0px;
 	background-image: url("img/ui/dialogbox.png");
 	background-position: 0 7px;
+}
+
+#dialog-box .dondger {
+	/* Due to PokemonScreen's lack of support for the Donder characters,
+	 * We need to mark them and put them in a different font entirely. */
+	font-family: Arial;
+	font-size: 10px;
 }
 
 /*body.x2 #dialog-box {

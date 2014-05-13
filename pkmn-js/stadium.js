@@ -7,6 +7,7 @@
 	var SCREEN_W = 54;
 	var SCREEN_H = 33;
 	
+	var STATE_RIOTING = 1; //ヽ༼ຈل͜ຈ༽ﾉ RIOT ヽ༼ຈل͜ຈ༽ﾉ
 	var STATE_DECIDING = 5; //deciding on battlers
 	var STATE_VOTING = 10;
 	var STATE_BATTLING = 20;
@@ -29,6 +30,17 @@
 	
 	var eventlist = [];
 	
+	window.setStadiumState = function(state){
+		currState = state;
+	}
+	
+	function testScreenSupport() {
+		var canvas = $("<canvas>");
+		if (!(canvas[0].getContext && canvas[0].getContext('2d')))
+			return false;
+		return true;
+	}
+	
 	function doStadium() {
 		if (countdown > 0) countdown--;
 		
@@ -50,12 +62,32 @@
 			for (var y = -37; y <= -31; y++) {
 				if (x > 79 && x < 86 && y < -34) continue; //skip screen area
 				
-				if (Math.random() > 0.85) continue; //randomly skip patrons
+				var shouldSpawn = Math.random();
+				if (shouldSpawn > 0.85) continue; //randomly skip patrons
 				
-				var patron = new Patron({
-					style : Math.floor(Math.random()*44),
-					x: x, y: y,
-				});
+				var patron = null;
+				if (NAMED_PATRONS.length && shouldSpawn > 0.85 - Math.max(8-Math.abs(82-x), 0)*0.01) { //spawn predefed patrons sometimes
+					var pnum = Math.floor(Math.random() * NAMED_PATRONS.length);
+					var np = NAMED_PATRONS.splice(pnum, 1)[0];
+					
+					patron = new Patron({
+						name : np.name,
+						style : np.style,
+						dialog: np.dialog,
+						x: x, y: y,
+					});
+				}
+				
+				if (!patron) {
+					var pnum = Math.floor(Math.random() * RANDOM_NAMES.length);
+					var name = RANDOM_NAMES.splice(pnum, 1)[0];
+					
+					patron = new Patron({
+						name : name,
+						style : Math.floor(Math.random()*44),
+						x: x, y: y,
+					});
+				}
 				
 				addEvent(patron);
 				eventlist.push(patron);
@@ -80,7 +112,10 @@
 			
 		setInterval(fireStadiumBehaviors, 250);
 		
-		goToState(STATE_DECIDING);
+		if (!testScreenSupport()) //Screen doesn't work! RIOT!
+			goToState(STATE_RIOTING);
+		else
+			goToState(STATE_DECIDING);
 	}
 	
 	function fireStadiumBehaviors() {
@@ -237,6 +272,8 @@
 		domImage : null,
 		vote : null, //1 = red, 2 = blue
 		
+		dialog: null,
+		
 		updateImage : function() {
 			var x = -this.direction * 16;
 			var y = -this.style * 22;
@@ -248,7 +285,15 @@
 		
 		stadiumBehavior : function() {
 			switch(currState) {
-				case STATE_VOTING:
+				case STATE_DECIDING: {
+					this.vote = 0;
+					
+					var r = Math.floor(Math.random()*16);
+					this.direction = (r < 4)?r:0;
+					
+				} break;
+					
+				case STATE_VOTING: {
 					this.delayBehaviorTimer--;
 					if (this.delayBehaviorTimer > 0) break;
 					
@@ -269,11 +314,31 @@
 					}
 					
 					this.delayBehaviorTimer = Math.random()*10;
-					break;
+				} break;
 				
-				case STATE_BATTLING:
+				case STATE_BATTLING: {
 					this.direction = 0;
-					break;
+					
+				} break;
+				
+				case STATE_RIOTING: {
+					this.delayBehaviorTimer--;
+					if (this.delayBehaviorTimer > 0) break;
+					
+					var r = Math.floor(Math.random()*32);
+					this.direction = (r < 16)?r>>2:0;
+					
+					if (r % 4 == 0) {
+						this.domImage.delay(Math.floor(Math.random()*200))
+						.animate({
+							bottom: 5,
+						}, 150).animate({
+							bottom: 0,
+						}, 150);
+					}
+					
+					this.delayBehaviorTimer = Math.random()*4;
+				} break;
 			}
 			
 			this.updateImage();
@@ -302,9 +367,40 @@
 					position : "absolute",
 					"background-image": "url(img/trainers/stadium_patrons.png)",
 					bottom: -2,
+				}).on("vclick", function(e){
+					console.log("Patron click!");
+					eventobj.doClick();
 				});
+			
+			if (this.style < 0) { //custom patrons are in the negatives, convert for use
+				img.css("background-image", "url(img/trainers/custom_patrons.png)");
+				this.style = -this.style - 1;
+			}
 			return img;
 		},
+		
+		doClick : function(){
+			var text = this.name+": "+this.determineDialog();
+			
+			timeout = Math.max(4800, text.length * 80); //time out based on text length
+			showDialog(text, this.domElement.position(), timeout);
+		},
+		
+		determineDialog : function() {
+			if (this.dialog) {
+				if ($.isFunction(this.dialog))
+					return this.dialog();
+				else
+					return this.dialog;
+			}
+			
+			switch (currState) {
+				case STATE_RIOTING:
+					return "<span class='dondger'>ヽ༼ຈل͜ຈ༽ﾉ</span> RIOT <span class='dondger'>ヽ༼ຈل͜ຈ༽ﾉ</span>";
+			}
+			
+			return "<span class='dondger'>ヽ༼ຈل͜ຈ༽ﾉ</span> RIOT <span class='dondger'>ヽ༼ຈل͜ຈ༽ﾉ</span>";
+		}
 	});
 	
 	/////////// Combatant Definition ////////////
@@ -384,6 +480,9 @@
 					width: 32, height: 32,
 					"background-image": "url(img/bld/stadium_pokemon.png)",
 					bottom: 0,
+				}).on("vclick", function(e){
+					console.log("Patron click!");
+					eventobj.doClick();
 				});
 			
 			if (this.team == 2) { //blue team is flipped
@@ -413,6 +512,9 @@
 		
 		canvas : null,
 		context : null,
+		broken : false,
+		
+		domImage : null,
 		
 		_createImageTag : function() {
 			var eventobj = this;
@@ -425,10 +527,12 @@
 					left : -16,
 					width: 64, height: 48,
 				});
+			this.domImage = img;
 			
 			var canvas = $("<canvas width='"+SCREEN_W+"px' height='"+SCREEN_H+"px'>");
 			if (!(canvas[0].getContext && canvas[0].getContext('2d'))) {
 				//No canvas support, show broken screen
+				this.broken = true;
 				img.css("background-position", "0px -48px");
 				return img;
 			}
@@ -445,13 +549,31 @@
 		},
 		
 		drawScreen : function() {
+			var _this = this;
+			if (this.broken) return;
+			
 			var ctx = this.context;
 			ctx.clearRect(0, 0, SCREEN_W, SCREEN_H);
 			
+			if (currState == STATE_RIOTING) { showRiotScreen(); return; }
+			else { hideRiotScreen(); return; }
+			
+			
 			switch (currState) {
 				case STATE_BATTLING: drawHP(); break;
-				
+				case STATE_RIOTING: showRiotScreen(); break;
 				default: drawBetting(); break;
+			}
+			
+			function showRiotScreen() {
+				if (_this.sprite == 2) return;
+				_this.domImage.css("background-position", "0px -48px");
+				_this.sprite == 2; //flag
+			}
+			function hideRiotScreen() {
+				if (_this.sprite == 1) return;
+				_this.domImage.css("background-position", "0px 0px");
+				_this.sprite == 1;
 			}
 			
 			function drawBetting() {
@@ -523,6 +645,12 @@
 		sprite: "img/bld/Stadium_ext.png",
 		x : 76, y : -17,
 		warp_x: 176, warp_y: 368,
+		
+		_createImageTag : function() {
+			var img = Building.fn._createImageTag.call(this);
+			img.css("pointer-events", "none");
+			return img;
+		},
 	}));
 	
 	addEvent(new Building({
@@ -561,16 +689,44 @@
 	/////////////////////////////////////////////////////////
 	
 	////// Patron Dex //////
-	var NAMED_PATRONS = {
-		"tustin2121":	{ style: 0, },
-		"carlotta4th":	{ style: 0, },
-		
-	};
+	var NAMED_PATRONS = [
+	 	//remember, positive numbers need to be 0 based, not 1 based like the image
+		{ name: "tustin2121",		style: -2,   },
+		{ name: "carlotta4th",		style: -1,   },
+		{ name: "VillainousWattson",style: -3,   dialog: "WAHAHAHAHAHAHA!"},
+		{ name: "HedgemazeExpo",	style: 42-1, },
+		{ name: "Everyle", 			style: 17-1, },
+		{ name: "FruityParfait",	style: 23-1, },
+		{ name: "inabox44",			style: 30-1, },
+		{ name: "BigFatMantis",		style: 16-1, }, //prefers to be a scyther sprite
+		{ name: "0ddd",				style: 40-1, },
+		{ name: "TheObserver99",	style: 33-1, },
+		{ name: "Xellotath", 		style:  8-1, },
+	];
 	
 	////// Random Names //////
 	// Pulled from the chat at various moments in time
 	var RANDOM_NAMES = [
-		
+		"pikayoutwo", "mojo120", "gammaception", "16bitlink", "pastramiok", "cannified", "crinias", "clemywall", "rowena19", 
+		"charrasculdi", "davetrain14", "thefminorscale", "teamotei", "cruentusdeus", "sidneyjks", "gmatt0", "sa24mi02", 
+		"raberaff", "marksmanonthego", "ota_kun", "sir_roflcopter", "eksereles", "ellindsey", "zolan007", "indigoblack", 
+		"reykardwhitewolf", "gadzek", "saturdayknight2", "lacexwarrior", "pooooookey", "fronsislol", "hex151", "garfinator5",
+		"battleonroute", "nuniruro", "iantern", "kobocolla", "fishycheeze", "teras_ode", "tempylol", "yapok96", "16bitlink", 
+		"ogolcromgog", "thexxxmgpackxxx", "lukasgc15", "justtyperight", "iambulletproof1", "indigoblack", "mawarumawaru", 
+		"castformer", "gordout", "kareemabduljabbarr", "yuudachin", "3fullmetal6739", "burritobomb257", "lexbutts", 
+		"magnificentjosh", "kuddel6", "murdim", "kingofredlions_", "kuroko1710", "xredleaf", "fishycheeze", "goldenzephyr5", 
+		"kiba_inuzuka_akamaru", "11wizard", "heyyouwhiteboy", "ultra_mc", "kalebpresley", "reddylion", "thexxxmgpackxxx", 
+		"janggun100", "woopertrooper", "tempylol", "rollbuster", "zonextreme", "passiveengie", "kosukeueki", "thebigdf74",
+		"jonathan282", "thisnamehasbeentakenn", "mr_tumtums", "angryponcho", "lesqualala06", "crunchy_lime", "weneedtofistmisty", 
+		"4dname", "theunconscionable", "colonelcrunch33", "hella_norcal", "ksrgaming", "fishamanp", "politicalmetrics", "peralejok",
+		"worthlesskoridian", "burbalax", "z33k33", "mimilikescake", "pokemonplayspokemon", "justshootitfox", "slimoleq", "ryziken", 
+		"jrat12345", "nifflerfloo", "cyborg_nausicaa", "shinysapphire", "0000map", "bhboehlert", "umpa1", "bdawg104", "maotegin", 
+		"scotticus626", "drazule", "drross14", "lazyredsmurf", "sealmore", "ptcollins08", "xxfedoramasterxx", "rainesworld", 
+		"magnusdau", "arcrequiem", "overpowernico", "jaannzz", "seaway1024", "fenderxbender", "fanman777", "slsvcn", 
+		"xxfedoramasterxx", "inferno44", "blazegaming1", "milkdeliveryguy", "coboltnp", "quoctopus", "slimoleq", "cs1energypyre", 
+		"cthaws", "redwings13400", "itdoesntmatte", "faithfulforce", "empressofsnow", "thrownoway", "penguinstein", 
+		"geosspone", "i_cant_believe_you_all", "junewind", "mjbaker", "potatosaladdressing", "mo40o2naliz", "cakedayisbirthday", 
+		"alifen", "erassus", "nidoking_armx", "basedazumarill", "our_lord_helix_the_great", "arazioman", "101100111000", 
 	];
 
 	////// Types //////
