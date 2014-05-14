@@ -329,6 +329,11 @@ addEvent(new Person({
 	spritesheet : "img/trainers/burgler.png",
 	x: -10, y: -36,
 	
+	activeZone: {
+		left: -10, right: -10,
+		top: -38, bottom: -37,
+	},
+	
 	behavior: behavior.look,
 	
 	dialog : [
@@ -365,6 +370,11 @@ addEvent(new Trainer({
 	
 	badge_html : "",
 	
+	activeZone: {
+		left: -10, right: -10,
+		top: -38, bottom: -37,
+	},
+	
 	behavior: behavior.meander,
 	behavArg : {
 		"left" : -10, "top" : -38,
@@ -387,6 +397,11 @@ addEvent(new Person({
 	spritesheet : "img/trainers/clingy-girl.png",
 	x: -5, y: 22,
 	
+	activeZone: {
+		left: -9, right: -1,
+		top: 22, bottom: 23,
+	},
+	
 	behavior: behavior.meander,
 	behavArg : {
 		"left" : -9, "top" : 22,
@@ -405,6 +420,11 @@ addEvent(new Person({
 	spritesheet : "img/trainers/fatman.png",
 	x: -6, y: -6,
 	
+	activeZone: {
+		left: -8, right: -6,
+		top: -6, bottom: -4,
+	},
+	
 	behavior: behavior.meander,
 	behavArg : {
 		"left" : -8, "top" : -6,
@@ -421,6 +441,11 @@ addEvent(new Person({
 	name : "Fatman 2",
 	spritesheet : "img/trainers/fatman.png",
 	x: -8, y: -6,
+	
+	activeZone: {
+		left: -8, right: -6,
+		top: -6, bottom: -4,
+	},
 	
 	behavior: behavior.meander,
 	behavArg : {

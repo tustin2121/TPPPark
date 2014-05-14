@@ -167,6 +167,9 @@ addEvent(new Pokemon({
 	animation: false,
 	
 	dex : "http://cdn.bulbagarden.net/upload/0/06/Spr_3e_362.gif", //Bulbapedia
+	sources : {
+		"Pokedex Image from Bulbapedia" : "",
+	},
 	
 	OT: "Alice",
 	gender: 2,
@@ -185,6 +188,11 @@ addEvent(new Person({
 	name : "PokeDude",
 	spritesheet : "img/trainers/pokedude.png",
 	x: -22, y: 9,
+	
+	activeZone: {
+		left: -27, right: -20,
+		top: 4, bottom: 13,
+	},
 	
 	behavior: behavior.meander,
 	behavArg : {
@@ -244,6 +252,9 @@ addEvent(new Pokemon({
 	x: -36, y: -9,
 	
 	dex: "http://cdn.bulbagarden.net/upload/9/96/Spr_3f_025_s.png", //Bulbapedia
+	sources : {
+		"Pokedex Image from Bulbapedia" : "",
+	},
 	
 	OT: "--",
 	gamename: "--",
@@ -257,7 +268,7 @@ addEvent(new Pokemon({
 // And finally, Alice!
 addEvent(new Trainer({
 	name : "A",
-	spritesheet : "img/trainers/aj.png",
+	spritesheet : "img/trainers/alice.png",
 	x: 20, y: 2,
 	
 	dex : "img/pkdx/trainer_alice.png",

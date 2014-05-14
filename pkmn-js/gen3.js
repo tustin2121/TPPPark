@@ -158,9 +158,9 @@ addEvent(new MovingPokemon({
 	x: -8, y: 14,
 	
 	dex : "http://cdn.bulbagarden.net/upload/9/97/Spr_3e_064.gif", //Bulbapedia
-	// sources : {
-	// 	"Pokedex Image by /u/Aleksandair" : "http://www.reddit.com/r/twitchplayspokemon/comments/20iaxx/i_made_it_anybody_want_to_use_these_sprites/",
-	// },
+	sources : {
+		"Pokedex Image from Bulbapedia" : "",
+	},
 	
 	OT: "AJDNNW",
 	gender: 1,
@@ -255,6 +255,11 @@ addEvent(new Pokemon({
 		new Released_Ribbon("9d 8h 53m"),
 	],
 	
+	activeZone: {
+		left: -32, right: -30,
+		top: 3, bottom: 5,
+	},
+	
 	behavior : function(){
 		if (!this.domImg) this.domImg = $(this.domElement).find(".main");
 		if (!this.domSdw) this.domSdw = $(this.domElement).find(".shadow");
@@ -313,6 +318,9 @@ addEvent(new MultiEvent({
 	// x: -33, y: -23,
 	
 	dex : "http://cdn.bulbagarden.net/upload/d/dc/Spr_3e_043.gif", //Bulbapedia
+	sources : {
+		"Pokedex Image from Bulbapedia" : "",
+	},
 	
 	OT: "<strike>M</strike>Ay",
 	gender: 1,
@@ -332,6 +340,9 @@ addEvent(new MultiEvent({
 	// x: -35, y: -23,
 	
 	dex : "http://cdn.bulbagarden.net/upload/d/dc/Spr_3e_043.gif", //Bulbapedia
+	sources : {
+		"Pokedex Image from Bulbapedia" : "",
+	},
 	
 	OT: "<strike>M</strike>Ay",
 	gender: 2,
@@ -352,6 +363,9 @@ addEvent(new MultiEvent({
 	// animation: null,
 	
 	dex : "http://cdn.bulbagarden.net/upload/d/dc/Spr_3r_Egg.png", //Bulbapedia
+	sources : {
+		"Pokedex Image from Bulbapedia" : "",
+	},
 	
 	OT: "<strike>M</strike>Ay",
 	gender: 0,
@@ -374,6 +388,9 @@ addEvent(new Pokemon({
 	x: -40, y: -8,
 	
 	dex: "http://cdn.bulbagarden.net/upload/f/ff/Spr_3e_170_s.gif", //Bulbapedia
+	sources : {
+		"Pokedex Image from Bulbapedia" : "",
+	},
 	
 	OT: "--",
 	gamename: "--",
@@ -392,6 +409,11 @@ addEvent(new Person({
 	name : "Wattson",
 	spritesheet : "img/trainers/wattson.png",
 	x: -20, y: 32,
+	
+	activeZone: {
+		left: -20, right: -20,
+		top: 32, bottom: 32,
+	},
 	
 	behavior: behavior.look,
 	
@@ -446,14 +468,18 @@ addEvent(new MultiEvent({
 })).addSubEvent("16,1,30,13", new Pokemon({ //top pooch
 	name : "Pooch 1",
 	
+	dex : "http://cdn.bulbagarden.net/upload/8/8c/Spr_3e_261.gif",
 	sources : {
+		"Pokedex Image from Bulbapedia" : "",
 		"Swingset Sprite by /u/Bayoeen" : "http://www.reddit.com/r/twitchplayspokemon/comments/21gzza/banner_doge_improvements/",
 	},
 	
 })).addSubEvent("34,22,47,42", new Pokemon({ //swinging pooch
 	name : "Pooch 2",
 	
+	dex : "http://cdn.bulbagarden.net/upload/8/8c/Spr_3e_261.gif",
 	sources : {
+		"Pokedex Image from Bulbapedia" : "",
 		"Swingset Sprite by /u/Bayoeen" : "http://www.reddit.com/r/twitchplayspokemon/comments/21gzza/banner_doge_improvements/",
 	},
 	
@@ -487,10 +513,10 @@ addEvent(new Pokemon({
 	sprite: "img/pkmn/doge_atm.png",
 	x: 5, y: 25,
 	
-	// dex : "img/pkdx/emdex_mightydoge.png",
-	// sources : {
-	// 	"Pokedex Image by /u/NoPenNameGirl" : "http://www.reddit.com/r/twitchplayspokemon/comments/22kx4y/the_ateam_sprite/",
-	// },
+	dex : "http://cdn.bulbagarden.net/upload/8/8c/Spr_3e_261.gif",
+	sources : {
+		"Pokedex Image from Bulbapedia" : "",
+	},
 	
 	OT: "<strike>M</strike>Ay",
 	gender: 2,

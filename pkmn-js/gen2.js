@@ -155,6 +155,147 @@ addEvent(new MovingPokemon({
 }));
 
 
+addEvent(new Pokemon({
+	name : "Solid Snake",
+	sprite: 1, //we supply our own complex stuff below
+	x: -36, y: 9,
+	animation: "custom",
+	
+	dex : "img/pkdx/dex_solidsnake.png",
+	sources : { 
+		"Pokedex Image by /u/Aleksandair" : "http://www.reddit.com/r/twitchplayspokemon/comments/20iaxx/i_made_it_anybody_want_to_use_these_sprites/",
+	},
+	
+	OT: "AJDNNW",
+	gender: 1,
+	gamename : "AAJRR RRR",
+	pokename : "Steelix",
+	nicknames : "Solid Snake<br/>Metal Gear",
+	level : 72,
+	memo: "Holds: Leftovers. Excellent Tank vs Mt. Silver.",
+	
+	ribbons : [
+		new HallOfFame_Ribbon("9d 21h 24m"),
+	],
+	
+	actTimer : 10,
+	activeZone: {
+		left: -40, right: -33,
+		top: 5, bottom: 13,
+	},
+	
+	behavior : function(){
+		this.actTimer--;
+		if (this.actTimer > 0) return; //do nothing this time
+		
+		var dirChoice = Math.floor(Math.random()*4);
+		var evtobj = this;
+		
+		var arg = this.activeZone;
+		var _x = this.x;
+		var _y = this.y;
+		
+		switch(dirChoice) {
+			case 0: _y++; break; //down
+			case 1: _y--; break; //up
+			case 2: _x--; break; //left
+			case 3: _x++; break; //right
+		}
+		
+		if (_x >= arg.left && _x <= arg.right
+		&& _y >= arg.top && _y <= arg.bottom)
+		{
+			this.x = _x;
+			this.y = _y;
+			
+			$(this.domElement).css({
+				left : _x * 16,
+				top : _y * 16,
+				"z-index" : ZBASE + _y,
+			});
+		}
+		
+		this.actTimer = 10;
+	},
+	
+	doClick : function(e){
+		this.actTimer = 10;
+		
+		this.domPkmn.show().delay(3000).animate({
+			bottom: -20, left: 32-25+19,
+		}, 1800).fadeOut(100).css({
+			bottom: 10, left: 32-25, //reset
+		});
+		
+		this.domExclaim.slideDown(300).delay(1000).fadeOut(1000);
+		
+		Pokemon.fn.doClick.call(this, e);
+	},
+	
+	domPkmn : null,
+	domGrass : null,
+	domExclaim : null,
+	
+	getDomElement : function() {
+			if (this.domElement) return this.domElement;
+			var eventobj = this;
+			
+			var base = $("<div>").addClass("event-base").attr("name", this.name);
+			
+			var clip = $("<div>").css({
+				position: "absolute",
+				width: 64, height: 64,
+				bottom: 0, left: -32+8,
+				overflow: "hidden",
+			})
+			.on("vclick", function(e){
+				console.log("Click SNAAAAAKE!!!", isDragging);
+				if (!isDragging)
+					eventobj.doClick(e);
+			});
+			
+			this.domPkmn = $("<img>").attr("src", "img/pkmn/solid_snake.png")
+				.addClass("main pokemon")
+				.css({
+					bottom: 10, left: 32-25,
+				})
+				.hide()
+				// .on("vclick", function(e){
+				// 	console.log("Click SNAAAAAKE!!!", isDragging);
+				// 	if (!isDragging)
+				// 		eventobj.doClick(e);
+				// })
+				.appendTo(clip);
+			
+			this.domGrass = $("<img>").attr("src", "img/pkmn/solid_snake_grass.gif")
+				.css({
+					position: "absolute",
+					bottom: 0, left: 22,
+					"z-index": 10,
+				})
+				// .on("vclick", function(e){
+				// 	console.log("Click SNAAAAAKE!!!", isDragging);
+				// 	if (!isDragging)
+				// 		eventobj.doClick(e);
+				// })
+				.appendTo(clip);
+			
+			this.domExclaim = $("<img>").attr("src", "img/pkmn/solid_snake_exclaim.png")
+				.css({
+					position: "absolute",
+					bottom: 34, left: 22,
+					"z-index": 10,
+				})
+				.hide()
+				.appendTo(clip);
+			
+			base.append(clip);
+			this._storeElement(base);
+			return base;
+		},
+}));
+
+
 
 // The Admiral
 addEvent(new Pokemon({

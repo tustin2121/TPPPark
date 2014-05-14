@@ -22,10 +22,10 @@ addEvent(new MultiEvent({
 	sprite: "img/pkmn/chimchar.png",
 	x: -12, y: -29,
 	
-	// dex : "img/pkdx/emdex_cruella.png",
-	// sources : {
-	// 	"Pokedex Image by /u/NoPenNameGirl" : "http://www.reddit.com/r/twitchplayspokemon/comments/22kx4y/the_ateam_sprite/",
-	// },
+	dex : "http://cdn.bulbagarden.net/upload/8/80/Spr_4p_390.png",
+	sources : {
+		"Pokedex Image from Bulbapedia" : "",
+	},
 	
 	OT: "nqpppnl",
 	gender: 2,

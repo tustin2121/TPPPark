@@ -11,10 +11,10 @@ addEvent(new Pokemon({
 	sprite: "img/pkmn/bidoof-oreo.png",
 	x: 14, y: -29,
 	
-	// dex : "img/pkdx/emdex_cruella.png",
-	// sources : {
-	// 	"Pokedex Image by /u/NoPenNameGirl" : "http://www.reddit.com/r/twitchplayspokemon/comments/22kx4y/the_ateam_sprite/",
-	// },
+	dex : "http://cdn.bulbagarden.net/upload/f/f2/Spr_4p_399_f.png",
+	sources : {
+		"Pokedex Image from Bulbapedia" : "",
+	},
 	
 	OT: "nqpppnl",
 	gender: 2,
@@ -40,14 +40,14 @@ addEvent(new Pokemon({
 	// sprite: "img/pkmn/bidoof.png",
 	x: 7, y: -24,
 	
-	// dex : "img/pkdx/emdex_cruella.png",
-	// sources : {
-	// 	"Pokedex Image by /u/NoPenNameGirl" : "http://www.reddit.com/r/twitchplayspokemon/comments/22kx4y/the_ateam_sprite/",
-	// },
+	dex : "http://cdn.bulbagarden.net/upload/f/f2/Spr_4p_399_m.png",
+	sources : {
+		"Pokedex Image from Bulbapedia" : "",
+	},
 	
 	OT: "nqpppnl",
-	gender: 2,
-	// gamename : "O_o",
+	gender: 1,
+	gamename : "nppmwB9◊Im",
 	pokename : "Bidoof",
 	nicknames : "",
 	// level : 5,
@@ -65,6 +65,9 @@ addEvent(new Pokemon({
 	x: -43, y: -10,
 	
 	dex: "http://cdn.bulbagarden.net/upload/b/b0/Spr_4p_074_s.png", //Bulbapedia
+	sources : {
+		"Pokedex Image from Bulbapedia" : "",
+	},
 	
 	OT: "--",
 	gamename: "--",
@@ -73,6 +76,8 @@ addEvent(new Pokemon({
 	level: "???",
 	memo: "TPP's third random shiny, killed in battle.",
 }));
+
+
 
 
 // Current Party Pokemon: DO NOT uncomment sprites until they win the Hall of Fame ribbon!
@@ -89,7 +94,7 @@ addEvent(new Pokemon({
 	
 	OT: "nqpppnl",
 	gender: 0,
-	// gamename : "Bronzong",
+	gamename : "Bronzong",
 	pokename : "Bronzong",
 	nicknames : "Captain America",
 	// level : 5,
@@ -114,10 +119,10 @@ addEvent(new Pokemon({
 	
 	OT: "nqpppnl",
 	gender: 2,
-	// gamename : "O_o",
-	pokename : "Roselia",
+	gamename : "!☂!!☀! !:1",
+	pokename : "Roserade",
 	// level : 5,
-	memo : "Evolved via Rare Candy by anti-evolution trolls spamming the menu button.",
+	memo : "Evolved to Rosila via Rare Candy by anti-evolution trolls spamming the menu button.",
 	
 	ribbons : [
 		new Daycare_Ribbon("To Learn Petal Dance"),
@@ -137,7 +142,7 @@ addEvent(new Pokemon({
 	
 	OT: "nqpppnl",
 	gender: 2,
-	// gamename : "O_o",
+	// gamename : 'O_o',
 	pokename : "Shinx",
 	nicknames : "Sparkles<br/>Sunshine",
 	// level : 5,
@@ -207,7 +212,7 @@ addEvent(new Pokemon({
 	// },
 	
 	OT: "nqpppnl",
-	gender: 2,
+	gender: 1,
 	// gamename : "O_o",
 	pokename : "Golbat",
 	nicknames : "",
@@ -231,7 +236,7 @@ addEvent(new Pokemon({
 	
 	OT: "nqpppnl",
 	gender: 2,
-	// gamename : "O_o",
+	gamename : "KK♀ROOOY",
 	pokename : "Togepi",
 	nicknames : "",
 	// level : 5,
