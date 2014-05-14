@@ -132,6 +132,7 @@ addEvent(new MovingPokemon({
 	memo : "Lived in the shadow of Bird Jesus",
 	
 	ribbons : [
+		new Daycare_Ribbon("Breakout Fighter"),
 		new HallOfFame_Ribbon("9d 21h 24m"),
 	],
 	
@@ -237,64 +238,89 @@ addEvent(new Pokemon({
 	domExclaim : null,
 	
 	getDomElement : function() {
-			if (this.domElement) return this.domElement;
-			var eventobj = this;
-			
-			var base = $("<div>").addClass("event-base").attr("name", this.name);
-			
-			var clip = $("<div>").css({
-				position: "absolute",
-				width: 64, height: 64,
-				bottom: 0, left: -32+8,
-				overflow: "hidden",
+		if (this.domElement) return this.domElement;
+		var eventobj = this;
+		
+		var base = $("<div>").addClass("event-base").attr("name", this.name);
+		
+		var clip = $("<div>").css({
+			position: "absolute",
+			width: 64, height: 64,
+			bottom: 0, left: -32+8,
+			overflow: "hidden",
+		})
+		.on("vclick", function(e){
+			console.log("Click SNAAAAAKE!!!", isDragging);
+			if (!isDragging)
+				eventobj.doClick(e);
+		});
+		
+		this.domPkmn = $("<img>").attr("src", "img/pkmn/solid_snake.png")
+			.addClass("main pokemon")
+			.css({
+				bottom: 10, left: 32-25,
 			})
-			.on("vclick", function(e){
-				console.log("Click SNAAAAAKE!!!", isDragging);
-				if (!isDragging)
-					eventobj.doClick(e);
-			});
-			
-			this.domPkmn = $("<img>").attr("src", "img/pkmn/solid_snake.png")
-				.addClass("main pokemon")
-				.css({
-					bottom: 10, left: 32-25,
-				})
-				.hide()
-				// .on("vclick", function(e){
-				// 	console.log("Click SNAAAAAKE!!!", isDragging);
-				// 	if (!isDragging)
-				// 		eventobj.doClick(e);
-				// })
-				.appendTo(clip);
-			
-			this.domGrass = $("<img>").attr("src", "img/pkmn/solid_snake_grass.gif")
-				.css({
-					position: "absolute",
-					bottom: 0, left: 22,
-					"z-index": 10,
-				})
-				// .on("vclick", function(e){
-				// 	console.log("Click SNAAAAAKE!!!", isDragging);
-				// 	if (!isDragging)
-				// 		eventobj.doClick(e);
-				// })
-				.appendTo(clip);
-			
-			this.domExclaim = $("<img>").attr("src", "img/pkmn/solid_snake_exclaim.png")
-				.css({
-					position: "absolute",
-					bottom: 34, left: 22,
-					"z-index": 10,
-				})
-				.hide()
-				.appendTo(clip);
-			
-			base.append(clip);
-			this._storeElement(base);
-			return base;
-		},
+			.hide()
+			// .on("vclick", function(e){
+			// 	console.log("Click SNAAAAAKE!!!", isDragging);
+			// 	if (!isDragging)
+			// 		eventobj.doClick(e);
+			// })
+			.appendTo(clip);
+		
+		this.domGrass = $("<img>").attr("src", "img/pkmn/solid_snake_grass.gif")
+			.css({
+				position: "absolute",
+				bottom: 0, left: 22,
+				"z-index": 10,
+			})
+			// .on("vclick", function(e){
+			// 	console.log("Click SNAAAAAKE!!!", isDragging);
+			// 	if (!isDragging)
+			// 		eventobj.doClick(e);
+			// })
+			.appendTo(clip);
+		
+		this.domExclaim = $("<img>").attr("src", "img/pkmn/solid_snake_exclaim.png")
+			.css({
+				position: "absolute",
+				bottom: 34, left: 22,
+				"z-index": 10,
+			})
+			.hide()
+			.appendTo(clip);
+		
+		base.append(clip);
+		this._storeElement(base);
+		return base;
+	},
 }));
 
+
+// Master Goldeen
+addEvent(new Pokemon({
+	name : "Goldeen",
+	sprite: "img/pkmn/goldeen.png",
+	x: -20, y: -34,
+	
+	dex : "http://cdn.bulbagarden.net/upload/4/42/Spr_2c_118.gif",
+	sources : {
+		"Pokedex Image from Bulbapedia" : "",
+	},
+	
+	OT: "AJDNNW",
+	gender: 1,
+	gamename : "IAAAJS",
+	pokename : "Goldeen",
+	nicknames : "The Chosen One",
+	level : 22,
+	memo : "Caught using the masterball.",
+	ball: "master",
+	
+	ribbons : [
+		new Master_Ribbon(),
+	],
+}));
 
 
 // The Admiral

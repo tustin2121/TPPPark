@@ -78,6 +78,30 @@ addEvent(new Pokemon({
 }));
 
 
+// Master Geodude - technically not allowed in yet...
+addEvent(new Pokemon({
+	name : "Geodude",
+	// sprite: "img/pkmn/goldeen.png",
+	// x: -20, y: -34,
+	
+	dex : "http://cdn.bulbagarden.net/upload/b/b7/Spr_4p_074.png",
+	sources : {
+		"Pokedex Image from Bulbapedia" : "",
+	},
+	
+	OT: "nqpppnl",
+	gender: 2,
+	gamename : "Geodude",
+	pokename : "Geodude",
+	nicknames : "Master Dude",
+	level : 17,
+	memo : "Caught using the masterball.",
+	ball: "master",
+	
+	ribbons : [
+		new Master_Ribbon(),
+	],
+}));
 
 
 // Current Party Pokemon: DO NOT uncomment sprites until they win the Hall of Fame ribbon!
@@ -121,6 +145,7 @@ addEvent(new Pokemon({
 	gender: 2,
 	gamename : "!☂!!☀! !:1",
 	pokename : "Roserade",
+	nicknames: "The Empress<br/>Queen",
 	// level : 5,
 	memo : "Evolved to Rosila via Rare Candy by anti-evolution trolls spamming the menu button.",
 	
@@ -142,11 +167,11 @@ addEvent(new Pokemon({
 	
 	OT: "nqpppnl",
 	gender: 2,
-	// gamename : 'O_o',
+	gamename : '0"☀ ☀0☀☺ &#9785;',
 	pokename : "Shinx",
 	nicknames : "Sparkles<br/>Sunshine",
 	// level : 5,
-	// memo : "",
+	memo : "Forever unable to evolve...",
 	ball : "heal",	
 	
 	ribbons : [
@@ -156,7 +181,7 @@ addEvent(new Pokemon({
 }));
 
 addEvent(new Pokemon({
-	name : "Flareon",
+	name : "Solareon",
 	// sprite: "img/pkmn/sunshine_shinx.png",
 	// x: -37, y: -25,
 	
@@ -167,9 +192,9 @@ addEvent(new Pokemon({
 	
 	OT: "nqpppnl",
 	gender: 1,
-	// gamename : "O_o",
+	gamename : "Flareon",
 	pokename : "Flareon",
-	nicknames : "",
+	nicknames : "Sun Prophet",
 	// level : 5,
 	// memo : "",
 	
@@ -213,7 +238,7 @@ addEvent(new Pokemon({
 	
 	OT: "nqpppnl",
 	gender: 1,
-	// gamename : "O_o",
+	gamename : "Golbat",
 	pokename : "Golbat",
 	nicknames : "",
 	// level : 5,

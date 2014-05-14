@@ -13,6 +13,9 @@
 	var STATE_BATTLING = 20;
 	var STATE_WINNINGS = 30;
 	
+	var chatterDom = [];
+	var chatterContainer;
+	
 	var redvotes = [];
 	var bluevotes = [];
 	
@@ -25,13 +28,17 @@
 	var redDom = [];
 	var blueDom = [];
 	
+	var redCurrMon = null;
+	var blueCurrMon = null;
+	
 	var currState = 0;
 	var countdown = 0;
 	
 	var eventlist = [];
+	var eventIntervalId = 0;
 	
 	window.setStadiumState = function(state){
-		currState = state;
+		goToState(state);
 	}
 	
 	function testScreenSupport() {
@@ -42,15 +49,32 @@
 	}
 	
 	function doStadium() {
-		if (countdown > 0) countdown--;
-		
 		if (currState == 0) doInit();
+		
+		//this = the stadium entrance event
+		if (this._isActive && !eventIntervalId) {
+			//If the stadium was kicked back into active, activate all of its events
+			eventIntervalId = setInterval(fireStadiumBehaviors, 250);
+			console.log("Stadium activate!", eventIntervalId);
+		}
+		
+		if (countdown > 0) countdown--;
 		
 		switch(currState) {
 			case STATE_DECIDING: doDeciding(); break;
 			case STATE_VOTING: doVoting(); break;
 			case STATE_BATTLING: doBattle(); break;
 			case STATE_WINNINGS: doWinnings(); break;
+			case STATE_RIOTING: doRioting(); break;
+		}
+	}
+	
+	function checkStadiumActive() {
+		if (!this._isActive && eventIntervalId) {
+			//halt stadium events when outside the active area
+			clearInterval(eventIntervalId);
+			eventIntervalId = 0;
+			console.log("Stadium deactivate!");
 		}
 	}
 	
@@ -94,6 +118,13 @@
 			}
 		}
 		
+		var chat;
+		for (var i = 0; i < 10; i++) {
+			chat = $("<div>").addClass("stadium-chatter");
+			chatterContainer.append(chat);
+			chatterDom.push(chat);
+		}
+		
 		//Create the combatants!
 		var pkmn;
 		pkmn = new Combatant({ team: 1, x: 91, y: -28 });
@@ -110,8 +141,6 @@
 		pkmn = new Combatant({ team: 2, x: 72, y: -26 });
 		addEvent(pkmn); eventlist.push(pkmn); blueDom.push(pkmn);
 			
-		setInterval(fireStadiumBehaviors, 250);
-		
 		if (!testScreenSupport()) //Screen doesn't work! RIOT!
 			goToState(STATE_RIOTING);
 		else
@@ -183,6 +212,9 @@
 		
 	}
 	
+	function doRioting() {
+		if (countdown == 0) goToState(STATE_DECIDING);
+	}
 	
 	function calcFavor(myTeam, oppTeam) {
 		var overall = 1;
@@ -218,7 +250,15 @@
 		currState = state;
 		switch (state) {
 			case STATE_DECIDING: 
-				countdown = 4; //2 seconds between decisions
+				//10% of the time, just randomly riot for a while :P
+				if (Math.random()/* > 0.9*/) {
+					countdown = 120 + Math.floor(Math.random()*120); //1-2 minutes
+					currState = STATE_RIOTING;
+					console.log("ヽ༼ຈل͜ຈ༽ﾉ RIOT ヽ༼ຈل͜ຈ༽ﾉ");
+				} else {
+					//normally:
+					countdown = 4; //2 seconds between decisions
+				}
 				break;
 			case STATE_VOTING: 
 				countdown = 120; //1 minute (in 0.5 sec increments)
@@ -228,6 +268,9 @@
 				break;
 			case STATE_WINNINGS:
 				countdown = 30; //15 seconds
+				break;
+			case STATE_RIOTING:
+				countdown = -1; //disabled
 				break;
 		}
 	}
@@ -247,6 +290,249 @@
 		}
 		
 		return red+1;
+	}
+	
+	function submitChatter(msg) {
+		if (Math.random() > 0.5) return; //outright reject half of the requests
+		var chat = chatterDom.shift();
+		if (!chat) return; //no available chatter messages, ignore request
+		
+		chat
+			.html(msg)
+			.css({
+				left: (Math.random()*80) + "%",
+				top: (Math.random()*100) + "%",
+			}).show().delay(1200).fadeOut(10, function(){
+				chatterDom.push(chat); //return this to the queue
+			});
+	}
+	
+	//////////// Battle Manager! /////////////
+	
+	var lastBattleAction = 0;
+	
+	//Sub states during battle
+	var BATTLE_RED_SEND = 1;
+	var BATTLE_BLU_SEND = 2;
+	var BATTLE_RED_FAINTS = 3;
+	var BATTLE_BLU_FAINTS = 4;
+	
+	var BATTLE_RED_MISSES = 10;
+	var BATTLE_RED_HIT_INEFF = 11;
+	var BATTLE_RED_HIT_NORM = 12;
+	var BATTLE_RED_HIT_SUPER = 13;
+	var BATTLE_RED_HIT_CRIT = 14;
+	
+	var BATTLE_BLU_MISSES = 20;
+	var BATTLE_BLU_HIT_INEFF = 21;
+	var BATTLE_BLU_HIT_NORM = 22;
+	var BATTLE_BLU_HIT_SUPER = 23;
+	var BATTLE_BLU_HIT_CRIT = 24;
+	
+	var BATTLE_RED_WINS = 100;
+	var BATTLE_BLU_WINS = 101;
+	
+	_bt_Cooldown = 0;
+	_bt_turn = 0;
+	
+	function battleManager() {
+		if (currState != STATE_BATTLING) return;
+		if (_bt_Cooldown > 0) {
+			_bt_Cooldown--; return;
+		}
+		
+		if (redCurrMon == null) { //send out mon!
+			redCurrMon = _chooseNextMon(redDom);
+			if (!redCurrMon) 
+				return _endBattle(true);
+			
+			_anim_sendMon(true, redCurrMon);
+			lastBattleAction = BATTLE_RED_SEND;
+			return;
+		}
+		
+		if (blueCurrMon == null) { //send out mon!
+			blueCurrMon = _chooseNextMon(blueDom);
+			if (!blueCurrMon) 
+				return _endBattle(false);
+			
+			_anim_sendMon(false, blueCurrMon);
+			lastBattleAction = BATTLE_BLU_SEND;
+			return;
+		}
+		
+		//TODO check HP here!
+		
+		if (_bt_turn == 0) { //red's turn
+			_determineHit(true);
+			
+			_bt_turn = 1;
+			
+		} else { //blue's turn
+			_determineHit(false);
+			
+			_bt_turn = 0;
+		}
+		
+		
+		function _determineHit(red) {
+			var me, opp;
+			if (red) {
+				me = redCurrMon; opp = blueCurrMon;
+			} else {
+				me = blueCurrMon; opp = redCurrMon;
+			}
+			var p_me = POKEMON[me.pokemon];
+			var p_opp = POKEMON[opp.pokemon];
+			
+			var baseDamage = 0;
+			var attkType = 0;
+			var rnd = Math.random()*4; //Detemine the type of move
+			switch (rnd) {
+				case 0: //Normal move
+					baseDamage = 40; //base 40 attack
+					attkType = Normal;
+					break;
+				case 1: //Type 1 move
+					baseDamage = 60;
+					attkType = p_me.type;
+					break;
+				case 2: //Type 2 move (or more powerful Type 1, if no 2nd type)
+					if (p_me.type2) {
+						baseDamage = 80;
+						attkType = p_me.type;
+					} else {
+						baseDamage = 60;
+						attkType = p_me.type;
+					}
+					break;
+				case 3: //Hax (or Hax of their type if none defined)
+					if (_performHax(me, opp)) {
+						return; //all hax handing is in there
+					} else {
+						//no hax to perform! Do random status move that we don't emulate here!
+						//TODO
+					}
+					break;
+			}
+			
+			var damage = 0, multiplier = 1;
+			if (baseDamage) {
+				multiplier = TYPECHART[attkType][p_opp.type];
+				if (p_opp.type2)
+					multiplier *= TYPECHART[attkType][p_opp.type2];
+				
+				damage = baseDamage * multiplier;
+			}
+			
+			_anim_monAttack(red, me);
+			_anim_monHit(!red, opp);
+			_bt_Cooldown = 4 *4;
+		}
+		
+		
+		function _performHax(me, opp) {
+			var p_me = POKEMON[me.pokemon];
+			var p_opp = POKEMON[opp.pokemon];
+			
+			var hax = p_me.hax;
+			if (!hax) hax = _getHaxForType(p_me.type2);
+			if (!hax) hax = _getHaxForType(p_me.type);
+			
+			switch(hax) {
+				case "posion":
+				case "burn":
+				case "para":
+				case "freeze":
+				case "sleep":
+				
+				case "curse":
+				case "confusion":
+				case "perish song":
+				case "rollout":
+				
+				case "earthquake":
+				case "fly":
+				case "heal":
+				case "explode":
+				case "splash":
+				case "horndrill":
+				case "metronome":
+				
+			}
+			return null;
+		}
+		
+		function _getHaxForType(type) {
+			switch (type) {
+				case Normal: 	return null;
+				case Fighting:	return null;
+				case Flying:	return "fly";
+				case Poison:	return "poison";
+				case Ground:	return "earthquake";
+				case Rock:		return null;
+				case Bug:		return "confusion";
+				case Ghost:		return "curse";
+				case Steel:		return null;
+				case Fire:		return "burn";
+				case Water:		return null;
+				case Grass:		return null;
+				case Electric:	return "para"; //paralysis - don't want to spell
+				case Psychic:	return null;
+				case Ice:		return "freeze";
+				case Dragon:	return null;
+				case Dark:		return null;
+			}
+			return null;
+		}
+		
+		
+		
+		function _endBattle(red){
+			lastBattleAction = BATTLE_RED_WINS + !red;
+			goToState(STATE_WINNINGS);
+		}
+		
+		function _chooseNextMon(list) {
+			for (var i = 0; i < list.length; i++) {
+				if (list[i].hp > 0) {
+					return list[i];
+				}
+			}
+			return null;
+		}
+		function _anim_sendMon(red, event) {
+			var x = ((red)? 84 : 81) * 16;
+			var y = -27 * 16;
+			event.domElement.animate({
+				left: x, top: y,
+			}, 600);
+			event.domAnim
+				.animate({ bottom: 16, }, 300)
+				.animate({ bottom:  0, }, 300);
+			_bt_Cooldown = 3 *4;
+		}
+		
+		function _anim_monAttack(red, event) {
+			event.domAnim
+				.animate({ left: 8 * ((red)?-1:1), }, 150)
+				.animate({ left:  0, }, 150);
+		}
+		function _anim_monHit(red, event) {
+			event.domAnim
+				.delay(200)
+				.animate({ 
+					left: 8 * ((red)?1:-1), 
+					bottom: -3,
+					// transform: "rotate("+(20 * (red)?1:-1 )+")",
+				}, 200)
+				.delay(1000)
+				.animate({ 
+					left: 0,
+					bottom: 0,
+					// transform: "rotate(0)",
+				}, 300);
+		}
 	}
 	
 	// for (var i = 0; i < 200; i++) placeBet(true);
@@ -335,6 +621,8 @@
 						}, 150).animate({
 							bottom: 0,
 						}, 150);
+						
+						submitChatter("ヽ༼ຈل͜ຈ༽ﾉ RIOT ヽ༼ຈل͜ຈ༽ﾉ")
 					}
 					
 					this.delayBehaviorTimer = Math.random()*4;
@@ -410,11 +698,15 @@
 			return new Combatant(opts);
 		
 		Event.call(this, opts);
+		
+		this.org_x = this.x;
+		this.org_y = this.y;
 	}
 	
 	Combatant.fn = Combatant.prototype = new Event({
 		name : "<Combatant>",
-		sprite: 1, 
+		sprite: 1,
+		org_x: 0, org_y: 0, //original location, for reset
 		
 		team : 0, //1=red, 2=blue
 		pokemon : 0,
@@ -424,11 +716,27 @@
 		
 		delayBehaviorTimer : 0,
 		domImage : null,
+		dimAnim : null,
 		
 		setPokemon : function(num){
 			this.pokemon = num;
+			this.reset();
 			this.updateImage();
 			this.domElement.show();
+		},
+		
+		reset : function(){
+			this.x = this.org_x;
+			this.y = this.org_y;
+			this.hp = 200;
+			
+			if (POKEMON[this.pokemon].hp)
+				this.hp = POKEMON[this.pokemon].hp;
+			
+			this.domElement.css({
+				left: this.x * 16,
+				top: this.y * 16,
+			});
 		},
 		
 		updateImage : function() {
@@ -466,7 +774,6 @@
 			
 			this._applyShadow(base);
 			
-			this.domImage = img;
 			this._storeElement(base);
 			base.hide();
 			return base;
@@ -493,7 +800,10 @@
 				});
 			}
 			
-			return img;
+			this.domImage = img;
+			this.domAnim = $("<div>").addClass("helper").append(img);
+			
+			return this.domAnim;
 		},
 	});
 	
@@ -556,7 +866,7 @@
 			ctx.clearRect(0, 0, SCREEN_W, SCREEN_H);
 			
 			if (currState == STATE_RIOTING) { showRiotScreen(); return; }
-			else { hideRiotScreen(); return; }
+			else { hideRiotScreen(); }
 			
 			
 			switch (currState) {
@@ -638,51 +948,71 @@
 	});
 	
 	////////////////////////////////////////
-	
-	//definitions of events!
-	addEvent(new Building({
-		name: "Pokemon Stadium 2 (Ext)",
-		sprite: "img/bld/Stadium_ext.png",
-		x : 76, y : -17,
-		warp_x: 176, warp_y: 368,
+	{
+		//definitions of events!
+		addEvent(new Building({
+			name: "Pokemon Stadium 2 (Ext)",
+			sprite: "img/bld/Stadium_ext.png",
+			x : 76, y : -17,
+			warp_x: 176, warp_y: 368,
+			
+			getDomElement : function(){
+				var base = Building.fn.getDomElement.call(this);
+				chatterContainer = $("<div>").addClass("staidum-chatter-container").appendTo(base);
+				return base;
+			},
+			
+			_createImageTag : function() {
+				var img = Building.fn._createImageTag.call(this);
+				img.css("pointer-events", "none");
+				return img;
+			},
+		}));
 		
-		_createImageTag : function() {
-			var img = Building.fn._createImageTag.call(this);
-			img.css("pointer-events", "none");
-			return img;
-		},
-	}));
-	
-	addEvent(new Building({
-		name: "Pokemon Stadium 2 (Seating)",
-		sprite: "img/bld/Stadium_seating.png",
-		x : 80, y : -39,
-		warp_x: 192, warp_y: 0,
-	}));
-	
-	addEvent(new Building({
-		name: "Pokemon Stadium 2 (Arena)",
-		sprite: "img/bld/Stadium_arena.png",
-		x : 79, y : -30,
-		warp_x: 176, warp_y: 8,
-	}));
-	
-	addEvent(new Building({
-		name: "Pokemon Stadium 2 (Entrance)",
-		sprite: "img/bld/Stadium_entrance.png",
-		x : 82, y : -14,
-		warp_x: 144, warp_y: 48,
+		addEvent(new Building({
+			name: "Pokemon Stadium 2 (Seating)",
+			sprite: "img/bld/Stadium_seating.png",
+			x : 80, y : -39,
+			warp_x: 192, warp_y: 0,
+		}));
 		
-		behavior : doStadium,
-	}));
-	
-	addEvent(new Screen({
-		x: 82, y: -16, z: 4*16,
-	}));
-	
-	addEvent(new Screen({
-		x: 82, y: -36,
-	}));
+		var b = new Building({
+			name: "Pokemon Stadium 2 (Arena)",
+			sprite: "img/bld/Stadium_arena.png",
+			x : 79, y : -30,
+			warp_x: 176, warp_y: 8,
+			
+			stadiumBehavior : battleManager,
+		});
+		addEvent(b);
+		eventlist.push(b);
+		
+		b = new Building({
+			name: "Pokemon Stadium 2 (Entrance)",
+			sprite: "img/bld/Stadium_entrance.png",
+			x : 82, y : -14,
+			warp_x: 144, warp_y: 48,
+			
+			activeZone: {
+				left: 65, right: 100,
+				top: -40, bottom: -17,
+			},
+			
+			behavior : doStadium,
+			stadiumBehavior : checkStadiumActive,
+		});
+		addEvent(b);
+		eventlist.push(b);
+		
+		addEvent(new Screen({
+			x: 82, y: -16, z: 4*16,
+		}));
+		
+		addEvent(new Screen({
+			x: 82, y: -36,
+		}));
+		
+	}
 	
 	/////////////////////////////////////////////////////////
 	//Large Dexes that I don't want at the TOP of the file
@@ -790,12 +1120,12 @@
 		{ id : 032, name: "Nidoran♂"	, type: Poison,		type2: null, 	favor: 1},
 		{ id : 033, name: "Nidorino"	, type: Poison,		type2: null, 	favor: 1},
 		{ id : 034, name: "Nidoking"	, type: Poison,		type2: Ground, 	favor: 1},
-		{ id : 035, name: "Clefairy"	, type: Normal,		type2: null, 	favor: 1},
-		{ id : 036, name: "Clefable"	, type: Normal,		type2: null, 	favor: 1},
+		{ id : 035, name: "Clefairy"	, type: Normal,		type2: null, 	favor: 1, hax:"metronome" },
+		{ id : 036, name: "Clefable"	, type: Normal,		type2: null, 	favor: 1, hax:"metronome" },
 		{ id : 037, name: "Vulpix"		, type: Fire,		type2: null, 	favor: 1},
 		{ id : 038, name: "Ninetales"	, type: Fire,		type2: null, 	favor: 1},
-		{ id : 039, name: "Jigglypuff"	, type: Normal,		type2: null, 	favor: 1},
-		{ id : 040, name: "Wigglytuff"	, type: Normal,		type2: null, 	favor: 1},
+		{ id : 039, name: "Jigglypuff"	, type: Normal,		type2: null, 	favor: 1, hax:"sleep" },
+		{ id : 040, name: "Wigglytuff"	, type: Normal,		type2: null, 	favor: 1, hax:"sleep" },
 		{ id : 041, name: "Zubat"		, type: Poison,		type2: Flying, 	favor: 1},
 		{ id : 042, name: "Golbat"		, type: Poison,		type2: Flying, 	favor: 1},
 		{ id : 043, name: "Oddish"		, type: Grass,		type2: Poison, 	favor: 1},
@@ -842,7 +1172,7 @@
 		{ id : 084, name: "Doduo"		, type: Normal,		type2: Flying, 	favor: 1},
 		{ id : 085, name: "Dodrio"		, type: Normal,		type2: Flying, 	favor: 1},
 		{ id : 086, name: "Seel"		, type: Water,		type2: null, 	favor: 1},
-		{ id : 087, name: "Dewgong"		, type: Water,		type2: Ice, 	favor: 1, chant: ["Restgong", "Dewgong"] },
+		{ id : 087, name: "Dewgong"		, type: Water,		type2: Ice, 	favor: 1, hax:"heal", chant: ["Restgong", "Dewgong"] },
 		{ id : 088, name: "Grimer"		, type: Poison,		type2: null, 	favor: 1},
 		{ id : 089, name: "Muk"			, type: Poison,		type2: null, 	favor: 1},
 		{ id : 090, name: "Shellder"	, type: Water,		type2: null, 	favor: 1},
@@ -850,13 +1180,13 @@
 		{ id : 092, name: "Gastly"		, type: Ghost,		type2: Poison, 	favor: 1},
 		{ id : 093, name: "Haunter"		, type: Ghost,		type2: Poison, 	favor: 1},
 		{ id : 094, name: "Gengar"		, type: Ghost,		type2: Poison, 	favor: 1},
-		{ id : 095, name: "Onix"		, type: Rock,		type2: Ground, 	favor: 1},
+		{ id : 095, name: "Onix"		, type: Rock,		type2: Ground, 	favor: 1, hp:300},
 		{ id : 096, name: "Drowzee"		, type: Psychic,	type2: null, 	favor: 1},
 		{ id : 097, name: "Hypno"		, type: Psychic,	type2: null, 	favor: 1},
 		{ id : 098, name: "Krabby"		, type: Water,		type2: null, 	favor: 1},
 		{ id : 099, name: "Kingler"		, type: Water,		type2: null, 	favor: 1},
-		{ id : 100, name: "Voltorb"		, type: Electric,	type2: null, 	favor: 1},
-		{ id : 101, name: "Electrode"	, type: Electric,	type2: null, 	favor: 1},
+		{ id : 100, name: "Voltorb"		, type: Electric,	type2: null, 	favor: 1, hax:"explode" },
+		{ id : 101, name: "Electrode"	, type: Electric,	type2: null, 	favor: 1, hax:"explode" },
 		{ id : 102, name: "Exeggcute"	, type: Grass,		type2: Psychic,	favor: 1},
 		{ id : 103, name: "Exeggutor"	, type: Grass,		type2: Psychic,	favor: 1},
 		{ id : 104, name: "Cubone"		, type: Ground,		type2: null, 	favor: 1},
@@ -864,11 +1194,11 @@
 		{ id : 106, name: "Hitmonlee"	, type: Fighting,	type2: null, 	favor: 1, chant: ["C3KO"] },
 		{ id : 107, name: "Hitmonchan"	, type: Fighting,	type2: null, 	favor: 1},
 		{ id : 108, name: "Lickitung"	, type: Normal,		type2: null, 	favor: 1},
-		{ id : 109, name: "Koffing"		, type: Poison,		type2: null, 	favor: 1},
-		{ id : 110, name: "Weezing"		, type: Poison,		type2: null, 	favor: 1},
-		{ id : 111, name: "Rhyhorn"		, type: Ground,		type2: Rock, 	favor: 1},
-		{ id : 112, name: "Rhydon"		, type: Ground,		type2: Rock, 	favor: 1},
-		{ id : 113, name: "Chansey"		, type: Normal,		type2: null, 	favor: 1},
+		{ id : 109, name: "Koffing"		, type: Poison,		type2: null, 	favor: 1, hax:"explode" },
+		{ id : 110, name: "Weezing"		, type: Poison,		type2: null, 	favor: 1, hax:"explode" },
+		{ id : 111, name: "Rhyhorn"		, type: Ground,		type2: Rock, 	favor: 1, hax:"horndrill" },
+		{ id : 112, name: "Rhydon"		, type: Ground,		type2: Rock, 	favor: 1, hax:"horndrill" },
+		{ id : 113, name: "Chansey"		, type: Normal,		type2: null, 	favor: 1, hax:"heal" },
 		{ id : 114, name: "Tangela"		, type: Grass,		type2: null, 	favor: 1},
 		{ id : 115, name: "Kangaskhan"	, type: Normal,		type2: null, 	favor: 1},
 		{ id : 116, name: "Horsea"		, type: Water,		type2: null, 	favor: 1},
@@ -884,10 +1214,10 @@
 		{ id : 126, name: "Magmar"		, type: Fire,		type2: null, 	favor: 1},
 		{ id : 127, name: "Pinsir"		, type: Bug,		type2: null, 	favor: 1},
 		{ id : 128, name: "Tauros"		, type: Normal,		type2: null, 	favor: 1},
-		{ id : 129, name: "Magikarp"	, type: Water,		type2: null, 	favor: 0.4},
+		{ id : 129, name: "Magikarp"	, type: Water,		type2: null, 	favor: 0.4, hax:"splash" },
 		{ id : 130, name: "Gyarados"	, type: Water,		type2: Flying, 	favor: 1.05},
-		{ id : 131, name: "Lapras"		, type: Water,		type2: Ice, 	favor: 1},
-		{ id : 132, name: "Ditto"		, type: Normal,		type2: null, 	favor: 1},
+		{ id : 131, name: "Lapras"		, type: Water,		type2: Ice, 	favor: 1, hax:"perish song", hp: 250},
+		{ id : 132, name: "Ditto"		, type: Normal,		type2: null, 	favor: 1, forbidden: true}, //don't want to program ditto's transform... O_o
 		{ id : 133, name: "Eevee"		, type: Normal,		type2: null, 	favor: 1},
 		{ id : 134, name: "Vaporeon"	, type: Water,		type2: null, 	favor: 1},
 		{ id : 135, name: "Jolteon"		, type: Electric,	type2: null, 	favor: 1},
@@ -898,7 +1228,7 @@
 		{ id : 140, name: "Kabuto"		, type: Rock,		type2: Water, 	favor: 1.9, chant: ["Dome"] },
 		{ id : 141, name: "Kabutops"	, type: Rock,		type2: Water, 	favor: 2.0, chant: ["Dome"] },
 		{ id : 142, name: "Aerodactyl"	, type: Rock,		type2: Flying, 	favor: 1.6, chant: ["Amber"] },
-		{ id : 143, name: "Snorlax"		, type: Normal,		type2: null, 	favor: 1.9},
+		{ id : 143, name: "Snorlax"		, type: Normal,		type2: null, 	favor: 1.9, hp:350},
 		{ id : 144, name: "Articuno"	, type: Ice,		type2: Flying, 	favor: 1.8},
 		{ id : 145, name: "Zapdos"		, type: Electric,	type2: Flying, 	favor: 1.8},
 		{ id : 146, name: "Moltres"		, type: Fire,		type2: Flying, 	favor: 1.8},
@@ -938,10 +1268,10 @@
 		{ id : 180, name: "Flaaffy"		, type: Electric,	type2: null, 	favor: 1},
 		{ id : 181, name: "Ampharos"	, type: Electric,	type2: null, 	favor: 1},
 		{ id : 182, name: "Bellossom"	, type: Grass,		type2: null, 	favor: 1},
-		{ id : 183, name: "Marill"		, type: Water,		type2: null, 	favor: 1},
-		{ id : 184, name: "Azumarill"	, type: Water,		type2: null, 	favor: 1},
+		{ id : 183, name: "Marill"		, type: Water,		type2: null, 	favor: 1, hax:"rollout" },
+		{ id : 184, name: "Azumarill"	, type: Water,		type2: null, 	favor: 1, hax:"rollout" },
 		{ id : 185, name: "Sudowoodo"	, type: Rock,		type2: null, 	favor: 1},
-		{ id : 186, name: "Politoed"	, type: Water,		type2: null, 	favor: 1},
+		{ id : 186, name: "Politoed"	, type: Water,		type2: null, 	favor: 1, hax:"perish song" },
 		{ id : 187, name: "Hoppip"		, type: Grass,		type2: Flying, 	favor: 1},
 		{ id : 188, name: "Skiploom"	, type: Grass,		type2: Flying, 	favor: 1},
 		{ id : 189, name: "Jumpluff"	, type: Grass,		type2: Flying, 	favor: 1},
@@ -949,7 +1279,7 @@
 		{ id : 191, name: "Sunkern"		, type: Grass,		type2: null, 	favor: 1},
 		{ id : 192, name: "Sunflora"	, type: Grass,		type2: null, 	favor: 1},
 		{ id : 193, name: "Yanma"		, type: Bug,		type2: Flying, 	favor: 1},
-		{ id : 194, name: "Wooper"		, type: Water,		type2: Ground, 	favor: 1},
+		{ id : 194, name: "Wooper"		, type: Water,		type2: Ground, 	favor: 1, hp:250},
 		{ id : 195, name: "Quagsire"	, type: Water,		type2: Ground, 	favor: 1},
 		{ id : 196, name: "Espeon"		, type: Psychic,	type2: null, 	favor: 1},
 		{ id : 197, name: "Umbreon"		, type: Dark,		type2: null, 	favor: 1},
@@ -957,13 +1287,13 @@
 		{ id : 199, name: "Slowking"	, type: Water,		type2: Psychic,	favor: 1},
 		{ id : 200, name: "Misdreavus"	, type: Ghost,		type2: null, 	favor: 1},
 		{ id : 201, name: "Unown"		, type: Psychic,	type2: null, 	favor: 1.1},
-		{ id : 202, name: "Wobbuffet"	, type: Psychic,	type2: null, 	favor: 1},
+		{ id : 202, name: "Wobbuffet"	, type: Psychic,	type2: null, 	favor: 1, hax:"counter",},
 		{ id : 203, name: "Girafarig"	, type: Normal,		type2: Psychic,	favor: 1},
 		{ id : 204, name: "Pineco"		, type: Bug,		type2: null, 	favor: 1},
 		{ id : 205, name: "Forretress"	, type: Bug,		type2: Steel, 	favor: 1},
 		{ id : 206, name: "Dunsparce"	, type: Normal,		type2: null, 	favor: 1},
 		{ id : 207, name: "Gligar"		, type: Ground,		type2: Flying, 	favor: 1},
-		{ id : 208, name: "Steelix"		, type: Steel,		type2: Ground, 	favor: 1.7, chant: ["Solid Snake", "Steelix"], spbg:"-448px -480px" },
+		{ id : 208, name: "Steelix"		, type: Steel,		type2: Ground, 	favor: 1.7, hp:300, chant: ["Solid Snake", "Steelix"], spbg:"-448px -480px" },
 		{ id : 209, name: "Snubbull"	, type: Normal,		type2: null, 	favor: 1},
 		{ id : 210, name: "Granbull"	, type: Normal,		type2: null, 	favor: 1},
 		{ id : 211, name: "Qwilfish"	, type: Water,		type2: Poison, 	favor: 1},
@@ -1004,8 +1334,8 @@
 		{ id : 246, name: "Larvitar"	, type: Rock,		type2: Ground, 	favor: 1},
 		{ id : 247, name: "Pupitar"		, type: Rock,		type2: Ground, 	favor: 1},
 		{ id : 248, name: "Tyranitar"	, type: Rock,		type2: Dark, 	favor: 1},
-		{ id : 249, name: "Lugia"		, type: Psychic,	type2: Flying, 	favor: 2, forbidden:true, spbg:"-224px -480px"},
-		{ id : 250, name: "Ho-Oh"		, type: Fire,		type2: Flying, 	favor: 2, forbidden:true, spbg:"-320px -480px"},
+		{ id : 249, name: "Lugia"		, type: Psychic,	type2: Flying, 	favor: 2, forbidden:true, spbg:"-240px -480px"},
+		{ id : 250, name: "Ho-Oh"		, type: Fire,		type2: Flying, 	favor: 2, forbidden:true, spbg:"-336px -480px"},
 		{ id : 251, name: "Celebi"		, type: Psychic,	type2: Grass, 	favor: 1.6, forbidden:true,},
 	];
 	

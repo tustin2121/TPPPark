@@ -30,5 +30,5 @@ addEvent(new WarpTile({
 addEvent(new WarpTile({
 	name : "From Quagmire Warp 2",
 	x: 151, y: -267,
-	warp_to_x: 83, warp_to_y: 24,
+	warp_to_x: 83, warp_to_y: -24,
 }));

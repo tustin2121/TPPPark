@@ -229,6 +229,21 @@ body.x2 #anchor {
 	-webkit-transform: scale(0.5);
 }*/
 
+.staidum-chatter-container {
+	position: absolute;
+	width: 640px; height: 384px;
+	left: -208px; bottom: 64px;
+	pointer-events: none;
+}
+
+.stadium-chatter {
+	position: absolute;
+	/*width: 100px; height: 30px;*/
+	font-family: Arial;
+	font-size: 10px;
+	pointer-events: none;
+}
+
 
 /* --- Status Screen --- */
 
@@ -465,8 +480,8 @@ body.x2 #anchor {
 #status-screen .info-screen.ribbon section.rb-traded:before			{ background-position: -1px -271px; }
 #status-screen .info-screen.ribbon section.rb-bloodysunday:before	{ background-position: -34px -271px; }
 #status-screen .info-screen.ribbon section.rb-daycare:before		{ background-position: -1px -306px; }
-#status-screen .info-screen.ribbon section.rb-ribbon8:before		{ background-position: -34px -306px; }
-#status-screen .info-screen.ribbon section.rb-ribbon9:before		{ background-position: -1px -341px; }
+#status-screen .info-screen.ribbon section.rb-pokerus:before		{ background-position: -34px -306px; }
+#status-screen .info-screen.ribbon section.rb-master:before			{ background-position: -1px -341px; }
 #status-screen .info-screen.ribbon section.rb-ribbon10:before		{ background-position: -34px -341px; }
 #status-screen .info-screen.ribbon section.rb-ribbon11:before		{ background-position: -1px -376px; }
 #status-screen .info-screen.ribbon section.rb-ribbon12:before		{ background-position: -34px -376px; }
