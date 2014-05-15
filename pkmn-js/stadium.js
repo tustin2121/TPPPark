@@ -205,11 +205,28 @@
 	}
 	
 	function doBattle() {
-		
+		//Battle Manager determines going to Winnings state 
 	}
 	
 	function doWinnings() {
-		
+		if (countdown <= 0) { //Battle Cleanup
+			redCurrMon = null; blueCurrMon = null;
+			redfavor = bluefavor = 0;
+			
+			redvotes = [];
+			bluevotes = [];
+			redPokes = []; 
+			bluePokes = [];
+			
+			for (var i = 0; i < 3; i++) {
+				redDom[i].domElement.fadeOut(500);
+				blueDom[i].domElement.fadeOut(500);
+			}
+			
+			lastBattleAction = 0;
+			
+			goToState(STATE_DECIDING);
+		} 
 	}
 	
 	function doRioting() {
@@ -251,7 +268,7 @@
 		switch (state) {
 			case STATE_DECIDING: 
 				//10% of the time, just randomly riot for a while :P
-				if (Math.random()/* > 0.9*/) {
+				if (Math.random() > 0.9) {
 					countdown = 120 + Math.floor(Math.random()*120); //1-2 minutes
 					currState = STATE_RIOTING;
 					console.log("ヽ༼ຈل͜ຈ༽ﾉ RIOT ヽ༼ຈل͜ຈ༽ﾉ");
@@ -344,7 +361,7 @@
 		if (redCurrMon == null) { //send out mon!
 			redCurrMon = _chooseNextMon(redDom);
 			if (!redCurrMon) 
-				return _endBattle(true);
+				return _endBattle(false);
 			
 			_anim_sendMon(true, redCurrMon);
 			lastBattleAction = BATTLE_RED_SEND;
@@ -354,14 +371,25 @@
 		if (blueCurrMon == null) { //send out mon!
 			blueCurrMon = _chooseNextMon(blueDom);
 			if (!blueCurrMon) 
-				return _endBattle(false);
+				return _endBattle(true);
 			
 			_anim_sendMon(false, blueCurrMon);
 			lastBattleAction = BATTLE_BLU_SEND;
 			return;
 		}
 		
-		//TODO check HP here!
+		//check HP here!
+		if (redCurrMon.hp <= 0) {
+			_anim_faintMon(redCurrMon);
+			redCurrMon = null;
+		}
+		if (blueCurrMon.hp <= 0) {
+			_anim_faintMon(blueCurrMon);
+			blueCurrMon = null;
+		}
+		//separate the return from fainting, so both can do so at the same time
+		if (!redCurrMon || !blueCurrMon) return; 
+		
 		
 		if (_bt_turn == 0) { //red's turn
 			_determineHit(true);
@@ -387,7 +415,7 @@
 			
 			var baseDamage = 0;
 			var attkType = 0;
-			var rnd = Math.random()*4; //Detemine the type of move
+			var rnd = Math.floor(Math.random()*4); //Detemine the type of move
 			switch (rnd) {
 				case 0: //Normal move
 					baseDamage = 40; //base 40 attack
@@ -425,9 +453,15 @@
 				damage = baseDamage * multiplier;
 			}
 			
+			// opp.hp -= damage;
+			
+			console.log((red)?"Red":"Blue", "Attacks!", damage, "Type:", rnd);
+			
 			_anim_monAttack(red, me);
-			_anim_monHit(!red, opp);
-			_bt_Cooldown = 4 *4;
+			_anim_monHit(!red, opp, multiplier, function(){
+				opp.hp -= damage;
+			});
+			_bt_Cooldown = 3 *4;
 		}
 		
 		
@@ -436,8 +470,8 @@
 			var p_opp = POKEMON[opp.pokemon];
 			
 			var hax = p_me.hax;
-			if (!hax) hax = _getHaxForType(p_me.type2);
 			if (!hax) hax = _getHaxForType(p_me.type);
+			if (!hax) hax = _getHaxForType(p_me.type2);
 			
 			switch(hax) {
 				case "posion":
@@ -512,13 +546,22 @@
 				.animate({ bottom:  0, }, 300);
 			_bt_Cooldown = 3 *4;
 		}
+		function _anim_faintMon(event) {
+			event.domElement.fadeOut(400);
+			event.domAnim.animate({ bottom:  -10, }, 400);
+			
+			_bt_Cooldown = 3 *4;
+		}
 		
 		function _anim_monAttack(red, event) {
 			event.domAnim
 				.animate({ left: 8 * ((red)?-1:1), }, 150)
 				.animate({ left:  0, }, 150);
 		}
-		function _anim_monHit(red, event) {
+		function _anim_monHit(red, event, multiplier, hurtCallback) {
+			var knockback = 8 * multiplier;
+			var returnTime = 300;// * multiplier;
+			
 			event.domAnim
 				.delay(200)
 				.animate({ 
@@ -526,12 +569,16 @@
 					bottom: -3,
 					// transform: "rotate("+(20 * (red)?1:-1 )+")",
 				}, 200)
+				.queue(function(){
+					hurtCallback();
+					$(this).dequeue();
+				})
 				.delay(1000)
 				.animate({ 
 					left: 0,
 					bottom: 0,
 					// transform: "rotate(0)",
-				}, 300);
+				}, returnTime);
 		}
 	}
 	
@@ -755,9 +802,18 @@
 			switch(currState) {
 				case STATE_VOTING:
 					this.animstep = (this.animstep+1) % 4;
-					
 					this.domImage.css("bottom", (this.animstep < 2)?-1: 0);
-					
+					break;
+				case STATE_WINNINGS:
+					this.animstep = (this.animstep+1) % 4;
+					console.log("Dance?", this.team, lastBattleAction, this.animstep);
+					if (this.animstep != 0) break;
+					if (this.team == 1 && lastBattleAction == BATTLE_RED_WINS
+					|| this.team == 2 && lastBattleAction == BATTLE_BLU_WINS) {
+						this.domAnim
+							.animate({bottom: 8}, 200)
+							.animate({bottom: 0}, 200);
+					}
 					break;
 			}
 			
@@ -809,12 +865,17 @@
 	
 	/////// Screen event definition ///////
 	
+	window.requestAnimationFrame = window.requestAnimationFrame || window.moxRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+	
 	function Screen(opts){
 		if (!(this instanceof Screen))
 			return new Screen(opts);
 		
 		Event.call(this, opts);
 		this.behavior = this.drawScreen;
+		
+		// var _this = this;
+		// this.intervalID = setInterval(function(){ _this.drawScreen(); }, 100);
 	}
 	Screen.fn = Screen.prototype = new Event({
 		name : "<Screen>",
@@ -825,6 +886,8 @@
 		broken : false,
 		
 		domImage : null,
+		// intervalID : 0,
+		animRequestID : 0,
 		
 		_createImageTag : function() {
 			var eventobj = this;
@@ -855,6 +918,7 @@
 			this.canvas = canvas;
 			this.context = canvas[0].getContext('2d');
 			
+			// $("<div>").addClass("debug").css({position: "absolute", top: "40"});
 			return img;
 		},
 		
@@ -870,8 +934,12 @@
 			
 			
 			switch (currState) {
-				case STATE_BATTLING: drawHP(); break;
+				case STATE_BATTLING: 
+					if (!this.animRequestID)
+					this.animRequestID = requestAnimationFrame(drawHP);
+					break;
 				case STATE_RIOTING: showRiotScreen(); break;
+				case -1: break;
 				default: drawBetting(); break;
 			}
 			
@@ -941,8 +1009,132 @@
 				}
 			}
 			
+			if (!_this.hpstored) {
+				_this.hpstored = {
+					redDelay : 20, redPos : 54, redHP: 0, redMax: 0, redName: "",
+					blueDelay : 20, bluePos : -44, blueHP: 0, blueMax : 0, blueName: "",
+				};
+			}
 			function drawHP() {
+				var s = _this.hpstored;
+				ctx.clearRect(0, 0, SCREEN_W, SCREEN_H);
 				
+				if (blueCurrMon) {
+					if (s.blueDelay > 0) s.blueDelay--;
+					else if (s.bluePos < 0) s.bluePos += 2;
+					
+					if (blueCurrMon.hp > s.blueHP) s.blueHP++;
+					else if (blueCurrMon.hp < s.blueHP) s.blueHP--;
+					
+					if (!s.blueMax) {
+						s.blueHP = blueCurrMon.hp;
+						s.blueMax = POKEMON[blueCurrMon.pokemon].hp || 200;
+						s.blueName = POKEMON[blueCurrMon.pokemon].name;
+					}
+				} else {
+					if (s.blueDelay < 20) s.blueDelay++;
+					else if (s.bluePos > -44) s.bluePos -= 2;
+					
+					s.blueHP = s.blueMax = 0;
+				}
+				if (s.bluePos > -44) {
+					ctx.save();
+					ctx.translate(s.bluePos, 1);
+					
+					ctx.beginPath();
+					ctx.moveTo(-2, 0);
+					ctx.lineTo(44, 0);
+					ctx.lineTo(34, 15);
+					ctx.lineTo(-2, 15);
+					ctx.closePath();
+					
+					ctx.fillStyle = "#a6d4ff";
+					ctx.strokeStyle = "1px solid #0d4f8d";
+					ctx.fill();
+					ctx.stroke();
+					
+					//HP Bar
+					ctx.fillStyle = "#506858";
+					ctx.fillRect(0,  9, 44, 4);
+					
+					var percent = Math.max((s.blueMax)? s.blueHP / s.blueMax : 0, 0);
+					if (percent > 0.5) 
+						ctx.fillStyle = "#70f8a8";
+					else if (percent > 0.2)
+						ctx.fillStyle = "#f8e038";
+					else
+						ctx.fillStyle = "#f85838";
+					ctx.fillRect(0, 10, 44*percent, 2);
+					
+					ctx.font = "8px sans-serif";
+					ctx.fillStyle = "black";
+					ctx.fillText(s.blueName, 2, 8);
+					
+					ctx.restore();
+				}
+				
+				if (redCurrMon) {
+					if (s.redDelay > 0) s.redDelay--;
+					else if (s.redPos > 10) s.redPos -= 2;
+					
+					if (redCurrMon.hp > s.redHP) s.redHP++;
+					else if (redCurrMon.hp < s.redHP) s.redHP--;
+					
+					if (!s.redMax) {
+						s.redHP = redCurrMon.hp;
+						s.redMax = POKEMON[redCurrMon.pokemon].hp || 200;
+						s.redName = POKEMON[redCurrMon.pokemon].name;
+					}
+				} else {
+					if (s.redDelay < 20) s.redDelay++;
+					else if (s.redPos < 54) s.redPos += 2;
+					
+					s.redHP = s.redMax = 0;
+				}
+				if (s.redPos < 54) {
+					ctx.save();
+					ctx.translate(s.redPos, 17);
+					
+					ctx.beginPath();
+					ctx.moveTo(46, 0);
+					ctx.lineTo(0, 0);
+					ctx.lineTo(10, 15);
+					ctx.lineTo(46, 15);
+					ctx.closePath();
+					
+					ctx.fillStyle = "#ffa6a6";
+					ctx.strokeStyle = "1px solid #8d0d0d";
+					ctx.fill();
+					ctx.stroke();
+					
+					//HP Bar
+					ctx.fillStyle = "#506858";
+					ctx.fillRect(0,  9, 44, 4);
+					
+					var percent = Math.max((s.redMax)? s.redHP / s.redMax : 0, 0);
+					if (percent > 0.5) 
+						ctx.fillStyle = "#70f8a8";
+					else if (percent > 0.2)
+						ctx.fillStyle = "#f8e038";
+					else
+						ctx.fillStyle = "#f85838";
+					ctx.fillRect(0, 10, 44*percent, 2);
+					
+					ctx.font = "8px sans-serif";
+					ctx.fillStyle = "black";
+					ctx.fillText(s.redName, 7, 8);
+					
+					ctx.restore();
+				}
+				
+				// $(".ui.creditnote").html("DEBUG: blue="+((blueCurrMon)?POKEMON[blueCurrMon.pokemon].name:"<none>")+" red="+((redCurrMon)?POKEMON[redCurrMon.pokemon].name:"<none>")+
+				// 	"<br/>bd="+s.blueDelay+" bp="+s.bluePos+" bhp="+s.blueHP+"<br/>rd="+s.redDelay+" rp="+s.redPos+" rhp="+s.redHP);
+				
+				if (currState == STATE_BATTLING) {
+					requestAnimationFrame(drawHP);
+				} else {
+					_this.animRequestID = 0;
+				}
 			}
 		}
 	});
