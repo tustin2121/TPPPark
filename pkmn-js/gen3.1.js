@@ -265,6 +265,48 @@ addEvent(new Pokemon({
 }));
 
 
+addEvent(new MultiEvent({
+	name: "Master Wingull and Trainer",
+	sprite: "img/pkmn/master_wingull.gif",
+	x: -33, y: 32,
+}).addSubEvent("19,0,0,25,1,45,12,49,21,45,47,12,40,0",new Pokemon({
+	name: "Wingull",
+	
+	animation: null,
+	
+	dex: "http://cdn.bulbagarden.net/upload/b/b3/Spr_3e_278.gif", //Bulbapedia
+	sources : {
+		"Pokedex Image from Bulbapedia" : "",
+	},
+	
+	OT: "Guitarist",
+	gamename: "--",
+	pokename: "Wingull",
+	caught: "Encountered by Alice.",
+	level: "???",
+	memo: "Master Ball thrown at another trainer's pokemon.",
+	
+	ribbons : [
+		new Master_Ribbon(),
+	],
+})).addSubEvent("33,45,48,66", new Person({
+	name: "Guitarist",
+	behavior: null,
+	dialog: [
+		"Don't be a theif!"
+	],
+	
+	updateImage : function(){},
+	getPosition : function(){
+		var o = this.parent.domElement.position();
+		// o.left += 33;
+		// o.top += 50;
+		return o;
+	},
+}))
+);
+
+
 // And finally, Alice!
 addEvent(new Trainer({
 	name : "A",

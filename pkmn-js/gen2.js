@@ -113,6 +113,50 @@ addEvent(new MultiEvent({
 }))
 );
 
+addEvent(new MultiEvent({
+	name: "Eeveeloutions of Love",
+	sprite: "img/pkmn/buritto_flarion.gif",
+	x: 24, y: 38,
+}).addSubEvent("0,10,0,26,35,26,35,6,32,7,28,14,20,18,11,11", new Pokemon({
+	name: "Flareon",
+	
+	dex : "img/pkdx/tpp7_flareon.gif",
+	sources : {
+		"Pokedex Image by /u/Firewaffle" : "http://hamigakimomo.tumblr.com/post/78455477855/finally-did-a-jay-leno-and-cabbage-sprite",
+	},
+	
+	OT: "Red",
+	gamename : "Flareon",
+	pokename : "Flareon",
+	level : 25,
+	nicknames: "The False Prophet",
+	memo : "Known as the False Prophet for filling a party slot slated for Lapras and evolving neither to Jolteon or Vaporeon.",
+	
+	ribbons : [
+		new Released_Ribbon("5d 17h 47m"),
+	],	
+})).addSubEvent("0,0,0,9,11,11,19,18,27,13,32,6,35,5,35,0", new Pokemon({
+	name: "Burrito",
+	
+	dex : "img/pkdx/dex_burrito.png",
+	sources : {
+		"Pokedex Image by /u/Aleksandair" : "http://www.reddit.com/r/twitchplayspokemon/comments/20iaxx/i_made_it_anybody_want_to_use_these_sprites/",
+	},
+	
+	OT: "AJDNNW",
+	gender: 1,
+	gamename : "AAAS RJ-1",
+	pokename : "Espeon",
+	level : 54,
+	nicknames: "Breakfast Burrito<br/>Bringer of Light",
+	memo : "Known for trying to use Attract on everyone",
+	
+	ribbons : [
+		new HallOfFame_Ribbon("9d 21h 24m"),
+	],
+}))
+);
+
 
 addEvent(new MovingPokemon({
 	name : "Brian",
@@ -301,7 +345,7 @@ addEvent(new Pokemon({
 addEvent(new Pokemon({
 	name : "Goldeen",
 	sprite: "img/pkmn/goldeen.png",
-	x: -20, y: -34,
+	x: -27, y: -2,
 	
 	dex : "http://cdn.bulbagarden.net/upload/4/42/Spr_2c_118.gif",
 	sources : {
@@ -393,8 +437,9 @@ addEvent(new Pokemon({
 // 
 addEvent(new Pokemon({
 	name : "AAAAAAAAAA",
-	sprite: "img/pkmn/aaaaa_ponyta.png",
+	sprite: "img/pkmn/aaaaa_ponyta.gif",
 	x: 23, y: 19,
+	animation: null,
 	
 	dex : "img/pkdx/dex_aaaaa.png",
 	sources : {

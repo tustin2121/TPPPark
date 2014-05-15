@@ -7,7 +7,7 @@ addEvent(new SignPost({
 	name : "Quagmire Sign",
 	x: 149, y:-265,
 	
-	message: "<strong>The Anarchy Quagmire</strong><br/>Remember, You're Here Forever",
+	message: "<strong>The Anarchy Quagmire</strong><br/>Don't Forget, You're Here Forever",
 }));
 
 //Warp Points

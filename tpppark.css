@@ -96,13 +96,28 @@ body.x2 #anchor {
 	line-height: 14px;
 }
 
-#curr-sources a {
+.ui.creditnote a {
 	color: #75C2FF;
 }
 #curr-sources:empty:before {
 	content: "Tilemap ripped from Emerald and FireRed.";
 }
 
+.ui.instructions {
+	top: 20px; left: 20px;
+	width: 220px; 
+	padding: 10px;
+	border-radius: 20px;
+	background-color: rgba(0, 0, 0, 0.75);
+	
+	color: white;
+	font-family: PokemonScreen;
+	font-size: 16px;
+	line-height: 12px;
+}
+.ui.instructions p {
+	margin: 6px inherit;
+}
 
 /* --- Startup Screen --- */
 

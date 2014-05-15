@@ -255,6 +255,11 @@ addEvent(new Building({
 	warp_x: 208, warp_y: -2,
 }));
 
+//
+// Note: The False Propeht is attached to the Eeveeloutions of Love multi-event 
+// defined in the Gen 2 events file. See there for her event definition.
+//
+
 
 // Rick Gastly (no h...)
 addEvent(new Pokemon({

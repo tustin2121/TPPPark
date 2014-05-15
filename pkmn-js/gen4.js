@@ -60,6 +60,29 @@ addEvent(new Pokemon({
 }));
 
 addEvent(new Pokemon({
+	name : "Baby Bidoof",
+	// sprite: "img/pkmn/bidoof.png",
+	x: 7, y: -24,
+	
+	dex : "http://cdn.bulbagarden.net/upload/f/f2/Spr_4p_399_m.png",
+	sources : {
+		"Pokedex Image from Bulbapedia" : "",
+	},
+	
+	OT: "nqpppnl",
+	gender: 1,
+	gamename : "???",
+	pokename : "Bidoof",
+	nicknames : "",
+	level : 1,
+	memo : "Child of a Daycare one-night stand between Solareon and Agent 006. Has Solareon's Rock Smash.",
+	
+	ribbons : [
+		new Daycare_Ribbon("Born"),
+	],
+}));
+
+addEvent(new Pokemon({
 	name: "Geodude",
 	sprite: "img/pkmn/shiny-geodude.gif",
 	x: -43, y: -10,

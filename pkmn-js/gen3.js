@@ -2,50 +2,6 @@
 // File for TPP Emerald events
 // 
 
-// Shedinja!
-addEvent(new Pokemon({
-	name : "Zexinja",
-	sprite: "img/pkmn/shedinja_zexxy.png",
-	shadow: "img/pkmn/generic-shadow.png",
-	x: 31, y: -11, z: 16,
-	
-	dex : "img/pkdx/emdex_shedinja.png",
-	sources : {
-		"Pokedex Image by /u/bboyskullkid" : "http://www.reddit.com/r/twitchplayspokemon/comments/21g0da/was_inspired_by_my_flair_and_drew_zexxys_soul/",
-	},
-	
-	OT: "<strike>M</strike>Ay",
-	gamename : "Shedinja",
-	pokename : "Shedinja",
-	nicknames : "ZexyNinja",
-	level : 26,
-	caught : "Appeared 3d 23h 3m",
-	memo : "Thought to hold the soul of Zexy after his release.",
-}));
-
-addEvent(new Pokemon({
-	name : "Dotty",
-	sprite: "img/pkmn/dotty.png",
-	shadow: "img/pkmn/generic-shadow.png",
-	x: 33, y: -10, z: 22,
-	
-	// dex : "img/pkdx/emdex_shedinja.png",
-	// sources : {
-	// 	"Pokedex Image by /u/bboyskullkid" : "http://www.reddit.com/r/twitchplayspokemon/comments/21g0da/was_inspired_by_my_flair_and_drew_zexxys_soul/",
-	// },
-	
-	OT: "<strike>M</strike>Ay",
-	gamename : ". TT",
-	pokename : "Ninjask",
-	nicknames : "(Inappropriate names)",
-	level : 20,
-	caught : "Appeared 3d 23h 3m",
-	memo : "Thought to hold the soul of Zexy after his release.",
-	
-	ribbons : [
-		new Released_Ribbon("7d 15h 36m"),
-	],
-}));
 
 //
 // Note: Zexy is attached to the Released Starter Campfire multi-event 
@@ -55,8 +11,8 @@ addEvent(new Pokemon({
 addEvent(new MultiEvent({
 	name: "M4 Bowling",
 	sprite: "img/pkmn/m4_bowling.gif",
-	x: -10, y: 5, z:5,
-}).addSubEvent("34,9,95,30", new Pokemon({
+	x: -13, y: 5, z:5,
+}).addSubEvent("29,42,110,69", new Pokemon({
 	name : "M4",
 	// sprite: "img/pkmn/cabbage_white.png",
 	// x: -37, y: -25,
@@ -64,6 +20,7 @@ addEvent(new MultiEvent({
 	dex : "img/pkdx/emdex_M4.png",
 	sources : {
 		"Pokedex Image by /u/NoPenNameGirl" : "http://www.reddit.com/r/twitchplayspokemon/comments/22kx4y/the_ateam_sprite/",
+		"Sprite by /u/carlotta4th": "",
 	},
 	
 	OT: "<strike>M</strike>Ay",
@@ -78,7 +35,7 @@ addEvent(new MultiEvent({
 		new Record_Ribbon("Only Lvl 100 Mon"),
 		new HallOfFame_Ribbon("21d 19h 27m"),
 	],
-})).addSubEvent("0,0,32,30", new Pokemon({
+})).addSubEvent("1,34,28,67", new Pokemon({
 	name : "5'7",
 	// sprite: "img/pkmn/cabbage_white.png",
 	// x: -37, y: -25,
@@ -86,6 +43,7 @@ addEvent(new MultiEvent({
 	dex : "img/pkdx/emdex_57.png",
 	sources : {
 		"Pokedex Image by /u/NoPenNameGirl" : "http://www.reddit.com/r/twitchplayspokemon/comments/22kx4y/the_ateam_sprite/",
+		"Sprite by /u/carlotta4th": "",
 	},
 	
 	OT: "<strike>M</strike>Ay",
@@ -99,8 +57,51 @@ addEvent(new MultiEvent({
 	ribbons : [
 		new HallOfFame_Ribbon("21d 19h 27m"),
 	],
+})).addSubEvent("151,0,176,24", new Pokemon({
+	name : "Dotty",
+	sprite: "img/pkmn/dotty.png",
+	// shadow: "img/pkmn/generic-shadow.png",
+	// x: 33, y: -10, z: 22,
+	
+	dex : "http://cdn.bulbagarden.net/upload/0/0b/Spr_3e_291.gif",
+	sources : {
+		"Pokedex Image from Bulbapedia" : "",
+		"Sprite by /u/carlotta4th": "",
+	},
+	
+	OT: "<strike>M</strike>Ay",
+	gamename : ". TT",
+	pokename : "Ninjask",
+	nicknames : "(Inappropriate names)",
+	level : 20,
+	memo : "",
+	
+	ribbons : [
+		new Released_Ribbon("7d 15h 36m"),
+	],
 }))
 );
+
+// Shedinja!
+addEvent(new Pokemon({
+	name : "Zexinja",
+	sprite: "img/pkmn/shedinja_zexxy.png",
+	// shadow: "img/pkmn/generic-shadow.png",
+	x: -15, y: 5, z: 16*4,
+	
+	dex : "img/pkdx/emdex_shedinja.png",
+	sources : {
+		"Pokedex Image by /u/bboyskullkid" : "http://www.reddit.com/r/twitchplayspokemon/comments/21g0da/was_inspired_by_my_flair_and_drew_zexxys_soul/",
+	},
+	
+	OT: "<strike>M</strike>Ay",
+	gamename : "Shedinja",
+	pokename : "Shedinja",
+	nicknames : "ZexyNinja",
+	level : 26,
+	caught : "Appeared 3d 23h 3m",
+	memo : "Thought to hold the soul of Zexy after his release.",
+}));
 
 
 
@@ -404,6 +405,45 @@ addEvent(new Pokemon({
 	],
 }));
 
+addEvent(new MultiEvent({
+	name: "Master Zubat and Trainer",
+	sprite: "img/pkmn/master_zubat.gif",
+	x: -28, y: -37,
+}).addSubEvent("40,0,63,24", new Pokemon({
+	name: "Zubat",
+	
+	dex: "http://cdn.bulbagarden.net/upload/e/ea/Spr_3e_041.gif", //Bulbapedia
+	sources : {
+		"Pokedex Image from Bulbapedia" : "",
+	},
+	
+	OT: "Aqua Grunt",
+	gamename: "--",
+	pokename: "Zubat",
+	caught: "Encountered by <strike>M</strike>Ay.",
+	level: "???",
+	memo: "Master Ball thrown at another trainer's pokemon.",
+	
+	ribbons : [
+		new Master_Ribbon(),
+	],
+})).addSubEvent("0,0,16,24", new Person({
+	name: "Aqua Grunt",
+	behavior: null,
+	dialog: [
+		"Don't be a theif!"
+	],
+	
+	updateImage : function(){},
+	getPosition : function(){
+		var o = this.parent.domElement.position();
+		// o.left += 33;
+		// o.top += 50;
+		return o;
+	},
+}))
+);
+
 // Wattson! <3
 addEvent(new Person({
 	name : "Wattson",
@@ -510,8 +550,9 @@ addEvent(new Pokemon({
 
 addEvent(new Pokemon({
 	name : "ATM",
-	sprite: "img/pkmn/doge_atm.png",
+	sprite: "img/pkmn/atm.gif",
 	x: 5, y: 25,
+	animation: null,
 	
 	dex : "http://cdn.bulbagarden.net/upload/8/8c/Spr_3e_261.gif",
 	sources : {

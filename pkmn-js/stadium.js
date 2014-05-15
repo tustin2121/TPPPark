@@ -198,8 +198,9 @@
 	}
 	
 	function doVoting() {
-		// placeBet(true);
-		// placeBet(false);
+		if (Math.random() > 0.8) { //random voting
+			placeBet(Math.random() > 0.5);
+		}
 		
 		if (countdown <= 0) goToState(STATE_BATTLING);
 	}
@@ -292,18 +293,20 @@
 		}
 	}
 	
-	function placeBet() {
+	function placeBet(force) {
 		var split = redfavor / (redfavor + bluefavor);
 		var n = Math.random();// * 65535;
 		var red = n < split; //if the random number hits below the favor split, its a red vote
 		
+		if (force !== undefined) red = force;
+		
 		//var red = Math.floor((rnd * 3019) % 2)+1;
 		if (red) {
-			var index = Math.floor(((n*49631) % 256) * redvotes.length);
-			redvotes.splice(index, 0, (n * 65565) % 3019);
+			var index = Math.floor((n*49631) % redvotes.length);
+			redvotes.splice(index, 0, Math.floor(n * 65565) % 3019);
 		} else {
-			var index = Math.floor(((n*49631) % 256) * bluevotes.length);
-			bluevotes.splice(index, 0, (n * 65565) % 3019);
+			var index = Math.floor((n*49631) % bluevotes.length);
+			bluevotes.splice(index, 0, Math.floor(n * 65565) % 3019);
 		}
 		
 		return red+1;
@@ -327,27 +330,25 @@
 	//////////// Battle Manager! /////////////
 	
 	var lastBattleAction = 0;
+	var lastBattleTeam = 0;
+	
+	var TEAM_RED = 1;
+	var TEAM_BLUE = 2;
+	var TEAM_BOTH = 3;
 	
 	//Sub states during battle
-	var BATTLE_RED_SEND = 1;
-	var BATTLE_BLU_SEND = 2;
-	var BATTLE_RED_FAINTS = 3;
-	var BATTLE_BLU_FAINTS = 4;
+	var BATTLE_SEND = 1;
+	var BATTLE_FAINTS = 2;
 	
-	var BATTLE_RED_MISSES = 10;
-	var BATTLE_RED_HIT_INEFF = 11;
-	var BATTLE_RED_HIT_NORM = 12;
-	var BATTLE_RED_HIT_SUPER = 13;
-	var BATTLE_RED_HIT_CRIT = 14;
+	var BATTLE_ATK_STATCHANGE = 8;
+	var BATTLE_ATK_NO_EFFECT = 9;
+	var BATTLE_ATK_MISSES = 10;
+	var BATTLE_ATK_HIT_INEFF = 11;
+	var BATTLE_ATK_HIT_NORM = 12;
+	var BATTLE_ATK_HIT_SUPER = 13;
+	var BATTLE_ATK_HIT_CRIT = 14;
 	
-	var BATTLE_BLU_MISSES = 20;
-	var BATTLE_BLU_HIT_INEFF = 21;
-	var BATTLE_BLU_HIT_NORM = 22;
-	var BATTLE_BLU_HIT_SUPER = 23;
-	var BATTLE_BLU_HIT_CRIT = 24;
-	
-	var BATTLE_RED_WINS = 100;
-	var BATTLE_BLU_WINS = 101;
+	var BATTLE_FINISHED = 100;
 	
 	_bt_Cooldown = 0;
 	_bt_turn = 0;
@@ -364,7 +365,8 @@
 				return _endBattle(false);
 			
 			_anim_sendMon(true, redCurrMon);
-			lastBattleAction = BATTLE_RED_SEND;
+			lastBattleTeam = TEAM_RED;
+			lastBattleAction = BATTLE_SEND;
 			return;
 		}
 		
@@ -374,7 +376,8 @@
 				return _endBattle(true);
 			
 			_anim_sendMon(false, blueCurrMon);
-			lastBattleAction = BATTLE_BLU_SEND;
+			lastBattleTeam = TEAM_BLUE;
+			lastBattleAction = BATTLE_SEND;
 			return;
 		}
 		
@@ -382,21 +385,29 @@
 		if (redCurrMon.hp <= 0) {
 			_anim_faintMon(redCurrMon);
 			redCurrMon = null;
+			lastBattleTeam = TEAM_RED;
+			lastBattleAction = BATTLE_FAINTS;
 		}
 		if (blueCurrMon.hp <= 0) {
 			_anim_faintMon(blueCurrMon);
 			blueCurrMon = null;
+			lastBattleTeam = TEAM_BLUE;
+			lastBattleAction = BATTLE_FAINTS;
 		}
+		if (!redCurrMon && !blueCurrMon)
+			lastBattleTeam = TEAM_BOTH;
 		//separate the return from fainting, so both can do so at the same time
 		if (!redCurrMon || !blueCurrMon) return; 
 		
 		
 		if (_bt_turn == 0) { //red's turn
+			lastBattleTeam = TEAM_RED;
 			_determineHit(true);
 			
 			_bt_turn = 1;
 			
 		} else { //blue's turn
+			lastBattleTeam = TEAM_BLUE;
 			_determineHit(false);
 			
 			_bt_turn = 0;
@@ -405,6 +416,8 @@
 		
 		function _determineHit(red) {
 			var me, opp;
+			_bt_Cooldown = 3 *4; //cooldown now, so we will have consistant cooldown no matter where we return from
+			
 			if (red) {
 				me = redCurrMon; opp = blueCurrMon;
 			} else {
@@ -440,6 +453,7 @@
 					} else {
 						//no hax to perform! Do random status move that we don't emulate here!
 						//TODO
+						lastBattleAction = BATTLE_ATK_STATCHANGE;
 					}
 					break;
 			}
@@ -450,18 +464,34 @@
 				if (p_opp.type2)
 					multiplier *= TYPECHART[attkType][p_opp.type2];
 				
-				damage = baseDamage * multiplier;
+				if (multiplier < 1) lastBattleAction = BATTLE_ATK_HIT_INEFF;
+				else if (multiplier > 1) lastBattleAction = BATTLE_ATK_HIT_SUPER;
+				else lastBattleAction = BATTLE_ATK_HIT_NORM;
 			}
 			
-			// opp.hp -= damage;
+			if (multiplier == 0) { //by type, multiplier already went to 0
+				lastBattleAction = BATTLE_ATK_NO_EFFECT;
+			} 
+			else if (rnd < 3) { //hax will do their own calculations
+				var r = Math.random();
+				if (r < 0.0625) { //critical hits = 
+					multiplier *= 2;
+					lastBattleAction = BATTLE_ATK_HIT_CRIT;
+				} 
+				else if (r > 0.89) { //miss chance
+					multiplier *= 0;
+					lastBattleAction = BATTLE_ATK_MISSES;
+				}
+			}
 			
-			console.log((red)?"Red":"Blue", "Attacks!", damage, "Type:", rnd);
+			damage = baseDamage * multiplier;
+			
+			console.log((red)?"Red":"Blue", "Attacks!", damage, "Type:", rnd, "Mul:", multiplier, "Action:", lastBattleAction);
 			
 			_anim_monAttack(red, me);
 			_anim_monHit(!red, opp, multiplier, function(){
 				opp.hp -= damage;
 			});
-			_bt_Cooldown = 3 *4;
 		}
 		
 		
@@ -479,6 +509,7 @@
 				case "para":
 				case "freeze":
 				case "sleep":
+				case "rest": //heal + sleep 2 turns
 				
 				case "curse":
 				case "confusion":
@@ -523,7 +554,8 @@
 		
 		
 		function _endBattle(red){
-			lastBattleAction = BATTLE_RED_WINS + !red;
+			lastBattleAction = BATTLE_FINISHED;
+			lastBattleTeam = red + 1;
 			goToState(STATE_WINNINGS);
 		}
 		
@@ -565,8 +597,8 @@
 			event.domAnim
 				.delay(200)
 				.animate({ 
-					left: 8 * ((red)?1:-1), 
-					bottom: -3,
+					left: knockback * ((red)?1:-1), 
+					bottom: (multiplier > 0)?-3:0,
 					// transform: "rotate("+(20 * (red)?1:-1 )+")",
 				}, 200)
 				.queue(function(){
@@ -759,6 +791,10 @@
 		pokemon : 0,
 		hp:200,
 		
+		victories : 0, //number of pokemon this combatant took down, for "SWEEP!" reactions
+		moveturn : 0, //for tracking multi-turn hax, like Fly and Rollout
+		status : 0, //for when afflicted by status conditions, like Para, Sleep, Poison, Burn, etc
+		
 		animstep: 0,
 		
 		delayBehaviorTimer : 0,
@@ -776,6 +812,7 @@
 			this.x = this.org_x;
 			this.y = this.org_y;
 			this.hp = 200;
+			this.victories = 0;
 			
 			if (POKEMON[this.pokemon].hp)
 				this.hp = POKEMON[this.pokemon].hp;
@@ -804,12 +841,12 @@
 					this.animstep = (this.animstep+1) % 4;
 					this.domImage.css("bottom", (this.animstep < 2)?-1: 0);
 					break;
+				case STATE_BATTLING: break; //DON'T TOUCH! handled by battle manager!
 				case STATE_WINNINGS:
 					this.animstep = (this.animstep+1) % 4;
-					console.log("Dance?", this.team, lastBattleAction, this.animstep);
 					if (this.animstep != 0) break;
-					if (this.team == 1 && lastBattleAction == BATTLE_RED_WINS
-					|| this.team == 2 && lastBattleAction == BATTLE_BLU_WINS) {
+					if (this.team == TEAM_RED && lastBattleTeam == TEAM_RED
+					|| this.team == TEAM_BLUE && lastBattleTeam == TEAM_BLUE) {
 						this.domAnim
 							.animate({bottom: 8}, 200)
 							.animate({bottom: 0}, 200);
@@ -946,12 +983,12 @@
 			function showRiotScreen() {
 				if (_this.sprite == 2) return;
 				_this.domImage.css("background-position", "0px -48px");
-				_this.sprite == 2; //flag
+				_this.sprite = 2; //flag
 			}
 			function hideRiotScreen() {
 				if (_this.sprite == 1) return;
 				_this.domImage.css("background-position", "0px 0px");
-				_this.sprite == 1;
+				_this.sprite = 1;
 			}
 			
 			function drawBetting() {
@@ -968,7 +1005,7 @@
 				ctx.fillRect(SCREEN_W-10-1-i, 1, i, 2);
 				
 				//blue side bet
-				i = (redvotes.length ? (redvotes.length > 8? 7 : 4) : 2);
+				i = (bluevotes.length ? (bluevotes.length > 8? 7 : 4) : 2);
 				ctx.fillRect(11, 1, i, 2);
 				
 				//middle ratio
@@ -1364,7 +1401,7 @@
 		{ id : 084, name: "Doduo"		, type: Normal,		type2: Flying, 	favor: 1},
 		{ id : 085, name: "Dodrio"		, type: Normal,		type2: Flying, 	favor: 1},
 		{ id : 086, name: "Seel"		, type: Water,		type2: null, 	favor: 1},
-		{ id : 087, name: "Dewgong"		, type: Water,		type2: Ice, 	favor: 1, hax:"heal", chant: ["Restgong", "Dewgong"] },
+		{ id : 087, name: "Dewgong"		, type: Water,		type2: Ice, 	favor: 1, hax:"rest", chant: ["Restgong", "Dewgong"] },
 		{ id : 088, name: "Grimer"		, type: Poison,		type2: null, 	favor: 1},
 		{ id : 089, name: "Muk"			, type: Poison,		type2: null, 	favor: 1},
 		{ id : 090, name: "Shellder"	, type: Water,		type2: null, 	favor: 1},
