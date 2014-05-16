@@ -2,6 +2,8 @@
 // File for various other events relating to TPP
 // 
 
+//////////////////// Starter Campfire ///////////////////////
+
 addEvent(new Building({
 	name : "Released Starter Campfire Base",
 	sprite : "img/bld/campfire.gif",
@@ -80,6 +82,84 @@ addEvent(new MultiEvent({
 	],
 })));
 
+///////////////// Train Station ////////////////////
+// I like trains!
+
+addEvent(new Building({
+	name: "Train Station",
+	sprite: "img/bld/train_station.png",
+	x: -19, y: 60,
+	
+	warp_x: 128, warp_y: 144,
+}));
+
+addEvent(new Event({
+	name: "Train",
+	sprite: "img/bld/train.png",
+	x: -15, y: 58, z: -8,
+	
+	is_stopped : false, //if the train is stopped permenantly at the station
+	
+	activeZone : function(load) {
+		if (this.is_stopped) return false;
+		var res = !(load.bottom < 56 || load.top > 61);
+		if (!res && this.nowRunning) {
+			this.nowRunning = false;
+			this.domElement.hide();
+		}
+		return res;
+	},
+	
+	lastRun : -1,
+	nowRunning : false,
+	actTimer : 0,
+	behavior: function(){
+		if (--this.actTimer > 0) return;
+		if (this.is_stopped) return;
+		if (!this.nowRunning) {
+			this.domElement.hide();
+			
+			var date = new Date();
+			var hour = date.getHours();
+			var min = date.getMinutes();
+			//run on the hour (up to 5 minutes after) and only once per hour
+			if (min > 5 || hour == this.lastRun) {
+				this.actTimer = 120;
+				return;
+			}
+			
+			//We want to run, place train just off the left side of the screen
+			var offset = $("#anchor").position();
+			this.domElement.css("left", -offset.left - 256).show();
+			
+			this.lastRun = hour;
+			this.nowRunning = true;
+			this.actTimer = -1;
+			console.log("Train now running!");
+		}
+		
+		if (this.nowRunning) {
+			var xloc = this.domElement.position().left;
+			this.domElement.stop().animate({
+				"left" : xloc + 128,
+			}, {
+				duration: 500,
+				easing: 'linear',
+			});
+			
+			var offset = $("#anchor").position();
+			var scrw = $("body").width() + 512;
+			if (xloc > -offset.left + scrw) {
+				this.domElement.hide();
+				this.nowRunning = false;
+				this.actTimer = 60;
+			}
+		}
+	},
+}));
+
+/////////////////// Shiny House ///////////////////
+
 addEvent(new Building({
 	name : "Shiny House",
 	sprite : "img/bld/shiny2.png",
@@ -88,12 +168,15 @@ addEvent(new Building({
 	warp_x: 32, warp_y: 54,
 }));
 
+//////////////////// Misc Signs! //////////////////
+
 addEvent(new SignPost({
 	name : "Park Sign",
 	x: 5, y: 9,
 }));
 
-// Creepy eyes! >:3
+
+//////////////// Creepy Eyes! >:3 ////////////////////
 addEvent(new Event({
 	name : "Cave Eyes",
 	sprite : "img/pkmn/cave_eyes.png",
