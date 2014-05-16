@@ -1389,7 +1389,7 @@
 		{ id : 072, name: "Tentacool"	, type: Water,		type2: Poison, 	favor: 1},
 		{ id : 073, name: "Tentacruel"	, type: Water,		type2: Poison, 	favor: 1},
 		{ id : 074, name: "Geodude"		, type: Rock,		type2: Ground, 	favor: 1},
-		{ id : 075, name: "Graveler"	, type: Rock,		type2: Ground, 	favor: 1},
+		{ id : 075, name: "Graveler"	, type: Rock,		type2: Ground, 	favor: 1, hax: "rollout" },
 		{ id : 076, name: "Golem"		, type: Rock,		type2: Ground, 	favor: 1},
 		{ id : 077, name: "Ponyta"		, type: Fire,		type2: null, 	favor: 1},
 		{ id : 078, name: "Rapidash"	, type: Fire,		type2: null, 	favor: 1},
@@ -1453,7 +1453,7 @@
 		{ id : 136, name: "Flareon"		, type: Fire,		type2: null, 	favor: 1},
 		{ id : 137, name: "Porygon"		, type: Normal,		type2: null, 	favor: 1},
 		{ id : 138, name: "Omanyte"		, type: Rock,		type2: Water, 	favor: 2.0, chant: ["Helix", "Lord Helix"] },
-		{ id : 139, name: "Omastar"		, type: Rock,		type2: Water, 	favor: 2.1, chant: ["Helix", "Lord Helix"] },
+		{ id : 139, name: "Omastar"		, type: Rock,		type2: Water, 	favor: 2.1, chant: ["Helix", "Lord Helix"] }, //༼ つ ◕_◕ ༽つ PRAISE HELIX ༼ つ ◕_◕ ༽つ after a full team helix sweep
 		{ id : 140, name: "Kabuto"		, type: Rock,		type2: Water, 	favor: 1.9, chant: ["Dome"] },
 		{ id : 141, name: "Kabutops"	, type: Rock,		type2: Water, 	favor: 2.0, chant: ["Dome"] },
 		{ id : 142, name: "Aerodactyl"	, type: Rock,		type2: Flying, 	favor: 1.6, chant: ["Amber"] },

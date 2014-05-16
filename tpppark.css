@@ -663,6 +663,11 @@ body.x2 #anchor {
 	src: url("img/ui/PokemonDPPt.ttf");
 }
 
+/*@font-face {
+	font-family: PokemonScreen;
+	src: url("font/pkmndp.ttf");
+}*/
+
 /*----------------------------------
   Animations 
 ----------------------------------*/
