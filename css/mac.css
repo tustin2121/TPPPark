@@ -1,0 +1,51 @@
+/* CSS */
+/* Mac only CSS, because Mac hates rendering my lovely font correctly... -_- */
+
+@font-face {
+	font-family: PokemonScreenMac;
+	src: url("../font/pkmndp.ttf");
+}
+
+.ui.footnote {
+	padding-left: 20px;
+	
+	font-family: PokemonScreenMac;
+	font-size: 12px;
+	line-height: 14px;
+}
+
+.ui.creditnote {
+	padding-top: 2px;
+	padding-left: 6px;
+	padding-right: 15px;
+	
+	font-family: PokemonScreenMac;
+	font-size: 12px;
+	line-height: 14px;
+}
+
+.ui.instructions {
+	padding: 10px;
+	
+	font-family: PokemonScreenMac;
+	font-size: 12px;
+	line-height: 12px;
+}
+
+#dialog-box {
+	font-family: PokemonScreenMac;
+	font-size: 12px;
+	line-height: 14px;
+}
+
+#status-screen section {
+	font-family: PokemonScreenMac;
+	font-size: 12px;
+	line-height: 12px;
+}
+
+#trainer-card section {
+	font-family: PokemonScreenMac;
+	font-size: 12px;
+	line-height: 12px;
+}

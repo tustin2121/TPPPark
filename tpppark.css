@@ -101,6 +101,7 @@ body.x2 #anchor {
 }
 #curr-sources:empty:before {
 	content: "Tilemap ripped from Emerald and FireRed.";
+	display: block;
 }
 
 .ui.instructions {
