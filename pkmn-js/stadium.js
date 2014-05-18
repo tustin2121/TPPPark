@@ -1510,7 +1510,7 @@
 		{ id : 193, name: "Yanma"		, type: Bug,		type2: Flying, 	favor: 1},
 		{ id : 194, name: "Wooper"		, type: Water,		type2: Ground, 	favor: 1, hp:250},
 		{ id : 195, name: "Quagsire"	, type: Water,		type2: Ground, 	favor: 1},
-		{ id : 196, name: "Espeon"		, type: Psychic,	type2: null, 	favor: 1},
+		{ id : 196, name: "Espeon"		, type: Psychic,	type2: null, 	favor: 1.7, hax:"attact", chant: ["Burrito"]},
 		{ id : 197, name: "Umbreon"		, type: Dark,		type2: null, 	favor: 1},
 		{ id : 198, name: "Murkrow"		, type: Dark,		type2: Flying, 	favor: 1},
 		{ id : 199, name: "Slowking"	, type: Water,		type2: Psychic,	favor: 1},

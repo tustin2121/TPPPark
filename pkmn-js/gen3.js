@@ -29,7 +29,7 @@ addEvent(new MultiEvent({
 	pokename : "Azumarill",
 	nicknames : "M4rill, Moe,<br/>Virgin Marill",
 	level : 100,
-	memo : "Known for her signiture move: Rollout.",
+	memo : "Known for her signature move: Rollout.",
 	
 	ribbons : [
 		new Record_Ribbon("Only Lvl 100 Mon"),
@@ -431,7 +431,7 @@ addEvent(new MultiEvent({
 	name: "Aqua Grunt",
 	behavior: null,
 	dialog: [
-		"Don't be a theif!"
+		"Don't be a thief!"
 	],
 	
 	updateImage : function(){},

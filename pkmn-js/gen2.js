@@ -22,7 +22,7 @@ addEvent(new MultiEvent({
 	gamename : "Omastar",
 	pokename : "Omastar",
 	level : 52,
-	memo : "God of the Religon of TPP.",
+	memo : "God of the Religion of TPP.",
 	caught : "Revived at 11d 10h 35m",
 	
 	ribbons : [
@@ -92,7 +92,7 @@ addEvent(new MultiEvent({
 	ribbons : [
 		new HallOfFame_Ribbon("16d 7h 45m"),
 	],	
-})).addSubEvent("1,64,94,34", new Pokemon({
+})).addSubEvent("64,1,94,34", new Pokemon({
 	name : "Katie",
 	
 	dex : "img/pkdx/dex_katie.png",

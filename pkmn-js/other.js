@@ -74,7 +74,7 @@ addEvent(new MultiEvent({
 		
 	OT: "Red",
 	gamename : "ABBBBBBK",
-	pokename : "Charmelion",
+	pokename : "Charmeleon",
 	level : 34,
 	ribbons : [
 		new Starter_Ribbon(),

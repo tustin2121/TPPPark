@@ -51,7 +51,6 @@ addEvent(new Pokemon({
 	nicknames : "DJ<br/>DJ Stalinking",
 	level : 66,
 	ball : "great",
-	caught : "Bought from Magikarp Man",
 	memo : "Ability: Minus. Knows Fly.",
 	
 	ribbons : [
@@ -178,7 +177,7 @@ addEvent(new Pokemon({
 	level : 30,
 	ball: "great",
 	caught : "",
-	memo : "The Snorlax on Route 12 was a Galie in disguise",
+	memo : "The Snorlax on Route 12 was a Glalie in disguise",
 	
 }));
 
@@ -293,7 +292,7 @@ addEvent(new MultiEvent({
 	name: "Guitarist",
 	behavior: null,
 	dialog: [
-		"Don't be a theif!"
+		"Don't be a thief!"
 	],
 	
 	updateImage : function(){},
