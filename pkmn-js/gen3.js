@@ -550,7 +550,7 @@ addEvent(new Pokemon({
 
 addEvent(new Pokemon({
 	name : "ATM",
-	sprite: "img/pkmn/atm.gif",
+	sprite: "img/pkmn/ATM.gif",
 	x: 5, y: 25,
 	animation: null,
 	
