@@ -638,6 +638,7 @@
 		vote : null, //1 = red, 2 = blue
 		
 		dialog: null,
+		favorite: -1,
 		
 		updateImage : function() {
 			var x = -this.direction * 16;
@@ -684,6 +685,12 @@
 				case STATE_BATTLING: {
 					this.direction = 0;
 					
+					var rnd = Math.random();
+					if ((rnd*1000)%20 < 19) break; //don't do anything 10 percent of the time
+					
+					this.reactToBattle();
+					
+					this.delayBehaviorTimer = Math.random()*4;
 				} break;
 				
 				case STATE_RIOTING: {
@@ -767,7 +774,24 @@
 			}
 			
 			return "<span class='dondger'>ヽ༼ຈل͜ຈ༽ﾉ</span> RIOT <span class='dondger'>ヽ༼ຈل͜ຈ༽ﾉ</span>";
-		}
+		},
+		
+		reactToBattle : function() {
+			var myTeam = lastBattleTeam == this.team;
+			var actPokemon = (lastBattleTeam == TEAM_RED)? redCurrMon : blueCurrMon; //TODO adjust for TEAM_BOTH
+			
+			switch (lastBattleAction) {
+				case BATTLE_SEND: 
+					submitChatter("GO POKEMON!");
+					break;
+				case BATTLE_FAINTS: 
+					submitChatter("NOOOOOOOOOOO!");
+					break;
+				case BATTLE_ATK_HIT_CRIT: 
+					submitChatter("DAT CRIT!");
+					break;
+			}
+		},
 	});
 	
 	/////////// Combatant Definition ////////////
@@ -1250,7 +1274,7 @@
 	////// Patron Dex //////
 	var NAMED_PATRONS = [
 	 	//remember, positive numbers need to be 0 based, not 1 based like the image
-		{ name: "tustin2121",		style: -2,   },
+		{ name: "tustin2121",		style: -2,   favorite: 156,},
 		{ name: "carlotta4th",		style: -1,   },
 		{ name: "VillainousWattson",style: -3,   dialog: "WAHAHAHAHAHAHA!"},
 		{ name: "HedgemazeExpo",	style: 42-1, },
