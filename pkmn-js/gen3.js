@@ -52,7 +52,7 @@ addEvent(new MultiEvent({
 	pokename : "Graveler",
 	nicknames : "Five Feet",
 	level : 68,
-	memo : "Knew Explosion at one point, where she would use indiscriminately.",
+	memo : "Knew Explosion at one point, which she used indiscriminately.",
 	
 	ribbons : [
 		new HallOfFame_Ribbon("21d 19h 27m"),
@@ -563,6 +563,6 @@ addEvent(new Pokemon({
 	gender: 2,
 	gamename : "ATMMMGMGG",
 	pokename : "Poochyena",
-	nicknames : "All Terrain Doge",
+	nicknames : "Automated Teller Doge<br/>All Terrain Doge",
 	level : 14,
 }));
