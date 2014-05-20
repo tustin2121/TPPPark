@@ -398,10 +398,9 @@ addEvent(new Pokemon({
 	sprite: "img/pkmn/ozzyozworm.png",
 	x: 7, y: -35,
 	
-	dex : "http://cdn.bulbagarden.net/upload/1/10/Spr_2c_010.gif", //Blubapedia
-	// dex : "img/pkdx/tpp10_dux.gif",
+	dex : "img/pkdx/dex_oxxy.png", //Blubapedia
 	sources : {
-		"Pokedex Image from Bulbapedia" : "",
+		"Pokedex Image from /u/Kelcyus's Twitch Pokedex Project" : "http://www.reddit.com/r/twitchplayspokemon/comments/25gcrh/twitch_pokedex_205_entries/",
 	},
 	
 	OT: "AJDNNW",
@@ -477,7 +476,7 @@ addEvent(new Trainer({
 	info_html : 
 		"Number of E4 Attempts: 38<br/>"+
 		"Times Blacked Out: 41<br/>"+
-		"<br/>"+
+		"Boyfriend: Joey<br/>"+
 		"<br/>"+
 		"",
 	icons : [
@@ -511,4 +510,72 @@ addEvent(new Trainer({
 	},
 }));
 
+//And, of course, the love of AJ's life:
+addEvent(new Person({
+	name: "Joey",
+	spritesheet : "img/trainers/joey.png",
+	x: 21, y: 0,
+	
+	smitten : false,
+	aj : null,
+	domHeart : null,
+	
+	getDomElement : function(){
+		var base = Person.fn.getDomElement.call(this);
+		this.aj = $(".event-base[name='AJDNNW']");
+		
+		this.domHeart = $("<img>").attr("src", "img/trainers/tiny_heart.png")
+			.css({
+				left : 8-3, bottom : 8,
+				"z-index": -100,
+			});
+		
+		base.append(this.domHeart);
+		return base;
+	},
+	
+	behavior : function(){
+		var ajpos = this.aj.position();
+		
+		if (ajpos.left < 17 * 16) { //AJ is walking around
+			this.smitten = false;
+			behavior.look.call(this); //Do normal looking behavior
+		} 
+		else { //AJ is walking down
+			this.smitten = true;
+			
+			//Follow his walking
+			if (ajpos.top < -2 * 16) {
+				this.direction = 1;
+			} else if (ajpos.top > 1*16) {
+				this.direction = 0;
+			} else {
+				this.direction = 2;
+			}
+		}
+		
+		this.updateImage();
+		
+		// //reset action timer
+		// this.actTimer = Math.floor(Math.random() * 2)+4;
+	},
+	
+	dialog : function() {
+		if (!this.smitten) {
+			return "YOUNGSTER JOEY: Check out my awesome RATICATE, Ace!";
+		} else {
+			this.domHeart.show()
+			.animate({
+				bottom: 32,
+			}, {
+				duration: 1500,
+				progress: function(p, n){
+					$(this).css({ left: 8 - 3 + Math.cos(n/Math.PI) * 4 });
+				},
+			}).fadeOut(100);
+			
+			return false;
+		}
+	},
+}));
 

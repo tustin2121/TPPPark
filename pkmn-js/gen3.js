@@ -130,8 +130,8 @@ addEvent(new Pokemon({
 
 addEvent(new Pokemon({
 	name : "Annie",
-	// sprite: "img/pkmn/cabbage_white.png",
-	// x: -37, y: -25,
+	sprite: "img/pkmn/annie.png",
+	x: 22, y: 25,
 	
 	dex : "img/pkdx/emdex_annie.png",
 	sources : {
@@ -383,6 +383,65 @@ addEvent(new MultiEvent({
 );
 
 
+// The G-Man (Wurmple)
+addEvent(new Pokemon({
+	name : "G-Man",
+	sprite: "img/pkmn/gman.png",
+	x: 8, y: 7, //behind the church of helix
+	animation : null,
+	
+	dex : "img/pkdx/emdex_gman.png",
+	sources : {
+		"Pokedex Image from /u/Kelcyus's Twitch Pokedex Project" : "http://www.reddit.com/r/twitchplayspokemon/comments/25gcrh/twitch_pokedex_205_entries/",
+	},
+	
+	OT: "<strike>M</strike>Ay",
+	gender: 1,
+	gamename : "Gmnnn",
+	pokename : "Wurmple",
+	level : 6,
+	nicknames: "Geronimo",
+	memo : "Said to work for a shadowy employer working against Bill. Mysterous.",
+	
+	activeZone : function(load) {
+		var res = !(
+			this.y > load.bottom ||
+			this.y < load.top ||
+			this.x > load.right ||
+			this.x < load.left
+		);
+		if (this._isActive && !res) this.behavior(true);
+		return res;
+	},
+	
+	behavior: function(exiting) {
+		if (exiting) {
+			var rnd = Math.floor(Math.random() * this.behavArg.length);
+			var newloc = this.behavArg[rnd];
+			
+			$.extend(this, {x: 8, y:7, z:0}, newloc);
+			
+			console.log("GMan vanishes to ", newloc, this);
+			this.domElement.css({
+				top: this.y * 16, 
+				left: this.x * 16,
+				"z-index" : ZBASE + this.y,
+			});
+			this.domElement.find(".main").css({
+				bottom : this.z,
+			})
+		}
+	},
+	behavArg : [
+		{x: 6, y: 5},  {x: 95, y: -24, z:6}, {x: -34, y: 31, z:-6},
+		{x: 32, y: 43}, {x: -153, y: -53}, {x: 112, y: -144}, 
+		{x: 16, y: -36, z:2}, {x: -7, y: 55}, {x: -86, y: 97, z:8},
+		{x: 61, y: 57, z:14},
+	],
+}));
+
+
+
 addEvent(new Pokemon({
 	name: "Chinchou",
 	sprite: "img/pkmn/shiny-chinchou.gif",
@@ -494,7 +553,7 @@ addEvent(new MultiEvent({
 		"Times Blacked Out: 89+<br/>"+
 		"Oddish Caught: 29<br/>"+
 		"Poochyena Caught: 7<br/>"+
-		"",
+		"Boyfriend: Brendan T. Birch",
 	icons : [
 		"img/icn/good_rod.png",
 		"img/icn/goggles.png",
@@ -506,30 +565,92 @@ addEvent(new MultiEvent({
 	
 	badge_html : "",
 })).addSubEvent("16,1,30,13", new Pokemon({ //top pooch
-	name : "Pooch 1",
+	name : "A Doge",
 	
 	dex : "http://cdn.bulbagarden.net/upload/8/8c/Spr_3e_261.gif",
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
 		"Swingset Sprite by /u/Bayoeen" : "http://www.reddit.com/r/twitchplayspokemon/comments/21gzza/banner_doge_improvements/",
 	},
+	
+	OT: "<strike>M</strike>Ay",
+	gender: 1,
+	gamename : "A",
+	pokename : "Poochyana",
+	level : 12,
 	
 })).addSubEvent("34,22,47,42", new Pokemon({ //swinging pooch
-	name : "Pooch 2",
+	name : "Pacifist Doge",
 	
 	dex : "http://cdn.bulbagarden.net/upload/8/8c/Spr_3e_261.gif",
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
 		"Swingset Sprite by /u/Bayoeen" : "http://www.reddit.com/r/twitchplayspokemon/comments/21gzza/banner_doge_improvements/",
 	},
+		
+	OT: "<strike>M</strike>Ay",
+	gender: 1,
+	gamename : "Poochyana",
+	pokename : "Poochyana",
+	nicknames : "Daycare Doge<br/>Pacifist Doge",
+	level : 29,
+	memo: "Due to leaving it in the day care longer than intended, it has no damaging moves.",
+	
+	ribbons: [
+		new Daycare_Ribbon("Made it a Pacifist"),
+	],
 	
 }))
 );
 
+addEvent(new MultiEvent({
+	name : "Pooch Rolling",
+	sprite: "img/pkmn/doge_ball.gif",
+	x : 10, y : 25,
+}).addSubEvent("0,0,21,16", new Pokemon({ //Left Doge, big
+	name : "Alpha Doge",
+	
+	dex : "http://cdn.bulbagarden.net/upload/8/8c/Spr_3e_261.gif",
+	sources : {
+		"Pokedex Image from Bulbapedia" : "",
+		"Swingset Sprite by /u/Bayoeen" : "http://www.reddit.com/r/twitchplayspokemon/comments/21gzza/banner_doge_improvements/",
+	},
+	
+	OT: "<strike>M</strike>Ay",
+	gender: 1,
+	gamename : "Poochyana",
+	pokename : "Poochyana",
+	nicknames : "Alpha Doge<br/>Dogeyena",
+	level : 36,
+	memo: "Second strongest of A's doges.",
+	
+	ribbons: [
+		new Daycare_Ribbon("Made it a Fighter"),
+	],
+	
+})).addSubEvent("37,0,54,16", new Pokemon({ //Right doge, small
+	name : "Doge",
+	
+	dex : "http://cdn.bulbagarden.net/upload/8/8c/Spr_3e_261.gif",
+	sources : {
+		"Pokedex Image from Bulbapedia" : "",
+		"Swingset Sprite by /u/Bayoeen" : "http://www.reddit.com/r/twitchplayspokemon/comments/21gzza/banner_doge_improvements/",
+	},
+	
+	OT: "<strike>M</strike>Ay",
+	gender: 1,
+	gamename : "Poochyena",
+	pokename : "Poochyana",
+	level : 8,
+}))
+
+);
+
 addEvent(new Pokemon({
 	name : "Mightydoge",
-	// sprite: "img/pkmn/cabbage_white.png",
-	// x: -37, y: -25,
+	sprite: "img/pkmn/mighty_doge.gif",
+	x: 6, y: 23,
+	animation: null,
 	
 	dex : "img/pkdx/emdex_mightydoge.png",
 	sources : {
@@ -551,7 +672,7 @@ addEvent(new Pokemon({
 addEvent(new Pokemon({
 	name : "ATM",
 	sprite: "img/pkmn/ATM.gif",
-	x: 5, y: 25,
+	x: 6, y: 26,
 	animation: null,
 	
 	dex : "http://cdn.bulbagarden.net/upload/8/8c/Spr_3e_261.gif",

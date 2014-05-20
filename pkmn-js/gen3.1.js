@@ -141,10 +141,10 @@ addEvent(new Pokemon({
 	animation : null,
 	adj_x : 4.5, adj_y : 1,
 	
-	// dex : "img/pkdx/frdex_marc.png",
-	// sources : {
-	// 	"Pokedex Image by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/252a2b/tpp_sprites/",
-	// },
+	dex : "img/pkdx/frdex_meow.png",
+	sources : {
+		"Pokedex Image by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/252a2b/tpp_sprites/",
+	},
 	
 	OT: "Alice",
 	gender: 1,
@@ -155,7 +155,73 @@ addEvent(new Pokemon({
 	memo : "Ability: Magma Armor. Head of the Meowist Party.",
 }));
 
+addEvent(new Pokemon({
+	name : "Swaqsire",
+	sprite: "img/pkmn/caveman_quagsire.png",
+	x: -24, y: -31,
+	
+	// dex : "img/pkdx/frdex_swaqsire.png",
+	// sources : {
+	// 	"Pokedex Image by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/252a2b/tpp_sprites/",
+	// },
+	
+	OT: "Alice",
+	gender: 1,
+	gamename : "Quagsire",
+	pokename : "Quagsire",
+	nicknames : "Caveman Quagsire",
+	level : 24,
+	memo : "Ability: Indimidate. Knew Bone Club as a Wooper. Holds some Black Glasses (his Swag).",
+}));
 
+addEvent(new Pokemon({
+	name : "Trizagoon",
+	sprite: "img/pkmn/agent_zigzagoon.png",
+	x: 7, y: -30,
+	
+	dex : "img/pkdx/frdex_zigzagoon.png",
+	sources : {
+		"Pokedex Image from /u/Kelcyus's Twitch Pokedex Project" : "http://www.reddit.com/r/twitchplayspokemon/comments/25gcrh/twitch_pokedex_205_entries/",
+	},
+	
+	OT: "Alice",
+	gender: 1,
+	gamename : "CCC",
+	pokename : "Minun",
+	nicknames : "Special Agent Zigzagoon",
+	level : 33,
+	memo : "Agent of Bill. Immensely incompetent. But knew Tri Attack.",
+	
+	ribbons : [
+		new Released_Ribbon("0d 6h 1m"),
+		new Record_Ribbon("Only Release in TPP FR"),
+	],
+}));
+
+
+addEvent(new Pokemon({
+	name : "Hijinks",
+	sprite: "img/pkmn/hijinks_umbrella.png",
+	x: 25, y: 102,
+	animation : null,
+	
+	dex : "img/pkdx/frdex_machop.png",
+	sources : {
+		"Pokedex Image by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/252a2b/tpp_sprites/",
+	},
+	
+	OT: "Alice",
+	gender: 1,
+	gamename : "hnjkrs",
+	pokename : "Machop",
+	level : 12,
+	nicknames: "Lazychop",
+	memo : "Ability: Truant. First introduction to Randomized Kanto: our Machop starter has Truant.",
+	
+	ribbons : [
+		new Starter_Ribbon(),
+	],
+}));
 
 
 // Snorlax/Glalie
@@ -178,8 +244,26 @@ addEvent(new Pokemon({
 	ball: "great",
 	caught : "",
 	memo : "The Snorlax on Route 12 was a Glalie in disguise",
-	
 }));
+
+addEvent(new Pokemon({
+	name : "Hitmonpluff",
+	// sprite: "img/pkmn/hitmonpluff.png",
+	// x: -27, y: 35,
+	
+	dex : "img/pkdx/frdex_hitmonpluff.png",
+	sources : {
+		"Pokedex Image by /u/boxofkangaroos" : "http://www.reddit.com/r/twitchplayspokemon/comments/23h0qp/",
+	},
+	
+	OT: "Alice",
+	gender: 2,
+	gamename : "Jumpluff ",
+	pokename : "Jumpluff ",
+	level : 25,
+	memo : "Recieved from the Fighting Dojo instead of Hitmonchan.",
+}));
+
 
 
 //POKE DUDE!! (aka, Primo)

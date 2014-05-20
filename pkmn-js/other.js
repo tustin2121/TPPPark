@@ -24,9 +24,9 @@ addEvent(new MultiEvent({
 	sprite: "img/pkmn/chimchar.png",
 	x: -12, y: -29,
 	
-	dex : "http://cdn.bulbagarden.net/upload/8/80/Spr_4p_390.png",
+	dex : "img/pkdx/ptdex_chimchar",
 	sources : {
-		"Pokedex Image from Bulbapedia" : "",
+		"Pokedex Image by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/252a2b/tpp_sprites/",
 	},
 	
 	OT: "nqpppnl",

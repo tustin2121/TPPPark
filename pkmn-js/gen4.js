@@ -11,7 +11,7 @@ addEvent(new Pokemon({
 	sprite: "img/pkmn/bidoof-oreo.png",
 	x: 14, y: -29,
 	
-	dex : "http://cdn.bulbagarden.net/upload/f/f2/Spr_4p_399_f.png",
+	dex : "http://cdn.bulbagarden.net/upload/a/ae/Spr_4p_399_f.png",
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
 	},
@@ -20,7 +20,6 @@ addEvent(new Pokemon({
 	gender: 2,
 	gamename : "1 OORROOOO",
 	pokename : "Bidoof",
-	nicknames : "Special Agent Zigzagoon",
 	level : 15,
 	// memo : "",
 	
@@ -159,10 +158,10 @@ addEvent(new Pokemon({
 	// sprite: "img/pkmn/sunberella.png",
 	// x: -37, y: -25,
 	
-	// dex : "img/pkdx/emdex_cruella.png",
-	// sources : {
-	// 	"Pokedex Image by /u/NoPenNameGirl" : "http://www.reddit.com/r/twitchplayspokemon/comments/22kx4y/the_ateam_sprite/",
-	// },
+	dex : "img/pkdx/ptdex_sunbrella.png",
+	sources : {
+		"Pokedex Image by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/252a2b/tpp_sprites/",
+	},
 	
 	OT: "nqpppnl",
 	gender: 2,
@@ -183,7 +182,7 @@ addEvent(new Pokemon({
 	// sprite: "img/pkmn/sunshine_shinx.png",
 	// x: -37, y: -25,
 	
-	// dex : "img/pkdx/emdex_cruella.png",
+	// dex : "img/pkdx/ptdex_.png",
 	// sources : {
 	// 	"Pokedex Image by /u/NoPenNameGirl" : "http://www.reddit.com/r/twitchplayspokemon/comments/22kx4y/the_ateam_sprite/",
 	// },
@@ -231,10 +230,10 @@ addEvent(new Pokemon({
 	// sprite: "img/pkmn/agent_bibarel.png",
 	x: 7, y: -24,
 	
-	// dex : "img/pkdx/emdex_cruella.png",
-	// sources : {
-	// 	"Pokedex Image by /u/NoPenNameGirl" : "http://www.reddit.com/r/twitchplayspokemon/comments/22kx4y/the_ateam_sprite/",
-	// },
+	dex : "img/pkdx/ptdex_cruella.png",
+	sources : {
+		"Pokedex Image by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/252a2b/tpp_sprites/",
+	},
 	
 	OT: "nqpppnl",
 	gender: 2,

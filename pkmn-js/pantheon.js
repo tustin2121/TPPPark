@@ -45,11 +45,20 @@ addEvent(new Event({
 }));
 
 
-addEvent(new Event({
-	name : "Pantheon Guardian",
+addEvent(new Pokemon({
+	name : "Guardian", //"Pantheon Guardian",
 	sprite : "img/pkmn/!deity_amber_guardian.png",
 	x: -145, y:-74,
-	animation: "breathe",
+	
+	dex: "",
+	
+	OT: "Alice",
+	gender: 1,
+	gamename: "AATUUVWVW",
+	pokename: "Charizard",
+	level: 5,
+	nicknames: "Prophet of Amber",
+	memo: "Revived by Alice from the Amber Fossil. (Given name is his current role in TPP Park, not fan-made.)",
 }));
 
 
