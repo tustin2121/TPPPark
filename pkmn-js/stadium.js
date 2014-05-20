@@ -693,7 +693,7 @@
 				
 				case "earthquake": {
 					var arena = $(".stadium-arena-element .main");
-					var pos = arena.position();
+					var pos = { left: -176, }; //arena.position();
 					
 					var res = _calcHaxDamage(Ground, 100, p_opp, {accuracy : 100});
 					
