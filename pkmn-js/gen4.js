@@ -171,7 +171,7 @@ addEvent(new MultiEvent({
 	gamename : "!☂!!☀! !:1",
 	pokename : "Roserade",
 	nicknames: "The Empress<br/>Queen",
-	level : 70,
+	level : 71,
 	memo : "Evolved to Roselia via Rare Candy by anti-evolution trolls spamming the menu button.",
 	
 	ribbons : [
