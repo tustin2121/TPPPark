@@ -1223,11 +1223,12 @@ Kreygasm LORD HELIX Kreygasm
 			var pkmn = POKEMON[this.pokemon];
 			var bg_x = (this.pokemon % 16) * 32;
 			var bg_y = Math.floor(this.pokemon / 16) * 32;
+			var spbg = POKEMON[this.pokemon].spbg;
 			
 			this.domImage.css({
-				width: (this.spbg)?64:32, height: (this.spbg)?64:32,
-				left: -((this.spbg)?32:16) + 8,
-				"background-position": (this.spbg)?this.spbg : ("-"+bg_x+"px -"+bg_y+"px"),
+				width: (spbg)?64:32, height: (spbg)?64:32,
+				left: -((spbg)?32:16) + 8,
+				"background-position": (spbg)?spbg : ("-"+bg_x+"px -"+bg_y+"px"),
 			});
 		},
 		
