@@ -166,7 +166,7 @@ addEvent(new MovingPokemon({
 	OT: "AJDNNW",
 	gender: 1,
 	gamename : "apf uojkyy",
-	pokename : "Pidgeot",
+	pokename : "Kadabra",
 	level : 29,
 	nicknames : "Apfel<br/>Fap Junky",
 	memo : '"How did we get a Kadabra?!"',
