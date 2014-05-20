@@ -1663,6 +1663,8 @@ Kreygasm LORD HELIX Kreygasm
 		{ name: "Spoon_rhythm", 	style: 19-1, },
 		{ name: "Poksonkirmar", 	style: 26-1, },
 		{ name: "CiderTW", 			style: 14-1, },
+		{ name: "MakeOurDay", 		style: 41-1, },
+		{ name: "meowmeowmi", 		style: 15-1, },
 	];
 	
 	////// Random Names //////
