@@ -180,7 +180,7 @@ addEvent(new MultiEvent({
 		new HallOfFame_Ribbon("17d 11h 39m"),
 	],
 })).addSubEvent("0,0,20,25", new Pokemon({
-	name : "Roselia",
+	name : "Roselio",
 	
 	dex : "http://cdn.bulbagarden.net/upload/9/9d/Spr_4p_315_m.png",
 	sources : {
@@ -192,7 +192,6 @@ addEvent(new MultiEvent({
 	gamename : "Roselia",
 	pokename : "Roselia",
 	level : 24,
-	memo : "Evolved to Rosila via Rare Candy by anti-evolution trolls spamming the menu button.",
 	
 	ribbons : [
 		new Released_Ribbon("Paradox Victim 12d 10h 32m"),
