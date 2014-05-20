@@ -862,7 +862,7 @@
 								case 0: chat = "<dger>♫ ┌༼ຈلຈ༽┘ ♪</dger> victory dance  <dger>♫ ┌༼ຈلຈ༽┘ ♪</dger>"; break;
 								case 1: chat = "THANK YOU FOR THE MONEY!"; break;
 								case 2: chat = "MONEY Kreygasam"; break;
-								case 3: chat = "THANK YOU FOR MONEY"+((lastBattleTeam == TEAM_RED)?"RED":"BLUE")+" TEAM!"; break;
+								case 3: chat = "THANK YOU FOR MONEY"+((lastBattleTeam == TEAM_RED)?"BLUE":"RED")+" TEAM!"; break;
 								case 4: chat = "No longer in the 100 CLUB!"; break;
 								case 4: chat = "GIMMIE MY MONEY!!"; break;
 								default:chat = "I HAVE MONEY!"; break;
