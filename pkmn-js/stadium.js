@@ -1651,6 +1651,7 @@ Kreygasm LORD HELIX Kreygasm
 		{ name: "tustin2121",		style: -2,   favorite: 156,},
 		{ name: "carlotta4th",		style: -1,   },
 		{ name: "VillainousWattson",style: -3,   dialog: "WAHAHAHAHAHAHA!"},
+		{ name: "Faithfulforce",	style:  0  , dialog: function(){ return "BloodTrail "+ this.lastChant; }}
 		{ name: "HedgemazeExpo",	style: 42-1, },
 		{ name: "Everyle", 			style: 17-1, },
 		{ name: "FruityParfait",	style: 23-1, },
@@ -1659,7 +1660,9 @@ Kreygasm LORD HELIX Kreygasm
 		{ name: "0ddd",				style: 40-1, },
 		{ name: "TheObserver99",	style: 33-1, },
 		{ name: "Xellotath", 		style:  8-1, },
-		{ name: "Faithfulforce",	style:  0  , dialog: function(){ return "BloodTrail "+ this.lastChant; }}
+		{ name: "Spoon_rhythm", 	style: 19-1, },
+		{ name: "Poksonkirmar", 	style: 26-1, },
+		{ name: "CiderTW", 			style: 14-1, },
 	];
 	
 	////// Random Names //////
@@ -1685,6 +1688,8 @@ Kreygasm LORD HELIX Kreygasm
 		"cthaws", "redwings13400", "itdoesntmatte", "faithfulforce", "empressofsnow", "thrownoway", "penguinstein", 
 		"geosspone", "i_cant_believe_you_all", "junewind", "mjbaker", "potatosaladdressing", "mo40o2naliz", "cakedayisbirthday", 
 		"alifen", "erassus", "nidoking_armx", "basedazumarill", "our_lord_helix_the_great", "arazioman", "101100111000", 
+		
+		"chaoticcookie39",
 	];
 
 	////// Types //////

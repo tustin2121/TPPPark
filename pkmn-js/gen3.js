@@ -576,7 +576,7 @@ addEvent(new MultiEvent({
 	OT: "<strike>M</strike>Ay",
 	gender: 1,
 	gamename : "A",
-	pokename : "Poochyana",
+	pokename : "Poochyena",
 	level : 12,
 	
 })).addSubEvent("34,22,47,42", new Pokemon({ //swinging pooch
@@ -590,8 +590,8 @@ addEvent(new MultiEvent({
 		
 	OT: "<strike>M</strike>Ay",
 	gender: 1,
-	gamename : "Poochyana",
-	pokename : "Poochyana",
+	gamename : "Poochyena",
+	pokename : "Poochyena",
 	nicknames : "Daycare Doge<br/>Pacifist Doge",
 	level : 29,
 	memo: "Due to leaving it in the day care longer than intended, it has no damaging moves.",
@@ -618,8 +618,8 @@ addEvent(new MultiEvent({
 	
 	OT: "<strike>M</strike>Ay",
 	gender: 1,
-	gamename : "Poochyana",
-	pokename : "Poochyana",
+	gamename : "Poochyena",
+	pokename : "Poochyena",
 	nicknames : "Alpha Doge<br/>Dogeyena",
 	level : 36,
 	memo: "Second strongest of A's doges.",
@@ -640,7 +640,7 @@ addEvent(new MultiEvent({
 	OT: "<strike>M</strike>Ay",
 	gender: 1,
 	gamename : "Poochyena",
-	pokename : "Poochyana",
+	pokename : "Poochyena",
 	level : 8,
 }))
 

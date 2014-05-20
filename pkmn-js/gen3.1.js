@@ -164,8 +164,8 @@ addEvent(new Pokemon({
 	
 	OT: "Alice",
 	gender: 1,
-	gamename : "CCC",
-	pokename : "Minun",
+	gamename : "Zigzagoon",
+	pokename : "Zigzagoon",
 	nicknames : "Special Agent Zigzagoon",
 	level : 33,
 	memo : "Agent of Bill. Immensely incompetent. But knew Tri Attack.",
