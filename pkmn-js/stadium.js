@@ -1651,7 +1651,7 @@ Kreygasm LORD HELIX Kreygasm
 		{ name: "tustin2121",		style: -2,   favorite: 156,},
 		{ name: "carlotta4th",		style: -1,   },
 		{ name: "VillainousWattson",style: -3,   dialog: "WAHAHAHAHAHAHA!"},
-		{ name: "Faithfulforce",	style:  0  , dialog: function(){ return "BloodTrail "+ this.lastChant; }}
+		{ name: "Faithfulforce",	style:  0  , dialog: function(){ return "BloodTrail "+ this.lastChant; }},
 		{ name: "HedgemazeExpo",	style: 42-1, },
 		{ name: "Everyle", 			style: 17-1, },
 		{ name: "FruityParfait",	style: 23-1, },
@@ -1665,6 +1665,7 @@ Kreygasm LORD HELIX Kreygasm
 		{ name: "CiderTW", 			style: 14-1, },
 		{ name: "MakeOurDay", 		style: 41-1, },
 		{ name: "meowmeowmi", 		style: 15-1, },
+		{ name: "Bladeseed", 		style: 28-1, },
 	];
 	
 	////// Random Names //////
