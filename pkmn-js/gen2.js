@@ -130,7 +130,7 @@ addEvent(new MultiEvent({
 	pokename : "Flareon",
 	level : 25,
 	nicknames: "The False Prophet",
-	memo : "Known as the False Prophet for filling a party slot slated for Lapras and evolving neither to Jolteon or Vaporeon.",
+	memo : "Known as the False Prophet for filling a party slot slated for Lapras and evolving neither into Jolteon or Vaporeon.",
 	
 	ribbons : [
 		new Released_Ribbon("5d 17h 47m"),

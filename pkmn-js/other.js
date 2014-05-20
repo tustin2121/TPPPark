@@ -24,7 +24,7 @@ addEvent(new MultiEvent({
 	sprite: "img/pkmn/chimchar.png",
 	x: -12, y: -29,
 	
-	dex : "img/pkdx/ptdex_chimchar",
+	dex : "img/pkdx/ptdex_chimchar.png",
 	sources : {
 		"Pokedex Image by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/252a2b/tpp_sprites/",
 	},

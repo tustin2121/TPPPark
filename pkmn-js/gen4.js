@@ -172,7 +172,7 @@ addEvent(new MultiEvent({
 	pokename : "Roserade",
 	nicknames: "The Empress<br/>Queen",
 	level : 70,
-	memo : "Evolved to Rosila via Rare Candy by anti-evolution trolls spamming the menu button.",
+	memo : "Evolved to Roselia via Rare Candy by anti-evolution trolls spamming the menu button.",
 	
 	ribbons : [
 		new Daycare_Ribbon("To Learn Petal Dance"),
@@ -192,10 +192,12 @@ addEvent(new MultiEvent({
 	gamename : "Roselia",
 	pokename : "Roselia",
 	level : 24,
+	memo: "Caught before Nepoleon's coma, lost to the time Paradox.",
 	
 	ribbons : [
-		new Released_Ribbon("Paradox Victim 12d 10h 32m"),
 		new Daycare_Ribbon("To Love Sunbrella"),
+		new Released_Ribbon("12d 10h 32m* <br/>(*Lost to Paradox)"),
+		//No badges after this, so they don't bleed into one another.
 	],
 }))
 );

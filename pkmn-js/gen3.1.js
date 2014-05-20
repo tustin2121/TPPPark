@@ -134,14 +134,14 @@ addEvent(new Pokemon({
 }));
 
 addEvent(new Pokemon({
-	name : "Swaqsire",
+	name : "Swagsire",
 	sprite: "img/pkmn/caveman_quagsire.png",
 	x: -24, y: -31,
 	
-	// dex : "img/pkdx/frdex_swaqsire.png",
-	// sources : {
-	// 	"Pokedex Image by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/252a2b/tpp_sprites/",
-	// },
+	dex : "http://cdn.bulbagarden.net/upload/7/77/Spr_3r_195.png",
+	sources : {
+		"Pokedex Image from Bulbapedia" : "",
+	},
 	
 	OT: "Alice",
 	gender: 1,
@@ -284,6 +284,7 @@ addEvent(new Event({
 	animation: "breathe",
 	
 	doClick : Person.fn.doClick,
+	getPosition : Person.fn.getPosition,
 	updateImage : function(){},
 	
 	dialog_assignment : "random",
@@ -298,6 +299,7 @@ addEvent(new Event({
 	x: -30, y: 16,
 	
 	doClick : Person.fn.doClick,
+	getPosition : Person.fn.getPosition,
 	updateImage : function(){},
 	
 	dialog_assignment : "random",
@@ -312,7 +314,7 @@ addEvent(new Pokemon({
 	sprite: "img/pkmn/shiny-pikachu.gif",
 	x: -36, y: -9,
 	
-	dex: "http://cdn.bulbagarden.net/upload/9/96/Spr_3f_025_s.png", //Bulbapedia
+	dex: "http://cdn.bulbagarden.net/upload/8/83/Spr_3f_025_s.png", //Bulbapedia
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
 	},
@@ -431,7 +433,7 @@ addEvent(new MovingPokemon({
 	nicknames : "Full Name: Shellock Holmes",
 	level : 58,
 	caught : "Caught from Route Heaven",
-	memo : "Ability: Vital Spirit. Used Oder Sleuth a lot to identify pokemon. Also has an Octazooka.",
+	memo : "Ability: Vital Spirit. Used Odor Sleuth a lot to identify pokemon. Also has an Octazooka.",
 	
 	ribbons : [
 		new HallOfFame_Ribbon("15d 2h 2m"),
