@@ -64,6 +64,24 @@ body.x2 #anchor {
 	width: 2px; height: 30px;
 }
 
+.ui.countdown {
+	top: 0; left: 0;
+	/*width: 200px; */
+	padding-left: 6px;
+	padding-right: 15px;
+	border-radius: 0 0 20px 0;
+	background-color: rgba(0, 0, 0, 0.75);
+	
+	color: white;
+	font-family: PokemonScreen;
+	font-size: 16px;
+	line-height: 14px;
+	text-align: center;
+}
+.ui.countdown:empty {
+	display: none;
+}
+
 .ui.footnote {
 	display: none;
 	bottom: 0; right: 0;
@@ -232,9 +250,12 @@ body.x2 #anchor {
 	background-position: 0 7px;
 }
 
-#dialog-box .dondger {
+#dialog-box dger { 
+	/* Special "Dondger" tag, short for a span tag with a proper class */
 	/* Due to PokemonScreen's lack of support for the Donder characters,
 	 * We need to mark them and put them in a different font entirely. */
+	display: inline;
+	
 	font-family: Arial;
 	font-size: 10px;
 }

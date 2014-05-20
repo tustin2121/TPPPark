@@ -12,6 +12,7 @@
 	var STATE_VOTING = 10;
 	var STATE_BATTLING = 20;
 	var STATE_WINNINGS = 30;
+	var STATE_HELIX_PRAISE = 100; //༼ つ ◕_◕ ༽つ PRAISE HELIX ༼ つ ◕_◕ ༽つ
 	
 	var chatterDom = [];
 	var chatterContainer;
@@ -22,8 +23,8 @@
 	var redfavor = 0;
 	var bluefavor = 0;
 	
-	var redPokes = [];
-	var bluePokes = [];
+	var redPokes = [128, 128, 128];
+	var bluePokes = [91];
 	
 	var redDom = [];
 	var blueDom = [];
@@ -65,7 +66,9 @@
 			case STATE_VOTING: doVoting(); break;
 			case STATE_BATTLING: doBattle(); break;
 			case STATE_WINNINGS: doWinnings(); break;
-			case STATE_RIOTING: doRioting(); break;
+			
+			case STATE_RIOTING:
+			case STATE_HELIX_PRAISE: doRioting(); break;
 		}
 	}
 	
@@ -211,27 +214,34 @@
 	
 	function doWinnings() {
 		if (countdown <= 0) { //Battle Cleanup
-			redCurrMon = null; blueCurrMon = null;
-			redfavor = bluefavor = 0;
-			
-			redvotes = [];
-			bluevotes = [];
-			redPokes = []; 
-			bluePokes = [];
-			
-			for (var i = 0; i < 3; i++) {
-				redDom[i].domElement.fadeOut(500);
-				blueDom[i].domElement.fadeOut(500);
-			}
-			
-			lastBattleAction = 0;
+			cleanupBattle();
 			
 			goToState(STATE_DECIDING);
 		} 
 	}
 	
 	function doRioting() {
+		if (redfavor || bluefavor) cleanupBattle();
 		if (countdown == 0) goToState(STATE_DECIDING);
+	}
+	
+	function cleanupBattle() {
+		if (!(redfavor || bluefavor)) return;
+		
+		redCurrMon = null; blueCurrMon = null;
+		redfavor = bluefavor = 0;
+		
+		redvotes = [];
+		bluevotes = [];
+		redPokes = []; 
+		bluePokes = [];
+		
+		for (var i = 0; i < 3; i++) {
+			redDom[i].domElement.fadeOut(500);
+			blueDom[i].domElement.fadeOut(500);
+		}
+		
+		lastBattleAction = 0;
 	}
 	
 	function calcFavor(myTeam, oppTeam) {
@@ -290,6 +300,9 @@
 			case STATE_RIOTING:
 				countdown = -1; //disabled
 				break;
+			case STATE_HELIX_PRAISE:
+				countdown = 120 + Math.floor(Math.random()*120); //1-2 minutes
+				break;
 		}
 	}
 	
@@ -309,7 +322,7 @@
 			bluevotes.splice(index, 0, Math.floor(n * 65565) % 3019);
 		}
 		
-		return red+1;
+		return (red)? TEAM_RED : TEAM_BLUE;
 	}
 	
 	function submitChatter(msg) {
@@ -347,6 +360,13 @@
 	var BATTLE_ATK_HIT_NORM = 12;
 	var BATTLE_ATK_HIT_SUPER = 13;
 	var BATTLE_ATK_HIT_CRIT = 14;
+	
+	var BATTLE_HAX_NO_EFFECT = 20;
+	var BATTLE_HAX_MISSES = 21;
+	var BATTLE_HAX_HIT_INEFF = 22;
+	var BATTLE_HAX_HIT_NORM = 23;
+	var BATTLE_HAX_HIT_SUPER = 24;
+	var BATTLE_HAX_HIT_CRIT = 25;
 	
 	var BATTLE_FINISHED = 100;
 	
@@ -387,12 +407,16 @@
 			redCurrMon = null;
 			lastBattleTeam = TEAM_RED;
 			lastBattleAction = BATTLE_FAINTS;
+			
+			if (blueCurrMon) blueCurrMon.victories++;
 		}
 		if (blueCurrMon.hp <= 0) {
 			_anim_faintMon(blueCurrMon);
 			blueCurrMon = null;
 			lastBattleTeam = TEAM_BLUE;
 			lastBattleAction = BATTLE_FAINTS;
+			
+			if (redCurrMon) redCurrMon.victories++;
 		}
 		if (!redCurrMon && !blueCurrMon)
 			lastBattleTeam = TEAM_BOTH;
@@ -429,6 +453,13 @@
 			var baseDamage = 0;
 			var attkType = 0;
 			var rnd = Math.floor(Math.random()*4); //Detemine the type of move
+			
+			//special case for magikarp
+			if (p_me.hax == "splash") {
+				rnd = rnd >> 1; //div by 2
+				if (rnd > 0) rnd = 3; //Tackle or Splash only
+			} 
+			
 			switch (rnd) {
 				case 0: //Normal move
 					baseDamage = 40; //base 40 attack
@@ -453,7 +484,10 @@
 					} else {
 						//no hax to perform! Do random status move that we don't emulate here!
 						//TODO
+						console.log((red)?"Red":"Blue", "Status!", damage, "Action:", lastBattleAction);
+						_anim_monStatus(me);
 						lastBattleAction = BATTLE_ATK_STATCHANGE;
+						return;
 					}
 					break;
 			}
@@ -494,68 +528,17 @@
 			});
 		}
 		
-		
-		function _performHax(me, opp) {
-			var p_me = POKEMON[me.pokemon];
-			var p_opp = POKEMON[opp.pokemon];
-			
-			var hax = p_me.hax;
-			if (!hax) hax = _getHaxForType(p_me.type);
-			if (!hax) hax = _getHaxForType(p_me.type2);
-			
-			switch(hax) {
-				case "posion":
-				case "burn":
-				case "para":
-				case "freeze":
-				case "sleep":
-				case "rest": //heal + sleep 2 turns
-				
-				case "curse":
-				case "confusion":
-				case "perish song":
-				case "rollout":
-				
-				case "earthquake":
-				case "fly":
-				case "heal":
-				case "explode":
-				case "splash":
-				case "horndrill":
-				case "metronome":
-				
-			}
-			return null;
-		}
-		
-		function _getHaxForType(type) {
-			switch (type) {
-				case Normal: 	return null;
-				case Fighting:	return null;
-				case Flying:	return "fly";
-				case Poison:	return "poison";
-				case Ground:	return "earthquake";
-				case Rock:		return null;
-				case Bug:		return "confusion";
-				case Ghost:		return "curse";
-				case Steel:		return null;
-				case Fire:		return "burn";
-				case Water:		return null;
-				case Grass:		return null;
-				case Electric:	return "para"; //paralysis - don't want to spell
-				case Psychic:	return null;
-				case Ice:		return "freeze";
-				case Dragon:	return null;
-				case Dark:		return null;
-			}
-			return null;
-		}
-		
-		
-		
 		function _endBattle(red){
 			lastBattleAction = BATTLE_FINISHED;
 			lastBattleTeam = red + 1;
+			
+			//If the helix swept all three opponent pokemon, the crowd breaks out into PRAISE HELIX mode
+			if ((redCurrMon && (POKEMON[redCurrMon.pokemon].id == 138 || POKEMON[redCurrMon.pokemon].id == 139) && redCurrMon.victories == 3)
+			 || (blueCurrMon && (POKEMON[blueCurrMon.pokemon].id == 138 || POKEMON[blueCurrMon.pokemon].id == 139) && blueCurrMon.victories == 3))
+			{
+				goToState(STATE_HELIX_PRAISE);
+			}
+			
 			goToState(STATE_WINNINGS);
 		}
 		
@@ -612,6 +595,167 @@
 					// transform: "rotate(0)",
 				}, returnTime);
 		}
+		
+		function _anim_monStatus(event) {
+			event.domAnim
+				.animate({ bottom: 5, }, 150)
+				.animate({ bottom: 0, }, 150)
+				.animate({ bottom: 5, }, 150)
+				.animate({ bottom: 0, }, 150);
+		}
+		
+		function _getHaxForType(type) {
+			switch (type) {
+				case Normal: 	return null;
+				case Fighting:	return null;
+				case Flying:	return "fly";
+				case Poison:	return "poison";
+				case Ground:	return "earthquake";
+				case Rock:		return null;
+				case Bug:		return "confusion";
+				case Ghost:		return "curse";
+				case Steel:		return null;
+				case Fire:		return "burn";
+				case Water:		return null;
+				case Grass:		return null;
+				case Electric:	return "para"; //paralysis - don't want to spell
+				case Psychic:	return null;
+				case Ice:		return "freeze";
+				case Dragon:	return null;
+				case Dark:		return null;
+			}
+			return null;
+		}
+		
+		function _calcHaxDamage(attkType, base, p_opp, opts) {
+			var damage = 0, multiplier = 1;
+			var critChance = (opts.critChance !== undefined)? opts.critChance : 0.0625;
+			var accuracy = opts.accuracy || 0.90;
+			if (base) {
+				multiplier = TYPECHART[attkType][p_opp.type];
+				if (p_opp.type2)
+					multiplier *= TYPECHART[attkType][p_opp.type2];
+				
+				if (multiplier < 1) lastBattleAction = BATTLE_HAX_HIT_INEFF;
+				else if (multiplier > 1) lastBattleAction = BATTLE_HAX_HIT_SUPER;
+				else lastBattleAction = BATTLE_HAX_HIT_NORM;
+			}
+			
+			if (multiplier == 0) { //by type, multiplier already went to 0
+				lastBattleAction = BATTLE_HAX_NO_EFFECT;
+			} 
+			else {
+				var r = Math.random();
+				if (r < critChance) { //critical hits = 
+					multiplier *= 2;
+					lastBattleAction = BATTLE_HAX_HIT_CRIT;
+				} 
+				else if (r > accuracy) { //miss chance
+					multiplier *= 0;
+					lastBattleAction = BATTLE_HAX_MISSES;
+				}
+			}
+			
+			damage = base * multiplier;
+			
+			return { damage: damage, multiplier: multiplier };
+		}
+		
+		
+		function _performHax(me, opp) {
+			var p_me = POKEMON[me.pokemon];
+			var p_opp = POKEMON[opp.pokemon];
+			
+			var hax = p_me.hax;
+			if (!hax) hax = _getHaxForType(p_me.type);
+			if (!hax) hax = _getHaxForType(p_me.type2);
+			
+			switch(hax) {
+				case "posion": break;
+				case "burn": break;
+				case "para": break;
+				case "freeze": break;
+				case "sleep": break;
+				case "rest":  break;//heal + sleep 2 turns
+				
+				case "curse": break;
+				case "confusion": break;
+				case "perish song": break;
+				case "rollout": {
+					var moveturn = 0;//;
+					var res = _calcHaxDamage(Rock,
+						 30 * Math.pow(2, moveturn), //2^0 = 1 (30), 2^1 = 2 (60), 2^2 = 4 (120), 2^3 = 8 (240), 2^4 = 16 (480)
+						 p_opp, {accuracy : 90});
+					
+					if (res.damage > 0) me.moveturn++;
+					else me.moveturn = 0;
+				} break;
+				
+				case "earthquake": {
+					var arena = $(".stadium-arena-element .main");
+					var pos = arena.position();
+					
+					var res = _calcHaxDamage(Ground, 100, p_opp, {accuracy : 100});
+					
+					me.domAnim
+						.animate({ bottom: 10 }, 300)
+						.delay(500)
+						.animate({ bottom: 0 }, 1000);
+					
+					$(arena).delay(400)
+						.animate({ left: pos.left - 5 }, 50)
+						.animate({ left: pos.left + 5 }, 50)//1
+						.animate({ left: pos.left - 5 }, 50)
+						.animate({ left: pos.left + 5 }, 50)//2
+						.animate({ left: pos.left - 5 }, 50)
+						.animate({ left: pos.left + 5 }, 50)//3
+						.animate({ left: pos.left - 5 }, 50)
+						.animate({ left: pos.left + 4 }, 50)//4
+						.animate({ left: pos.left + 5 }, 50)
+						.animate({ left: pos.left - 5 }, 50)//5
+						.animate({ left: pos.left + 5 }, 50)
+						.animate({ left: pos.left - 5 }, 50)//6
+						.animate({ left: pos.left + 5 }, 50)
+						.animate({ left: pos.left - 5 }, 50)//7
+						.animate({ left: pos.left + 5 }, 50)
+						.animate({ left: pos.left - 5 }, 50)//8
+						.animate({ left: pos.left - 3 }, 50)
+						.animate({ left: pos.left + 2 }, 50)//900
+						.animate({ left: pos.left }, 50)
+						.queue(function(){
+							opp.hp -= res.damage;
+							$(this).dequeue();
+						});
+					
+					if (res.damage > 0) {
+						opp.domAnim.delay(400)
+							.animate({ left:  8 * res.multiplier }, 150)
+							.animate({ left: -8 * res.multiplier }, 150)
+							.animate({ left:  8 * res.multiplier }, 150)
+							.animate({ left: -8 * res.multiplier }, 150)
+							.animate({ left:  8 * res.multiplier }, 150)
+							.animate({ left: -8 * res.multiplier }, 150)
+							.animate({ left:  0}, 400);
+					}
+					
+					return true;
+				} break;
+				case "fly": break;
+				case "heal": break;
+				case "explode": break;
+				case "splash": {
+					me.domAnim
+						.animate({ bottom: 16, left:  0, }, { duration: 1000, easing: 'easeInBounce' })
+						.animate({ bottom: 0,  left:  0, }, { duration: 1000, easing: 'easeOutBounce' });
+				} break;
+				case "horndrill": break;
+				case "metronome": break;
+				
+			}
+			return null;
+		}
+		
+		
 	}
 	
 	// for (var i = 0; i < 200; i++) placeBet(true);
@@ -635,8 +779,9 @@
 		
 		delayBehaviorTimer : 0,
 		domImage : null,
-		vote : null, //1 = red, 2 = blue
+		team : null, //1 = red, 2 = blue
 		
+		lastChant : null,
 		dialog: null,
 		favorite: -1,
 		
@@ -652,7 +797,7 @@
 		stadiumBehavior : function() {
 			switch(currState) {
 				case STATE_DECIDING: {
-					this.vote = 0;
+					this.team = 0;
 					
 					var r = Math.floor(Math.random()*16);
 					this.direction = (r < 4)?r:0;
@@ -663,7 +808,7 @@
 					this.delayBehaviorTimer--;
 					if (this.delayBehaviorTimer > 0) break;
 					
-					if (this.vote) {
+					if (this.team) {
 						this.direction = 0;
 						break;
 					} 
@@ -674,9 +819,7 @@
 					var bet = Math.random();
 					// console.log(bet, (countdown/120));
 					if (bet > (countdown/120.0)*2) {
-						//this.vote = Math.floor((bet * 3019) % 2)+1;
-						//placeBet(this.vote-1);
-						this.vote = placeBet();
+						this.team = placeBet();
 					}
 					
 					this.delayBehaviorTimer = Math.random()*10;
@@ -685,12 +828,40 @@
 				case STATE_BATTLING: {
 					this.direction = 0;
 					
-					var rnd = Math.random();
-					if ((rnd*1000)%20 < 19) break; //don't do anything 10 percent of the time
-					
 					this.reactToBattle();
 					
 					this.delayBehaviorTimer = Math.random()*4;
+				} break;
+				
+				case STATE_WINNINGS: {
+					var chat = "";
+					var rnd = Math.random();
+					if (this.team == lastBattleTeam) {
+						var winningMon = (lastBattleTeam == TEAM_RED)? redCurrMon : blueCurrMon;
+						console.log(winningMon);
+						
+						if ((lastBattleTeam == TEAM_RED && redCurrMon.victories == 3)
+						  ||(lastBattleTeam == TEAM_BLUE && blueCurrMon.victories == 3))
+						{
+							var name = 
+							submitChatter("My money! No!");
+						}
+						
+						switch (Math.floor(rnd * 8)) {
+							case 0: chat = "<dger>♫ ┌༼ຈلຈ༽┘ ♪</dger> victory dance  <dger>♫ ┌༼ຈلຈ༽┘ ♪</dger>"; break;
+							case 0: chat = "My money! No!"; break;
+							default:chat = "My money! No!"; break;
+						}
+						
+						//
+						
+					} else {
+						switch (Math.floor(rnd * 8)) {
+							case 0: chat = "My money! No!"; break;
+							case 0: chat = "My money! No!"; break;
+							default:chat = "My money! No!"; break;
+						}
+					}
 				} break;
 				
 				case STATE_RIOTING: {
@@ -708,11 +879,28 @@
 							bottom: 0,
 						}, 150);
 						
-						submitChatter("ヽ༼ຈل͜ຈ༽ﾉ RIOT ヽ༼ຈل͜ຈ༽ﾉ")
+						submitChatter("ヽ༼ຈل͜ຈ༽ﾉ RIOT ヽ༼ຈل͜ຈ༽ﾉ");
 					}
 					
 					this.delayBehaviorTimer = Math.random()*4;
 				} break;
+				
+				case STATE_HELIX_PRAISE: {
+					this.delayBehaviorTimer--;
+					if (this.delayBehaviorTimer > 0) break;
+					
+					var r = Math.floor(Math.random()*32);
+					if (r < 4) this.direction = r;
+					else if (this.x < 79) this.direction = 3; //look towards middle screen
+					else if (this.x > 86) this.direction = 2;
+					else this.direction = 1;
+					
+					if (r % 4 == 0) {
+						submitChatter("༼ つ ◕_◕ ༽つ PRAISE HELIX ༼ つ ◕_◕ ༽つ");
+					}
+					
+					this.delayBehaviorTimer = Math.random()*4;
+				}
 			}
 			
 			this.updateImage();
@@ -770,29 +958,190 @@
 			
 			switch (currState) {
 				case STATE_RIOTING:
-					return "<span class='dondger'>ヽ༼ຈل͜ຈ༽ﾉ</span> RIOT <span class='dondger'>ヽ༼ຈل͜ຈ༽ﾉ</span>";
+					return "<dger>ヽ༼ຈل͜ຈ༽ﾉ</dger> RIOT <dger>ヽ༼ຈل͜ຈ༽ﾉ</span>";
+				case STATE_HELIX_PRAISE:
+					return "<dger>༼ つ ◕_◕ ༽つ</dger> PRAISE HELIX <dger>༼ つ ◕_◕ ༽つ</dger>";
 			}
 			
-			return "<span class='dondger'>ヽ༼ຈل͜ຈ༽ﾉ</span> RIOT <span class='dondger'>ヽ༼ຈل͜ຈ༽ﾉ</span>";
+			if (this.lastChant)
+				return this.lastChant;
+			
+			return "<dger>ヽ༼ຈل͜ຈ༽ﾉ</dger> RIOT <dger>ヽ༼ຈل͜ຈ༽ﾉ</dger>";
 		},
 		
 		reactToBattle : function() {
+			// this.direction = !(lastBattleTeam == this.team);
+			
+			if (Math.random() > 0.04) return; //don't do anything 96 percent of the time
+			
 			var myTeam = lastBattleTeam == this.team;
 			var actPokemon = (lastBattleTeam == TEAM_RED)? redCurrMon : blueCurrMon; //TODO adjust for TEAM_BOTH
 			
+			var rnd = Math.random();
+			var chant = "";
+			
+			//Build chant
 			switch (lastBattleAction) {
-				case BATTLE_SEND: 
-					submitChatter("GO POKEMON!");
+				case BATTLE_SEND:
+					if (!myTeam) return; //don't react if not my team
+					
+					var pkdata = POKEMON[actPokemon.pokemon];
+					var name = _getPokeName(pkdata);
+					
+					switch (Math.floor(rnd * 8)) {
+						case 0: chant = "GET 'EM "+name.toUpperCase()+"!"; break;
+						case 1: chant = name.toUpperCase()+" SWEEP"; break;
+						case 3: chant = "BASED "+name.toUpperCase(); break;
+						case 4: chant = "Not "+name+"!"; break;
+						case 5: chant = "YEAH "+name.toUpperCase()+"!"; break;
+						case 6: chant = name+" will get 'em!"; break;
+						case 7: chant = "Get em "+name+"!"; break;
+						default:chant = "GO "+name.toUpperCase()+""; break;
+					}
+					
 					break;
 				case BATTLE_FAINTS: 
-					submitChatter("NOOOOOOOOOOO!");
+					if (myTeam) {
+						
+						if (!chant) {
+							switch (Math.floor(rnd * 10)) {
+								case 0: chant = "NOOOOOOOOOOOO"; break;
+								case 1: chant = "ヽ༼ຈل͜ຈ༽ﾉ RIOT ヽ༼ຈل͜ຈ༽ﾉ"; break;
+								case 2: chant = "nooooooooo"; break;
+								case 3: chant = "Nooooo"; break;
+								case 4: chant = "NOOOOOOOOOOOOOOOOOOOOOO"; break;
+								case 5: chant = "noooooooooooooooo"; break;
+								case 6: chant = "ggggg"; break;
+								case 7: chant = "NOOOOOOOOO"; break;
+								case 8: chant = "<dger>( ╯ᐛ )╯︵ ┻━┻</dger>"; break;
+								case 9: chant = "RIP FailFish"; break;
+								case 10:chant = " GG BloodTrail"; break;
+							}
+						}
+					} else {
+						var pkdata = POKEMON[actPokemon.pokemon];
+						var name = _getPokeName(pkdata);
+						
+						if (actPokemon.victories > 1) {
+							switch (Math.floor(rnd * 487) % 10) {
+								case 0: chant = name.toUpperCase()+" SWEEP?!"; break;
+								case 1: chant = name+" Sweep!!"; break;
+								case 2: chant = "TIME FOR "+name.toUpperCase()+" SWEEP"; break;
+								case 3: chant = "ヽ༼ຈل͜ຈ༽ﾉ "+name.toUpperCase()+" HYPE ヽ༼ຈل͜ຈ༽ﾉ"; break;
+								case 4: chant = "THE SWEEP IS REAL"; break;
+								case 5: chant = "SWEEP HYPE"; break;
+							}
+						}
+						
+						if (!chant) {
+							switch (Math.floor(rnd * 10)) {
+								case 0: chant = name.toUpperCase()+" HYPE"; break;
+								case 1: chant = "HURRAH "+name.toUpperCase()+" ヽ༼ຈل͜ຈ༽ﾉ"; break;
+								case 2: chant = name.toUpperCase()+" SWEEP?"; break;
+								case 3: chant = "Yes!"; break;
+								case 4: chant = "YES!"; break;
+								case 5: chant = "GOOOOOO!!"; break;
+								case 6: chant = "HYPE"; break;
+								case 7: chant = "Kreygasm"; break;
+								case 8: chant = "Kreygasm Kreygasm"; break;
+								case 8: chant = "TEH URN?!"; break;
+							}
+						}
+					}
+					
 					break;
 				case BATTLE_ATK_HIT_CRIT: 
-					submitChatter("DAT CRIT!");
+					if (myTeam) {
+						switch (Math.floor(rnd * 3)) {
+							case 0: chant = "DAT CRIT!"; break;
+							case 1: chant = "CRIT!!!"; break;
+							case 2: chant = "YESSSSSSSSSSSSSSS!"; break;
+						}
+						break;
+					} else {
+						switch (Math.floor(rnd * 3)) {
+							case 0: chant = "DAT CRIT!"; break;
+							case 1: chant = name.toUpperCase()+" 2 STRONK PLS NERF!"; break;
+							case 2: chant = "NOOOOOO!"; break;
+						}
+						break;
+					}
+				
+				case BATTLE_ATK_MISSES:
+					if (!myTeam) {
+						switch (Math.floor(rnd * 3)) {
+							case 0: chant = "CLUTCH!"; break;
+							case 1: chant = "MISSED!"; break;
+							case 2: chant = "!"; break;
+						}
+					}
 					break;
+				case BATTLE_ATK_STATCHANGE:
+					if (myTeam) {
+						switch (Math.floor(rnd * 5)) {
+							case 0: chant = "NOOOOOOOOOOO!"; break;
+							case 1: chant = "ATTACK!!"; break;
+							case 2: chant = "MUST STAT MORE! Kreygasm"; break;
+							case 3: chant = "NOOOOOOOO! SwiftRage"; break;
+							case 4: chant = "! SwiftRage"; break;
+						}
+					}
+				case BATTLE_ATK_NO_EFFECT:
+					if (myTeam) {
+						switch (Math.floor(rnd * 5)) {
+							case 0: chant = "NOOOOOOOOOOO!"; break;
+							case 1: chant = "DO SOMETHING ELSE!!"; break;
+							case 2: chant = "That won't work!"; break;
+							case 3: chant = "SwiftRage"; break;
+						}
+					} else {
+						switch (Math.floor(rnd * 5)) {
+							case 0: chant = "Go on! Keep doing it!"; break;
+							case 1: chant = "It doesn't affect!"; break;
+							case 2: chant = "lol"; break;
+							case 3: chant = "LOLOLOLOLOL"; break;
+						}
+					}
+					
+				//CLUTCH!
+				//TODO: Heal = "CHEATER!!"
+			}
+			
+			// if (!chant) { //generic chants
+			// 	switch (Math.floor(rnd * 1873) % 2) {
+			// 		case 0: chant = name+" Intensifies"; break; //"undefined Intesifies"
+			// 		case 1: chant = name.toUpperCase()+" Kreygasm"; break;
+			// 	}
+			// }
+			
+			this.lastChant = chant;
+			submitChatter(chant);
+			this.domImage.delay(Math.floor(rnd*200))
+				.animate({ bottom: 5, }, 150)
+				.animate({ bottom: 0, }, 150)
+				.animate({ bottom: 5, }, 150)
+				.animate({ bottom: 0, }, 150);
+			
+			function _getPokeName(pkdata) {
+				var name = pkdata.name;
+				
+				if (pkdata.chant) {
+					if (pkdata.chant.length > 1) {
+						var id = Math.floor(rnd * 4157) % pkdata.chant.length;
+						name = pkdata.chant[id];
+					} else {
+						name = pkdata.chant[0];
+					}
+				}
+				return name;
 			}
 		},
 	});
+
+/*
+LORD HELIX Kreygasm 
+Kreygasm LORD HELIX Kreygasm 
+ */
 	
 	/////////// Combatant Definition ////////////
 	
@@ -990,9 +1339,9 @@
 			var ctx = this.context;
 			ctx.clearRect(0, 0, SCREEN_W, SCREEN_H);
 			
-			if (currState == STATE_RIOTING) { showRiotScreen(); return; }
-			else { hideRiotScreen(); }
-			
+			if (currState == STATE_RIOTING) { showAltScreen(1); return; }
+			if (currState == STATE_HELIX_PRAISE) { showAltScreen(2); return; }
+			else { showAltScreen(0); }
 			
 			switch (currState) {
 				case STATE_BATTLING: 
@@ -1004,15 +1353,10 @@
 				default: drawBetting(); break;
 			}
 			
-			function showRiotScreen() {
-				if (_this.sprite == 2) return;
-				_this.domImage.css("background-position", "0px -48px");
-				_this.sprite = 2; //flag
-			}
-			function hideRiotScreen() {
-				if (_this.sprite == 1) return;
-				_this.domImage.css("background-position", "0px 0px");
-				_this.sprite = 1;
+			function showAltScreen(alt) {
+				if (_this.sprite == alt) return;
+				_this.domImage.css("background-position", "0px -"+(48*alt)+"px");
+				_this.sprite = alt; //flag
 			}
 			
 			function drawBetting() {
@@ -1235,6 +1579,12 @@
 			x : 79, y : -30,
 			warp_x: 176, warp_y: 8,
 			
+			getDomElement : function(){
+				var base = Building.fn.getDomElement.call(this);
+				base.addClass("stadium-arena-element");
+				return base;
+			},
+			
 			stadiumBehavior : battleManager,
 		});
 		addEvent(b);
@@ -1285,6 +1635,7 @@
 		{ name: "0ddd",				style: 40-1, },
 		{ name: "TheObserver99",	style: 33-1, },
 		{ name: "Xellotath", 		style:  8-1, },
+		{ name: "Faithfulforce",	style:  0  , dialog: function(){ return "BloodTrail "+ this.lastChant; }}
 	];
 	
 	////// Random Names //////
@@ -1382,8 +1733,8 @@
 		{ id : 041, name: "Zubat"		, type: Poison,		type2: Flying, 	favor: 1},
 		{ id : 042, name: "Golbat"		, type: Poison,		type2: Flying, 	favor: 1},
 		{ id : 043, name: "Oddish"		, type: Grass,		type2: Poison, 	favor: 1},
-		{ id : 044, name: "Gloom"		, type: Grass,		type2: Poison, 	favor: 1},
-		{ id : 045, name: "Vileplume"	, type: Grass,		type2: Poison, 	favor: 1},
+		{ id : 044, name: "Gloom"		, type: Grass,		type2: Poison, 	favor: 1, chant: ["Cabbage", "Gloom"] },
+		{ id : 045, name: "Vileplume"	, type: Grass,		type2: Poison, 	favor: 1, chant: ["Cabbage", "Vileplume"] },
 		{ id : 046, name: "Paras"		, type: Bug,		type2: Grass, 	favor: 1},
 		{ id : 047, name: "Parasect"	, type: Bug,		type2: Grass, 	favor: 1},
 		{ id : 048, name: "Venonat"		, type: Bug,		type2: Poison, 	favor: 1},
@@ -1467,14 +1818,14 @@
 		{ id : 126, name: "Magmar"		, type: Fire,		type2: null, 	favor: 1},
 		{ id : 127, name: "Pinsir"		, type: Bug,		type2: null, 	favor: 1},
 		{ id : 128, name: "Tauros"		, type: Normal,		type2: null, 	favor: 1},
-		{ id : 129, name: "Magikarp"	, type: Water,		type2: null, 	favor: 0.4, hax:"splash" },
+		{ id : 129, name: "Magikarp"	, type: Water,		type2: null, 	favor: 0.09, hax:"splash" },
 		{ id : 130, name: "Gyarados"	, type: Water,		type2: Flying, 	favor: 1.05},
 		{ id : 131, name: "Lapras"		, type: Water,		type2: Ice, 	favor: 1, hax:"perish song", hp: 250},
 		{ id : 132, name: "Ditto"		, type: Normal,		type2: null, 	favor: 1, forbidden: true}, //don't want to program ditto's transform... O_o
 		{ id : 133, name: "Eevee"		, type: Normal,		type2: null, 	favor: 1},
 		{ id : 134, name: "Vaporeon"	, type: Water,		type2: null, 	favor: 1},
 		{ id : 135, name: "Jolteon"		, type: Electric,	type2: null, 	favor: 1},
-		{ id : 136, name: "Flareon"		, type: Fire,		type2: null, 	favor: 1},
+		{ id : 136, name: "Flareon"		, type: Fire,		type2: null, 	favor: 1, chant: ["False Prophet", "The False Prophet"] },
 		{ id : 137, name: "Porygon"		, type: Normal,		type2: null, 	favor: 1},
 		{ id : 138, name: "Omanyte"		, type: Rock,		type2: Water, 	favor: 2.0, chant: ["Helix", "Lord Helix"] },
 		{ id : 139, name: "Omastar"		, type: Rock,		type2: Water, 	favor: 2.1, chant: ["Helix", "Lord Helix"] }, //༼ つ ◕_◕ ༽つ PRAISE HELIX ༼ つ ◕_◕ ༽つ after a full team helix sweep
