@@ -23,8 +23,8 @@
 	var redfavor = 0;
 	var bluefavor = 0;
 	
-	var redPokes = [128, 128, 128];
-	var bluePokes = [91];
+	var redPokes = [];
+	var bluePokes = [];
 	
 	var redDom = [];
 	var blueDom = [];
@@ -530,7 +530,7 @@
 		
 		function _endBattle(red){
 			lastBattleAction = BATTLE_FINISHED;
-			lastBattleTeam = red + 1;
+			lastBattleTeam = (red)? TEAM_RED : TEAM_BLUE;
 			
 			//If the helix swept all three opponent pokemon, the crowd breaks out into PRAISE HELIX mode
 			if ((redCurrMon && (POKEMON[redCurrMon.pokemon].id == 138 || POKEMON[redCurrMon.pokemon].id == 139) && redCurrMon.victories == 3)
@@ -820,6 +820,11 @@
 					// console.log(bet, (countdown/120));
 					if (bet > (countdown/120.0)*2) {
 						this.team = placeBet();
+						
+						var betAmt = Math.floor(Math.pow(Math.floor(bet * 4721) % 2.5, 10) + 100);
+						if (betAmt > 1000) betAmt = Math.floor(betAmt / 100) * 100;
+						this.lastChant = "!bet "+(betAmt)+" "+((this.team == TEAM_RED)?"red":"blue");
+						submitChatter(this.lastChant);
 					}
 					
 					this.delayBehaviorTimer = Math.random()*10;
@@ -838,30 +843,47 @@
 					var rnd = Math.random();
 					if (this.team == lastBattleTeam) {
 						var winningMon = (lastBattleTeam == TEAM_RED)? redCurrMon : blueCurrMon;
-						console.log(winningMon);
 						
 						if ((lastBattleTeam == TEAM_RED && redCurrMon.victories == 3)
 						  ||(lastBattleTeam == TEAM_BLUE && blueCurrMon.victories == 3))
 						{
-							var name = 
-							submitChatter("My money! No!");
+							var name = POKEMON[winningMon.pokemon].name;
+							switch (Math.floor(rnd * 1553) % 10) {
+								case 0: chat = "Kreygasam "+name.toUpperCase()+" SWEEP Kreygasam"; break;
+								case 1: chat = "DAT "+name.toUpperCase()+" SWEEP"; break;
+								case 2: chat = "<dger>ヽ༼ຈل͜ຈ༽ﾉ</dger> "+name.toUpperCase()+" SWEEP <dger>ヽ༼ຈل͜ຈ༽ﾉ</dger>"; break;
+								case 3: chat = "SWEEPING UP HERE!"; break;
+								//default: break out
+							}
 						}
 						
-						switch (Math.floor(rnd * 8)) {
-							case 0: chat = "<dger>♫ ┌༼ຈلຈ༽┘ ♪</dger> victory dance  <dger>♫ ┌༼ຈلຈ༽┘ ♪</dger>"; break;
-							case 0: chat = "My money! No!"; break;
-							default:chat = "My money! No!"; break;
+						if (!chat) {
+							switch (Math.floor(rnd * 8)) {
+								case 0: chat = "<dger>♫ ┌༼ຈلຈ༽┘ ♪</dger> victory dance  <dger>♫ ┌༼ຈلຈ༽┘ ♪</dger>"; break;
+								case 1: chat = "THANK YOU FOR THE MONEY!"; break;
+								case 2: chat = "MONEY Kreygasam"; break;
+								case 3: chat = "THANK YOU FOR MONEY"+((lastBattleTeam == TEAM_RED)?"RED":"BLUE")+" TEAM!"; break;
+								case 4: chat = "No longer in the 100 CLUB!"; break;
+								case 4: chat = "GIMMIE MY MONEY!!"; break;
+								default:chat = "I HAVE MONEY!"; break;
+							}
 						}
-						
-						//
 						
 					} else {
 						switch (Math.floor(rnd * 8)) {
-							case 0: chat = "My money! No!"; break;
-							case 0: chat = "My money! No!"; break;
+							case 0: chat = "Back in the 100 club..."; break;
+							case 1: chat = "RIP in peace Money"; break;
+							case 2: chat = "I lost my money!"; break;
+							case 3: chat = "Never go al in..."; break;
+							case 4: chat = "NOOOOOOOOOO"; break;
+							case 5: chat = "noooooooooooooooo"; break;
+							case 6: chat = "Noooooo!!"; break;
 							default:chat = "My money! No!"; break;
 						}
 					}
+					
+					this.lastChant = chat;
+					submitChatter(chat);
 				} break;
 				
 				case STATE_RIOTING: {
@@ -977,6 +999,9 @@
 			var myTeam = lastBattleTeam == this.team;
 			var actPokemon = (lastBattleTeam == TEAM_RED)? redCurrMon : blueCurrMon; //TODO adjust for TEAM_BOTH
 			
+			var pkdata = (actPokemon)? POKEMON[actPokemon.pokemon] : {};
+			var name = _getPokeName(pkdata);
+			
 			var rnd = Math.random();
 			var chant = "";
 			
@@ -984,9 +1009,6 @@
 			switch (lastBattleAction) {
 				case BATTLE_SEND:
 					if (!myTeam) return; //don't react if not my team
-					
-					var pkdata = POKEMON[actPokemon.pokemon];
-					var name = _getPokeName(pkdata);
 					
 					switch (Math.floor(rnd * 8)) {
 						case 0: chant = "GET 'EM "+name.toUpperCase()+"!"; break;
@@ -1002,7 +1024,6 @@
 					break;
 				case BATTLE_FAINTS: 
 					if (myTeam) {
-						
 						if (!chant) {
 							switch (Math.floor(rnd * 10)) {
 								case 0: chant = "NOOOOOOOOOOOO"; break;
@@ -1019,10 +1040,12 @@
 							}
 						}
 					} else {
-						var pkdata = POKEMON[actPokemon.pokemon];
+						var winningPokemon = (lastBattleTeam == TEAM_RED)? blueCurrMon : redCurrMon;
+						
+						var pkdata = POKEMON[winningPokemon.pokemon];
 						var name = _getPokeName(pkdata);
 						
-						if (actPokemon.victories > 1) {
+						if (winningPokemon.victories > 1) {
 							switch (Math.floor(rnd * 487) % 10) {
 								case 0: chant = name.toUpperCase()+" SWEEP?!"; break;
 								case 1: chant = name+" Sweep!!"; break;

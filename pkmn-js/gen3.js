@@ -421,7 +421,7 @@ addEvent(new Pokemon({
 			
 			$.extend(this, {x: 8, y:7, z:0}, newloc);
 			
-			console.log("GMan vanishes to ", newloc, this);
+			console.log("GMan vanishes to ", newloc);
 			this.domElement.css({
 				top: this.y * 16, 
 				left: this.x * 16,

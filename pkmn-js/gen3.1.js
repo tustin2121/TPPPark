@@ -86,28 +86,6 @@ addEvent(new Pokemon({
 	],
 }));
 
-// Shellock Holmes
-addEvent(new Pokemon({
-	name : "Shellock",
-	// sprite: "img/pkmn/hyperbug_ev.png",
-	x: 16, y: -25,
-	
-	// dex : "img/pkdx/frdex_flameslash.png",
-	
-	OT: "Alice",
-	gender: 1,
-	gamename : "TTABCIJIJD",
-	pokename : "Blastoise",
-	nicknames : "Full Name: Shellock Holmes",
-	level : 58,
-	caught : "Caught from Route Heaven",
-	memo : "Ability: Vital Spirit. Used Oder Sleuth a lot to identify pokemon. Also has an Octazooka.",
-	
-	ribbons : [
-		new HallOfFame_Ribbon("15d 2h 2m"),
-	],
-}));
-
 // Mew
 addEvent(new Pokemon({
 	name : "Marc",
@@ -248,8 +226,8 @@ addEvent(new Pokemon({
 
 addEvent(new Pokemon({
 	name : "Hitmonpluff",
-	// sprite: "img/pkmn/hitmonpluff.png",
-	// x: -27, y: 35,
+	sprite: "img/pkmn/hitmonpuff.png",
+	x: 21, y: 27,
 	
 	dex : "img/pkdx/frdex_hitmonpluff.png",
 	sources : {
@@ -392,9 +370,10 @@ addEvent(new MultiEvent({
 
 // And finally, Alice!
 addEvent(new Trainer({
-	name : "A",
+	name : "A  ", //spaces to differentiate from the OTHER "A"
 	spritesheet : "img/trainers/alice.png",
-	x: 20, y: 2,
+	x: 22, y: -39,
+	frame_width : 20,
 	
 	dex : "img/pkdx/trainer_alice.png",
 	sources : {
@@ -424,10 +403,51 @@ addEvent(new Trainer({
 	
 	badge_html : "",
 	
-	behavior: null,
-	// behavior: behavior.meander,
-	// behavArg : {
-	// 	"left" : -10, "top" : -38,
-	// 	"right": -10, "bottom": -37,
-	// },
+	behavior: behavior.meander,
+	behavArg : {
+		"left" : 21, "top" : -40,
+		"right": 26, "bottom": -36,
+		avoidEvent: "Shellock",
+	},
+}));
+
+// Shellock Holmes
+addEvent(new MovingPokemon({
+	name : "Shellock",
+	spritesheet: "img/pkmn/shellock_blastoise.png",
+	x: 24, y: -38,
+	frame_width : 29,
+	frame_height: 27,
+	
+	dex: "img/pkdx/frdex_shellock.png", //Bulbapedia
+	sources : {
+		"Pokedex Image by /u/Sorceress_Feraly" : "http://www.reddit.com/r/twitchplayspokemon/comments/24j8p0/my_sprites_of_our_firered_team/",
+	},
+	
+	OT: "Alice",
+	gender: 1,
+	gamename : "TTABCIJIJD",
+	pokename : "Blastoise",
+	nicknames : "Full Name: Shellock Holmes",
+	level : 58,
+	caught : "Caught from Route Heaven",
+	memo : "Ability: Vital Spirit. Used Oder Sleuth a lot to identify pokemon. Also has an Octazooka.",
+	
+	ribbons : [
+		new HallOfFame_Ribbon("15d 2h 2m"),
+	],
+	
+	behavior: behavior.meander,
+	behavArg : {
+		"left" : 21, "top" : -40,
+		"right": 26, "bottom": -36,
+		avoidEvent: "A  ",
+	},
+}));
+
+addEvent(new Building({
+	name: "Crime Scene",
+	sprite: "img/bld/crime_scene.png",
+	x: 19, y: -40,
+	warp_x: 0, warp_y: 0,
 }));

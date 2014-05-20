@@ -116,7 +116,7 @@ addEvent(new MultiEvent({
 addEvent(new MultiEvent({
 	name: "Eeveeloutions of Love",
 	sprite: "img/pkmn/buritto_flarion.gif",
-	x: 24, y: 38,
+	x: 23, y: 38,
 }).addSubEvent("0,10,0,26,35,26,35,6,32,7,28,14,20,18,11,11", new Pokemon({
 	name: "Flareon",
 	
@@ -562,15 +562,23 @@ addEvent(new Person({
 	
 	dialog : function() {
 		if (!this.smitten) {
-			return "YOUNGSTER JOEY: Check out my awesome RATICATE, Ace!";
+			switch (Math.floor(Math.random() * 6)) {
+				case 0: return "YOUNGSTER JOEY: Check out my awesome RATICATE, Ace!";
+				case 1: return "YOUNGSTER JOEY: My RATATTA is in the top percentage of all RATATTAs!";
+				case 2: return "YOUNGSTER JOEY: Ace is in the top percentage of all RATICATEs!";
+				case 3: return "YOUNGSTER JOEY: Why'd you have to go and box Ace, AJ...?";
+				case 4: return "YOUNGSTER JOEY: AJ is in the top percentage of all Trainers in Johto and Kanto, you know. I wish I could be as good as him.";
+				case 5: return "YOUNGSTER JOEY: AJ's the only one who's ever exchanged numbers with me. <3";
+			}
+			
 		} else {
-			this.domHeart.show()
+			this.domHeart.css({ bottom: 16 }).show()
 			.animate({
-				bottom: 32,
+				bottom: 40,
 			}, {
 				duration: 1500,
 				progress: function(p, n){
-					$(this).css({ left: 8 - 3 + Math.cos(n/Math.PI) * 4 });
+					$(this).css({ left: 8 - 3 + Math.cos(n*10) * 4 });
 				},
 			}).fadeOut(100);
 			

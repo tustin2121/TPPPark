@@ -103,8 +103,8 @@ addEvent(new Pokemon({
 // Master Geodude - technically not allowed in yet...
 addEvent(new Pokemon({
 	name : "Geodude",
-	// sprite: "img/pkmn/goldeen.png",
-	// x: -20, y: -34,
+	sprite: "img/pkmn/master-geodude.png",
+	x: -30, y: -10,
 	
 	dex : "http://cdn.bulbagarden.net/upload/b/b7/Spr_4p_074.png",
 	sources : {
@@ -150,13 +150,16 @@ addEvent(new Pokemon({
 		new Record_Ribbon("First to catch PkRS"),
 		new Pokerus_Ribbon(),
 		//new Daycare_Ribbon("To Learn Something"),
+		new HallOfFame_Ribbon("17d 11h 39m"),
 	],
 }));
 
-addEvent(new Pokemon({
+addEvent(new MultiEvent({
+	name: "The Royal Family",
+	sprite: "img/pkmn/sunbrella_family.gif",
+	x: 29, y: 36,
+}).addSubEvent("25,0,47,25", new Pokemon({
 	name : "Sunbrella",
-	// sprite: "img/pkmn/sunberella.png",
-	// x: -37, y: -25,
 	
 	dex : "img/pkdx/ptdex_sunbrella.png",
 	sources : {
@@ -168,19 +171,41 @@ addEvent(new Pokemon({
 	gamename : "!☂!!☀! !:1",
 	pokename : "Roserade",
 	nicknames: "The Empress<br/>Queen",
-	// level : 5,
+	level : 70,
 	memo : "Evolved to Rosila via Rare Candy by anti-evolution trolls spamming the menu button.",
 	
 	ribbons : [
 		new Daycare_Ribbon("To Learn Petal Dance"),
 		new Pokerus_Ribbon(),
+		new HallOfFame_Ribbon("17d 11h 39m"),
 	],
-}));
+})).addSubEvent("0,0,20,25", new Pokemon({
+	name : "Roselia",
+	
+	dex : "http://cdn.bulbagarden.net/upload/9/9d/Spr_4p_315_m.png",
+	sources : {
+		"Pokedex Image from Bulbapedia" : "",
+	},
+	
+	OT: "nqpppnl",
+	gender: 1,
+	gamename : "Roselia",
+	pokename : "Roselia",
+	level : 24,
+	memo : "Evolved to Rosila via Rare Candy by anti-evolution trolls spamming the menu button.",
+	
+	ribbons : [
+		new Released_Ribbon("Paradox Victim 12d 10h 32m"),
+		new Daycare_Ribbon("To Love Sunbrella"),
+	],
+}))
+);
+
 
 addEvent(new Pokemon({
 	name : "Shinx",
 	// sprite: "img/pkmn/sunshine_shinx.png",
-	// x: -37, y: -25,
+	x: -37, y: -25,
 	
 	// dex : "img/pkdx/ptdex_.png",
 	// sources : {
@@ -192,13 +217,14 @@ addEvent(new Pokemon({
 	gamename : '0"☀ ☀0☀☺ &#9785;',
 	pokename : "Shinx",
 	nicknames : "Sparkles<br/>Sunshine",
-	// level : 5,
+	level : 63,
 	memo : "Forever unable to evolve...",
 	ball : "heal",	
 	
 	ribbons : [
 		new Daycare_Ribbon("To Learn Discharge"),
 		new Pokerus_Ribbon(),
+		new HallOfFame_Ribbon("17d 11h 39m"),
 	],
 }));
 
@@ -217,11 +243,12 @@ addEvent(new Pokemon({
 	gamename : "Flareon",
 	pokename : "Flareon",
 	nicknames : "Sun Prophet",
-	// level : 5,
-	// memo : "",
+	level : 97,
+	memo : "Said to have broken the Fire Starter curse by entering the Hall of Fame.",
 	
 	ribbons : [
 		new Pokerus_Ribbon(),
+		new HallOfFame_Ribbon("17d 11h 39m"),
 	],
 }));
 
@@ -240,11 +267,13 @@ addEvent(new Pokemon({
 	gamename : "00&nbsp;&nbsp;00&nbsp;06",
 	pokename : "Bibarel",
 	nicknames : "",
-	// level : 5,
-	// memo : "",
+	level : 5,
+	memo : "",
 	
 	ribbons : [
 		// new Pokerus_Ribbon(), //caught after the outbreak
+		new Daycare_Ribbon("Had a baby?!"),
+		new HallOfFame_Ribbon("17d 11h 39m"),
 	],
 }));
 
@@ -268,26 +297,27 @@ addEvent(new Pokemon({
 	
 	ribbons : [
 		new Pokerus_Ribbon(),
+		new HallOfFame_Ribbon("17d 11h 39m"),
 	],
 }));
 
 addEvent(new Pokemon({
 	name : "Togepi",
-	// sprite: "img/pkmn/sunshine_shinx.png",
-	// x: -37, y: -25,
+	sprite: "img/pkmn/kk-roy.png",
+	x: 16, y: -33,
 	
-	// dex : "img/pkdx/emdex_cruella.png",
-	// sources : {
-	// 	"Pokedex Image by /u/NoPenNameGirl" : "http://www.reddit.com/r/twitchplayspokemon/comments/22kx4y/the_ateam_sprite/",
-	// },
+	dex : "http://cdn.bulbagarden.net/upload/0/07/Spr_4p_175.png",
+	sources : {
+		"Pokedex Image from Bulbapedia" : "",
+	},
 	
 	OT: "nqpppnl",
 	gender: 2,
 	gamename : "KK♀ROOOY",
 	pokename : "Togepi",
 	nicknames : "",
-	// level : 5,
-	// memo : "",
+	level : 48,
+	memo : "Had lots of fun in the Day Care",
 	
 	ribbons : [
 		new Daycare_Ribbon("Common Resident"),
@@ -299,8 +329,8 @@ addEvent(new Pokemon({
 // And finally, Nepoleon himself!
 addEvent(new Trainer({
 	name : "nqpppnl",
-	// spritesheet : "img/trainers/aj.png",
-	// x: 20, y: 2,
+	spritesheet : "img/trainers/napoleon.png",
+	x: -9, y: 13,
 	
 	dex : "http://cdn.bulbagarden.net/upload/6/6b/Spr_Pt_Lucas.png",
 	sources : {
@@ -308,32 +338,55 @@ addEvent(new Trainer({
 	},
 	
 	nickname : "Napoleon",
-	// playtime: "15d 2h 2m",
-	// pokedex : "56 own/303 seen",
-	// releasecount : 4,
+	playtime: "17d 11h 39m",
+	pokedex : "52 own/206 seen",
+	releasecount : "4 (+22)",
 	idnum : "12339",
 	
 	info_html : 
-		"Number of E4 Attempts: ?<br/>"+
-		"Times Blacked Out: ?<br/>"+
-		"Number of Wooper Caught: 17<br/>"+
-		"Bibarel: 16, Bidoof: 11<br/>"+
-		"",
+		"Number of E4 Attempts: 49<br/>"+
+		"Times Blacked Out: 173<br/>"+
+		"Number of Wooper Caught: 20<br/>"+
+		"Number of Times Time Traveled: 2<br/>"+
+		"Number of Pokeballs Bought: 400+",
 	icons : [
-		null,//"img/icn/teachy_tv.png",
-		null,//"img/icn/dome_fossil.png",
-		null,//"img/icn/poke_doll.png",
-		null,//"img/icn/amber_charizard.png",
-		null,//"img/pkmn/potato.png",
-		null,//"img/icn/slowpoke_tail.png",
+		"img/icn/coin_case.png",
+		"img/icn/air_mail.png",
+		"img/icn/poke_ball.png",
+		"img/icn/shiny_stone.png",
+		"img/icn/contest_pass.png",
+		"img/icn/sun_stone.png",
 	],
 	
 	badge_html : "",
 	
-	behavior: null,
-	// behavior: behavior.meander,
-	// behavArg : {
-	// 	"left" : -10, "top" : -38,
-	// 	"right": -10, "bottom": -37,
-	// },
+	behavior: behavior.look,
+	
+	dialog: [ 
+		"YOU SPELLED MY NAME WRONG!!",
+		"HELLO?! Anyone want to FIX MY NAME ON THIS SIGN?!?!",
+		"It's <em>NE</em>poleon! NEE! As in I'm going to KNEE SOMEONE IN THE GROIN OVER THIS!!",
+		"I pay GOOD MONEY at the Game Corner and they CAN'T EVEN SPELL MY NAME RIGHT?!",
+	],
+	dialog_assignment: "random",
+	
+	doClick : function(){
+		Person.fn.doClick.call(this);
+		this.openTrainerCard();
+	},
+}));
+
+//And his very own Game Corner!
+addEvent(new Building({
+	name: "Game Corner",
+	sprite: "img/bld/gamecorner.png",
+	x : -7, y : 12,
+	warp_x: 48, warp_y: 48,
+}));
+
+addEvent(new Building({
+	name: "Game Corner Congrats Sign",
+	sprite: "img/bld/gamecorner_sign.png",
+	x : -7, y : 13, 
+	warp_x: 44, warp_y: 37,
 }));
