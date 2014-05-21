@@ -1723,7 +1723,6 @@ Kreygasm LORD HELIX Kreygasm
 		{ name: "boolerex", 		style: 39-1, },
 		{ name: "TheLakAttack", 	style: 44-1, },
 		{ name: "GlitcherRed", 		style: 43-1, },
-		
 		{ name: "notnowhoney", 		style: 44-1, },
 		{ name: "LupinTheIIII", 	style: 26-1, },
 		{ name: "jigsawmonster", 	style: 16-1, },
@@ -1733,8 +1732,9 @@ Kreygasm LORD HELIX Kreygasm
 		{ name: "sirguyman", 		style: 27-1, },
 		{ name: "FluffyTamerMarill",style: 20-1, }, //u/Clarkarius
 		{ name: "Soulweaver91", 	style: 15-1, },
-		{ name: "MrVaidd", 			style:  1-1, },
+		{ name: "MrVaidd", 			style:  1-1, dialog: "<dger>ᕕ( ᐛ )ᕗ</dger> DANCE RIOT <dger>ᕕ( ᐛ )ᕗ</dger>",},
 		{ name: "renzantar", 		style: 41-1, },
+		
 		// { name: "", 		style: -1, },
 		// { name: "", 		style: -1, },
 		// { name: "", 		style: -1, },
@@ -1768,7 +1768,7 @@ Kreygasm LORD HELIX Kreygasm
 		"geosspone", "i_cant_believe_you_all", "junewind", "mjbaker", "potatosaladdressing", "mo40o2naliz", "cakedayisbirthday", 
 		"alifen", "erassus", "nidoking_armx", "basedazumarill", "our_lord_helix_the_great", "arazioman", "101100111000", 
 		
-		"chaoticcookie39", "abiyoru", "222phantom",
+		"chaoticcookie39", "abiyoru", "222phantom", "shotgunninja", "Onamuk", "BettingBetter", "UltraMew", "Jacobjr1",
 	];
 
 	////// Types //////
