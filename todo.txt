@@ -1,12 +1,27 @@
 TODO LIST!
 
 -------
-D: my god it's glorious and amazing, when i should have spent the last half hour working on my project i was looking for things D:
-
 but i do have an odd request. Would it be possible to make a wooper sanctuary for our 32 members of the woop family? celebrating our newfound religion of 卅(◕‿◕)卅woophism卅(◕‿◕)卅?
 ------
 
 Oddish House
 
 ------
+[Stadium]
+Nah, it's fine. Does he ONLY harden in Stadium. Because... harden's not really a thing that I can simulate (there's no stats in the tiny stadium ^_^;). The most I can make him do is... well... splash like Magikarp, except perhaps without the animation.
 
+But Magikarp vs Metapod will lock the game unless you add Struggle.
+
+Well, Magikarp has Tackle still, but Metapod vs Metapod will lock it certainly... :P
+
+------
+
+[Stadium]
+Bug: Names of pokemon on the screen in/on the stadium tend to appear as the name of the pokemon from the previous match who didn't faint, and beat the last pokemon on the opposing side. 
+EDIT: May actually/also be caused by clicking off the tab then going back to it a while later, when different pokemon are battling.
+
+-------
+
+[Stadium] Super HP bar bug!
+
+-------

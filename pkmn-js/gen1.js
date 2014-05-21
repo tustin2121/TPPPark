@@ -237,8 +237,9 @@ addEvent(new Pokemon({
 	sprite: "img/pkmn/thekeeper.png",
 	x: -17, y: 13,
 	
-	// dex : "img/pkdx/jayleno.gif",
+	dex : "img/pkdx/tpp_keeper.png",
 	sources : {
+		"Pokedex Image from /u/Kelcyus's Twitch Pokedex Project" : "http://www.reddit.com/r/twitchplayspokemon/comments/25gcrh/twitch_pokedex_205_entries/",
 		"Sprite by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/1yx0gx/i_madealtered_flairs_suggestions_or_corrections/",
 	},
 		
@@ -308,9 +309,9 @@ addEvent(new Pokemon({
 	x: 25, y: 26,
 	animation: null,
 	
-	// dex : "img/pkdx/tpp10_dux.gif",
-	// dexsource : "http://hamigakimomo.tumblr.com/post/78067393358/ive-updated-omanytes-sprite-to-omastar-i-also",
+	dex : "img/pkdx/tpp_c3ko.png",
 	sources : {
+		"Pokedex Image from /u/Kelcyus's Twitch Pokedex Project" : "http://www.reddit.com/r/twitchplayspokemon/comments/25gcrh/twitch_pokedex_205_entries/",
 		"Sprite by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/1yx0gx/i_madealtered_flairs_suggestions_or_corrections/",
 	},
 	
