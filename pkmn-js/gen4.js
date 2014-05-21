@@ -95,7 +95,7 @@ addEvent(new Pokemon({
 	gamename: "--",
 	pokename: "Geodude",
 	caught: "Encountered by nqpppnl.",
-	level: "???",
+	level: 20,
 	memo: "TPP's third random shiny, killed in battle.",
 }));
 
@@ -366,7 +366,7 @@ addEvent(new Trainer({
 	dialog: [ 
 		"YOU SPELLED MY NAME WRONG!!",
 		"HELLO?! Anyone want to FIX MY NAME ON THIS SIGN?!?!",
-		"It's <em>NE</em>poleon! NEE! As in I'm going to KNEE SOMEONE IN THE GROIN OVER THIS!!",
+		"It's <em>NA</em>poleon! NAH! As in you can DO NOTHING TO MAKE ME HAPPY ABOUT THIS!!",
 		"I pay GOOD MONEY at the Game Corner and they CAN'T EVEN SPELL MY NAME RIGHT?!",
 	],
 	dialog_assignment: "random",

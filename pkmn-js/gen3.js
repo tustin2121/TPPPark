@@ -284,6 +284,12 @@ addEvent(new Building({
 	x : -35, y : -27,
 	warp_x: 16, warp_y: 48,
 }));
+addEvent(new SignPost({
+	name : "Oddish House Mailbox",
+	x: -31, y: -27,
+	sprite: 3,
+	message: "<strong>Oddish House</strong>",
+}));
 
 addEvent(new Pokemon({
 	name : "Cabbage",
@@ -401,7 +407,7 @@ addEvent(new Pokemon({
 	pokename : "Wurmple",
 	level : 6,
 	nicknames: "Geronimo",
-	memo : "Said to work for a shadowy employer working against Bill. Mysterous.",
+	memo : "Said to work for a shadowy employer working against Bill. Mysterious.",
 	
 	activeZone : function(load) {
 		var res = !(
@@ -456,8 +462,8 @@ addEvent(new Pokemon({
 	gamename: "--",
 	pokename: "Chinchou",
 	caught: "Encountered by <strike>M</strike>Ay.",
-	level: "???",
 	memo: "TPP's first random shiny, killed in battle.",
+	level: 25,
 	
 	ribbons : [
 		new Record_Ribbon("First Shiny Encounter"),
@@ -617,7 +623,7 @@ addEvent(new MultiEvent({
 	},
 	
 	OT: "<strike>M</strike>Ay",
-	gender: 1,
+	gender: 2,
 	gamename : "Poochyena",
 	pokename : "Poochyena",
 	nicknames : "Alpha Doge<br/>Dogeyena",

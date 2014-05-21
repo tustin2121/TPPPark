@@ -46,11 +46,14 @@ addEvent(new Event({
 
 
 addEvent(new Pokemon({
-	name : "Guardian", //"Pantheon Guardian",
+	name : "Amberzard", //"Pantheon Guardian",
 	sprite : "img/pkmn/!deity_amber_guardian.png",
 	x: -145, y:-74,
 	
-	dex: "",
+	dex: "http://archives.bulbagarden.net/media/upload/f/f1/Spr_3f_006.png",
+	sources : {
+		"Pokedex Sprite from Bulbapedia": "",
+	}
 	
 	OT: "Alice",
 	gender: 1,
@@ -58,7 +61,26 @@ addEvent(new Pokemon({
 	pokename: "Charizard",
 	level: 5,
 	nicknames: "Prophet of Amber",
-	memo: "Revived by Alice from the Amber Fossil. (Given name is his current role in TPP Park, not fan-made.)",
+	memo: "Revived by Alice from the Amber Fossil.",
+}));
+
+addEvent(new Pokemon({
+	name : "Ariadome",
+	sprite : "img/pkmn/!deity_dome_guardian.png",
+	x: -141, y:-66,
+	
+	dex: "http://cdn.bulbagarden.net/upload/b/b2/Spr_3r_168.png",
+	sources : {
+		"Pokedex Sprite from Bulbapedia": "",
+	}
+	
+	OT: "Alice",
+	gender: 0,
+	gamename: "Lwweekjjje",
+	pokename: "Ariados",
+	level: 5,
+	nicknames: "Prophet of Dome",
+	memo: "Revived by Alice from the Dome Fossil.",
 }));
 
 

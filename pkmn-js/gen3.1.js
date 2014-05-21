@@ -86,6 +86,33 @@ addEvent(new Pokemon({
 	],
 }));
 
+// Hyperbug
+addEvent(new Pokemon({
+	name : "Altareon",
+	sprite: "img/pkmn/alteria.png",
+	shadow: "img/pkmn/generic-shadow.png",
+	x: 6, y: -22, z: 16,
+	animation: "breathe",
+	
+	dex : "img/pkdx/frdex_altareon.png",
+	sources : {
+		"Pokedex Image by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/252a2b/tpp_sprites/",
+	},
+	
+	OT: "Alice",
+	gender: 2,
+	gamename : "Altaria",
+	pokename : "Altaria",
+	nicknames : "Amberia",
+	level : 54,
+	// caught : "Bought from Magikarp Man",
+	memo : 'Ability: Trace. Was our "Eevee" in FireRed.',
+	
+	ribbons : [
+		new HallOfFame_Ribbon("15d 2h 2m"),
+	],
+}));
+
 // Mew
 addEvent(new Pokemon({
 	name : "Marc",

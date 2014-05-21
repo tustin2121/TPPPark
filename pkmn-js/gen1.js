@@ -113,6 +113,7 @@ addEvent(new Pokemon({
 	ribbons : [
 		new HallOfFame_Ribbon("16d 7h 45m"),
 		new Master_Ribbon(),
+		new Record_Ribbon("First (& Only) Legendary"),
 	],	
 }));
 

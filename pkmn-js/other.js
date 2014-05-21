@@ -167,12 +167,54 @@ addEvent(new Building({
 	
 	warp_x: 32, warp_y: 54,
 }));
+addEvent(new SignPost({
+	name : "Shiny House Mailbox",
+	x: -41, y: -13,
+	sprite: 3,
+	message: "<strong>Shiny House</strong>",
+}));
 
 //////////////////// Misc Signs! //////////////////
 
 addEvent(new SignPost({
 	name : "Park Sign",
 	x: 5, y: 9,
+}));
+
+
+addEvent(new SignPost({
+	name : "Park Sign",
+	x: -2121, y: 57,
+	sprite: 2,
+	message: "Hey, congrats, you made it all the way out here. Why, I don't know, because there's nothing out here. But good for you! :) --tustin2121",
+}));
+
+addEvent(new SignPost({
+	name : "Park Sign",
+	x: 2121, y: 57,
+	sprite: 2,
+	message: "Congrats on scrolling all the way out here. Did you know you could move the trainer card and status screen by dragging them? :) --tustin2121",
+}));
+
+addEvent(new SignPost({
+	name : "Park Sign",
+	x: 2221, y: 57,
+	sprite: 2,
+	message: "Quit scrolling already, there's nothing more out this way. --tustin2121",
+}));
+
+addEvent(new SignPost({
+	name : "Park Sign",
+	x: 2321, y: 57,
+	sprite: 2,
+	message: "No, really. Stop it. You're only going to be disappointed. --tustin2121",
+}));
+
+addEvent(new SignPost({
+	name : "Park Sign",
+	x: 2521, y: 57,
+	sprite: 2,
+	message: "Fine, whatever, keep going. I don't care. There's literally nothing beyond this sign now. --tustin2121",
 }));
 
 

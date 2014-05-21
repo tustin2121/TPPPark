@@ -862,7 +862,7 @@
 								case 0: chat = "<dger>♫ ┌༼ຈلຈ༽┘ ♪</dger> victory dance  <dger>♫ ┌༼ຈلຈ༽┘ ♪</dger>"; break;
 								case 1: chat = "THANK YOU FOR THE MONEY!"; break;
 								case 2: chat = "MONEY Kreygasam"; break;
-								case 3: chat = "THANK YOU FOR MONEY"+((lastBattleTeam == TEAM_RED)?"BLUE":"RED")+" TEAM!"; break;
+								case 3: chat = "THANK YOU FOR MONEY "+((lastBattleTeam == TEAM_RED)?"BLUE":"RED")+" TEAM!"; break;
 								case 4: chat = "No longer in the 100 CLUB!"; break;
 								case 4: chat = "GIMMIE MY MONEY!!"; break;
 								default:chat = "I HAVE MONEY!"; break;
@@ -1666,6 +1666,30 @@ Kreygasm LORD HELIX Kreygasm
 		{ name: "MakeOurDay", 		style: 41-1, },
 		{ name: "meowmeowmi", 		style: 15-1, },
 		{ name: "Bladeseed", 		style: 28-1, },
+		
+		{ name: "Sledgehammmmer", 	style: 29-1, },
+		{ name: "Kelcyus", 			style: 20-1, },
+		{ name: "cobaltPoisoning", 	style: 43-1, },
+		{ name: "SleepDenied", 		style: 33-1, },
+		{ name: "xxtzkzxx", 		style: 16-1, },
+		{ name: "Spankler", 		style: 43-1, },
+		{ name: "Z72z", 			style: 25-1, },
+		{ name: "Jelkaz", 			style: 36-1, dialog: "<dger>ヽ༼ຈل͜ຈ༽ﾉ</dger> VICTORY RIOT <dger>ヽ༼ຈل͜ຈ༽ﾉ</dger>", },
+		{ name: "Zhadeblade", 		style: 41-1, },
+		{ name: "DraymondDarksteel",style: 43-1, },
+		{ name: "FeedTheOx", 		style: 25-1, },
+		{ name: "ShadeSoul", 		style: 25-1, },
+		{ name: "tubaman656", 		style: 3-1, },
+		{ name: "TheOmegalpha", 	style: 16-1, },
+		{ name: "Hafkie", 			style: 27-1, },
+		{ name: "HelixGuideUs", 	style: 33-1, },
+		{ name: "misko91", 			style: 43-1, },
+		{ name: "s_SoNick", 		style: 10-1, },
+		{ name: "SUPERCOW7", 		style: 33-1, },
+		// { name: "", 		style: -1, },
+		// { name: "", 		style: -1, },
+		// { name: "", 		style: -1, },
+		// { name: "", 		style: -1, },
 	];
 	
 	////// Random Names //////
@@ -1692,7 +1716,7 @@ Kreygasm LORD HELIX Kreygasm
 		"geosspone", "i_cant_believe_you_all", "junewind", "mjbaker", "potatosaladdressing", "mo40o2naliz", "cakedayisbirthday", 
 		"alifen", "erassus", "nidoking_armx", "basedazumarill", "our_lord_helix_the_great", "arazioman", "101100111000", 
 		
-		"chaoticcookie39",
+		"chaoticcookie39", "abiyoru",
 	];
 
 	////// Types //////
