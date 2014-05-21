@@ -471,7 +471,7 @@ addEvent(new Trainer({
 	playtime: "13d 2h 2m",
 	pokedex : "32 own/200 seen",
 	releasecount : 4,
-	idnum : "00000",
+	idnum : "47901",
 	
 	info_html : 
 		"Number of E4 Attempts: 38<br/>"+

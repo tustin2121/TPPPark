@@ -14,6 +14,7 @@ addEvent(new Pokemon({
 	dex : "http://cdn.bulbagarden.net/upload/a/ae/Spr_4p_399_f.png",
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
+		"Sprite is Flair by /u/RT-Pickred": "",
 	},
 	
 	OT: "nqpppnl",
@@ -192,7 +193,7 @@ addEvent(new MultiEvent({
 	gamename : "Roselia",
 	pokename : "Roselia",
 	level : 24,
-	memo: "Caught before Nepoleon's coma, lost to the time Paradox.",
+	memo: "Caught before Napoleon's coma, lost to the time Paradox.",
 	
 	ribbons : [
 		new Daycare_Ribbon("To Love Sunbrella"),
@@ -310,6 +311,7 @@ addEvent(new Pokemon({
 	dex : "http://cdn.bulbagarden.net/upload/0/07/Spr_4p_175.png",
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
+		"Sprite is Flair by /u/RT-Pickred": "",
 	},
 	
 	OT: "nqpppnl",

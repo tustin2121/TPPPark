@@ -4,7 +4,16 @@ TODO LIST!
 but i do have an odd request. Would it be possible to make a wooper sanctuary for our 32 members of the woop family? celebrating our newfound religion of 卅(◕‿◕)卅woophism卅(◕‿◕)卅?
 ------
 
-Oddish House
+Add Bill: tell /u/Bladeseed
+Add C3: tell /u/GlitcherRed
+
+------
+
+Are you going to add in Qwillix? (If you didn't know, If we had picked Helix it would have become a Qwilfish)
+
+------
+
+Oddish House opens to reveal a crap load of oddish!
 
 ------
 [Stadium]
@@ -25,3 +34,5 @@ EDIT: May actually/also be caused by clicking off the tab then going back to it 
 [Stadium] Super HP bar bug!
 
 -------
+
+OCCASIONS!! (See js file!)

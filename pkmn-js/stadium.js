@@ -90,10 +90,10 @@
 				if (x > 79 && x < 86 && y < -34) continue; //skip screen area
 				
 				var shouldSpawn = Math.random();
-				if (shouldSpawn > 0.85) continue; //randomly skip patrons
+				if (shouldSpawn > 0.90) continue; //randomly skip patrons
 				
 				var patron = null;
-				if (NAMED_PATRONS.length && shouldSpawn > 0.85 - Math.max(8-Math.abs(82-x), 0)*0.01) { //spawn predefed patrons sometimes
+				if (NAMED_PATRONS.length && shouldSpawn > 0.60 - Math.max(8-Math.abs(82-x), 0)*0.01) { //spawn predefed patrons sometimes
 					var pnum = Math.floor(Math.random() * NAMED_PATRONS.length);
 					var np = NAMED_PATRONS.splice(pnum, 1)[0];
 					
@@ -344,6 +344,7 @@
 	
 	var lastBattleAction = 0;
 	var lastBattleTeam = 0;
+	var lastBattleHax = 0;
 	
 	var TEAM_RED = 1;
 	var TEAM_BLUE = 2;
@@ -459,7 +460,12 @@
 				rnd = rnd >> 1; //div by 2
 				if (rnd > 0) rnd = 3; //Tackle or Splash only
 			} 
+			//special case for metapod
+			if (p_me.hax == "harden") {
+				rnd = 3; //ALWAYS harden
+			} 
 			
+			lastBattleHax = 0;
 			switch (rnd) {
 				case 0: //Normal move
 					baseDamage = 40; //base 40 attack
@@ -479,7 +485,7 @@
 					}
 					break;
 				case 3: //Hax (or Hax of their type if none defined)
-					if (_performHax(me, opp)) {
+					if (_performHax(red, me, opp)) {
 						return; //all hax handing is in there
 					} else {
 						//no hax to perform! Do random status move that we don't emulate here!
@@ -662,7 +668,7 @@
 		}
 		
 		
-		function _performHax(me, opp) {
+		function _performHax(red, me, opp) {
 			var p_me = POKEMON[me.pokemon];
 			var p_opp = POKEMON[opp.pokemon];
 			
@@ -670,6 +676,7 @@
 			if (!hax) hax = _getHaxForType(p_me.type);
 			if (!hax) hax = _getHaxForType(p_me.type2);
 			
+			lastBattleHax = hax;
 			switch(hax) {
 				case "posion": break;
 				case "burn": break;
@@ -743,13 +750,37 @@
 				case "fly": break;
 				case "heal": break;
 				case "explode": break;
+				case "horndrill": break;
+				case "metronome": break;
+				
 				case "splash": {
 					me.domAnim
 						.animate({ bottom: 16, left:  0, }, { duration: 1000, easing: 'easeInBounce' })
 						.animate({ bottom: 0,  left:  0, }, { duration: 1000, easing: 'easeOutBounce' });
 				} break;
-				case "horndrill": break;
-				case "metronome": break;
+				case "harden": {
+					me.moveturn++;
+					if (me.moveturn > 30) {
+						lastBattleHax = "struggle"; //The struggle is real
+						
+						opp.domAnim
+							.animate({ left:  8 }, 150)
+							.animate({ left: -8 }, 150)
+							.animate({ left:  8 }, 150)
+							.animate({ left: -8 }, 150)
+							.animate({ left:  0 }, 150);
+						
+						_anim_monHit(!red, opp, 1, function(){
+							opp.hp -= 50; //typeless damage, no type calc
+							me.hp -= 25; //half damage recoil
+						});
+					} else {
+						opp.domAnim
+							.animate({ bottom: 5 }, 150)
+							.animate({ bottom: 0 }, 150);
+					}
+					return true;
+				} break;
 				
 			}
 			return null;
@@ -1685,7 +1716,6 @@ Kreygasm LORD HELIX Kreygasm
 		{ name: "misko91", 			style: 43-1, },
 		{ name: "s_SoNick", 		style: 10-1, },
 		{ name: "SUPERCOW7", 		style: 33-1, },
-		
 		{ name: "Khisaella", 		style: 13-1, },
 		{ name: "teamvistatech", 	style: 41-1, },
 		{ name: "GroundCtrl27", 	style: 16-1, },
@@ -1693,6 +1723,23 @@ Kreygasm LORD HELIX Kreygasm
 		{ name: "boolerex", 		style: 39-1, },
 		{ name: "TheLakAttack", 	style: 44-1, },
 		{ name: "GlitcherRed", 		style: 43-1, },
+		
+		{ name: "notnowhoney", 		style: 44-1, },
+		{ name: "LupinTheIIII", 	style: 26-1, },
+		{ name: "jigsawmonster", 	style: 16-1, },
+		{ name: "Xaixas", 			style: 14-1, dialog: function(){ return "Kreygasam "+ this.lastChant + " Kreygasam"; }},
+		{ name: "theRayeGun", 		style: 41-1, },//dialog: "!bet 100 red", },
+		{ name: "toto2379", 		style: 20-1, },
+		{ name: "sirguyman", 		style: 27-1, },
+		{ name: "FluffyTamerMarill",style: 20-1, }, //u/Clarkarius
+		{ name: "Soulweaver91", 	style: 15-1, },
+		{ name: "MrVaidd", 			style:  1-1, },
+		{ name: "renzantar", 		style: 41-1, },
+		// { name: "", 		style: -1, },
+		// { name: "", 		style: -1, },
+		// { name: "", 		style: -1, },
+		// { name: "", 		style: -1, },
+		// { name: "", 		style: -1, },
 		// { name: "", 		style: -1, },
 		// { name: "", 		style: -1, },
 	];
@@ -1721,7 +1768,7 @@ Kreygasm LORD HELIX Kreygasm
 		"geosspone", "i_cant_believe_you_all", "junewind", "mjbaker", "potatosaladdressing", "mo40o2naliz", "cakedayisbirthday", 
 		"alifen", "erassus", "nidoking_armx", "basedazumarill", "our_lord_helix_the_great", "arazioman", "101100111000", 
 		
-		"chaoticcookie39", "abiyoru",
+		"chaoticcookie39", "abiyoru", "222phantom",
 	];
 
 	////// Types //////
@@ -1761,10 +1808,10 @@ Kreygasm LORD HELIX Kreygasm
 		{ id : 008, name: "Wartortle"	, type: Water,		type2: null, 	favor: 1},
 		{ id : 009, name: "Blastoise"	, type: Water,		type2: null, 	favor: 1},
 		{ id : 010, name: "Caterpie"	, type: Bug,		type2: null, 	favor: 1},
-		{ id : 011, name: "Metapod"		, type: Bug,		type2: null, 	favor: 1},
+		{ id : 011, name: "Metapod"		, type: Bug,		type2: null, 	favor: 0.6, hax: "harden",},
 		{ id : 012, name: "Butterfree"	, type: Bug,		type2: Flying, 	favor: 1},
 		{ id : 013, name: "Weedle"		, type: Bug,		type2: Poison, 	favor: 1},
-		{ id : 014, name: "Kakuna"		, type: Bug,		type2: Poison, 	favor: 1},
+		{ id : 014, name: "Kakuna"		, type: Bug,		type2: Poison, 	favor: 0.5, hax: "harden",},
 		{ id : 015, name: "Beedrill"	, type: Bug,		type2: Poison, 	favor: 1},
 		{ id : 016, name: "Pidgey"		, type: Normal,		type2: Flying, 	favor: 1},
 		{ id : 017, name: "Pidgeotto"	, type: Normal,		type2: Flying, 	favor: 1.3, chant: ["Bird Jesus", "Brian"] },

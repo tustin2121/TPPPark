@@ -16,6 +16,8 @@ addEvent(new Pokemon({
 	dex : "img/pkdx/frdex_flameslash.png",
 	sources : {
 		"Pokedex Image by /u/bboyskullkid" : "http://www.reddit.com/r/twitchplayspokemon/comments/24ouwj/i_drew_flameslash_in_sprite_form_inspired_by_the/",
+		"Sprite based on Flair by /u/RT-Pickred": "",
+		"Animated by /u/carlotta4th": "",
 	},
 	
 	OT: "Alice",
@@ -149,6 +151,7 @@ addEvent(new Pokemon({
 	dex : "img/pkdx/frdex_meow.png",
 	sources : {
 		"Pokedex Image by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/252a2b/tpp_sprites/",
+		"Sprite is Flair by /u/RT-Pickred": "",
 	},
 	
 	OT: "Alice",
@@ -451,6 +454,8 @@ addEvent(new MovingPokemon({
 	dex: "img/pkdx/frdex_shellock.png", //Bulbapedia
 	sources : {
 		"Pokedex Image by /u/Sorceress_Feraly" : "http://www.reddit.com/r/twitchplayspokemon/comments/24j8p0/my_sprites_of_our_firered_team/",
+		"Sprite is Flair by /u/RT-Pickred": "",
+		"Animated by /u/carlotta4th": "",
 	},
 	
 	OT: "Alice",

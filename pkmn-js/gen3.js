@@ -92,6 +92,7 @@ addEvent(new Pokemon({
 	dex : "img/pkdx/emdex_shedinja.png",
 	sources : {
 		"Pokedex Image by /u/bboyskullkid" : "http://www.reddit.com/r/twitchplayspokemon/comments/21g0da/was_inspired_by_my_flair_and_drew_zexxys_soul/",
+		"Sprite is Flair by /u/RT-Pickred": "",
 	},
 	
 	OT: "<strike>M</strike>Ay",
@@ -136,6 +137,7 @@ addEvent(new Pokemon({
 	dex : "img/pkdx/emdex_annie.png",
 	sources : {
 		"Pokedex Image by /u/NoPenNameGirl" : "http://www.reddit.com/r/twitchplayspokemon/comments/22kx4y/the_ateam_sprite/",
+		"Sprite is Flair by /u/RT-Pickred": "",
 	},
 	
 	OT: "<strike>M</strike>Ay",
@@ -163,7 +165,7 @@ addEvent(new MovingPokemon({
 		"Pokedex Image from Bulbapedia" : "",
 	},
 	
-	OT: "AJDNNW",
+	OT: "<strike>M</strike>Ay",
 	gender: 1,
 	gamename : "apf uojkyy",
 	pokename : "Kadabra",
@@ -244,6 +246,8 @@ addEvent(new Pokemon({
 	dex : "img/pkdx/emdex_birdcop.png",
 	sources : { 
 		"Pokedex Image by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/252a2b/tpp_sprites/",
+		"Sprite is Flair by /u/RT-Pickred": "",
+		"Animated by /u/carlotta4th": "",
 	},
 	
 	OT: "<strike>M</strike>Ay",
@@ -299,6 +303,7 @@ addEvent(new Pokemon({
 	dex : "img/pkdx/emdex_cabbage_white.png",
 	sources : {
 		"Pokedex Image by /u/NoPenNameGirl" : "http://www.reddit.com/r/twitchplayspokemon/comments/22kx4y/the_ateam_sprite/",
+		"Sprite is Flair by /u/RT-Pickred": "",
 	},
 	
 	OT: "<strike>M</strike>Ay",
@@ -552,7 +557,7 @@ addEvent(new MultiEvent({
 	playtime: "21d 19h 27m",
 	pokedex : "40 own/164 seen",
 	releasecount : 5,
-	idnum : "00000",
+	idnum : "61415",
 	
 	info_html : 
 		"Number of E4 Attempts: 103<br/>"+
