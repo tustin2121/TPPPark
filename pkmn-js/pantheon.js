@@ -53,7 +53,7 @@ addEvent(new Pokemon({
 	dex: "http://archives.bulbagarden.net/media/upload/f/f1/Spr_3f_006.png",
 	sources : {
 		"Pokedex Sprite from Bulbapedia": "",
-	}
+	},
 	
 	OT: "Alice",
 	gender: 1,
@@ -72,7 +72,7 @@ addEvent(new Pokemon({
 	dex: "http://cdn.bulbagarden.net/upload/b/b2/Spr_3r_168.png",
 	sources : {
 		"Pokedex Sprite from Bulbapedia": "",
-	}
+	},
 	
 	OT: "Alice",
 	gender: 0,
