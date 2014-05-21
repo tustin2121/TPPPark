@@ -113,7 +113,8 @@ addEvent(new Pokemon({
 	ribbons : [
 		new HallOfFame_Ribbon("16d 7h 45m"),
 		new Master_Ribbon(),
-		new Record_Ribbon("First (& Only) Legendary"),
+		new Record_Ribbon("First Legendary"),
+		new Record_Ribbon("ONLY Legendary Caught"),
 	],	
 }));
 
@@ -147,6 +148,11 @@ addEvent(new Pokemon({
 		new Released_Ribbon("10d 16h 2m"),
 		new BloodySunday_Ribbon(),
 	],
+}).forOccasion("bloodysunday", {
+	sprite: "img/pkmn/digrat.png",
+	x: -21, y: -5,
+	animation: "breathe",
+	adj_flip: true,
 }));
 
 // DUX!
@@ -173,6 +179,10 @@ addEvent(new Pokemon({
 		new Released_Ribbon("10d 13h 13m"),
 		new BloodySunday_Ribbon(),
 	],
+}).forOccasion("bloodysunday", {
+	x: -21, y: -3,
+	animation: "breathe",
+	adj_flip: true,
 }));
 
 // Jay Leno!
@@ -221,6 +231,10 @@ addEvent(new Pokemon({
 		new Released_Ribbon("10d 12h 43m"),
 		new BloodySunday_Ribbon(),
 	],
+}).forOccasion("bloodysunday", {
+	x: -21, y: -1,
+	animation: "breathe",
+	adj_flip: true,
 }));
 
 
@@ -248,6 +262,9 @@ addEvent(new Pokemon({
 	pokename : "Drowzee",
 	level : 30,
 	memo : "Keeper of the PC",
+}).forOccasion("bloodysunday", {
+	x: -8, y: -5,
+	animation: "breathe",
 }));
 
 addEvent(new Building({
@@ -443,6 +460,8 @@ addEvent(new Person({
 	// dialog : [
 	// 	"REVIVE is costly, but it revives fainted POK&eacute;MON!",
 	// ],
+}).forOccasion("bloodysunday", {
+	skipme: true,
 }));
 
 addEvent(new Person({
@@ -465,4 +484,6 @@ addEvent(new Person({
 	// dialog : [
 	// 	"REVIVE is costly, but it revives fainted POK&eacute;MON!",
 	// ],
+}).forOccasion("bloodysunday", {
+	skipme: true,
 }));

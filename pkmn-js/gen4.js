@@ -101,7 +101,7 @@ addEvent(new Pokemon({
 }));
 
 
-// Master Geodude - technically not allowed in yet...
+// Master Geodude
 addEvent(new Pokemon({
 	name : "Geodude",
 	sprite: "img/pkmn/master-geodude.png",
@@ -126,8 +126,6 @@ addEvent(new Pokemon({
 	],
 }));
 
-
-// Current Party Pokemon: DO NOT uncomment sprites until they win the Hall of Fame ribbon!
 
 addEvent(new Pokemon({
 	name : "Steve",

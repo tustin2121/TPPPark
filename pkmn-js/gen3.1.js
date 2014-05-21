@@ -5,8 +5,7 @@
 // Flameslash
 addEvent(new Pokemon({
 	name : "Flameslash",
-	// sprite: "img/pkmn/flameslash.png",
-	// x: 28, y: -18,
+	
 	sprite: "img/pkmn/flamesplash.gif",
 	x: -11, y: -9,
 	animation: null,
@@ -32,6 +31,10 @@ addEvent(new Pokemon({
 	ribbons : [
 		new HallOfFame_Ribbon("15d 2h 2m"),
 	],
+}).forOccasion("bloodysunday", {
+	sprite: "img/pkmn/flamesplash.png",
+	x: -1, y: -11,
+	animation: "breathe",
 }));
 
 // DJ Slaking
