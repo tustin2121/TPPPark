@@ -1736,8 +1736,8 @@ Kreygasm LORD HELIX Kreygasm
 		{ name: "renzantar", 		style: 41-1, },
 		
 		{ name: "nasian_",	 		style: 41-1, },
-		// { name: "", 		style: -1, },
-		// { name: "", 		style: -1, },
+		{ name: "shotgunninja", 	style: 22-1, },
+		{ name: "pokechampjoey ", 	style: 43-1, },
 		// { name: "", 		style: -1, },
 		// { name: "", 		style: -1, },
 		// { name: "", 		style: -1, },
@@ -1768,7 +1768,7 @@ Kreygasm LORD HELIX Kreygasm
 		"geosspone", "i_cant_believe_you_all", "junewind", "mjbaker", "potatosaladdressing", "mo40o2naliz", "cakedayisbirthday", 
 		"alifen", "erassus", "nidoking_armx", "basedazumarill", "our_lord_helix_the_great", "arazioman", "101100111000", 
 		
-		"chaoticcookie39", "abiyoru", "222phantom", "shotgunninja", "Onamuk", "BettingBetter", "UltraMew", "Jacobjr1",
+		"chaoticcookie39", "abiyoru", "222phantom", "Onamuk", "BettingBetter", "UltraMew", "Jacobjr1",
 	];
 
 	////// Types //////
