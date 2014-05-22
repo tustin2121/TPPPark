@@ -1735,7 +1735,7 @@ Kreygasm LORD HELIX Kreygasm
 		{ name: "MrVaidd", 			style:  1-1, dialog: "<dger>ᕕ( ᐛ )ᕗ</dger> DANCE RIOT <dger>ᕕ( ᐛ )ᕗ</dger>",},
 		{ name: "renzantar", 		style: 41-1, },
 		
-		// { name: "", 		style: -1, },
+		{ name: "nasian_",	 		style: 41-1, },
 		// { name: "", 		style: -1, },
 		// { name: "", 		style: -1, },
 		// { name: "", 		style: -1, },
