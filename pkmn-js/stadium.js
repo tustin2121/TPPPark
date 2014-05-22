@@ -880,7 +880,7 @@
 						{
 							var name = POKEMON[winningMon.pokemon].name;
 							switch (Math.floor(rnd * 1553) % 10) {
-								case 0: chat = "Kreygasam "+name.toUpperCase()+" SWEEP Kreygasam"; break;
+								case 0: chat = "Kreygasm "+name.toUpperCase()+" SWEEP Kreygasm"; break;
 								case 1: chat = "DAT "+name.toUpperCase()+" SWEEP"; break;
 								case 2: chat = "<dger>ヽ༼ຈل͜ຈ༽ﾉ</dger> "+name.toUpperCase()+" SWEEP <dger>ヽ༼ຈل͜ຈ༽ﾉ</dger>"; break;
 								case 3: chat = "SWEEPING UP HERE!"; break;
@@ -892,7 +892,7 @@
 							switch (Math.floor(rnd * 8)) {
 								case 0: chat = "<dger>♫ ┌༼ຈلຈ༽┘ ♪</dger> victory dance  <dger>♫ ┌༼ຈلຈ༽┘ ♪</dger>"; break;
 								case 1: chat = "THANK YOU FOR THE MONEY!"; break;
-								case 2: chat = "MONEY Kreygasam"; break;
+								case 2: chat = "MONEY Kreygasm"; break;
 								case 3: chat = "THANK YOU FOR MONEY "+((lastBattleTeam == TEAM_RED)?"BLUE":"RED")+" TEAM!"; break;
 								case 4: chat = "No longer in the 100 CLUB!"; break;
 								case 4: chat = "GIMMIE MY MONEY!!"; break;
@@ -1726,7 +1726,7 @@ Kreygasm LORD HELIX Kreygasm
 		{ name: "notnowhoney", 		style: 44-1, },
 		{ name: "LupinTheIIII", 	style: 26-1, },
 		{ name: "jigsawmonster", 	style: 16-1, },
-		{ name: "Xaixas", 			style: 14-1, dialog: function(){ return "Kreygasam "+ this.lastChant + " Kreygasam"; }},
+		{ name: "Xaixas", 			style: 14-1, dialog: function(){ return "Kreygasm "+ this.lastChant + " Kreygasm"; }},
 		{ name: "theRayeGun", 		style: 41-1, },//dialog: "!bet 100 red", },
 		{ name: "toto2379", 		style: 20-1, },
 		{ name: "sirguyman", 		style: 27-1, },
