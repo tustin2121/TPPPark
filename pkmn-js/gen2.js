@@ -113,6 +113,7 @@ addEvent(new MultiEvent({
 }))
 );
 
+/*
 addEvent(new MultiEvent({
 	name: "Eeveeloutions of Love",
 	sprite: "img/pkmn/buritto_flarion.gif",
@@ -155,7 +156,7 @@ addEvent(new MultiEvent({
 		new HallOfFame_Ribbon("9d 21h 24m"),
 	],
 }))
-);
+); */
 
 
 addEvent(new MovingPokemon({

@@ -13,7 +13,7 @@ addEvent(new Building({
 addEvent(new Pokemon({
 	name: "Bird Jesus",
 	animation: "floating",
-	sprite: "img/pkmn/bird-jesus.png",
+	sprite: "img/pkmn/bird-jesus.gif",
 	shadow : "img/pkmn/bird-jesus-shadow.png",
 	x : 10, y : 8, z: 20,
 	
