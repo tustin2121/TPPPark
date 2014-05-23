@@ -1754,7 +1754,7 @@ Kreygasm LORD HELIX Kreygasm
 		{ name: "pokechampjoey ", 	style: 43-1, },
 		
 		{ name: "Nick-Tr", 			style: 42-1, },
-		{ name: "PokemonGod777", 	style: 27-1, ),//dialog: random("HELLO", "WORLD", "AND", "ALL")},
+		{ name: "PokemonGod777", 	style: 27-1, },//dialog: random("HELLO", "WORLD", "AND", "ALL")},
 		// { name: "", 		style: -1, },
 		// { name: "", 		style: -1, },
 	];
