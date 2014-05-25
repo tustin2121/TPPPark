@@ -555,7 +555,7 @@ addEvent(new Person({
 		if (!this.smitten) {
 			switch (Math.floor(Math.random() * 6)) {
 				case 0: return "YOUNGSTER JOEY: Check out my awesome RATICATE, Ace!";
-				case 1: return "YOUNGSTER JOEY: My RATATTA is in the top percentage of all RATATTAs!";
+				case 1: return "YOUNGSTER JOEY: My RATTATA is in the top percentage of all RATTATAs!";
 				case 2: return "YOUNGSTER JOEY: Ace is in the top percentage of all RATICATEs!";
 				case 3: return "YOUNGSTER JOEY: Why'd you have to go and box Ace, AJ...?";
 				case 4: return "YOUNGSTER JOEY: AJ is in the top percentage of all Trainers in Johto and Kanto, you know. I wish I could be as good as him.";

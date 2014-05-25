@@ -213,7 +213,7 @@ addEvent(new Pokemon({
 		
 	OT: "Red",
 	gamename : "JLVWNNOOOO",
-	pokename : "Ratatta",
+	pokename : "Rattata",
 	level : 13,
 	memo : "The very first pokemon ever released.",
 	
