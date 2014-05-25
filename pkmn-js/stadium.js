@@ -1741,11 +1741,7 @@ Kreygasm LORD HELIX Kreygasm
 		{ name: "notnowhoney", 		style: 44-1, },
 		{ name: "LupinTheIIII", 	style: 26-1, },
 		{ name: "jigsawmonster", 	style: 16-1, },
-<<<<<<< HEAD
-		{ name: "Xaixas", 			style: 14-1, dialog: function(){ return "Kreygasm "+ this.lastChant + " Kreygasm"; }},
-=======
 		{ name: "Xaixas", 			style: 14-1, dialog: wrap("Kreygasm") },
->>>>>>> origin/gh-pages
 		{ name: "theRayeGun", 		style: 41-1, },//dialog: "!bet 100 red", },
 		{ name: "toto2379", 		style: 20-1, },
 		{ name: "sirguyman", 		style: 27-1, },
