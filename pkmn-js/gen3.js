@@ -196,12 +196,97 @@ addEvent(new MovingPokemon({
 	frame_height : 42,
 }));
 
-
+//////////// C3 and Apostropi's Event Suite //////////////
+addEvent(new Event({
+	name: "C3's Capture",
+	sprite: "img/pkmn/c3_tied.gif",
+	x: 158, y: -265,
+	anim: "custom",
+	
+	domTied : null,
+	domRopes : null,
+	domAnim : null,
+	
+	behavior: function(){
+		this._isActive = false; //behavior only used for initializing
+		
+		if ($.cookie("c3-freed")) {
+			this.domElement.hide(); //don't show this at all if he's been freed already
+		}
+	},
+	
+	getDomElement : function(){
+		if (this.domElement) return this.domElement;
+		
+		var eventobj = this;
+		
+		var base = $("<div>").addClass("event-base").attr("name", this.name);
+		this.domTied = this._createImageTag();
+		
+		var img = $("<img>").attr("src", "img/pkmn/c3.png").addClass("second")
+				.css({ "z-index" : 100, })
+				.on("load", function(){ //need to get the width after it loads
+					img.css("left", -(this.width / 2) + 8 + eventobj.adj_x);
+					img.hide();
+				});
+		this.domAnim = this._applySpriteAnimation(img);
+		
+		var ropes = $("<img>").attr("src", "img/pkmn/c3_looseropes.png").addClass("second")
+				.on("load", function(){ //need to get the width after it loads
+					ropes.css("left", -(this.width / 2) + 8 + eventobj.adj_x);
+					ropes.hide();
+				});
+		
+		base.append(this.domTied);
+		base.append(this.domAnim);
+		base.append(ropes);
+		
+		this._storeElement(base);
+		return base;
+	},
+	
+	doClick : function() {
+		//Bring up C3's summary screen
+		var c3 = eventRegistry["gen3_c3_final"];
+		c3.doClick();
+		
+		//play animation
+		this.domElement.find(".main").hide();
+		this.domElement.find(".second").show();
+		
+		this.domAnim
+			.animate({ bottom: 8, }, 200)
+			.animate({ bottom: 0, }, 200).delay(1500)
+			.queue(function(){
+				$(this).dequeue("movec3");
+				$(this).dequeue();
+			})
+			.animate({ left: -16 * 7 }, { duration: 1200, easing: 'linear', queue: 'movec3' })
+			.animate({ bottom: 32 }, { duration: 200, easing: 'linear', queue: 'movec3' })
+			.animate({ bottom: 8 }, { duration: 200, easing: 'easeOutQuad' })
+			.animate({ bottom: 0 }, { duration: 200, easing: 'easeInQuad' })
+			.animate({ bottom: 8 }, { duration: 200, easing: 'easeOutQuad' })
+			.animate({ bottom: 0 }, { duration: 200, easing: 'easeInQuad' })
+			.animate({ bottom: 8 }, { duration: 200, easing: 'easeOutQuad' })
+			.animate({ bottom: 0 }, { duration: 200, easing: 'easeInQuad' })
+			.fadeOut(200);
+		
+		//time out based on text length	
+		var text = "C3 was released from his bindings! He ran off to get revenge!";
+		var timeout = Math.max(4800, text.length * 80);
+		showDialog(text, this.domElement.position(), timeout);
+		
+		$.cookie("c3-freed", true);
+		eventRegistry["gen3_c3_final"].doSwitch();
+		eventRegistry["gen3_apostropi"].doSwitch();
+		eventRegistry["gen3_apostropi_down"].doSwitch();
+	},
+}));
 
 addEvent(new Pokemon({
-	name : "C3",
-	// sprite: "img/pkmn/c3.png",
-	// x: -37, y: -25,
+	name : "C3", id:"gen3_c3_final",
+	sprite: "img/pkmn/c3.png",
+	x: 41, y: 30,
 	
 	dex : "img/pkdx/emdex_c3.png",
 	sources : {
@@ -215,12 +300,26 @@ addEvent(new Pokemon({
 	nicknames : "Pvt. C3",
 	level : 33,
 	memo : "Promising young recruit, captured in his prime by Apostropi.",
+	
+	behavior: function(){
+		this._isActive = false; //behavior only used for initializing
+		
+		if (!$.cookie("c3-freed")) {
+			this.domElement.hide();
+		} else {
+			this.doSwitch();
+		}
+	},
+	
+	doSwitch: function(){
+		this.domElement.show();
+	},
 }));
 
 addEvent(new Pokemon({
-	name : "Apostropi",
-	// sprite: "img/pkmn/apostropi.png",
-	// x: -37, y: -25,
+	name : "Apostropi", id: "gen3_apostropi",
+	sprite: "img/pkmn/apostropi.png",
+	x: 41, y: 30,
 	
 	dex : "img/pkdx/emdex_apostropi.png",
 	sources : {
@@ -234,7 +333,44 @@ addEvent(new Pokemon({
 	nicknames : "Apostrachu",
 	level : 26,
 	memo : "Seen as an imposter, taking Minun's place.",
+	
+	behavior: function(){
+		this._isActive = false; //behavior only used for initializing
+		
+		if ($.cookie("c3-freed")) {
+			//this.doSwitch();
+			this.y += 2;
+			this.domElement.css({
+				top: this.y * 16,
+				"z-index" : ZBASE + this.y,
+			});
+		}
+	},
+	
+	doSwitch: function(){
+		this.domElement.hide();
+	},
 }));
+
+addEvent(new Pokemon({
+	//After he's geen knocked down by C3
+	refid: "gen3_apostropi",
+	id: "gen3_apostropi_down",
+	sprite: "img/pkmn/apostropi_down.gif",
+	x: 41, y: 33,
+	animation: null,
+	
+	behavior: function(){
+		this._isActive = false; //behavior only used for initializing
+		this.domElement.hide();
+	},
+	
+	doSwitch: function(){
+		this.domElement.show();
+	},
+}))
+
+//////////////////////////////////////////////////////////
 
 addEvent(new Pokemon({
 	name : "Bird Cop",

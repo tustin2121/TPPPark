@@ -113,29 +113,12 @@ addEvent(new MultiEvent({
 }))
 );
 
+
 addEvent(new MultiEvent({
-	name: "Eeveeloutions of Love",
-	sprite: "img/pkmn/buritto_flarion.gif",
-	x: 23, y: 38,
-}).addSubEvent("0,10,0,26,35,26,35,6,32,7,28,14,20,18,11,11", new Pokemon({
-	name: "Flareon",
-	
-	dex : "img/pkdx/tpp7_flareon.gif",
-	sources : {
-		"Pokedex Image by /u/Firewaffle" : "http://hamigakimomo.tumblr.com/post/78455477855/finally-did-a-jay-leno-and-cabbage-sprite",
-	},
-	
-	OT: "Red",
-	gamename : "Flareon",
-	pokename : "Flareon",
-	level : 25,
-	nicknames: "The False Prophet",
-	memo : "Known as the False Prophet for filling a party slot slated for Lapras and evolving neither into Jolteon or Vaporeon.",
-	
-	ribbons : [
-		new Released_Ribbon("5d 17h 47m"),
-	],	
-})).addSubEvent("0,0,0,9,11,11,19,18,27,13,32,6,35,5,35,0", new Pokemon({
+	name: "Burrito Writes Fanfiction!",
+	sprite: "img/pkmn/burrito_fanfic.gif",
+	x: 39, y: 29, z:-32
+}).addSubEvent("0,9,20,42", new Pokemon({
 	name: "Burrito",
 	
 	dex : "img/pkdx/dex_burrito.png",
@@ -149,13 +132,21 @@ addEvent(new MultiEvent({
 	pokename : "Espeon",
 	level : 54,
 	nicknames: "Breakfast Burrito<br/>Bringer of Light",
-	memo : "Known for trying to use Attract on everyone",
+	memo : "Known for trying to use Attract on everyone. He's writing fanfiction right now.",
 	
 	ribbons : [
 		new HallOfFame_Ribbon("9d 21h 24m"),
 	],
+})).addSubEvent("21,13,36,35", new Event({
+	name: "Burrito's Computer",
+	
+	doClick: function(){
+		if (loadBurritoStory) {
+			loadBurritoStory();
+		}
+	},
 }))
-);
+); 
 
 
 addEvent(new MovingPokemon({
@@ -564,7 +555,7 @@ addEvent(new Person({
 		if (!this.smitten) {
 			switch (Math.floor(Math.random() * 6)) {
 				case 0: return "YOUNGSTER JOEY: Check out my awesome RATICATE, Ace!";
-				case 1: return "YOUNGSTER JOEY: My RATATTA is in the top percentage of all RATATTAs!";
+				case 1: return "YOUNGSTER JOEY: My RATTATA is in the top percentage of all RATTATAs!";
 				case 2: return "YOUNGSTER JOEY: Ace is in the top percentage of all RATICATEs!";
 				case 3: return "YOUNGSTER JOEY: Why'd you have to go and box Ace, AJ...?";
 				case 4: return "YOUNGSTER JOEY: AJ is in the top percentage of all Trainers in Johto and Kanto, you know. I wish I could be as good as him.";

@@ -105,7 +105,7 @@
 					});
 				}
 				
-				if (!patron) {
+				if (!patron) { 
 					var pnum = Math.floor(Math.random() * RANDOM_NAMES.length);
 					var name = RANDOM_NAMES.splice(pnum, 1)[0];
 					
@@ -812,7 +812,7 @@
 		domImage : null,
 		team : null, //1 = red, 2 = blue
 		
-		lastChant : null,
+		lastChant : "<dger>ヽ༼ຈل͜ຈ༽ﾉ</dger> STADIUM OR RIOT <dger>ヽ༼ຈل͜ຈ༽ﾉ</dger>",
 		dialog: null,
 		favorite: -1,
 		
@@ -1676,13 +1676,28 @@ Kreygasm LORD HELIX Kreygasm
 	//Large Dexes that I don't want at the TOP of the file
 	/////////////////////////////////////////////////////////
 	
+	function wrap(pre, post) { 
+		if (post === undefined)
+			return function(){ return pre + " " + this.lastChant + " " + pre; } 
+		else
+			return function(){ return pre + " " + this.lastChant + " " + post; } 
+	}
+	
+	function random() { //varargs
+		var strings = Array.prototype.slice.call(arguments);
+		return function(){
+			var index = Math.floor(Math.random() * strings.length);
+			return strings[index];
+		}
+	}
+	
 	////// Patron Dex //////
 	var NAMED_PATRONS = [
 	 	//remember, positive numbers need to be 0 based, not 1 based like the image
 		{ name: "tustin2121",		style: -2,   favorite: 156,},
 		{ name: "carlotta4th",		style: -1,   },
 		{ name: "VillainousWattson",style: -3,   dialog: "WAHAHAHAHAHAHA!"},
-		{ name: "Faithfulforce",	style:  0  , dialog: function(){ return "BloodTrail "+ this.lastChant; }},
+		{ name: "Faithfulforce",	style:  0  , dialog: wrap("BloodTrail", "") },
 		{ name: "HedgemazeExpo",	style: 42-1, },
 		{ name: "Everyle", 			style: 17-1, },
 		{ name: "FruityParfait",	style: 23-1, },
@@ -1723,24 +1738,28 @@ Kreygasm LORD HELIX Kreygasm
 		{ name: "boolerex", 		style: 39-1, },
 		{ name: "TheLakAttack", 	style: 44-1, },
 		{ name: "GlitcherRed", 		style: 43-1, },
-		
 		{ name: "notnowhoney", 		style: 44-1, },
 		{ name: "LupinTheIIII", 	style: 26-1, },
 		{ name: "jigsawmonster", 	style: 16-1, },
+<<<<<<< HEAD
 		{ name: "Xaixas", 			style: 14-1, dialog: function(){ return "Kreygasm "+ this.lastChant + " Kreygasm"; }},
+=======
+		{ name: "Xaixas", 			style: 14-1, dialog: wrap("Kreygasm") },
+>>>>>>> origin/gh-pages
 		{ name: "theRayeGun", 		style: 41-1, },//dialog: "!bet 100 red", },
 		{ name: "toto2379", 		style: 20-1, },
 		{ name: "sirguyman", 		style: 27-1, },
 		{ name: "FluffyTamerMarill",style: 20-1, }, //u/Clarkarius
 		{ name: "Soulweaver91", 	style: 15-1, },
-		{ name: "MrVaidd", 			style:  1-1, },
+		{ name: "MrVaidd", 			style:  1-1, dialog: "<dger>ᕕ( ᐛ )ᕗ</dger> DANCE RIOT <dger>ᕕ( ᐛ )ᕗ</dger>",},
 		{ name: "renzantar", 		style: 41-1, },
-		// { name: "", 		style: -1, },
-		// { name: "", 		style: -1, },
-		// { name: "", 		style: -1, },
-		// { name: "", 		style: -1, },
-		// { name: "", 		style: -1, },
-		// { name: "", 		style: -1, },
+		{ name: "nasian_",	 		style: 41-1, },
+		{ name: "shotgunninja", 	style: 22-1, },
+		{ name: "pokechampjoey ", 	style: 43-1, },
+		
+		{ name: "Nick-Tr", 			style: 42-1, },
+		{ name: "PokemonGod777", 	style: 27-1, },//dialog: random("HELLO", "WORLD", "AND", "ALL")},
+		{ name: "Sparkray", 		style: 39-1, },
 		// { name: "", 		style: -1, },
 	];
 	
@@ -1768,7 +1787,7 @@ Kreygasm LORD HELIX Kreygasm
 		"geosspone", "i_cant_believe_you_all", "junewind", "mjbaker", "potatosaladdressing", "mo40o2naliz", "cakedayisbirthday", 
 		"alifen", "erassus", "nidoking_armx", "basedazumarill", "our_lord_helix_the_great", "arazioman", "101100111000", 
 		
-		"chaoticcookie39", "abiyoru", "222phantom",
+		"chaoticcookie39", "abiyoru", "222phantom", "Onamuk", "BettingBetter", "UltraMew", "Jacobjr1", "Blademan9999",
 	];
 
 	////// Types //////
@@ -1980,8 +1999,8 @@ Kreygasm LORD HELIX Kreygasm
 		{ id : 180, name: "Flaaffy"		, type: Electric,	type2: null, 	favor: 1},
 		{ id : 181, name: "Ampharos"	, type: Electric,	type2: null, 	favor: 1},
 		{ id : 182, name: "Bellossom"	, type: Grass,		type2: null, 	favor: 1},
-		{ id : 183, name: "Marill"		, type: Water,		type2: null, 	favor: 1, hax:"rollout" },
-		{ id : 184, name: "Azumarill"	, type: Water,		type2: null, 	favor: 1, hax:"rollout" },
+		{ id : 183, name: "Marill"		, type: Water,		type2: null, 	favor: 1, hax:"rollout", chant:["M4", "M4rill"] },
+		{ id : 184, name: "Azumarill"	, type: Water,		type2: null, 	favor: 1, hax:"rollout", chant:["M4", "M4rill"] },
 		{ id : 185, name: "Sudowoodo"	, type: Rock,		type2: null, 	favor: 1},
 		{ id : 186, name: "Politoed"	, type: Water,		type2: null, 	favor: 1, hax:"perish song" },
 		{ id : 187, name: "Hoppip"		, type: Grass,		type2: Flying, 	favor: 1},
@@ -1993,7 +2012,7 @@ Kreygasm LORD HELIX Kreygasm
 		{ id : 193, name: "Yanma"		, type: Bug,		type2: Flying, 	favor: 1},
 		{ id : 194, name: "Wooper"		, type: Water,		type2: Ground, 	favor: 1, hp:250},
 		{ id : 195, name: "Quagsire"	, type: Water,		type2: Ground, 	favor: 1},
-		{ id : 196, name: "Espeon"		, type: Psychic,	type2: null, 	favor: 1.7, hax:"attact", chant: ["Burrito"]},
+		{ id : 196, name: "Espeon"		, type: Psychic,	type2: null, 	favor: 1.7, hax:"attract", chant: ["Burrito"]},
 		{ id : 197, name: "Umbreon"		, type: Dark,		type2: null, 	favor: 1},
 		{ id : 198, name: "Murkrow"		, type: Dark,		type2: Flying, 	favor: 1},
 		{ id : 199, name: "Slowking"	, type: Water,		type2: Psychic,	favor: 1},
@@ -2040,9 +2059,9 @@ Kreygasm LORD HELIX Kreygasm
 		{ id : 240, name: "Magby"		, type: Fire,		type2: null, 	favor: 1},
 		{ id : 241, name: "Miltank"		, type: Normal,		type2: null, 	favor: 1},
 		{ id : 242, name: "Blissey"		, type: Normal,		type2: null, 	favor: 1},
-		{ id : 243, name: "Raikou"		, type: Electric,	type2: null, 	favor: 1.8},
-		{ id : 244, name: "Entei"		, type: Fire,		type2: null, 	favor: 1.8},
-		{ id : 245, name: "Suicune"		, type: Water,		type2: null, 	favor: 1.8},
+		{ id : 243, name: "Raikou"		, type: Electric,	type2: null, 	favor: 1.2},
+		{ id : 244, name: "Entei"		, type: Fire,		type2: null, 	favor: 0.9},
+		{ id : 245, name: "Suicune"		, type: Water,		type2: null, 	favor: 1.2},
 		{ id : 246, name: "Larvitar"	, type: Rock,		type2: Ground, 	favor: 1},
 		{ id : 247, name: "Pupitar"		, type: Rock,		type2: Ground, 	favor: 1},
 		{ id : 248, name: "Tyranitar"	, type: Rock,		type2: Dark, 	favor: 1},
