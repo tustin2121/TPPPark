@@ -196,16 +196,24 @@ addEvent(new MovingPokemon({
 	frame_height : 42,
 }));
 
-
+//////////// C3 and Apostropi's Event Suite //////////////
 addEvent(new Event({
 	name: "C3's Capture",
-	// sprite: "img/pkmn/c3_tied.gif",
+	sprite: "img/pkmn/c3_tied.gif",
 	x: 158, y: -265,
 	anim: "custom",
 	
 	domTied : null,
 	domRopes : null,
 	domAnim : null,
+	
+	behavior: function(){
+		this._isActive = false; //behavior only used for initializing
+		
+		if ($.cookie("c3-freed")) {
+			this.domElement.hide(); //don't show this at all if he's been freed already
+		}
+	},
 	
 	getDomElement : function(){
 		if (this.domElement) return this.domElement;
@@ -238,6 +246,11 @@ addEvent(new Event({
 	},
 	
 	doClick : function() {
+		//Bring up C3's summary screen
+		var c3 = eventRegistry["gen3_c3_final"];
+		c3.doClick();
+		
+		//play animation
 		this.domElement.find(".main").hide();
 		this.domElement.find(".second").show();
 		
@@ -263,15 +276,17 @@ addEvent(new Event({
 		var timeout = Math.max(4800, text.length * 80);
 		showDialog(text, this.domElement.position(), timeout);
 		
-		$(".event-base[name='C3']").data("event").doSwitch();
-		$(".event-base[name='Apostropi']").data("event").doSwitch();
+		$.cookie("c3-freed", true);
+		eventRegistry["gen3_c3_final"].doSwitch();
+		eventRegistry["gen3_apostropi"].doSwitch();
+		eventRegistry["gen3_apostropi_down"].doSwitch();
 	},
 }));
 
 addEvent(new Pokemon({
-	name : "C3",
-	// sprite: "img/pkmn/c3.png",
-	x: 39, y: 28,
+	name : "C3", id:"gen3_c3_final",
+	sprite: "img/pkmn/c3.png",
+	x: 41, y: 30,
 	
 	dex : "img/pkdx/emdex_c3.png",
 	sources : {
@@ -286,15 +301,25 @@ addEvent(new Pokemon({
 	level : 33,
 	memo : "Promising young recruit, captured in his prime by Apostropi.",
 	
+	behavior: function(){
+		this._isActive = false; //behavior only used for initializing
+		
+		if (!$.cookie("c3-freed")) {
+			this.domElement.hide();
+		} else {
+			this.doSwitch();
+		}
+	},
+	
 	doSwitch: function(){
-		console.log("C3's switch function!");
+		this.domElement.show();
 	},
 }));
 
 addEvent(new Pokemon({
-	name : "Apostropi",
-	// sprite: "img/pkmn/apostropi.png",
-	x: 39, y: 27,
+	name : "Apostropi", id: "gen3_apostropi",
+	sprite: "img/pkmn/apostropi.png",
+	x: 41, y: 30,
 	
 	dex : "img/pkdx/emdex_apostropi.png",
 	sources : {
@@ -309,10 +334,43 @@ addEvent(new Pokemon({
 	level : 26,
 	memo : "Seen as an imposter, taking Minun's place.",
 	
+	behavior: function(){
+		this._isActive = false; //behavior only used for initializing
+		
+		if ($.cookie("c3-freed")) {
+			//this.doSwitch();
+			this.y += 2;
+			this.domElement.css({
+				top: this.y * 16,
+				"z-index" : ZBASE + this.y,
+			});
+		}
+	},
+	
 	doSwitch: function(){
-		console.log("Apos's switch function!");
+		this.domElement.hide();
 	},
 }));
+
+addEvent(new Pokemon({
+	//After he's geen knocked down by C3
+	refid: "gen3_apostropi",
+	id: "gen3_apostropi_down",
+	sprite: "img/pkmn/apostropi_down.gif",
+	x: 41, y: 33,
+	animation: null,
+	
+	behavior: function(){
+		this._isActive = false; //behavior only used for initializing
+		this.domElement.hide();
+	},
+	
+	doSwitch: function(){
+		this.domElement.show();
+	},
+}))
+
+//////////////////////////////////////////////////////////
 
 addEvent(new Pokemon({
 	name : "Bird Cop",

@@ -1755,7 +1755,7 @@ Kreygasm LORD HELIX Kreygasm
 		
 		{ name: "Nick-Tr", 			style: 42-1, },
 		{ name: "PokemonGod777", 	style: 27-1, },//dialog: random("HELLO", "WORLD", "AND", "ALL")},
-		// { name: "", 		style: -1, },
+		{ name: "Sparkray", 		style: 39-1, },
 		// { name: "", 		style: -1, },
 	];
 	
@@ -2055,9 +2055,9 @@ Kreygasm LORD HELIX Kreygasm
 		{ id : 240, name: "Magby"		, type: Fire,		type2: null, 	favor: 1},
 		{ id : 241, name: "Miltank"		, type: Normal,		type2: null, 	favor: 1},
 		{ id : 242, name: "Blissey"		, type: Normal,		type2: null, 	favor: 1},
-		{ id : 243, name: "Raikou"		, type: Electric,	type2: null, 	favor: 1.8},
-		{ id : 244, name: "Entei"		, type: Fire,		type2: null, 	favor: 1.8},
-		{ id : 245, name: "Suicune"		, type: Water,		type2: null, 	favor: 1.8},
+		{ id : 243, name: "Raikou"		, type: Electric,	type2: null, 	favor: 1.2},
+		{ id : 244, name: "Entei"		, type: Fire,		type2: null, 	favor: 0.9},
+		{ id : 245, name: "Suicune"		, type: Water,		type2: null, 	favor: 1.2},
 		{ id : 246, name: "Larvitar"	, type: Rock,		type2: Ground, 	favor: 1},
 		{ id : 247, name: "Pupitar"		, type: Rock,		type2: Ground, 	favor: 1},
 		{ id : 248, name: "Tyranitar"	, type: Rock,		type2: Dark, 	favor: 1},

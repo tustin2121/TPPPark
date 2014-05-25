@@ -123,7 +123,7 @@ body.x2 #anchor {
 }
 
 .ui.instructions {
-	top: 20px; left: 20px;
+	top: 30px; left: 40px;
 	width: 220px; 
 	padding: 10px;
 	border-radius: 20px;
@@ -137,6 +137,26 @@ body.x2 #anchor {
 .ui.instructions p {
 	margin: 6px inherit;
 }
+
+.ui.latest-update {
+	bottom: 0; right: 30px;
+	width: 300px; 
+	padding-left: 6px;
+	padding-right: 15px;
+	border-radius: 20px 20px 0 0;
+	background-color: rgba(0, 0, 0, 0.95);
+	
+	color: white;
+	font-family: PokemonScreen;
+	font-size: 16px;
+	line-height: 14px;
+}
+.ui.latest-update .btn-close {
+	position: absolute;
+	top: 10px; right: 10px;
+}
+.ui.latest-update .timestamp:before { content: "("; }
+.ui.latest-update .timestamp:after  { content: ")"; }
 
 /* --- Startup Screen --- */
 
@@ -289,6 +309,7 @@ body.x2 #anchor {
 	width: 280px; height: 200px;
 	background-image: url("img/ui/status_screen.png");
 	z-index : 20000; /* Float OVER pokemon */
+	top: 15px; left: 15px;
 	display: none;
 }
 
@@ -536,6 +557,7 @@ body.x2 #anchor {
 	width: 240px; height: 160px;
 	background-image: url("img/ui/trainer_card.png");
 	z-index : 20000; /* Float OVER pokemon */
+	top: 15px; left: 15px;
 	display: none;
 }
 
@@ -694,6 +716,27 @@ body.x2 #anchor {
 	font-size: 0.8em;
 	font-family: "Comic Sans", "Comic Sans MS", cursive; /* I apologize :P */
 	padding-right: 4px;
+}
+
+#buritto-frame .content h1 {
+	font-size: 1.2em;
+	text-align: center;
+}
+#buritto-frame .content p {
+	margin: 10px inherit;
+}
+#buritto-frame .content .censor {
+	background-color: black;
+	color: black;
+}
+#buritto-frame .content hr {
+	
+}
+
+#buritto-frame .btn-close {
+	position: absolute;
+	top: -24px; right: 3px;
+	/*width: 77px;*/ height: 24px;
 }
 
 #buritto-frame .frame {

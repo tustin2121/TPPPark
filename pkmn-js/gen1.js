@@ -10,7 +10,12 @@ addEvent(new Building({
 	warp_x: 32, warp_y: 67,
 }));
 
-addEvent(new Pokemon({
+addEvent(new MultiEvent({
+	name: "BJ and FP fight it out!",
+	sprite: "img/pkmn/bird_jesus_flareon_argue.gif",
+	x: 9, y : 10,
+	
+}).addSubEvent("39,12,73,56", new Pokemon({
 	name: "Bird Jesus",
 	animation: "floating",
 	sprite: "img/pkmn/bird_jesus.gif",
@@ -32,7 +37,26 @@ addEvent(new Pokemon({
 	ribbons : [
 		new HallOfFame_Ribbon("16d 7h 45m"),
 	],
-}));
+})).addSubEvent("11,33,34,55", new Pokemon({
+	name: "Flareon",
+	
+	dex : "img/pkdx/tpp7_flareon.gif",
+	sources : {
+		"Pokedex Image by /u/Firewaffle" : "http://hamigakimomo.tumblr.com/post/78455477855/finally-did-a-jay-leno-and-cabbage-sprite",
+	},
+	
+	OT: "Red",
+	gamename : "Flareon",
+	pokename : "Flareon",
+	level : 25,
+	nicknames: "The False Prophet",
+	memo : "Known as the False Prophet for filling a party slot slated for Lapras and evolving neither into Jolteon or Vaporeon.",
+	
+	ribbons : [
+		new Released_Ribbon("5d 17h 47m"),
+	],	
+}))
+);
 
 //
 // Note: Lord Helix is attached to the Battle of Mt Silver multi-event defined
@@ -140,7 +164,7 @@ addEvent(new Pokemon({
 	gamename : "AAJST(???",
 	pokename : "Raticate",
 	nicknames : "BigDig",
-	level : 20,
+	level : 29,
 	memo : "A trouble maker, known for digging us out of places we wanted to be.",
 	
 	ribbons : [
@@ -256,11 +280,6 @@ addEvent(new Building({
 	x : -3, y : 1,
 	warp_x: 208, warp_y: -2,
 }));
-
-//
-// Note: The False Propeht is attached to the Eeveeloutions of Love multi-event 
-// defined in the Gen 2 events file. See there for her event definition.
-//
 
 
 // Rick Gastly (no h...)
