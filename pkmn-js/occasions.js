@@ -148,3 +148,16 @@ addOccasion("bloodysunday", function(date) {
 //TODO: Change Brian and Alpha's sprites to not biking.
 
 //TODO: Add candles and banner here
+
+
+/***************************************************
+ Weds, Every Other Week: Protagonist Tournament!
+	Stadium has battlers now! Our Portagonists!
+	Their teams are thrown randomly into the lineup and they battle one another.
+***************************************************/
+
+addOccasion("protagturni", function(date) {
+	return ((currGame.day(date) == 10
+		 && currGame.hour(date) > 7 && currGame.hour(date) < 16)
+		 || (date.getMonth() == 2 && date.getDate() == 23))
+}, 100);
