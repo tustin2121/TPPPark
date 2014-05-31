@@ -1756,6 +1756,10 @@ Kreygasm LORD HELIX Kreygasm
 		{ name: "Nick-Tr", 			style: 42-1, },
 		{ name: "PokemonGod777", 	style: 27-1, },//dialog: random("HELLO", "WORLD", "AND", "ALL")},
 		{ name: "Sparkray", 		style: 39-1, },
+		{ name: "Zeldafoof", 		style: 37-1, },
+		// { name: "", 		style: -1, },
+		// { name: "", 		style: -1, },
+		// { name: "", 		style: -1, },
 		// { name: "", 		style: -1, },
 	];
 	
@@ -1784,6 +1788,7 @@ Kreygasm LORD HELIX Kreygasm
 		"alifen", "erassus", "nidoking_armx", "basedazumarill", "our_lord_helix_the_great", "arazioman", "101100111000", 
 		
 		"chaoticcookie39", "abiyoru", "222phantom", "Onamuk", "BettingBetter", "UltraMew", "Jacobjr1", "Blademan9999",
+		"Deny_Craft", "addgro_ove",
 	];
 
 	////// Types //////

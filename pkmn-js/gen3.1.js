@@ -237,7 +237,7 @@ addEvent(new Pokemon({
 
 // Snorlax/Glalie
 addEvent(new Pokemon({
-	name : "Glalax",
+	name : "Snowlax",
 	sprite: "img/pkmn/galie_snorlax.png",
 	x: -22, y: 3,
 	animation: false,
@@ -245,6 +245,7 @@ addEvent(new Pokemon({
 	dex : "http://cdn.bulbagarden.net/upload/0/06/Spr_3e_362.gif", //Bulbapedia
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
+		"Sprite by /u/addgro_ove" : "",
 	},
 	
 	OT: "Alice",
@@ -252,6 +253,7 @@ addEvent(new Pokemon({
 	gamename : "Glalie",
 	pokename : "Glalie",
 	level : 30,
+	nicknames: "Glalax",
 	ball: "great",
 	caught : "",
 	memo : "The Snorlax on Route 12 was a Glalie in disguise",
