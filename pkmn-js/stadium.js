@@ -1804,7 +1804,7 @@ Kreygasm LORD HELIX Kreygasm
 		{ name: "PokemonGod777", 	style: 27-1, },//dialog: random("HELLO", "WORLD", "AND", "ALL")},
 		{ name: "Sparkray", 		style: 39-1, },
 		{ name: "Zeldafoof", 		style: 37-1, },
-		// { name: "", 		style: -1, },
+		{ name: "Mayorofpyroland", 	style: 38-1, dialog: "This stadium is TENATTATEN!",},
 		// { name: "", 		style: -1, },
 		// { name: "", 		style: -1, },
 		// { name: "", 		style: -1, },
