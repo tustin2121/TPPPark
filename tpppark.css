@@ -345,7 +345,7 @@ body.x2 #anchor {
 #status-screen .info-screen.description {
 	background-position: -95px -498px;
 }
-#status-screen .info-screen.sources {
+#status-screen .info-screen.ctrlpnl {
 	background-position: -95px -647px;
 }
 
@@ -358,7 +358,7 @@ body.x2 #anchor {
 #status-screen.tab3 .info-screen.description {
 	display: block;
 }
-#status-screen.tab4 .info-screen.sources {
+#status-screen.tab4 .info-screen.ctrlpnl {
 	display: block;
 }
 
@@ -550,7 +550,7 @@ body.x2 #anchor {
 #status-screen .info-screen.ribbon section.rb-ribbon11:before		{ background-position: -1px -376px; }
 #status-screen .info-screen.ribbon section.rb-ribbon12:before		{ background-position: -34px -376px; }
 
-#status-screen .info-screen.sources {
+#status-screen .info-screen.ctrlpnl {
 	padding: 12px 4px 1px 6px;
 	width: 175px; height:136px; /* Respecify size due to padding */
 	overflow: hidden;

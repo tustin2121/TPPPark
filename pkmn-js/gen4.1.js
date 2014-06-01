@@ -20,7 +20,7 @@ showGameClock("TPP HeartGold Game Clock<br/>", new Date(Date.UTC(2014, 05-1, 24,
 addEvent(new Pokemon({
 	skipme: true,
 	
-	name: "",
+	name: "Trapnich",
 	sprite: "img/pkmn/",
 	x: 0, y: 0,
 	
@@ -28,13 +28,13 @@ addEvent(new Pokemon({
 	sources: {
 		"Sprite by /u/": "",
 		"Pokedex Image by /u/": "",
-	}
+	},
 	
 	OT: "",
 	gender: 0,
-	gamename: "",
-	pokename: "",
-	nicknames: "",
+	gamename: ",",
+	pokename: "Vibrava",
+	nicknames: "Trumpnich",
 	//level: 5,
 	memo: "",
 	
@@ -47,20 +47,20 @@ addEvent(new Pokemon({
 addEvent(new Trainer({
 	skipme: true,
 	
-	name : "",
+	name : "aoooo",
 	spritesheet : "img/trainers/.png",
 	x: -9, y: 13,
 	
 	dex : "",
 	sources : {
-		"XXXXX Sprite from Bulbapedia":"", 
+		"Lyra Sprite from Bulbapedia":"", 
 	},
 	
-	nickname : "",
+	nickname : "Aoooo",
 	playtime: "0d 0h 0m",
 	pokedex : "0 own/0 seen",
 	releasecount : 0,
-	idnum : "00000",
+	idnum : "28412",
 	
 	info_html : 
 		"Number of E4 Attempts: ??<br/>"+

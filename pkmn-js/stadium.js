@@ -23,8 +23,8 @@
 	var redfavor = 0;
 	var bluefavor = 0;
 	
-	var redPokes = [];
-	var bluePokes = [];
+	var redPokes = [], redNextPokes = [];
+	var bluePokes = [], blueNextPokes = [];
 	
 	var redDom = [];
 	var blueDom = [];
@@ -32,15 +32,55 @@
 	var redCurrMon = null;
 	var blueCurrMon = null;
 	
+	var initialState = STATE_DECIDING;
 	var currState = 0;
 	var countdown = 0;
 	
 	var eventlist = [];
 	var eventIntervalId = 0;
 	
-	window.setStadiumState = function(state){
-		goToState(state);
+	window.parseStadiumHash = function(value){
+		var args = value.split(";");
+		
+		var state = args.shift();
+		if (state) {
+			switch(state) {
+				case "empty": goToState(-1); break;
+				case "riot": initialState = STATE_RIOTING; break;
+				case "helix": initialState = STATE_HELIX_PRAISE; break;
+			}
+		}
+		
+		for (var i = 0; i < args.length; i++) {
+			switch (args[i][0]) { //first char of the string
+				case "r": //Red team
+					redNextPokes = redNextPokes.concat(getPokesFromHash(args[i]));
+					break;
+				case "b": //blue team
+					blueNextPokes = blueNextPokes.concat(getPokesFromHash(args[i]));
+					break;
+			}
+		}
+		
+		if (currState != 0)
+			goToState(initialState);
 	}
+	
+	function getPokesFromHash(value) {
+		value = value.substr(1); //chomp first char
+		
+		var ids = [];
+		var vals = value.split(",");
+		for (var i = 0; i < vals.length; i++) {
+			if (!$.isNumeric(vals[i])) continue;
+			var id = Math.floor(vals[i]);
+			if (id <= 0 || id > POKEMON.length) continue;
+			ids.push(id-1);
+		}
+		return ids;
+	}
+	
+	////////////////////////////////////////////////////////////////////////////
 	
 	function testScreenSupport() {
 		var canvas = $("<canvas>");
@@ -143,11 +183,11 @@
 		addEvent(pkmn); eventlist.push(pkmn); blueDom.push(pkmn);
 		pkmn = new Combatant({ team: 2, x: 72, y: -26 });
 		addEvent(pkmn); eventlist.push(pkmn); blueDom.push(pkmn);
-			
+		
 		if (!testScreenSupport()) //Screen doesn't work! RIOT!
 			goToState(STATE_RIOTING);
 		else
-			goToState(STATE_DECIDING);
+			goToState(initialState);
 	}
 	
 	function fireStadiumBehaviors() {
@@ -158,6 +198,13 @@
 	}
 	
 	function doDeciding() {
+		while (redNextPokes.length && redPokes.length < 3) {
+			redPokes.push(redNextPokes.shift());
+		}
+		while (blueNextPokes.length && bluePokes.length < 3) {
+			bluePokes.push(blueNextPokes.shift());
+		}
+		
 		var team = redPokes;
 		if (team.length == 3) team = bluePokes;
 		if (team.length < 3) {
