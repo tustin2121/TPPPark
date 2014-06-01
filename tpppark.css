@@ -253,6 +253,17 @@ body.x2 #anchor {
 	-webkit-transform: scale(-1, 1);
 }
 
+.event-base .banner {
+	position: absolute;
+	width: 256px; height: 24px;
+	
+	text-align: center;
+	color: black;
+	font-family: PokemonScreen;
+	font-size: 16px;
+	line-height: 19px;
+}
+
 /* --- Dialog Box --- */
 
 #dialog-box {

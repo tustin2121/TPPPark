@@ -117,6 +117,54 @@ Have a banner draped on the stage (a la the congrats sign on the Game Corner)
 		};
 	}
 	
+	//////////////////////////////////////////////////////////////////////////////////////
+	// Define occasion banner
+	
+	var banner = new Event({
+		name: "occasion banner",
+		x: 10, y: -37, 
+		skipme: true, //usually skip
+		
+		upperBannerText: "",
+		lowerBannerText: "",
+		bannerSize: 0, //1 for biggest, 2 for medium, 3 for small
+		
+		domLower: null,
+		domUpper: null,
+		getDomElement : function() {
+			if (this.domElement) return this.domElement;
+			
+			var base = $("<div>").addClass("event-base").attr("name", this.name);
+			if (this.lowerBannerText && this.bannerSize > 0) {
+				var lower = $("<div>").addClass("banner lower")
+					.css({
+						"background-image": "url(img/bld/occasion_banner.png)",
+						"background-position": "0px -"+(24*this.bannerSize)+"px",
+						left: -112, top: -26,
+					})
+					.text(this.lowerBannerText);
+				this.domLower = lower;
+				base.append(lower);
+			}
+			
+			if (this.upperBannerText) {
+				var upper = $("<div>").addClass("banner upper")
+					.css({
+						"background-image": "url(img/bld/occasion_banner.png)",
+						"background-position": "0px 0px",
+						left: -112, top: -45,
+					})
+					.text(this.upperBannerText);
+				this.domUpper = upper;
+				base.append(upper);
+			}
+			
+			this._storeElement(base);
+			return base;
+		},
+	});
+	addEvent(banner);
+	
 	
 	//////////////////////////////////////////////////////////////////////////////////////
 	// Define Occasions!
@@ -156,6 +204,12 @@ Have a banner draped on the stage (a la the congrats sign on the Game Corner)
 	//TODO: Change Brian and Alpha's sprites to not biking.
 
 	//TODO: Add candles and banner here
+	banner.forOccasion("bloodysunday", {
+		skipme: false,
+		upperBannerText: "In Memoriam",
+		lowerBannerText: "Bloody Sunday", 
+		bannerSize: 3,
+	});
 
 
 	/***************************************************
