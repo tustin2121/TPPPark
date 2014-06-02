@@ -63,7 +63,7 @@ addEvent(new MultiEvent({
 	// shadow: "img/pkmn/generic-shadow.png",
 	// x: 33, y: -10, z: 22,
 	
-	dex : "http://cdn.bulbagarden.net/upload/0/0b/Spr_3e_291.gif",
+	dex : "img/pkdx/b/Spr_3e_291.gif",
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
 		"Sprite by /u/carlotta4th": "",
@@ -160,7 +160,7 @@ addEvent(new MovingPokemon({
 	spritesheet: "img/pkmn/kadabra_biking.png",
 	x: -8, y: 14,
 	
-	dex : "http://cdn.bulbagarden.net/upload/9/97/Spr_3e_064.gif", //Bulbapedia
+	dex : "img/pkdx/b/Spr_3e_064.gif", //Bulbapedia
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
 	},
@@ -465,7 +465,7 @@ addEvent(new MultiEvent({
 	// sprite: "img/pkmn/oddish_1.png",
 	// x: -33, y: -23,
 	
-	dex : "http://cdn.bulbagarden.net/upload/d/dc/Spr_3e_043.gif", //Bulbapedia
+	dex : "img/pkdx/b/Spr_3e_043.gif", //Bulbapedia
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
 	},
@@ -487,7 +487,7 @@ addEvent(new MultiEvent({
 	// sprite: "img/pkmn/oddish_2.png",
 	// x: -35, y: -23,
 	
-	dex : "http://cdn.bulbagarden.net/upload/d/dc/Spr_3e_043.gif", //Bulbapedia
+	dex : "img/pkdx/b/Spr_3e_043.gif", //Bulbapedia
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
 	},
@@ -510,7 +510,7 @@ addEvent(new MultiEvent({
 	// x: -34, y: -23, z: -3,
 	// animation: null,
 	
-	dex : "http://cdn.bulbagarden.net/upload/d/dc/Spr_3r_Egg.png", //Bulbapedia
+	dex : "img/pkdx/b/Spr_3r_Egg.png", //Bulbapedia
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
 	},
@@ -594,7 +594,7 @@ addEvent(new Pokemon({
 	sprite: "img/pkmn/shiny-chinchou.gif",
 	x: -40, y: -8,
 	
-	dex: "http://cdn.bulbagarden.net/upload/f/ff/Spr_3e_170_s.gif", //Bulbapedia
+	dex: "img/pkdx/b/Spr_3e_170_s.gif", //Bulbapedia
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
 	},
@@ -618,7 +618,7 @@ addEvent(new MultiEvent({
 }).addSubEvent("40,0,63,24", new Pokemon({
 	name: "Zubat",
 	
-	dex: "http://cdn.bulbagarden.net/upload/e/ea/Spr_3e_041.gif", //Bulbapedia
+	dex: "img/pkdx/b/Spr_3e_041.gif", //Bulbapedia
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
 	},
@@ -714,7 +714,7 @@ addEvent(new MultiEvent({
 })).addSubEvent("16,1,30,13", new Pokemon({ //top pooch
 	name : "A Doge",
 	
-	dex : "http://cdn.bulbagarden.net/upload/8/8c/Spr_3e_261.gif",
+	dex : "img/pkdx/b/Spr_3e_261.gif",
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
 		"Swingset Sprite by /u/Bayoeen" : "http://www.reddit.com/r/twitchplayspokemon/comments/21gzza/banner_doge_improvements/",
@@ -729,7 +729,7 @@ addEvent(new MultiEvent({
 })).addSubEvent("34,22,47,42", new Pokemon({ //swinging pooch
 	name : "Pacifist Doge",
 	
-	dex : "http://cdn.bulbagarden.net/upload/8/8c/Spr_3e_261.gif",
+	dex : "img/pkdx/b/Spr_3e_261.gif",
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
 		"Swingset Sprite by /u/Bayoeen" : "http://www.reddit.com/r/twitchplayspokemon/comments/21gzza/banner_doge_improvements/",
@@ -757,7 +757,7 @@ addEvent(new MultiEvent({
 }).addSubEvent("0,0,21,16", new Pokemon({ //Left Doge, big
 	name : "Alpha Doge",
 	
-	dex : "http://cdn.bulbagarden.net/upload/8/8c/Spr_3e_261.gif",
+	dex : "img/pkdx/b/Spr_3e_261.gif",
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
 		"Swingset Sprite by /u/Bayoeen" : "http://www.reddit.com/r/twitchplayspokemon/comments/21gzza/banner_doge_improvements/",
@@ -778,7 +778,7 @@ addEvent(new MultiEvent({
 })).addSubEvent("37,0,54,16", new Pokemon({ //Right doge, small
 	name : "Doge",
 	
-	dex : "http://cdn.bulbagarden.net/upload/8/8c/Spr_3e_261.gif",
+	dex : "img/pkdx/b/Spr_3e_261.gif",
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
 		"Swingset Sprite by /u/Bayoeen" : "http://www.reddit.com/r/twitchplayspokemon/comments/21gzza/banner_doge_improvements/",
@@ -822,7 +822,7 @@ addEvent(new Pokemon({
 	x: 6, y: 26,
 	animation: null,
 	
-	dex : "http://cdn.bulbagarden.net/upload/8/8c/Spr_3e_261.gif",
+	dex : "img/pkdx/b/Spr_3e_261.gif",
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
 	},

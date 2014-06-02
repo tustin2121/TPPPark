@@ -11,7 +11,7 @@ addEvent(new Pokemon({
 	sprite: "img/pkmn/bidoof-oreo.png",
 	x: 14, y: -29,
 	
-	dex : "http://cdn.bulbagarden.net/upload/a/ae/Spr_4p_399_f.png",
+	dex : "img/pkdx/b/Spr_4p_399_f.png",
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
 		"Sprite is Flair by /u/RT-Pickred": "",
@@ -40,7 +40,7 @@ addEvent(new Pokemon({
 	// sprite: "img/pkmn/bidoof.png",
 	x: 7, y: -24,
 	
-	dex : "http://cdn.bulbagarden.net/upload/f/f2/Spr_4p_399_m.png",
+	dex : "img/pkdx/b/Spr_4p_399_m.png",
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
 	},
@@ -64,7 +64,7 @@ addEvent(new Pokemon({
 	sprite: "img/pkmn/shiny-geodude.gif",
 	x: -43, y: -10,
 	
-	dex: "http://cdn.bulbagarden.net/upload/b/b0/Spr_4p_074_s.png", //Bulbapedia
+	dex: "img/pkdx/b/Spr_4p_074_s.png", //Bulbapedia
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
 	},
@@ -84,7 +84,7 @@ addEvent(new Pokemon({
 	sprite: "img/pkmn/master-geodude.png",
 	x: -30, y: -10,
 	
-	dex : "http://cdn.bulbagarden.net/upload/b/b7/Spr_4p_074.png",
+	dex : "img/pkdx/b/Spr_4p_074.png",
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
 	},
@@ -201,7 +201,7 @@ addEvent(new MultiEvent({
 })).addSubEvent("0,0,20,25", new Pokemon({
 	name : "Roselio",
 	
-	dex : "http://cdn.bulbagarden.net/upload/9/9d/Spr_4p_315_m.png",
+	dex : "img/pkdx/b/Spr_4p_315_m.png",
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
 	},
@@ -221,7 +221,7 @@ addEvent(new MultiEvent({
 })).addSubEvent("21,16,30,25", new Pokemon({
 	name : "Roselia Egg",
 	
-	dex : "http://cdn.bulbagarden.net/upload/d/dc/Spr_3r_Egg.png",
+	dex : "img/pkdx/b/Spr_3r_Egg.png",
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
 	},
@@ -326,7 +326,7 @@ addEvent(new MovingPokemon({
 	x: 20, y: 33,
 	
 	
-	dex : "http://cdn.bulbagarden.net/upload/f/f2/Spr_4p_399_m.png",
+	dex : "img/pkdx/b/Spr_4p_399_m.png",
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
 	},
@@ -436,7 +436,7 @@ addEvent(new Pokemon({
 	sprite: "img/pkmn/kk-roy.png",
 	x: 16, y: -33,
 	
-	dex : "http://cdn.bulbagarden.net/upload/0/07/Spr_4p_175.png",
+	dex : "img/pkdx/b/Spr_4p_175.png",
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
 		"Sprite is Flair by /u/RT-Pickred": "",
@@ -463,7 +463,7 @@ addEvent(new Trainer({
 	spritesheet : "img/trainers/napoleon.png",
 	x: -9, y: 13,
 	
-	dex : "http://cdn.bulbagarden.net/upload/6/6b/Spr_Pt_Lucas.png",
+	dex : "img/pkdx/b/Spr_Pt_Lucas.png",
 	sources : {
 		"Lucas Sprite from Bulbapedia":"", 
 	},

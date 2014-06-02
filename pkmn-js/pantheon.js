@@ -50,7 +50,7 @@ addEvent(new Pokemon({
 	sprite : "img/pkmn/!deity_amber_guardian.png",
 	x: -145, y:-74,
 	
-	dex: "http://archives.bulbagarden.net/media/upload/f/f1/Spr_3f_006.png",
+	dex: "img/pkdx/b/Spr_3f_006.png",
 	sources : {
 		"Pokedex Sprite from Bulbapedia": "",
 	},
@@ -69,7 +69,7 @@ addEvent(new Pokemon({
 	sprite : "img/pkmn/!deity_dome_guardian.png",
 	x: -141, y:-66,
 	
-	dex: "http://cdn.bulbagarden.net/upload/b/b2/Spr_3r_168.png",
+	dex: "img/pkdx/b/Spr_3r_168.png",
 	sources : {
 		"Pokedex Sprite from Bulbapedia": "",
 	},

@@ -306,7 +306,7 @@ addEvent(new Pokemon({
 	x: 11, y: -34,
 	animation: false,
 	
-	dex : "http://cdn.bulbagarden.net/upload/c/ce/Spr_1b_092.png", //Bulbapedia
+	dex : "img/pkdx/b/Spr_1b_092.png", //Bulbapedia
 	// sources : {
 	// 	"Sprite by " : "",
 	// },

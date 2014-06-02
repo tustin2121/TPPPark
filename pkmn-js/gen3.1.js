@@ -171,7 +171,7 @@ addEvent(new Pokemon({
 	sprite: "img/pkmn/caveman_quagsire.png",
 	x: -24, y: -31,
 	
-	dex : "http://cdn.bulbagarden.net/upload/7/77/Spr_3r_195.png",
+	dex : "img/pkdx/b/Spr_3r_195.png",
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
 	},
@@ -242,7 +242,7 @@ addEvent(new Pokemon({
 	x: -22, y: 3,
 	animation: false,
 	
-	dex : "http://cdn.bulbagarden.net/upload/0/06/Spr_3e_362.gif", //Bulbapedia
+	dex : "img/pkdx/b/Spr_3e_362.gif", //Bulbapedia
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
 		"Sprite by /u/addgro_ove" : "",
@@ -349,7 +349,7 @@ addEvent(new Pokemon({
 	sprite: "img/pkmn/shiny-pikachu.gif",
 	x: -36, y: -9,
 	
-	dex: "http://cdn.bulbagarden.net/upload/8/83/Spr_3f_025_s.png", //Bulbapedia
+	dex: "img/pkdx/b/Spr_3f_025_s.png", //Bulbapedia
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
 	},
@@ -372,7 +372,7 @@ addEvent(new MultiEvent({
 	
 	animation: null,
 	
-	dex: "http://cdn.bulbagarden.net/upload/b/b3/Spr_3e_278.gif", //Bulbapedia
+	dex: "img/pkdx/b/Spr_3e_278.gif", //Bulbapedia
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
 	},

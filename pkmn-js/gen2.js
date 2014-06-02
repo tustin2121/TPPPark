@@ -338,7 +338,7 @@ addEvent(new Pokemon({
 	sprite: "img/pkmn/goldeen.png",
 	x: -27, y: -2,
 	
-	dex : "http://cdn.bulbagarden.net/upload/4/42/Spr_2c_118.gif",
+	dex : "img/pkdx/b/Spr_2c_118.gif",
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
 	},
@@ -423,6 +423,31 @@ addEvent(new Pokemon({
 	],
 }));
 // There's also the zubat left with Oxxy, but no one seems to care about it...
+
+//ACE!!
+addEvent(new Pokemon({
+	name : "Ace",
+	sprite: "img/pkmn/ace_raticate.png",
+	x: -27, y: -2,
+	
+	dex : "img/pkdx/b/Spr_2c_020.gif",
+	sources : {
+		"Pokedex Image from Bulbapedia" : "",
+	},
+	
+	OT: "AJDNNW",
+	gender: 1,
+	gamename : "IAAAJS",
+	pokename : "Goldeen",
+	nicknames : "The Chosen One",
+	level : 22,
+	memo : "Caught using the masterball.",
+	ball: "master",
+	
+	ribbons : [
+		new Master_Ribbon(),
+	],
+}));
 
 // 
 addEvent(new Pokemon({
