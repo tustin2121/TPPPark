@@ -578,13 +578,14 @@ addEvent(new Person({
 	
 	dialog : function() {
 		if (!this.smitten) {
-			switch (Math.floor(Math.random() * 6)) {
+			switch (Math.floor(Math.random() * 7)) {
 				case 0: return "YOUNGSTER JOEY: Check out my awesome RATICATE, Ace!";
 				case 1: return "YOUNGSTER JOEY: My RATTATA is in the top percentage of all RATTATAs!";
 				case 2: return "YOUNGSTER JOEY: Ace is in the top percentage of all RATICATEs!";
 				case 3: return "YOUNGSTER JOEY: Why'd you have to go and box Ace, AJ...?";
 				case 4: return "YOUNGSTER JOEY: AJ is in the top percentage of all Trainers in Johto and Kanto, you know. I wish I could be as good as him.";
 				case 5: return "YOUNGSTER JOEY: AJ's the only one who's ever exchanged numbers with me. <3";
+				case 6: return "YOUNGSTER JOEY: Being beaten this often actually feels good now!";
 			}
 			
 		} else {
