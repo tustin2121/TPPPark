@@ -188,6 +188,13 @@ addEvent(new MovingPokemon({
 	},
 	frame_width : 32,
 	frame_height : 26,
+}).forOccasion("bloodysunday", {
+	x: 9, y: -7,
+	
+	behavior: function(){
+		this.direction = 2;
+		this.updateImage();
+	},
 }));
 
 
@@ -428,7 +435,7 @@ addEvent(new Pokemon({
 addEvent(new Pokemon({
 	name : "Ace",
 	sprite: "img/pkmn/ace_raticate.png",
-	x: -27, y: -2,
+	x: 23, y: 0,
 	
 	dex : "img/pkdx/b/Spr_2c_020.gif",
 	sources : {
@@ -447,6 +454,12 @@ addEvent(new Pokemon({
 	ribbons : [
 		new Master_Ribbon(),
 	],
+}).forOccasion("bloodysaturday", {
+	x: 12, y: -41,
+	adj_flip: true,
+}).forOccasion("bloodysunday", {
+	x: -19, y: -10,
+	adj_flip: true,
 }));
 
 // 
@@ -524,6 +537,40 @@ addEvent(new Trainer({
 			18,  2,
 		],
 	},
+}).forOccasion("bloodysaturday", {
+	x: 7, y:-40,
+	adj_y: 2,
+	behavior: function(){
+		this.direction = 3;
+		this.updateImage();
+	},
+	
+	dialog_look: false,
+	dialog_assignment: "random",
+	dialog: [
+		"One second, Joey, I'm still tying this thing...",
+		"Stay, you stupid banner... where's LazorGator to weld this thing...?",
+		"Just hang tight Joey, I've almost got this!",
+		"There it's-- no it's not... I should have taken scout lessons when mommy suggested it...",
+		"I know you're afraid of heights Joey, just give me a little longer!",
+	],
+}).forOccasion("bloodysunday", {
+	x: -19, y:-8,
+	behavior: function(){
+		this.direction = 3;
+		this.updateImage();
+	},
+	
+	dialog_look: false,
+	dialog_assignment: "random",
+	dialog: [
+		"...",
+		"... Omlette...",
+		".....",
+		"....Admiral......",
+		"......",
+		"....",
+	],
 }));
 
 //And, of course, the love of AJ's life:
@@ -602,5 +649,38 @@ addEvent(new Person({
 			return false;
 		}
 	},
+}).forOccasion("bloodysaturday", {
+	x: 14, y: -40,
+	adj_y: 2,
+	behavior: function(){
+		this.direction = 2;
+		this.updateImage();
+	},
+	
+	dialog_look: false,
+	dialog_assignment: "random",
+	dialog: [
+		"You got it over there AJ?", 
+		"It's tied up over here!", 
+		"I don't think I'm ready for the other banner yet!",
+		"I'm scared, AJ... I hate heights...",
+	],
+}).forOccasion("bloodysunday", {
+	x: -19, y:-9,
+	behavior: function(){
+		this.actTimer--;
+		this.direction = (this.actTimer>0)? 0 : 3;
+		this.updateImage();
+	},
+	
+	dialog_assignment: "random",
+	dialog: [
+		"Don't cry, AJ... You'll make me cry...",
+		"AJ.... *sniff*",
+		"It'll be okay, AJ...",
+		":'(",
+		"*sniffle*",
+		"Do you need a hug, AJ?",
+	],
 }));
 

@@ -127,6 +127,9 @@ addEvent(new Pokemon({
 	ribbons : [
 		new HallOfFame_Ribbon("21d 19h 27m"),
 	],
+}).forOccasion("bloodysunday", {
+	x: -30, y: -2,
+	adj_flip: true,
 }));
 
 addEvent(new Pokemon({
@@ -194,6 +197,14 @@ addEvent(new MovingPokemon({
 	},
 	frame_width : 32,
 	frame_height : 42,
+}).forOccasion("bloodysunday", {
+	x: 9, y: -4,
+	// frame_height : 24,
+	
+	behavior: function(){
+		this.direction = 2;
+		this.updateImage();
+	},
 }));
 
 //////////// C3 and Apostropi's Event Suite //////////////

@@ -70,13 +70,24 @@
 		<button class="btn-close">Close</button>
 		<p>
 			<strong>Update Information</strong><br/>
-			<span class="timestamp">5-24-2014</span>
+			<span class="timestamp">6-4-2014</span>
 		</p>
 		<!-- Put latest update information here! Update Timestamp Above! -->
-		<p>Hey, I've got a place to put update information that isn't the reddit thread anymore! Click the button in the top left to close this for the remainder of your browser session.</p>
-		<p>Look! Burrito is back from the depths of the PokeMart, and he's got a computer that isn't evil! Looks like he's typing on it. I wonder what he's doing...</p>
-		<p>Oh, and hey! It's C3 powering her computer! Wait, no it's not, that's just Apostropi disguised as C3 again. I wonder where C3 is...</p>
-		<p>And the False Prophet has returned with Burrito, except... she got caught up in a heated discussion with Bird Jesus. I wonder how long they'll be at it.</p>
+		<p>Many random fixes! The images that were hosted on Bulbapedia are now hosted here, so hopefully the problem with vanishing pokedex images will be solved!</p>
+		<p>Good news! We just got word that Kenya is on the train over. He's very late, but he WILL get the mail delivered! Soon!</p>
+		<p>But, in the meantime, what's Red doing there? Looks like he's setting up for something. And what's Joey and AJ doing? It looks like something is on the horizon...</p>
+		<p class="bloodysundaydisclaimer" style="display:none;">(Yes, this Bloody Sunday memorial is one day off when it should be. I didn't have it finished in time, and so I just adjusted the clock by a day so you all could see this.)</p>
+		<script>
+		$(function(){
+			if (window.getCurrentOccasion && window.getCurrentOccasion() == "bloodysunday")
+			{
+				$(".bloodysundaydisclaimer").show();
+				
+				//HACK!! Make proper part of occasions later
+				centerPoint = [1, -18]; //Doesn't actually work. Don't care right now.
+			}
+		});
+		</script>
 	</div>
 	
 	<div id="anchor">

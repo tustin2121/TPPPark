@@ -19,6 +19,9 @@ addEvent(new MultiEvent({
 	
 	adj_x: -5, adj_y: 5,
 	
+}).forOccasion("bloodysunday", {
+	breakme: true,
+	
 }).addSubEvent("34,2,64,24", new Pokemon({
 	name : "Chimchar",
 	sprite: "img/pkmn/chimchar.png",
@@ -42,7 +45,11 @@ addEvent(new MultiEvent({
 		new Released_Ribbon("0d 12h 33m"),
 		new Record_Ribbon("Fastest Released Starter"),
 	],
-})).addSubEvent("56,24,72,42", new Pokemon({
+}).forOccasion("bloodysunday", {
+	x: -16, y: -14,
+	adj_flip: true,
+})
+).addSubEvent("56,24,72,42", new Pokemon({
 	name: "Zexy",
 	sprite: "img/pkmn/zexxy.png",
 	x : -14, y : -29,
@@ -61,7 +68,10 @@ addEvent(new MultiEvent({
 		new Starter_Ribbon(),
 		new Released_Ribbon("3d 23h 9m"),
 	],
-})).addSubEvent("2,19,32,41", new Pokemon({
+}).forOccasion("bloodysunday", {
+	x: -14, y: -15,
+})
+).addSubEvent("2,19,32,41", new Pokemon({
 	name: "Abby",
 	sprite: "img/pkmn/abby-gen1.png",
 	x : -13, y : -30,
@@ -80,6 +90,9 @@ addEvent(new MultiEvent({
 		new Starter_Ribbon(),
 		new Released_Ribbon("4d 8h 53m"),
 	],
+}).forOccasion("bloodysunday", {
+	x: -19, y: -12,
+	adj_flip: true,
 })));
 
 ///////////////// Train Station ////////////////////

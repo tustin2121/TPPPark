@@ -140,6 +140,8 @@ addEvent(new Pokemon({
 		new Record_Ribbon("First Legendary"),
 		new Record_Ribbon("ONLY Legendary Caught"),
 	],	
+}).forOccasion("bloodysunday", {
+	x: -6, y: -5,
 }));
 
 
@@ -383,6 +385,8 @@ addEvent(new Person({
 	dialog : [
 		"I wonder where my partner went.",
 	],
+}).forOccasion("bloodysunday,bloodysaturday", {
+	x: -9, y:-35,
 }));
 
 addEvent(new Trainer({
@@ -424,6 +428,12 @@ addEvent(new Trainer({
 		"left" : -10, "top" : -38,
 		"right": -10, "bottom": -37,
 	},
+}).forOccasion("bloodysunday", {
+	x: -7, y: -4,
+	behavior: null,
+}).forOccasion("bloodysaturday", {
+	x: -19, y: -9,
+	behavior: null,
 }));
 
 
