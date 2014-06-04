@@ -448,7 +448,7 @@ addEvent(new Pokemon({
 	pokename : "Raticate",
 	nicknames : "A Rat",
 	level :39,
-	memo: "Said to be Joey's Rattata given to AJ and evoloved."
+	memo: "Said to be Joey's Rattata given to AJ and evolved."
 	
 }).forOccasion("bloodysaturday", {
 	x: 12, y: -41,
