@@ -107,21 +107,13 @@ addEvent(new Pokemon({
 ////////////////////////
 // Steve and Moonbat
 
-addEvent(new Building({
-	name: "Steve's Belfry",
-	sprite: "img/bld/belfry.png",
-	x: 3, y: -13,
-//	x: -22, y: -12,
-	
-	warp_x: 32, warp_y: 56,
-}));
-
 addEvent(new MultiEvent({
 	name: "Steve and Moonbat Popcorn",
 	sprite: "img/pkmn/brozong_moonbat_popcorn.gif",
 	x: 95, y: -16, z: (38-16)*16,
 	adj_x: 5, adj_y: 2,
 }).addSubEvent("0,0,26,23", new Pokemon({
+	id: "gen4_steve",
 	name : "Steve",
 	// sprite: "img/pkmn/bronzong.png",
 	// x: -37, y: -25,
@@ -146,6 +138,7 @@ addEvent(new MultiEvent({
 		new HallOfFame_Ribbon("17d 11h 39m"),
 	],
 })).addSubEvent("18,21,44,37", new Pokemon({
+	id: "gen4_moonbat",
 	name : "Moonbat",
 	// sprite: "img/pkmn/sunshine_shinx.png",
 	// x: -37, y: -25,
@@ -167,10 +160,36 @@ addEvent(new MultiEvent({
 		new Pokerus_Ribbon(),
 		new HallOfFame_Ribbon("17d 11h 39m"),
 	],
-}))
+})).forOccasion("bloodysunday", {
+	skipme: true,
+})
 );
 
 
+addEvent(new Building({
+	name: "Steve's Belfry",
+	sprite: "img/bld/belfry.png",
+	x: 3, y: -13,
+//	x: -22, y: -12,
+	
+	warp_x: 32, warp_y: 56,
+}));
+
+addEvent(new MultiEvent({
+	name: "Steve and Moonbat Popcorn",
+	sprite: "img/pkmn/brozong_moonbat_belfry.gif",
+	x: 3, y: -13,
+	
+	skipme: true,
+	// adj_x: 5, adj_y: 2,
+}).forOccasion("bloodysunday", {
+	skipme: false,
+}).addSubEvent("11,9,27,22", new Pokemon({
+	refid: "gen4_steve",
+})).addSubEvent("6,32,44,49", new Pokemon({
+	refid: "gen4_moonbat",
+}))
+);
 
 
 addEvent(new MultiEvent({
