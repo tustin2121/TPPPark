@@ -444,16 +444,12 @@ addEvent(new Pokemon({
 	
 	OT: "AJDNNW",
 	gender: 1,
-	gamename : "IAAAJS",
-	pokename : "Goldeen",
-	nicknames : "The Chosen One",
-	level : 22,
-	memo : "Caught using the masterball.",
-	ball: "master",
+	gamename : "A",
+	pokename : "Raticate",
+	nicknames : "A Rat",
+	level :39,
+	memo: "Said to be Joey's Rattata given to AJ and evoloved."
 	
-	ribbons : [
-		new Master_Ribbon(),
-	],
 }).forOccasion("bloodysaturday", {
 	x: 12, y: -41,
 	adj_flip: true,
