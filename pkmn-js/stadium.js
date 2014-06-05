@@ -1835,7 +1835,7 @@ Kreygasm LORD HELIX Kreygasm
 		"alifen", "erassus", "nidoking_armx", "basedazumarill", "our_lord_helix_the_great", "arazioman", "101100111000", 
 		
 		"chaoticcookie39", "abiyoru", "222phantom", "Onamuk", "BettingBetter", "UltraMew", "Jacobjr1", "Blademan9999",
-		"Deny_Craft", "addgro_ove",
+		"Deny_Craft", "addgro_ove", "Mudkiplikeaboss",
 	];
 
 	////// Types //////
