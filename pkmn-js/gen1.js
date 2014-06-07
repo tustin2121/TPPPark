@@ -138,7 +138,6 @@ addEvent(new Pokemon({
 		new HallOfFame_Ribbon("16d 7h 45m"),
 		new Master_Ribbon(),
 		new Record_Ribbon("First Legendary"),
-		new Record_Ribbon("ONLY Legendary Caught"),
 	],	
 }).forOccasion("bloodysunday", {
 	x: -6, y: -5,
