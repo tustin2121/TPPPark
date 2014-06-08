@@ -19,8 +19,8 @@
 		{src:"20c06s", name: "FirePrince's Crystal Story Part 1", author: "/u/FirePrince", },
 		{src:"25pxc9", name: "The Night After", author: "/u/yewchung", },
 		{src:"212vtn", name: "One last story...", author: "/u/TheOmegalpha", },
-		// {src:"", name: "", author: "/u/", },
-		// {src:"", name: "", author: "/u/", },
+		{src:"25mgy0", name: "Steven-Senpai Part 1: An Emerald Story", author: "/u/Epicnights", },
+		{src:"1zuji8", name: "My Own Theory On the Fates of the Admiral and the Prince (A Little Story Fragment)", author: "/u/KingdomXathers", },
 		// {src:"", name: "", author: "/u/", },
 		// {src:"", name: "", author: "/u/", },
 	];
