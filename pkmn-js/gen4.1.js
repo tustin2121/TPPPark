@@ -10,10 +10,6 @@
 
 
 
-
-
-
-
 ///////////////////////////////////////////////
 // CURRENT PARTY MON!
 
@@ -79,3 +75,50 @@ addEvent(new Trainer({
 	
 	behavior: null,
 }));
+
+
+//////////////////////////////////////////////////////////
+//And Kenya, the most complicated pokemon in the park...
+addEvent(new MovingPokemon({
+	name: "Kenya",
+	x: 0, y: 0,
+	
+	dex: "img/pkdx/",
+	sources: {
+		"Sprite by /u/": "",
+		"Pokedex Image by /u/": "",
+	},
+	
+	OT: "aoooo",
+	gender: 0,
+	gamename: "Kenya",
+	pokename: "Groudon",
+	level: 51,
+	memo: "",
+	
+	ribbons: [
+		new Released_Ribbon("6d 17h 53m"),
+		new Traded_Ribbon("Gift from Webster 1d 14h 14m"),
+		new Record_Ribbon("First Legendary Released"),
+	],
+	
+	frame_width: 48,
+	frame_height: 46,
+	
+	updateImage : function() {
+		var x = -this.direction * this.frame_width;
+		var y = -this.animFrame * this.frame_height;
+		
+		this.domImage.css({
+			"background-position" : x+"px "+y+"px",
+		});
+	},
+	
+	
+	behavior: function(){
+		
+	},
+}));
+
+
+
