@@ -476,6 +476,43 @@ addEvent(new Pokemon({
 }));
 
 
+addEvent(new Event({
+	name: "delelelewoop",
+	sprite: "img/pkmn/delelelewoop.png",
+	x: 66, y: -15,
+	animation: "breathe",
+	
+	domSound : null,
+	
+	getDomElement: function(){
+		if (this.domElement) return this.domElement;
+		
+		var audio = $("<audio>");
+		if (!(audio[0] && audio[0].canPlayType &&
+			(audio[0].canPlayType('audio/ogg') || audio[0].canPlayType('audio/wav')) ))
+		{	//If no support for the audio formats, don't place this event
+			console.log("Audio support failed! Returning empty event.");
+			return null;
+		}
+		
+		var base = Event.fn.getDomElement.call(this);
+		if (!base) return null;
+		
+		$("<source>").attr("type", "audio/ogg").attr("src", "snd/delelelewoop.ogg").appendTo(audio);
+		$("<source>").attr("type", "audio/wav").attr("src", "snd/delelelewoop.wav").appendTo(audio);
+		this.domSound = audio;
+		base.append(audio);
+		return base;
+	},
+	
+	doClick: function(){
+		if (!this.domSound) return;
+		this.domSound[0].play();
+		
+		window.stadium.delelelewoop = 100;
+	},
+}));
+
 // And finally, Nepoleon himself!
 addEvent(new Trainer({
 	name : "nqpppnl",
