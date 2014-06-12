@@ -407,7 +407,7 @@
 			var rand = Math.floor(Math.random()*61)
 			if (rand > 60) return "Why is everyone delele woooping?";
 			
-			switch(rand % 10) {
+			switch(rand % 13) {
 				case 0: return "DELELELELELELELELE WOOOOOOOOOP!!";
 				case 1: return "DELELELELELLELE WOOOOOOOOOOOOOOP";
 				case 2: return "DELELELELE WOOOOOOOOOOOOP";
@@ -418,6 +418,9 @@
 				case 7: return "DELELELELE WOOOOP";
 				case 8: return "DELELELELELE WOOOOOOOOOOOOOOOOP!";
 				case 9: return "delelelelele woooooooooooop";
+				case 10:return "DELELELELELLELE WOOOOOOOOOOOOOOP Kreygasm";
+				case 11:return "DELELELLELELELELLELE WOOOOOOOOOOP Kreygasm";
+				case 12:return "DELELELELELLELE WOOOOOOOOOOOOOOP Kappa";
 			}
 		}
 	}
