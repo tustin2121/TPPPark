@@ -392,6 +392,39 @@
 			});
 	}
 	
+	function delelelewoop(patron){
+		if (!window.stadium.delelelewoop) return false;
+		if (Math.random() > 0.02) return false;
+		window.stadium.delelelewoop--;
+		
+		var chant = _choose();
+		if (chant) {
+			patron.lastChant = chant;
+			submitChatter(chant);
+		}
+		
+		function _choose(){
+			var rand = Math.floor(Math.random()*61)
+			if (rand > 60) return "Why is everyone delele woooping?";
+			
+			switch(rand % 13) {
+				case 0: return "DELELELELELELELELE WOOOOOOOOOP!!";
+				case 1: return "DELELELELELLELE WOOOOOOOOOOOOOOP";
+				case 2: return "DELELELELE WOOOOOOOOOOOOP";
+				case 3: return "ヽ༼ຈل͜ຈ༽ﾉ DELELELELELELELELE WOOOOOOOOOP ヽ༼ຈل͜ຈ༽ﾉ";
+				case 4: return "ヽ༼ຈل͜ຈ༽ﾉ DELELELELELELLE WOOOOOOOOOOOOOOOOP ヽ༼ຈل͜ຈ༽ﾉ";
+				case 5: return "ヽ༼ຈل͜ຈ༽ﾉ DELELELELELELELELELELE WOOOOOOOOOOOOP ヽ༼ຈل͜ຈ༽ﾉ";
+				case 6: return "༼ つ ◕_◕ ༽つ DELELELELELELELE WOOOOOOOOOOP";
+				case 7: return "DELELELELE WOOOOP";
+				case 8: return "DELELELELELE WOOOOOOOOOOOOOOOOP!";
+				case 9: return "delelelelele woooooooooooop";
+				case 10:return "DELELELELELLELE WOOOOOOOOOOOOOOP Kreygasm";
+				case 11:return "DELELELLELELELELLELE WOOOOOOOOOOP Kreygasm";
+				case 12:return "DELELELELELLELE WOOOOOOOOOOOOOOP Kappa";
+			}
+		}
+	}
+	
 	//////////// Battle Manager! /////////////
 	
 	var lastBattleAction = 0;
@@ -878,6 +911,8 @@
 		},
 		
 		stadiumBehavior : function() {
+			delelelewoop(this);
+			
 			switch(currState) {
 				case STATE_DECIDING: {
 					this.team = 0;
