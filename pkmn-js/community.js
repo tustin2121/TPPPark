@@ -36,6 +36,7 @@
 		
 		getDomElement : function() {
 			if (this.domElement) return this.domElement;
+			if (!this.spritesheet) return null;
 			
 			var eventobj = this;
 			
