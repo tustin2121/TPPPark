@@ -1,4 +1,4 @@
-// stadium_patrons.js
+// _usernames.js
 // A file specifically for defining the patrons in the stadium
 //
 
@@ -123,4 +123,12 @@
 	
 	window.stadium.NAMED_PATRONS = NAMED_PATRONS;
 	window.stadium.RANDOM_NAMES = RANDOM_NAMES;
+})();
+
+(function(){
+	//Community Center TPPers
+	
+	
+	
+	
 })();
