@@ -128,7 +128,26 @@
 (function(){
 	//Community Center TPPers
 	
-	
+	addEvent(new TPPer({
+		name: "Tustin",
+		name_twitch: "tustin2121",
+		name_reddit: "tustin2121",
+		title: "Slayer of C-Gear",
+		role: "Creator of TPPPark",
+		description: "",
+		
+		/* Nominated by /u/chaoticcookie39
+		
+		First post. I NOMINATE YOU /u/tustin2121
+		Twitch Username: I actually don't know it....
+		Role: TPP Park Creator + All around great community player
+		One of the biggest contributors on this subreddit. He made TPP Park and still updates it continuously today. He also is responsible for this whole community part of the park!
+		Sprite: /u/tustin2121 you obviously can choose. I can't open the sprite link at work :/
+		Icon: Your choice :)...Joey?
+		*/
+		
+		
+	}))
 	
 	
 })();
