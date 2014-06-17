@@ -171,7 +171,7 @@ addEvent(new Pokemon({
 	sprite: "img/pkmn/caveman_quagsire.png",
 	x: -24, y: -31,
 	
-	dex : "img/pkdx/b/Spr_3r_195.png",
+	dex : "img/pkdx/frdex_swaqsire.png",
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
 	},

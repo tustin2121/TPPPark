@@ -220,7 +220,7 @@ addEvent(new MultiEvent({
 })).addSubEvent("0,0,20,25", new Pokemon({
 	name : "Roselio",
 	
-	dex : "img/pkdx/b/Spr_4p_315_m.png",
+	dex : "img/pkdx/ptdex_malerosila.png",
 	sources : {
 		"Pokedex Image from Bulbapedia" : "",
 	},

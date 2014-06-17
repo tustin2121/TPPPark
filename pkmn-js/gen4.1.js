@@ -19,7 +19,7 @@ addEvent(new Pokemon({
 	sprite: "img/pkmn/trumpnich.png",
 	x: 13, y: -22,
 	
-	dex: "img/pkdx/",
+	dex: "img/pkdx/b/Spr_4d_329.png",
 	sources: {
 		"Sprite by /u/": "",
 		"Pokedex Image by /u/": "",

@@ -1,0 +1,102 @@
+/* infodex.css */
+
+#infodex {
+	position: absolute;
+	z-index: 20000; /* float OVER pokemon */
+	top: 100px; left: 100px;
+}
+
+#infodex section {
+	display: block;
+	font-family: PokemonScreen;
+	font-size: 16px;
+	margin: 0px 0px;
+	line-height: 14px;
+}
+
+#infodex .topbar {
+	position: absolute;
+	width: 192px; height: 32px;
+	background-image: url("../img/ui/infodex.png");
+	top: -3px; left: -3px;
+	z-index: 10;
+}
+
+#infodex .topbar .gem {
+	position: absolute;
+	width: 32px; height: 32px;
+	background-image: url("../img/ui/infodex.png");
+	background-position: -160px -32px;
+	top: 0px; left: 0px;
+}
+#infodex .topbar .gem.purple { background-position: -32px -32px; }
+#infodex .topbar .gem.blue   { background-position: -32px -64px; }
+#infodex .topbar .gem.green  { background-position: -32px -96px; }
+#infodex .topbar .gem.yellow { background-position: -32px -128px; }
+#infodex .topbar .gem.red    { background-position: -64px -32px; }
+#infodex .topbar .gem.cyan   { background-position: -96px -32px; }
+#infodex .topbar .gem.white  { background-position: -128px -32px; }
+
+#infodex .sidedrop {
+	position: absolute;
+	width: 32px; height: 128px;
+	background-image: url("../img/ui/infodex.png");
+	background-position: 0px -32px;
+	top: -3px; left: -3px;
+	z-index: 8;
+}
+
+#infodex .page-title {
+	position: absolute;
+	left: 178px; top: 8px;
+	width: 125px;
+	border-bottom: 1px #666 solid;
+	z-index: 2;
+	text-align: center;
+	color: #666;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/*#infodex .holo {
+	position: absolute;
+	width: 136px; height: 96px;
+	background-image: url("../img/ui/infodex.png");
+	background-position: -32px -64px;
+	bottom: -96px; right: -8px;
+	z-index: 6;
+}*/
+
+#infodex .holo {
+	position: absolute;
+	width: 112px; height: 88px;
+	background-image: url("../img/ui/infodex.png");
+	background-position: -80px -72px;
+	bottom: -108px; right: -8px;
+	z-index: 6;
+}
+
+#infodex .sheet:before {
+	content: "";
+	float: left;
+	width: 24px; height: 80px;
+}
+
+#infodex .sheet {
+	position: absolute;
+	width: 300px;
+	background-color: rgba(162, 228, 255, 0.95);
+	border: 1px #007caf solid;
+	padding: 32px 6px 6px 6px;
+	
+	display: block;
+	font-family: PokemonScreen;
+	font-size: 16px;
+	margin: 0px 0px;
+	line-height: 14px;
+}
+
+#infodex .sheet p {
+	margin: 0 0 0.6em 0;
+}
