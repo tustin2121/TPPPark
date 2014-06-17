@@ -14,9 +14,10 @@
 // CURRENT PARTY MON!
 
 addEvent(new Pokemon({
+	skipme: true,
 	name: "Trapnich",
-	sprite: "img/pkmn/",
-	x: 0, y: 0,
+	sprite: "img/pkmn/trumpnich.png",
+	x: 13, y: -22,
 	
 	dex: "img/pkdx/",
 	sources: {
@@ -38,6 +39,7 @@ addEvent(new Pokemon({
 }));
 
 addEvent(new Pokemon({
+	skipme: true,
 	name: "Diglight",
 	sprite: "img/pkmn/.png",
 	x: 0, y: 0,
@@ -60,6 +62,7 @@ addEvent(new Pokemon({
 }));
 
 addEvent(new Pokemon({
+	skipme: true,
 	name: "",
 	sprite: "img/pkmn/.png",
 	x: 0, y: 0,
@@ -83,6 +86,7 @@ addEvent(new Pokemon({
 }));
 
 addEvent(new Pokemon({
+	skipme: true,
 	name: "Diamondback",
 	sprite: "img/pkmn/diamondback.png",
 	x: 0, y: 0,
@@ -107,6 +111,7 @@ addEvent(new Pokemon({
 
 
 addEvent(new Pokemon({
+	skipme: true,
 	name: "Oracle",
 	sprite: "img/pkmn/xatu.png",
 	x: 0, y: 0,
@@ -132,6 +137,7 @@ addEvent(new Pokemon({
 }));
 
 addEvent(new Pokemon({
+	skipme: true,
 	name: "3G",
 	sprite: "img/pkmn/3g.png",
 	x: 0, y: 0,
@@ -155,6 +161,7 @@ addEvent(new Pokemon({
 
 
 addEvent(new Trainer({
+	skipme: true,
 	name : "aoooo",
 	spritesheet : "img/trainers/.png",
 	x: -9, y: 13,
@@ -192,6 +199,7 @@ addEvent(new Trainer({
 //////////////////////////////////////////////////////////
 //And Kenya, the most complicated pokemon in the park...
 addEvent(new MovingPokemon({
+	skipme: true,
 	name: "Kenya",
 	x: 0, y: 0,
 	

@@ -91,3 +91,9 @@
 	
 	window.TPPer = TPPer;
 })();
+
+addEvent(new SignPost({
+	name: "Construction Sign",
+	x: 101, y:7,
+	message: "Future Site of TPP Community Center",
+}))
