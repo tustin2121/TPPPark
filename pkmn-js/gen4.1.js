@@ -14,8 +14,6 @@
 // CURRENT PARTY MON!
 
 addEvent(new Pokemon({
-	skipme: true,
-	
 	name: "Trapnich",
 	sprite: "img/pkmn/",
 	x: 0, y: 0,
@@ -30,7 +28,7 @@ addEvent(new Pokemon({
 	gender: 0,
 	gamename: ",",
 	pokename: "Vibrava",
-	nicknames: "Trumpnich",
+	nicknames: "Trumpnich<br/>Vibrator",
 	//level: 5,
 	memo: "",
 	
@@ -39,10 +37,124 @@ addEvent(new Pokemon({
 	],
 }));
 
+addEvent(new Pokemon({
+	name: "Diglight",
+	sprite: "img/pkmn/.png",
+	x: 0, y: 0,
+	
+	dex: "img/pkdx/",
+	sources: {
+		"Sprite by /u/": "",
+		"Pokedex Image by /u/": "",
+	},
+	
+	OT: "",
+	gender: 0,
+	gamename: ",",
+	pokename: "Diglett",
+	//level: 5,
+	memo: "",
+	
+	ribbons: [
+	],
+}));
+
+addEvent(new Pokemon({
+	name: "",
+	sprite: "img/pkmn/.png",
+	x: 0, y: 0,
+	
+	dex: "img/pkdx/",
+	sources: {
+		"Sprite by /u/": "",
+		"Pokedex Image by /u/": "",
+	},
+	
+	OT: "",
+	gender: 0,
+	gamename: ",",
+	pokename: "Jigglypuff",
+	nicknames: "Dovakin",
+	//level: 5,
+	memo: "",
+	
+	ribbons: [
+	],
+}));
+
+addEvent(new Pokemon({
+	name: "Diamondback",
+	sprite: "img/pkmn/diamondback.png",
+	x: 0, y: 0,
+	
+	dex: "img/pkdx/",
+	sources: {
+		"Sprite by /u/": "",
+		"Pokedex Image by /u/": "",
+	},
+	
+	OT: "",
+	gender: 0,
+	gamename: ",",
+	pokename: "Ekans",
+	caught: "Johto Safari Zone",
+	//level: 5,
+	memo: "",
+	
+	ribbons: [
+	],
+}));
+
+
+addEvent(new Pokemon({
+	name: "Oracle",
+	sprite: "img/pkmn/xatu.png",
+	x: 0, y: 0,
+	
+	dex: "img/pkdx/",
+	sources: {
+		"Sprite by /u/": "",
+		"Pokedex Image by /u/": "",
+	},
+	
+	OT: "",
+	gender: 0,
+	gamename: ",",
+	pokename: "Xatu",
+	nicknames: "Stare Jesus",
+	caught: "Lake of Rage (Red Gyrados)",
+	//level: 5,
+	memo: "",
+	
+	ribbons: [
+		new Record_Ribbon("First Shiny Caught"),
+	],
+}));
+
+addEvent(new Pokemon({
+	name: "3G",
+	sprite: "img/pkmn/3g.png",
+	x: 0, y: 0,
+	
+	dex: "img/pkdx/",
+	sources: {
+		"Sprite by /u/": "",
+		"Pokedex Image by /u/": "",
+	},
+	
+	OT: "",
+	gender: 0,
+	gamename: ",",
+	pokename: "Larvitar",
+	//level: 5,
+	memo: "",
+	
+	ribbons: [
+	],
+}));
+
 
 addEvent(new Trainer({
-	skipme: true,
-	
 	name : "aoooo",
 	spritesheet : "img/trainers/.png",
 	x: -9, y: 13,
