@@ -22,7 +22,7 @@ addEvent(new Pokemon({
 	dex: "img/pkdx/b/Spr_4d_329.png",
 	sources: {
 		"Sprite by /u/": "",
-		"Pokedex Image by /u/": "",
+		"Pokedex Image from Bulbapedia": "",
 	},
 	
 	OT: "",

@@ -37,6 +37,12 @@
 #infodex .topbar .gem.cyan   { background-position: -96px -32px; }
 #infodex .topbar .gem.white  { background-position: -128px -32px; }
 
+#infodex .side-pivot {
+	position: absolute;
+	top: 13px; left: 13px;
+	z-index: 8;
+}
+
 #infodex .sidedrop {
 	position: absolute;
 	width: 32px; height: 128px;
@@ -44,6 +50,13 @@
 	background-position: 0px -32px;
 	top: -3px; left: -3px;
 	z-index: 8;
+	
+	transform-origin: 16px 16px;
+	-ms-transform-origin: 16px 16px;
+	-webkit-transform-origin: 16px 16px;
+	transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
 }
 
 #infodex .page-title {
@@ -75,6 +88,10 @@
 	background-position: -80px -72px;
 	bottom: -108px; right: -8px;
 	z-index: 6;
+}
+
+#infodex .holo img {
+	position: absolute;
 }
 
 #infodex .sheet:before {

@@ -173,14 +173,14 @@ addEvent(new Pokemon({
 	
 	dex : "img/pkdx/frdex_swaqsire.png",
 	sources : {
-		"Pokedex Image from Bulbapedia" : "",
+		"Pokedex Image by /u/Carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/252a2b/tpp_sprites/",
 	},
 	
 	OT: "Alice",
 	gender: 1,
 	gamename : "Quagsire",
 	pokename : "Quagsire",
-	nicknames : "Caveman Quagsire",
+	nicknames : "Cavesire",
 	level : 24,
 	memo : "Ability: Indimidate. Knew Bone Club as a Wooper. Holds some Black Glasses (his Swag).",
 }));
