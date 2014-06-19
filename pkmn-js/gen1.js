@@ -395,17 +395,26 @@ addEvent(new Trainer({
 	
 	dex : "img/pkdx/trainer_red.png",
 	nickname : "Red",
-	playtime: "16d 7h 45m",
-	pokedex : "30 own/132 seen",
-	releasecount : 16,
 	idnum : "20152",
+	playtime: "16d 7h 45m",
+	pokedex : "30 own / 132 seen",
+	releasecount : 16,
+	catchcount : 0,
+	e4attempts : 22,
+	blackouts : "???",
 	
-	info_html : 
-		"Number of E4 Attempts: 22<br/>"+
-		"Times Blacked Out: ???<br/>"+
-		"<br/>"+
-		"<br/>"+
-		"",
+	personality: "Often characterized as a robot, Red was silent and had no notable personality during his run.",
+	notable : "TPP recieved <a href='http://www.mcmbuzz.com/2014/06/15/twitch-plays-pokemon-wins-a-guinness-world-record/'>a Guinness World Record</a> for the most participants on a single-player online video game: 1,165,140",
+	ribbons : [
+		new Record_Ribbon("Won a Guinness World Record"),
+	],
+	
+	// info_html : 
+	// 	"Number of E4 Attempts: 22<br/>"+
+	// 	"Times Blacked Out: ???<br/>"+
+	// 	"<br/>"+
+	// 	"<br/>"+
+	// 	"",
 	icons : [
 		"img/icn/helix_fossil.png",
 		"img/icn/ss_ticket.png",

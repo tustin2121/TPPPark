@@ -134,7 +134,7 @@
 #infodex .tabs {
 	position: absolute;
 	left: 310px; bottom: -6px;
-	width: 130px;
+	width: 230px;
 	
 	transform-origin: 0 100%;
 	-ms-transform-origin: 0 100%;
@@ -165,14 +165,14 @@
 
 /* ---------------------------------------------------------------- */
 
-.pokeinfo section {
+.pokeinfo section, .trainerinfo section {
 	padding: 3px 6px;
 	border: 1px #2ac1ff solid;
 	border-radius: 3px;
 	background-color: rgb(228, 244, 251);
 	overflow: hidden;
 }
-.pokeinfo section:before {
+.pokeinfo section:before, .trainerinfo section:before {
 	content: " ";
 	background-color: rgb(162, 228, 255);
 	padding: 0px 6px;
@@ -182,7 +182,7 @@
 	display: inline-block;
 	margin-top: -1px;
 }
-.pokeinfo .spacer {
+.pokeinfo .spacer, .trainerinfo .spacer {
 	height: 0.6em;
 }
 
@@ -271,7 +271,7 @@
 	content: "Trainer Memo";
 }
 
-.pokeinfo .ribbons {
+#infodex .ribbons {
 	overflow: hidden;
 	padding: 3px 6px 0px;
 	border: 1px #2ac1ff solid;
@@ -279,7 +279,7 @@
 	background-color: rgb(228, 244, 251);
 	overflow: hidden;
 }
-.pokeinfo .ribbons:before {
+#infodex .ribbons:before {
 	content: "Ribbons";
 	background-color: rgb(162, 228, 255);
 	padding: 0px 6px;
@@ -289,13 +289,13 @@
 	display: inline-block;
 	margin-top: -1px;
 }
-.pokeinfo .ribbons:empty {
+#infodex .ribbons:empty {
 	padding-bottom: 3px;
 }
-.pokeinfo .ribbons ribbon {
+#infodex .ribbons ribbon {
 	display: block;
 	position: static;
-	height: 32px; 
+	min-height: 32px; 
 	padding: 2px 0px 2px 8px;
 	
 	display: block;
@@ -304,30 +304,60 @@
 	margin: 0px -10px;
 	line-height: 14px;
 }
-.pokeinfo .ribbons ribbon:nth-child(odd) {
+#infodex .ribbons ribbon:nth-child(odd) {
 	background-color: rgb(197, 238, 255);
 }
-.pokeinfo .ribbons ribbon:before {
+#infodex .ribbons ribbon:before {
 	content: "";
 	float: left;
 	width: 32px; height: 34px;
 	margin: -3px 10px 0px;
 	background-image: url("../img/ui/status_screen.png");
 }
-.pokeinfo .ribbons ribbon:after {
+#infodex .ribbons ribbon:after {
 	content: "";
 	clear: both;
 }
 
-.pokeinfo .ribbons ribbon.rb-purple:before			{ background-position: -1px -201px; }
-.pokeinfo .ribbons ribbon.rb-hallfame:before		{ background-position: -34px -201px; }
-.pokeinfo .ribbons ribbon.rb-starter:before		{ background-position: -1px -236px; }
-.pokeinfo .ribbons ribbon.rb-record:before			{ background-position: -34px -236px; }
-.pokeinfo .ribbons ribbon.rb-traded:before			{ background-position: -1px -271px; }
-.pokeinfo .ribbons ribbon.rb-bloodysunday:before	{ background-position: -34px -271px; }
-.pokeinfo .ribbons ribbon.rb-daycare:before		{ background-position: -1px -306px; }
-.pokeinfo .ribbons ribbon.rb-pokerus:before		{ background-position: -34px -306px; }
-.pokeinfo .ribbons ribbon.rb-master:before			{ background-position: -1px -341px; }
-.pokeinfo .ribbons ribbon.rb-ribbon10:before		{ background-position: -34px -341px; }
-.pokeinfo .ribbons ribbon.rb-ribbon11:before		{ background-position: -1px -376px; }
-.pokeinfo .ribbons ribbon.rb-ribbon12:before		{ background-position: -34px -376px; }
+#infodex .ribbons ribbon.rb-purple:before		{ background-position: -1px -201px; }
+#infodex .ribbons ribbon.rb-hallfame:before		{ background-position: -34px -201px; }
+#infodex .ribbons ribbon.rb-starter:before		{ background-position: -1px -236px; }
+#infodex .ribbons ribbon.rb-record:before		{ background-position: -34px -236px; }
+#infodex .ribbons ribbon.rb-traded:before		{ background-position: -1px -271px; }
+#infodex .ribbons ribbon.rb-bloodysunday:before	{ background-position: -34px -271px; }
+#infodex .ribbons ribbon.rb-daycare:before		{ background-position: -1px -306px; }
+#infodex .ribbons ribbon.rb-pokerus:before		{ background-position: -34px -306px; }
+#infodex .ribbons ribbon.rb-master:before		{ background-position: -1px -341px; }
+#infodex .ribbons ribbon.rb-ribbon10:before		{ background-position: -34px -341px; }
+#infodex .ribbons ribbon.rb-ribbon11:before		{ background-position: -1px -376px; }
+#infodex .ribbons ribbon.rb-ribbon12:before		{ background-position: -34px -376px; }
+
+/* ---------------------------------------------------------------- */
+
+.trainerinfo .name:before { content: "Name"; }
+.trainerinfo .trainerid { 
+	float: right;
+	width: 78px;
+}
+.trainerinfo .trainerid:before { content: "ID No."; }
+.trainerinfo .nickname:before { content: "Nickname"; }
+.trainerinfo .altnicks:before { content: "Alt Nicknames"; }
+
+.trainerinfo .playtime:before { content: "Playtime"; }
+.trainerinfo .pkdx:before { content: "Pokedex"; }
+.trainerinfo .caught:before { content: "Caught"; }
+.trainerinfo .released { 
+	float: right;
+	width: 48%;
+}
+.trainerinfo .released:before { content: "Released"; }
+.trainerinfo .e4attempts { 
+	float: right;
+	width: 48%;
+}
+.trainerinfo .e4attempts:before { content: "# of E4 Attempts"; }
+.trainerinfo .blackouts:before { content: "# of Blackouts"; }
+
+.trainerinfo .notable:before { content: "Notable Stats"; }
+.trainerinfo .personality:before { content: "Personality"; }
+

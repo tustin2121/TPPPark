@@ -492,18 +492,26 @@ addEvent(new Trainer({
 		"Trainer Sprite by /u/CyberDork35" : "http://www.reddit.com/r/twitchplayspokemon/comments/230qbl/im_making_custom_twitch_plays_pokemon_trainer/",
 	},
 	
+	idnum : "47901",
 	nickname : "AJ Downs",
 	playtime: "13d 2h 2m",
-	pokedex : "32 own/200 seen",
+	pokedex : "32 own / 200 seen",
 	releasecount : 4,
-	idnum : "47901",
+	catchcount : 0,
+	e4attempts : 38,
+	blackouts : 41,
 	
-	info_html : 
-		"Number of E4 Attempts: 38<br/>"+
-		"Times Blacked Out: 41<br/>"+
-		"Boyfriend: Joey<br/>"+
-		"<br/>"+
-		"",
+	personality: "Thought of as the youngest of our protagonists. He's a bit of a momma's boy. He loves getting calls from Joey, and loves being with Joey.",
+	notable: "Boyfriend: Joey",
+	ribbons: [
+	],
+	
+	// info_html : 
+	// 	"Number of E4 Attempts: 38<br/>"+
+	// 	"Times Blacked Out: 41<br/>"+
+	// 	"Boyfriend: Joey<br/>"+
+	// 	"<br/>"+
+	// 	"",
 	icons : [
 		"img/icn/slowpoke_search.png",
 		"img/icn/expshare.png",

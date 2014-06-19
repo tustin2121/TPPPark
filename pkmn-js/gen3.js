@@ -700,18 +700,31 @@ addEvent(new MultiEvent({
 		"Sprite based on Artwork by /u/Variis" : "http://www.reddit.com/r/twitchplayspokemon/comments/215jvk/dark_rituals/",
 	},
 	
-	nickname : "<strike>M</strike>ay (M = Silent)",
+	idnum : "61415",
+	nickname : "<strike>M</strike>ay (the M is Silent)",
 	playtime: "21d 19h 27m",
 	pokedex : "40 own/164 seen",
 	releasecount : 5,
-	idnum : "61415",
+	catchcount : 0,
+	e4attempts : 103,
+	blackouts : "89+",
 	
-	info_html : 
-		"Number of E4 Attempts: 103<br/>"+
-		"Times Blacked Out: 89+<br/>"+
+	personality: "A is a rebel, opting to disobey the voices at every chance and do things like catch loads of Oddish instead of training mon, or go fishing next to the cataclysmic legendary pokemon battles instead of help stop them.",
+	notable: 
 		"Oddish Caught: 29<br/>"+
 		"Poochyena Caught: 7<br/>"+
 		"Boyfriend: Brendan T. Birch",
+	ribbons: [
+		new Record_Ribbon("Highest number of E4 attempts"),
+		new Record_Ribbon("Highest number of attempts againt a single trainer: Wattson"),
+	],
+	
+	// info_html : 
+	// 	"Number of E4 Attempts: 103<br/>"+
+	// 	"Times Blacked Out: 89+<br/>"+
+	// 	"Oddish Caught: 29<br/>"+
+	// 	"Poochyena Caught: 7<br/>"+
+	// 	"Boyfriend: Brendan T. Birch",
 	icons : [
 		"img/icn/good_rod.png",
 		"img/icn/goggles.png",

@@ -112,7 +112,7 @@ addEvent(new Pokemon({
 		new Record_Ribbon("First Shiny Caught"),
 		new HallOfFame_Ribbon("11d 9h 9m"),
 		new HallOfFame_Ribbon("16d 12h 56m (Rematch)"),
-		new Record_Ribbon("Second Lvl 100 Pokemon"),
+		new Record_Ribbon("Third Lvl 100 Pokemon"),
 	],
 }));
 
@@ -329,18 +329,28 @@ addEvent(new Trainer({
 		"Lyra Sprite from Bulbapedia":"", 
 	},
 	
+	idnum : "28412",
 	nickname : "Aoooo",
+	altnicks : "Aurora",
 	playtime: "0d 0h 0m",
 	pokedex : "0 own/0 seen",
 	releasecount : 0,
-	idnum : "28412",
+	catchcount : 0,
+	e4attempts : 0,
+	blackouts : "???",
 	
-	info_html : 
-		"Number of E4 Attempts: ??<br/>"+
-		"Times Blacked Out: ???<br/>"+
-		"<br/>"+
-		"<br/>"+
-		"",
+	personality: 'Aoooo is a werewolf; she constantly glitched out during the game, drawing cries of "AOOOOOOOO!" from the chat. She is nieve and likes catching more friends with the thousands of pokeballs she\'s bought.',
+	notable: "",
+	ribbons: [
+		
+	],
+	
+	// info_html : 
+	// 	"Number of E4 Attempts: ??<br/>"+
+	// 	"Times Blacked Out: ???<br/>"+
+	// 	"<br/>"+
+	// 	"<br/>"+
+	// 	"",
 	icons : [
 		null, //"img/icn/coin_case.png",
 		null, //"img/icn/air_mail.png",

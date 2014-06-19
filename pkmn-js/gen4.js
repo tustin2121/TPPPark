@@ -524,18 +524,32 @@ addEvent(new Trainer({
 		"Lucas Sprite from Bulbapedia":"", 
 	},
 	
+	idnum : "12339",
 	nickname : "Napoleon",
+	altnicks : "Nipple",
 	playtime: "17d 11h 39m",
 	pokedex : "52 own/206 seen",
 	releasecount : "4 (+22)",
-	idnum : "12339",
+	catchcount : 0,
+	e4attempts : 49,
+	blackouts : 173,
 	
-	info_html : 
-		"Number of E4 Attempts: 49<br/>"+
-		"Times Blacked Out: 173<br/>"+
+	personality: "Napoleon hates pokemon, or he did at the start of his adventure. He is a quiet, reserved 'dandy', more concerned with keeping himself looking faboulous than any adventure at hand. He's also a habitual gambler.",
+	notable: 
 		"Number of Wooper Caught: 20<br/>"+
-		"Number of Times Time Traveled: 2<br/>"+
-		"Number of Pokeballs Bought: 400+",
+		"Number of Pokeballs Bought: 400+<br/>"+
+		"Number of Times Time Traveled: 2",
+	ribbons: [
+		new Ribbon({ cssclass: "rb-pokerus", name: "Infected", desc: "Died from the Pokérus virus, freezing the game."}),
+		new Record_Ribbon("Paradoxical: Had to load a previous save file."),
+	],
+	
+	// info_html : 
+	// 	"Number of E4 Attempts: 49<br/>"+
+	// 	"Times Blacked Out: 173<br/>"+
+	// 	"Number of Wooper Caught: 20<br/>"+
+	// 	"Number of Times Time Traveled: 2<br/>"+
+	// 	"Number of Pokeballs Bought: 400+",
 	icons : [
 		"img/icn/coin_case.png",
 		"img/icn/air_mail.png",
@@ -557,10 +571,10 @@ addEvent(new Trainer({
 	],
 	dialog_assignment: "random",
 	
-	doClick : function(){
-		Person.fn.doClick.call(this);
-		this.openTrainerCard();
-	},
+	// doClick : function(){
+	// 	Person.fn.doClick.call(this);
+	// 	this.openTrainerCard();
+	// },
 }));
 
 //And his very own Game Corner!

@@ -417,18 +417,28 @@ addEvent(new Trainer({
 		"Alice Sprite by /u/KingdomXathers":"http://www.reddit.com/r/twitchplayspokemon/comments/23tl7o/made_a_sprite_for_aalice_this_is_more_of_a_wip/", 
 	},
 	
+	idnum : "56171",
 	nickname : "Alice",
 	playtime: "15d 2h 2m",
 	pokedex : "56 own/303 seen",
 	releasecount : 1,
-	idnum : "56171",
+	catchcount : 0,
+	e4attempts : 8,
+	blackouts : "89+",
 	
-	info_html : 
-		"Number of E4 Attempts: 8<br/>"+
-		"Times Blacked Out: 89+<br/>"+
-		"<br/>"+
-		"<br/>"+
-		"",
+	personality: "Alice is more of a researcher than a pokemon trainer. The voices coming to her simply gave her an excuse to go adventuring through the land of randomized Kanto, taking notes all the way. The name Alice came from <em>Alice in Wonderland</em>, since Randomized Kanto was pretty much that.",
+	notable: "",
+	ribbons: [
+		new Record_Ribbon("Shortest E4 Run"),
+		new Record_Ribbon("Lowest Release Count"),
+	],
+	
+	// info_html : 
+	// 	"Number of E4 Attempts: 8<br/>"+
+	// 	"Times Blacked Out: 89+<br/>"+
+	// 	"<br/>"+
+	// 	"<br/>"+
+	// 	"",
 	icons : [
 		"img/icn/teachy_tv.png",
 		"img/icn/dome_fossil.png",
