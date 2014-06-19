@@ -501,7 +501,7 @@ addEvent(new Trainer({
 	e4attempts : 38,
 	blackouts : 41,
 	
-	personality: "Thought of as the youngest of our protagonists. He's a bit of a momma's boy. He loves getting calls from Joey, and loves being with Joey.",
+	personality: "Thought of as the youngest of our protagonists. He's a bit of a mommy's boy. He loves getting calls from Joey, and loves being with Joey.",
 	notable: "Boyfriend: Joey",
 	ribbons: [
 	],

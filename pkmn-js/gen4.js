@@ -330,7 +330,7 @@ addEvent(new Pokemon({
 	pokename : "Bibarel",
 	nicknames : "",
 	level : 93,
-	memo : "Had a baby bidoof with Solareon. Some say as a sorrogate mother.",
+	memo : "Had a baby bidoof with Solareon. Some say as a surrogate mother.",
 	
 	ribbons : [
 		// new Pokerus_Ribbon(), //caught after the outbreak
@@ -534,7 +534,7 @@ addEvent(new Trainer({
 	e4attempts : 49,
 	blackouts : 173,
 	
-	personality: "Napoleon hates pokemon, or he did at the start of his adventure. He is a quiet, reserved 'dandy', more concerned with keeping himself looking faboulous than any adventure at hand. He's also a habitual gambler.",
+	personality: "Napoleon hates pokemon, or he did at the start of his adventure. He is a quiet, reserved 'dandy', more concerned with keeping himself looking fabulous than any adventure at hand. He's also a habitual gambler.",
 	notable: 
 		"Number of Wooper Caught: 20<br/>"+
 		"Number of Pokeballs Bought: 400+<br/>"+

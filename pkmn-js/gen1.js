@@ -132,7 +132,7 @@ addEvent(new Pokemon({
 	level : 81,
 	caught : "With Masterball 10d 7h 49m",
 	ball : "master",
-	memo : "Attempts at retreival caused Bloody Sunday. Invaluable at Elite Four.",
+	memo : "Attempts at retrieval caused Bloody Sunday. Invaluable at Elite Four.",
 	
 	ribbons : [
 		new HallOfFame_Ribbon("16d 7h 45m"),
@@ -404,7 +404,7 @@ addEvent(new Trainer({
 	blackouts : "???",
 	
 	personality: "Often characterized as a robot, Red was silent and had no notable personality during his run.",
-	notable : "TPP recieved <a href='http://www.mcmbuzz.com/2014/06/15/twitch-plays-pokemon-wins-a-guinness-world-record/'>a Guinness World Record</a> for the most participants on a single-player online video game: 1,165,140",
+	notable : "TPP received <a href='http://www.mcmbuzz.com/2014/06/15/twitch-plays-pokemon-wins-a-guinness-world-record/'>a Guinness World Record</a> for the most participants on a single-player online video game: 1,165,140",
 	ribbons : [
 		new Record_Ribbon("Won a Guinness World Record"),
 	],

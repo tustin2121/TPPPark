@@ -20,10 +20,10 @@ addEvent(new Pokemon({
 	gamename: ",",
 	pokename: "Vibrava",
 	nicknames: "Trumprava, Vibrator, Trumpnich, MC Hammer",
-	caught: "Recieved at 0d 0h 6m.",
+	caught: "Received at 0d 0h 6m.",
 	level: 86,
 	ball: "poke",
-	memo: "Known for its signiture moves: Trump Card and Hammer Arm (the latter of which it had since the beginning).",
+	memo: "Known for its signature moves: Trump Card and Hammer Arm (the latter of which it had since the beginning).",
 	
 	ribbons: [
 		new Starter_Ribbon(),
@@ -48,10 +48,10 @@ addEvent(new Pokemon({
 	gamename: "Omastar",
 	pokename: "Omastar",
 	nicknames: "Lore Helix",
-	caught: "In the harbor of Vermillion City, 11d 17h 56m",
+	caught: "In the harbor of Vermilion City, 11d 17h 56m",
 	level: 100,
 	ball: "quick",
-	memo: "Ability: Thick Fat. He is, lorewise, the same Lord Helix as was revived by Red, after lazing around, eating cheeseburgers for 4.5 generations.",
+	memo: "Ability: Thick Fat. He is, lore-wise, the same Lord Helix as was revived by Red, after lazing around, eating cheeseburgers for 4.5 generations.",
 	
 	ribbons: [
 		new HallOfFame_Ribbon("16d 12h 56m (Rematch)"),
@@ -79,7 +79,7 @@ addEvent(new Pokemon({
 	caught: "As a Bonsley.",
 	level: 80,
 	ball: "net",
-	memo: "Ability: Sniper. Holds: Scope Lens. Known for its Rock Wreaker attack and its Sniper ability. Knows Surf. <p>Named Treesus after a Sudowoodo in Stadium Mimic'ed the attack Fly.</p>",
+	memo: "Ability: Sniper. Holds: Scope Lens. Known for its Rock Wrecker attack and its Sniper ability. Knows Surf. <p>Named Treesus after a Sudowoodo in Stadium Mimic'ed the attack Fly.</p>",
 	
 	ribbons: [
 		new HallOfFame_Ribbon("11d 9h 9m"),
@@ -339,7 +339,7 @@ addEvent(new Trainer({
 	e4attempts : 0,
 	blackouts : "???",
 	
-	personality: 'Aoooo is a werewolf; she constantly glitched out during the game, drawing cries of "AOOOOOOOO!" from the chat. She is nieve and likes catching more friends with the thousands of pokeballs she\'s bought.',
+	personality: 'Aoooo is a werewolf; she constantly glitched out during the game, drawing cries of "AOOOOOOOO!" from the chat. She is naive and likes catching more friends with the thousands of pokeballs she\'s bought.',
 	notable: "",
 	ribbons: [
 		

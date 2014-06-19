@@ -182,7 +182,7 @@ addEvent(new Pokemon({
 	pokename : "Quagsire",
 	nicknames : "Cavesire",
 	level : 24,
-	memo : "Ability: Indimidate. Knew Bone Club as a Wooper. Holds some Black Glasses (his Swag).",
+	memo : "Ability: Intimidate. Knew Bone Club as a Wooper. Holds some Black Glasses (his Swag).",
 }));
 
 addEvent(new Pokemon({
@@ -274,7 +274,7 @@ addEvent(new Pokemon({
 	gamename : "Jumpluff ",
 	pokename : "Jumpluff ",
 	level : 25,
-	memo : "Recieved from the Fighting Dojo instead of Hitmonchan.",
+	memo : "Received from the Fighting Dojo instead of Hitmonchan.",
 }));
 
 
@@ -306,7 +306,7 @@ addEvent(new Person({
 		"If you don't know how type matchups work, battles will be tough!",
 		"For the COOL-type POK&eacute; DUDE, AWESOME-type kids like you match up perfectly!",
 		"FOCUS PUNCH doesn't sound like anything a bird or fish POK&eacute;MON can learn. So, try using it on a POK&eacute;MON with arms that can throw punches!",
-		"You've given yourself one-touch access to TEACHY TV! That kind of attention is a little embarrasing!",
+		"You've given yourself one-touch access to TEACHY TV! That kind of attention is a little embarrassing!",
 	],
 }));
 

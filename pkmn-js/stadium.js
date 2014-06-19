@@ -1250,7 +1250,7 @@
 			
 			// if (!chant) { //generic chants
 			// 	switch (Math.floor(rnd * 1873) % 2) {
-			// 		case 0: chant = name+" Intensifies"; break; //"undefined Intesifies"
+			// 		case 0: chant = name+" Intensifies"; break; //"undefined Intensifies"
 			// 		case 1: chant = name.toUpperCase()+" Kreygasm"; break;
 			// 	}
 			// }
@@ -1697,7 +1697,7 @@ Kreygasm LORD HELIX Kreygasm
 			
 			getDomElement : function(){
 				var base = Building.fn.getDomElement.call(this);
-				chatterContainer = $("<div>").addClass("staidum-chatter-container").appendTo(base);
+				chatterContainer = $("<div>").addClass("stadium-chatter-container").appendTo(base);
 				return base;
 			},
 			
