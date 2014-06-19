@@ -105,7 +105,7 @@ addEvent(new MultiEvent({
 	OT: "Red",
 	gamename : "AIIIIIIRRR",
 	pokename : "Lapras",
-	nicknames : "Air Jordan<br/>Fresh Prince of Shell Air",
+	nicknames : "Air Jordan, Fresh Prince of Shell Air",
 	level : 31,
 	
 	ribbons : [
@@ -250,7 +250,7 @@ addEvent(new Pokemon({
 	gamename : "x(araggbaj",
 	pokename : "Gloom",
 	level : 31,
-	nicknames : "xCabbage<br/>Seed of Hope",
+	nicknames : "xCabbage, Seed of Hope",
 	
 	ribbons : [
 		new Released_Ribbon("10d 12h 43m"),

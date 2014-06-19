@@ -127,7 +127,7 @@ addEvent(new MultiEvent({
 	gender: 0,
 	gamename : "Bronzong",
 	pokename : "Bronzong",
-	nicknames : "Captain America<br/>Captain Unova",
+	nicknames : "Captain America, Captain Unova",
 	level : 68,
 	memo : "First to contract the Pokerus virus, named Captain America for this feat.",
 	
@@ -208,7 +208,7 @@ addEvent(new MultiEvent({
 	gender: 2,
 	gamename : "!☂!!☀! !:1",
 	pokename : "Roserade",
-	nicknames: "The Empress<br/>Queen",
+	nicknames: "The Empress, Queen",
 	level : 71,
 	memo : "Evolved to Roselia via Rare Candy by anti-evolution trolls spamming the menu button.",
 	
@@ -234,7 +234,7 @@ addEvent(new MultiEvent({
 	
 	ribbons : [
 		new Daycare_Ribbon("To Love Sunbrella"),
-		new Released_Ribbon("12d 10h 32m* <br/>(*Lost to Paradox)"),
+		new Released_Ribbon("12d 10h 32m (Lost to Paradox)"),
 		//No badges after this, so they don't bleed into one another.
 	],
 })).addSubEvent("21,16,30,25", new Pokemon({
@@ -277,7 +277,7 @@ addEvent(new MultiEvent({
 	gender: 1,
 	gamename : "Flareon",
 	pokename : "Flareon",
-	nicknames : "Sun Prophet<br/>Flame Jesus",
+	nicknames : "Sun Prophet, Flame Jesus",
 	level : 97,
 	memo : "Said to have broken the Fire Starter curse by entering the Hall of Fame.",
 	
@@ -455,9 +455,9 @@ addEvent(new Pokemon({
 	sprite: "img/pkmn/kk-roy.png",
 	x: 16, y: -33,
 	
-	dex : "img/pkdx/b/Spr_4p_175.png",
+	dex : "img/pkdx/ptdex_kkroy.png",
 	sources : {
-		"Pokedex Image from Bulbapedia" : "",
+		"Sprite by /u/carlotta4th": "http://www.reddit.com/r/twitchplayspokemon/comments/252a2b/tpp_sprites/",
 		"Sprite is Flair by /u/RT-Pickred": "",
 	},
 	

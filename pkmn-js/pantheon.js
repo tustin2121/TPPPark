@@ -22,6 +22,31 @@ addEvent(new Event({
 }));
 
 
+addEvent(new Event({
+	name : "Deity Armor Fossil",
+	sprite : "img/pkmn/!deity_shield_fossil.png",
+	x: -149, y:-74,
+}));
+
+addEvent(new Event({
+	name : "Deity Skull Fossil",
+	sprite : "img/pkmn/!deity_skull_fossil.png",
+	x: -141, y:-74,
+}));
+
+addEvent(new Event({
+	name : "Deity Claw Fossil",
+	sprite : "img/pkmn/!deity_claw_fossil.png",
+	x: -149, y:-72,
+}));
+
+addEvent(new Event({
+	name : "Deity Root Fossil",
+	sprite : "img/pkmn/!deity_root_fossil.png",
+	x: -141, y:-72,
+}));
+
+
 //Deities
 addEvent(new Event({
 	name : "Deity Amber",
@@ -41,6 +66,38 @@ addEvent(new Event({
 	name : "Deity Dome",
 	sprite : "img/pkmn/!deity_dome_pkmn.png",
 	x: -143, y:-77, z: 16,
+	animation: "breathe",
+}));
+
+// Defined in the Gen 4.1 file
+/*
+addEvent(new Event({
+	name : "Deity Armor",
+	sprite : "img/pkmn/!deity_shield_pkmn.png",
+	x: -151, y:-74, z: 8,
+	animation: "breathe",
+}));*/
+
+// Defined in the Gen 4.1 file 
+/*
+addEvent(new Event({
+	name : "Deity Skull",
+	sprite : "img/pkmn/!deity_skull_pkmn.png",
+	x: -139, y:-74, z: 8,
+	animation: "breathe",
+})); */
+
+addEvent(new Event({
+	name : "Deity Claw",
+	sprite : "img/pkmn/!deity_claw_pkmn.png",
+	x: -151, y:-72, z: 8,
+	animation: "breathe",
+}));
+
+addEvent(new Event({
+	name : "Deity Root",
+	sprite : "img/pkmn/!deity_root_pkmn.png",
+	x: -139, y:-72, z: 8,
 	animation: "breathe",
 }));
 

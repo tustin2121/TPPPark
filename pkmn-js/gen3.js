@@ -27,12 +27,12 @@ addEvent(new MultiEvent({
 	gender: 2,
 	gamename : "M ---/'/'4",
 	pokename : "Azumarill",
-	nicknames : "M4rill, Moe,<br/>Virgin Marill",
+	nicknames : "M4rill, Moe, Virgin Marill",
 	level : 100,
 	memo : "Known for her signature move: Rollout.",
 	
 	ribbons : [
-		new Record_Ribbon("Only Lvl 100 Mon"),
+		new Record_Ribbon("First Lvl 100 Pokemon"),
 		new HallOfFame_Ribbon("21d 19h 27m"),
 	],
 })).addSubEvent("1,34,28,67", new Pokemon({
@@ -120,7 +120,7 @@ addEvent(new Pokemon({
 	gender: 2,
 	gamename : "GJKLFFZ",
 	pokename : "Tentacruel",
-	nicknames : "GJK<br/>The Kraken",
+	nicknames : "GJK, The Kraken",
 	level : 79,
 	memo : "Great tank. Hidden Power: Electric.",
 	
@@ -147,7 +147,7 @@ addEvent(new Pokemon({
 	gender: 2,
 	gamename : 'A♀NIIIIc33',
 	pokename : "Hariyama",
-	nicknames : 'Anice<br/>"A Girl, <em>Nice</em>"',
+	nicknames : 'Anice, "A Girl, <em>Nice</em>"',
 	level : 78,
 	caught: "In victory road.",
 	memo : "Consistantly swept 2-3 of the E4 every run.",
@@ -173,7 +173,7 @@ addEvent(new MovingPokemon({
 	gamename : "apf uojkyy",
 	pokename : "Kadabra",
 	level : 29,
-	nicknames : "Apfel<br/>Fap Junky",
+	nicknames : "Apfel, Fap Junky",
 	memo : '"How did we get a Kadabra?!"',
 	
 	ribbons : [
@@ -750,7 +750,7 @@ addEvent(new MultiEvent({
 	gender: 1,
 	gamename : "Poochyena",
 	pokename : "Poochyena",
-	nicknames : "Daycare Doge<br/>Pacifist Doge",
+	nicknames : "Daycare Doge, Pacifist Doge",
 	level : 29,
 	memo: "Due to leaving it in the day care longer than intended, it has no damaging moves.",
 	
@@ -778,7 +778,7 @@ addEvent(new MultiEvent({
 	gender: 2,
 	gamename : "Poochyena",
 	pokename : "Poochyena",
-	nicknames : "Alpha Doge<br/>Dogeyena",
+	nicknames : "Alpha Doge, Dogeyena",
 	level : 36,
 	memo: "Second strongest of A's doges.",
 	
@@ -842,6 +842,6 @@ addEvent(new Pokemon({
 	gender: 2,
 	gamename : "ATMMMGMGG",
 	pokename : "Poochyena",
-	nicknames : "Automated Teller Doge<br/>All Terrain Doge",
+	nicknames : "Automated Teller Doge, All Terrain Doge",
 	level : 14,
 }));

@@ -3,7 +3,7 @@
 #infodex {
 	position: absolute;
 	z-index: 20000; /* float OVER pokemon */
-	top: 100px; left: 100px;
+	top: 120px; left: 20px;
 }
 
 #infodex section {
@@ -83,15 +83,27 @@
 
 #infodex .holo {
 	position: absolute;
-	width: 112px; height: 88px;
+	width: 128px; height: 96px;
 	background-image: url("../img/ui/infodex.png");
-	background-position: -80px -72px;
-	bottom: -108px; right: -8px;
+	background-position: -64px -64px;
+	/*bottom: -108px; right: -8px;*/
+	bottom: 0px; left: 48px;
 	z-index: 6;
+	pointer-events: none;
 }
 
-#infodex .holo img {
+#infodex .holo .sprite {
 	position: absolute;
+	width: 128px; height: 132px;
+	bottom: 8px; left: 0;
+	overflow: hidden;
+	pointer-events: none;
+}
+
+#infodex .holo .sprite img {
+	position: absolute;
+	bottom: 1px;
+	pointer-events: none;
 }
 
 #infodex .sheet:before {
@@ -117,3 +129,205 @@
 #infodex .sheet p {
 	margin: 0 0 0.6em 0;
 }
+
+
+#infodex .tabs {
+	position: absolute;
+	left: 310px; bottom: -6px;
+	width: 130px;
+	
+	transform-origin: 0 100%;
+	-ms-transform-origin: 0 100%;
+	-webkit-transform-origin: 0 100%;
+	transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	/*pointer-events: none;*/
+	z-index: -2;
+}
+#infodex .tabs div {
+	display: inline-block;
+	background-color: rgba(162, 228, 255, 0.95);
+	border: 1px #007caf solid;
+	border-radius: 10px 10px 0px 0px;
+	padding: 5px 7px 2px;
+	
+	font-family: PokemonScreen;
+	font-size: 16px;
+	margin: 0px 0px;
+	line-height: 14px;
+	cursor: pointer;
+}
+#infodex .tabs div.selected {
+	background-color: rgba(249, 253, 255, 0.95);
+	border-bottom: none;
+}
+
+/* ---------------------------------------------------------------- */
+
+.pokeinfo section {
+	padding: 3px 6px;
+	border: 1px #2ac1ff solid;
+	border-radius: 3px;
+	background-color: rgb(228, 244, 251);
+	overflow: hidden;
+}
+.pokeinfo section:before {
+	content: " ";
+	background-color: rgb(162, 228, 255);
+	padding: 0px 6px;
+	margin-left: -8px;
+	margin-right: 6px;
+	border: 1px #2ac1ff solid;
+	display: inline-block;
+	margin-top: -1px;
+}
+.pokeinfo .spacer {
+	height: 0.6em;
+}
+
+.pokeinfo .common-name {}
+.pokeinfo .common-name:before {
+	content: "Nickname";
+}
+.pokeinfo .game-name:before {
+	content: "Name";
+}
+.pokeinfo .spec-name:before {
+	content: "Species";
+}
+
+.pokeinfo .gender {
+	float: right;
+	width: 10px;
+	padding-bottom: 4px;
+	text-align: center;
+}
+.pokeinfo .gender:before {
+	content: none;
+}
+.pokeinfo .gender:after {
+	content: "\00a0";
+	/*color: #40c8f8;*/
+}
+.pokeinfo .gender.male:after {
+	content: "\2642";
+	/*color: #40c8f8;*/
+}
+.pokeinfo .gender.female:after {
+	content: "\2640";
+	/*color: #f89890;*/
+}
+
+
+.pokeinfo .level:before {
+	content: "Level";
+}
+.pokeinfo .level {
+	float: right;
+	width: 60px;
+}
+
+.pokeinfo .ballwrap {
+	float: right;
+	padding: 2px 4px 3px;
+}
+.pokeinfo .ballwrap:before {
+	content: none;
+}
+.pokeinfo .ball {
+	width: 16px; height: 16px;
+	background-image: url("../img/ui/status_screen.png");
+	background-position: -70px -200px; /* Default: Pokeball */
+}
+.pokeinfo .ball.poke 		{ background-position: -70px -200px; }
+.pokeinfo .ball.great		{ background-position: -70px -216px; }
+.pokeinfo .ball.ultra 		{ background-position: -70px -232px; }
+.pokeinfo .ball.master		{ background-position: -70px -248px; }
+.pokeinfo .ball.premiere	{ background-position: -70px -264px; }
+.pokeinfo .ball.cherish		{ background-position: -70px -280px; }
+.pokeinfo .ball.luxury		{ background-position: -70px -296px; }
+.pokeinfo .ball.nest 		{ background-position: -70px -312px; }
+.pokeinfo .ball.net 		{ background-position: -70px -328px; }
+.pokeinfo .ball.dive		{ background-position: -70px -344px; }
+.pokeinfo .ball.repeat		{ background-position: -70px -360px; }
+.pokeinfo .ball.timer		{ background-position: -70px -376px; }
+.pokeinfo .ball.safari		{ background-position: -70px -392px; }
+.pokeinfo .ball.quick 		{ background-position: -70px -408px; }
+.pokeinfo .ball.dusk 		{ background-position: -70px -424px; }
+.pokeinfo .ball.heal 		{ background-position: -70px -440px; }
+
+.pokeinfo .ot:before {
+	content: "OT";
+}
+
+.pokeinfo .nicknames:before {
+	content: "Alt Names";
+}
+.pokeinfo .caught:before {
+	content: "Caught";
+}
+.pokeinfo .memo:before {
+	content: "Trainer Memo";
+}
+
+.pokeinfo .ribbons {
+	overflow: hidden;
+	padding: 3px 6px 0px;
+	border: 1px #2ac1ff solid;
+	border-radius: 3px;
+	background-color: rgb(228, 244, 251);
+	overflow: hidden;
+}
+.pokeinfo .ribbons:before {
+	content: "Ribbons";
+	background-color: rgb(162, 228, 255);
+	padding: 0px 6px;
+	margin-left: -8px;
+	margin-right: 6px;
+	border: 1px #2ac1ff solid;
+	display: inline-block;
+	margin-top: -1px;
+}
+.pokeinfo .ribbons:empty {
+	padding-bottom: 3px;
+}
+.pokeinfo .ribbons ribbon {
+	display: block;
+	position: static;
+	height: 32px; 
+	padding: 2px 0px 2px 8px;
+	
+	display: block;
+	font-family: PokemonScreen;
+	font-size: 16px;
+	margin: 0px -10px;
+	line-height: 14px;
+}
+.pokeinfo .ribbons ribbon:nth-child(odd) {
+	background-color: rgb(197, 238, 255);
+}
+.pokeinfo .ribbons ribbon:before {
+	content: "";
+	float: left;
+	width: 32px; height: 34px;
+	margin: -3px 10px 0px;
+	background-image: url("../img/ui/status_screen.png");
+}
+.pokeinfo .ribbons ribbon:after {
+	content: "";
+	clear: both;
+}
+
+.pokeinfo .ribbons ribbon.rb-purple:before			{ background-position: -1px -201px; }
+.pokeinfo .ribbons ribbon.rb-hallfame:before		{ background-position: -34px -201px; }
+.pokeinfo .ribbons ribbon.rb-starter:before		{ background-position: -1px -236px; }
+.pokeinfo .ribbons ribbon.rb-record:before			{ background-position: -34px -236px; }
+.pokeinfo .ribbons ribbon.rb-traded:before			{ background-position: -1px -271px; }
+.pokeinfo .ribbons ribbon.rb-bloodysunday:before	{ background-position: -34px -271px; }
+.pokeinfo .ribbons ribbon.rb-daycare:before		{ background-position: -1px -306px; }
+.pokeinfo .ribbons ribbon.rb-pokerus:before		{ background-position: -34px -306px; }
+.pokeinfo .ribbons ribbon.rb-master:before			{ background-position: -1px -341px; }
+.pokeinfo .ribbons ribbon.rb-ribbon10:before		{ background-position: -34px -341px; }
+.pokeinfo .ribbons ribbon.rb-ribbon11:before		{ background-position: -1px -376px; }
+.pokeinfo .ribbons ribbon.rb-ribbon12:before		{ background-position: -34px -376px; }
