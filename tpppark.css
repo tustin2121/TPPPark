@@ -114,7 +114,7 @@ body.x2 #anchor {
 	line-height: 14px;
 }
 
-.ui.creditnote a {
+.ui a {
 	color: #75C2FF;
 }
 #curr-sources:empty:before {

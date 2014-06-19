@@ -131,7 +131,7 @@ addEvent(new MultiEvent({
 	gamename : "AAAS RJ-1",
 	pokename : "Espeon",
 	level : 54,
-	nicknames: "Breakfast Burrito<br/>Bringer of Light",
+	nicknames: "Breakfast Burrito, Bringer of Light",
 	memo : "Known for trying to use Attract on everyone. He's writing fanfiction right now.",
 	
 	ribbons : [
@@ -213,7 +213,7 @@ addEvent(new Pokemon({
 	gender: 1,
 	gamename : "AAJRR RRR",
 	pokename : "Steelix",
-	nicknames : "Solid Snake<br/>Metal Gear",
+	nicknames : "Solid Snake, Metal Gear",
 	level : 72,
 	memo: "Holds: Leftovers. Excellent Tank vs Mt. Silver.",
 	
@@ -405,7 +405,7 @@ addEvent(new Pokemon({
 	gender : 2,
 	gamename : "OXXOZZ -:",
 	pokename : "Metapod",
-	nickname : "Oxxy Ozzworm<br/>Lovebug",
+	nickname : "Oxxy Ozzworm, Lovebug",
 	level : function() {
 		//Oxxy left at 3d 18h 37m -- March 6th 18:37 UTC
 		var timeSince = (new Date().getTime()) - (new Date(2014, 3, 18, 18, 37).getTime());

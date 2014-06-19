@@ -1,4 +1,4 @@
-// stadium_patrons.js
+// _usernames.js
 // A file specifically for defining the patrons in the stadium
 //
 
@@ -123,4 +123,74 @@
 	
 	window.stadium.NAMED_PATRONS = NAMED_PATRONS;
 	window.stadium.RANDOM_NAMES = RANDOM_NAMES;
+})();
+
+(function(){
+	//Community Center TPPers
+	
+	addEvent(new TPPer({
+		name: "Tustin",
+		name_twitch: "tustin2121",
+		name_reddit: "tustin2121",
+		title: "Slayer of C-Gear",
+		role: "Creator of TPPPark",
+		description: "",
+		
+		icon : "joey",
+		spritesheet: "",
+		sprite: 0,
+		
+		/* (Nominated by /u/chaoticcookie39)
+		First post. I NOMINATE YOU /u/tustin2121
+		Twitch Username: I actually don't know it....
+		Role: TPP Park Creator + All around great community player
+		One of the biggest contributors on this subreddit. He made TPP Park and still updates it continuously today. He also is responsible for this whole community part of the park!
+		Sprite: /u/tustin2121 you obviously can choose. I can't open the sprite link at work :/
+		Icon: Your choice :)...Joey?
+		*/
+	}));
+	
+	addEvent(new TPPer({
+		name: "Carlotta",
+		name_twitch: "carlottathe4th",
+		name_reddit: "carlotta4th",
+		title: "",
+		role: "Sprite Artist, Artist of TPPPark",
+		description: "",
+		
+		icon : "digrat",
+		spritesheet: "",
+		sprite: 0,
+		
+		/* (Nominated by /u/Kelcyus)
+		Also, although I'm guessing she is included either way, I nominate /u/Carlotta4th
+		The amazing sprite artist that has give us so many great custom sprites for all our often zany TPP creations.
+		*/
+	}));
+	
+	addEvent(new TPPer({
+		name: "Streamer",
+	//	name_twitch: "",
+	//	name_reddit: "",
+		title: "Streamer-Spenpai",
+		role: "Creator of TwitchPlaysPokemon",
+		description: "",
+		
+		icon : "tppicon",
+		spritesheet: "",
+		sprite: 0,
+		
+		/* (Nominated by /u/confettibin)
+		Not sure if possible, but /u/BasedStreamerSenpai<3 ^(Citation Needed)
+		Role: Streamer
+		Twitch: TwitchPlaysPokemon
+		The streamer started streaming the stream back in February and viewers began to stream in. He's faithfully run the stream since, and has promised to do so as long as interest remains. Though he's gotten in a few arguments, he's managed to generally keep to community happy and run the stream in a professional manner at the same time.
+		Icon: This.
+		Sprite: Arceus.
+		*/
+	}));
+	
+	
+	
+	
 })();
