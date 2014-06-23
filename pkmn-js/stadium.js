@@ -1417,7 +1417,7 @@ Kreygasm LORD HELIX Kreygasm
 	
 	/////// Screen event definition ///////
 	
-	window.requestAnimationFrame = window.requestAnimationFrame || window.moxRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+	window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 	
 	function Screen(opts){
 		if (!(this instanceof Screen))
