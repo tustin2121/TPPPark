@@ -429,7 +429,21 @@ addEvent(new Trainer({
 		null,// "img/icn/slowpoke_tail.png",
 	],
 	
-	badge_html : "",
+	badges_info : {
+		img: "img/icn/badges_firered.png",
+		frame_width: 16,
+		frame_height: 16,
+	},
+	badges : [
+		new Badge({ name: "Cocoon Badge", leader: "Brock", type: "Bug" }),
+		new Badge({ name: "Chemical Badge", leader: "Misty", type: "Poison" }),
+		new Badge({ name: "Shale Badge", leader: "Lt. Surge", type: "Ground" }),
+		new Badge({ name: "Snowflake Badge", leader: "Erika", type: "Ice" }),
+		new Badge({ name: "Wind Badge", leader: "Koga", type: "Flying" }),
+		new Badge({ name: "Harmony Badge", leader: "Sabrina", type: "Normal" }),
+		new Badge({ name: "Fossil Badge", leader: "Blaine", type: "Rock" }),
+		new Badge({ name: "Impact Badge", leader: "Giovanni", type: "Fighing" }),
+	],
 	
 	behavior: behavior.meander,
 	behavArg : {

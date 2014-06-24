@@ -493,8 +493,8 @@ addEvent(new Pokemon({
 	
 	OT: "--",
 	gender: 1,
-	gamename : "Gyrados",
-	pokename : "Gyrados",
+	gamename : "Gyarados",
+	pokename : "Gyarados",
 	level : "??",
 }));
 
@@ -539,7 +539,30 @@ addEvent(new Trainer({
 		"img/icn/slowpoke_tail.png",
 	],
 	
-	badge_html : "",
+	badges_info : {
+		img: "img/icn/badges_crystal.png",
+		frame_width: 16,
+		frame_height: 16,
+	},
+	badges : [
+		new Badge({ name: "Zephyr Badge", leader: "Falkner", type: "Flying" }),
+		new Badge({ name: "Hive Badge", leader: "Bugsy", type: "Bug" }),
+		new Badge({ name: "Plain Badge", leader: "Whitney", type: "Normal" }),
+		new Badge({ name: "Fog Badge", leader: "Morty", type: "Ghost" }),
+		new Badge({ name: "Storm Badge", leader: "Chuck", type: "Fighting" }),
+		new Badge({ name: "Mineral Badge", leader: "Jasmine", type: "Steel" }),
+		new Badge({ name: "Glacier Badge", leader: "Pryce", type: "Ice" }),
+		new Badge({ name: "Rising Badge", leader: "Clair", type: "Dragon" }),
+		
+		new Badge({ name: "Boulder Badge", leader: "Brock", type: "Rock" }),
+		new Badge({ name: "Cascade Badge", leader: "Misty", type: "Water" }),
+		new Badge({ name: "Thunder Badge", leader: "Lt. Surge", type: "Electric" }),
+		new Badge({ name: "Rainbow Badge", leader: "Erika", type: "Grass" }),
+		new Badge({ name: "Soul Badge", leader: "Janine", type: "Poison" }),
+		new Badge({ name: "Marsh Badge", leader: "Sabrina", type: "Psychic" }),
+		new Badge({ name: "Volcano Badge", leader: "Blaine", type: "Fire" }),
+		new Badge({ name: "Earth Badge", leader: "Blue", type: "--" }),
+	],
 	
 	activeZone: {
 		left: 12, right: 18,

@@ -424,7 +424,22 @@ addEvent(new Trainer({
 		"img/icn/master_ball.png",
 	],
 	
-	badge_html : "",
+	badges_info : {
+		img: "img/icn/badges_red.png",
+		frame_width: 16,
+		frame_height: 16,
+	},
+	badges : [
+		new Badge({ name: "Boulder Badge", leader: "Brock", type: "Rock" }),
+		new Badge({ name: "Cascade Badge", leader: "Misty", type: "Water" }),
+		new Badge({ name: "Thunder Badge", leader: "Lt. Surge", type: "Electric" }),
+		new Badge({ name: "Rainbow Badge", leader: "Erika", type: "Grass" }),
+		new Badge({ name: "Soul Badge", leader: "Koga", type: "Poison" }),
+		new Badge({ name: "Marsh Badge", leader: "Sabrina", type: "Psychic" }),
+		new Badge({ name: "Volcano Badge", leader: "Blaine", type: "Fire" }),
+		new Badge({ name: "Earth Badge", leader: "Giovanni", type: "Ground" }),
+	],
+	
 	
 	activeZone: {
 		left: -10, right: -10,
