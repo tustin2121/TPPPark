@@ -49,7 +49,7 @@ addEvent(new MultiEvent({
 	x: -16, y: -14,
 	adj_flip: true,
 })
-).addSubEvent("56,24,72,42", new Pokemon({
+).addSubEvent("18,0,36,20", new Pokemon({
 	name: "Zexy",
 	sprite: "img/pkmn/zexxy.png",
 	x : -14, y : -29,
@@ -93,7 +93,35 @@ addEvent(new MultiEvent({
 }).forOccasion("bloodysunday", {
 	x: -19, y: -12,
 	adj_flip: true,
-})));
+})
+).addSubEvent("53,26,81,45", new Pokemon({
+	name : "Commander Bacon",
+	sprite: "img/pkmn/tepig.png",
+	x: -12, y: -16,
+	
+	dex : "img/pkdx/b/Spr_5b_498.png",
+	sources : {
+		"Pokedex Image by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/252a2b/tpp_sprites/",
+	},
+	
+	OT: "GMYC&nbsp;&nbsp;",
+	gender: 1,
+	gamename : ",",
+	pokename : "Tepig",
+	nicknames : "Commander Kevin Bacon",
+	level : 15,
+	// memo : "",
+	
+	ribbons : [
+		new Starter_Ribbon(),
+		new Pokerus_Ribbon(),
+		new Released_Ribbon("1d 13h 36m"),
+	],
+}).forOccasion("bloodysunday", {
+	x: -16, y: -14,
+	adj_flip: true,
+})
+));
 
 ///////////////// Train Station ////////////////////
 // I like trains!

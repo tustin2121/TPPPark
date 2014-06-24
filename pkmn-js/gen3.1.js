@@ -185,29 +185,10 @@ addEvent(new Pokemon({
 	memo : "Ability: Intimidate. Knew Bone Club as a Wooper. Holds some Black Glasses (his Swag).",
 }));
 
-addEvent(new Pokemon({
-	name : "Trizagoon",
-	sprite: "img/pkmn/agent_zigzagoon.png",
-	x: 7, y: -30,
-	
-	dex : "img/pkdx/frdex_zigzagoon.png",
-	sources : {
-		"Pokedex Image from /u/Kelcyus's Twitch Pokedex Project" : "http://www.reddit.com/r/twitchplayspokemon/comments/25gcrh/twitch_pokedex_205_entries/",
-	},
-	
-	OT: "Alice",
-	gender: 1,
-	gamename : "Zigzagoon",
-	pokename : "Zigzagoon",
-	nicknames : "Special Agent Zigzagoon",
-	level : 33,
-	memo : "Agent of Bill. Immensely incompetent. But knew Tri Attack.",
-	
-	ribbons : [
-		new Released_Ribbon("0d 6h 1m"),
-		new Record_Ribbon("Only Release in TPP FR"),
-	],
-}));
+//
+// Note: Trizagoon is attached to the Ice Cream Truck multi-event defined
+// in the Gen 4.1 file. See there for his details.
+//
 
 
 addEvent(new Pokemon({

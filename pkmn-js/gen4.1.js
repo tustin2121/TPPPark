@@ -32,7 +32,13 @@ addEvent(new Pokemon({
 	],
 }));
 
-addEvent(new Pokemon({
+addEvent(new MultiEvent({
+	name: "Ice Cream Stand",
+	sprite: "img/pkmn/zigzag_lard_helix.gif",
+	x: 1, y: 36,
+	adj_x: -4,
+	
+}).addSubEvent("1,34,30,62", new Pokemon({
 	name: "Lard Helix",
 	sprite: "img/pkmn/lard_helix.png",
 	x: -19, y: 20,
@@ -57,7 +63,30 @@ addEvent(new Pokemon({
 		new HallOfFame_Ribbon("16d 12h 56m (Rematch)"),
 		new Record_Ribbon("Second Lvl 100 Pokemon"),
 	],
-}));
+})).addSubEvent("27,26,46,40", new Pokemon({
+	name : "Trizagoon",
+	sprite: "img/pkmn/agent_zigzagoon.png",
+	x: 7, y: -30,
+	
+	dex : "img/pkdx/frdex_zigzagoon.png",
+	sources : {
+		"Pokedex Image from /u/Kelcyus's Twitch Pokedex Project" : "http://www.reddit.com/r/twitchplayspokemon/comments/25gcrh/twitch_pokedex_205_entries/",
+	},
+	
+	OT: "Alice",
+	gender: 1,
+	gamename : "Zigzagoon",
+	pokename : "Zigzagoon",
+	nicknames : "Special Agent Zigzagoon",
+	level : 33,
+	memo : "Agent of Bill. Immensely incompetent. But knew Tri Attack.",
+	
+	ribbons : [
+		new Released_Ribbon("0d 6h 1m"),
+		new Record_Ribbon("Only Release in TPP FR"),
+	],
+}))
+);
 
 addEvent(new Pokemon({
 	skipme: true,
@@ -89,7 +118,7 @@ addEvent(new Pokemon({
 
 addEvent(new Pokemon({
 	name: "The Oracle",
-	sprite: "img/pkmn/xatu.png",
+	sprite: "img/pkmn/shiny-xatu.gif",
 	x: -39, y: -12,
 	
 	dex: "img/pkdx/hgdex_xatu.png",

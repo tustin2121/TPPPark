@@ -480,6 +480,24 @@ addEvent(new Pokemon({
 }));
 
 
+addEvent(new Pokemon({
+	name : "--",
+	sprite: "img/pkmn/shiny-gyrados.gif",
+	x: -44, y: -5,
+	animation: null,
+	
+	dex : "img/pkdx/dex_aaaaa.png",
+	sources : {
+		"Pokemon Sprite by /u/carlotta4th" : "",
+	},
+	
+	OT: "--",
+	gender: 1,
+	gamename : "Gyrados",
+	pokename : "Gyrados",
+	level : "??",
+}));
+
 
 // And finally, AJ and Joey <3
 addEvent(new Trainer({

@@ -72,7 +72,7 @@ addEvent(new MultiEvent({
 addEvent(new MultiEvent({
 	name : "B-Ball Game",
 	sprite: "img/pkmn/bballgame.gif",
-	x : 0, y : 38, z:-8,
+	x : -9, y : 38, z:-8,
 }).addSubEvent("2,24,32,52", new Pokemon({
 	name : "King Fonz",
 	
