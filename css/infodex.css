@@ -378,7 +378,7 @@
 .trainerinfo .personality:before { content: "Personality"; }
 
 .trainerinfo .badges {
-	max-height: 1600px;
+	max-height: 600px;
 	overflow-y: auto;
 }
 
@@ -390,8 +390,13 @@
 	background-color: rgb(228, 244, 251);
 	overflow: hidden;
 }
+.trainerinfo .icon-list:before {
+	content: "Icons of the Run";
+} 
+.trainerinfo .badge-list:before {
+	content: "Badges";
+}
 .trainerinfo .icon-list:before, .trainerinfo .badge-list:before {
-	content: "Ribbons";
 	background-color: rgb(162, 228, 255);
 	padding: 0px 6px;
 	margin-left: -8px;
@@ -416,6 +421,11 @@
 	margin: 0px -10px;
 	line-height: 14px;
 }
-#infodex .ribbons ribbon:nth-child(odd) {
+.trainerinfo badge:nth-child(odd) {
 	background-color: rgb(197, 238, 255);
+}
+
+.trainerinfo badge .badgeimg {
+	float: left;
+	margin: 0px 6px 0px 2px;
 }

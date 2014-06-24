@@ -416,12 +416,12 @@ addEvent(new Trainer({
 	// 	"<br/>"+
 	// 	"",
 	icons : [
-		"img/icn/helix_fossil.png",
-		"img/icn/ss_ticket.png",
-		"img/icn/lift_key.png",
-		"img/icn/poke_flute.png",
-		"img/icn/rocket_pad.png",
-		"img/icn/master_ball.png",
+		new Icon("helix_fossil.png", "<b>CONSULT THE HELIX FOSSIL!</b> We \"worshiped\" the fossil by selecting it in battle all the time. Oak's words echoed,\"There's a time and place for everything! But not now.\" "),
+		new Icon("ss_ticket.png", "<b>The SS Ticket</b> we also worshiped as a lesser idol. Oak's words echoed,\"There's a time and place for everything! But not now.\" "),
+		new Icon("lift_key.png", "<b>The Rocket Lift</b> key was also worshiped as a lessor idol. Oak's words echoed,\"There's a time and place for everything! But not now.\" "),
+		new Icon("poke_flute.png", "We played <b>The Pokeflute</b> many times, and always when it wasn't necessary. Now that's a catchy tune!"),
+		new Icon("rocket_pad.png", "We spent 24 hours in <b>Mr. Giovanni's Wild Ride</b> before democracy was implemented."),
+		new Icon("master_ball.png", "Our one and only use of the <b>Master Ball</b> to catch a legendary pokemon, Zapdos."),
 	],
 	
 	badges_info : {
@@ -440,6 +440,12 @@ addEvent(new Trainer({
 		new Badge({ name: "Earth Badge", leader: "Giovanni", type: "Ground" }),
 	],
 	
+	sources: {
+		"Fossil Badge by /u/KingdomXathers" : "http://www.reddit.com/r/twitchplayspokemon/comments/23qqwb/rocktype_blaines_badge_the_fossil_badge_name/",
+		"Snowflake Badge by /u/tpphypemachine" : "http://www.reddit.com/r/twitchplayspokemon/comments/23lsw6/i_adjusted_the_snowflake_badge/",
+		"Harmony Badge by /u/KingdomXathers" : "http://www.reddit.com/r/twitchplayspokemon/comments/23iywq/sabrinas_harmony_badge/",
+		"Other Badges by /u/Booster137" : "http://www.reddit.com/r/twitchplayspokemon/comments/2318l8/i_decided_to_try_and_make_custom_badges_to_fit/",
+	},
 	
 	activeZone: {
 		left: -10, right: -10,

@@ -551,15 +551,29 @@ addEvent(new Trainer({
 	// 	"Number of Times Time Traveled: 2<br/>"+
 	// 	"Number of Pokeballs Bought: 400+",
 	icons : [
-		"img/icn/coin_case.png",
-		"img/icn/air_mail.png",
-		"img/icn/poke_ball.png",
-		"img/icn/shiny_stone.png",
-		"img/icn/contest_pass.png",
-		"img/icn/sun_stone.png",
+		new Icon("coin_case.png", ""),
+		new Icon("air_mail.png", ""),
+		new Icon("poke_ball.png", ""),
+		new Icon("shiny_stone.png", ""),
+		new Icon("contest_pass.png", ""),
+		new Icon("sun_stone.png", ""),
 	],
 	
-	badge_html : "",
+	badges_info : {
+		img: "img/icn/badges_platinum.png",
+		frame_width: 16,
+		frame_height: 16,
+	},
+	badges : [
+		new Badge({ name: "Coal Badge", leader: "Rorak", type: "Rock" }),
+		new Badge({ name: "Forest Badge", leader: "Gardenia", type: "Grass" }),
+		new Badge({ name: "Cobble Badge", leader: "Maylene", type: "Fighting" }),
+		new Badge({ name: "Fen Badge", leader: "Crasher Wake", type: "Water" }),
+		new Badge({ name: "Relic Badge", leader: "Fantina", type: "Ghost" }),
+		new Badge({ name: "Mine Badge", leader: "Byron", type: "Steel" }),
+		new Badge({ name: "Icicle Badge", leader: "Candice", type: "Ice" }),
+		new Badge({ name: "Beacon Badge", leader: "Volkner", type: "Electric" }),
+	],
 	
 	behavior: behavior.look,
 	

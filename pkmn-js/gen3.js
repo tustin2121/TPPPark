@@ -726,15 +726,30 @@ addEvent(new MultiEvent({
 	// 	"Poochyena Caught: 7<br/>"+
 	// 	"Boyfriend: Brendan T. Birch",
 	icons : [
-		"img/icn/good_rod.png",
-		"img/icn/goggles.png",
-		"img/pkmn/oddish_1.png",
-		"img/icn/cat_head.png",
-		"img/icn/contest_pass.png",
-		"img/icn/clock.png",
+		new Icon("good_rod.png", ""),
+		new Icon("goggles.png", ""),
+		new Icon("../pkmn/oddish_1.png", ""),
+		new Icon("cat_head.png", ""),
+		new Icon("contest_pass.png", ""),
+		new Icon("clock.png", ""),
 	],
 	
-	badge_html : "",
+	badges_info : {
+		img: "img/icn/badges_emerald.png",
+		frame_width: 16,
+		frame_height: 16,
+	},
+	badges : [
+		new Badge({ name: "Stone Badge", leader: "Roxanne", type: "Rock" }),
+		new Badge({ name: "Knuckle Badge", leader: "Brawly", type: "Fighting" }),
+		new Badge({ name: "Dynamo Badge", leader: "Wattson", type: "Electric" }),
+		new Badge({ name: "Heat Badge", leader: "Flannery", type: "Fire" }),
+		new Badge({ name: "Balance Badge", leader: "Norman", type: "Normal" }),
+		new Badge({ name: "Feather Badge", leader: "Winona", type: "Flying" }),
+		new Badge({ name: "Mind Badge", leader: "Tate and Liza", type: "Psychic" }),
+		new Badge({ name: "Rain Badge", leader: "Juan", type: "Water" }),
+	],
+	
 })).addSubEvent("16,1,30,13", new Pokemon({ //top pooch
 	name : "A Doge",
 	

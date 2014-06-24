@@ -531,12 +531,12 @@ addEvent(new Trainer({
 	// 	"<br/>"+
 	// 	"",
 	icons : [
-		"img/icn/slowpoke_search.png",
-		"img/icn/expshare.png",
-		"img/icn/leftovers.png",
-		"img/icn/joey_head.png",
-		"img/icn/tiny_mushroom.png",
-		"img/icn/slowpoke_tail.png",
+		new Icon("slowpoke_search.png", "<b>Slowpoke</b> was always there in the Pokedex, where we'd spend our time searching for type combinations or names that didn't exist."),
+		new Icon("expshare.png", "Our use of the <b>Exp Share</b> allowed our team to become balanced one again after LazorGator hogged a lot of Exp."),
+		new Icon("leftovers.png", "The <b>Leftovers</b> which we gave to Solid Snake allowed him to tank our way to the top of Mt. Silver to bear Red."),
+		new Icon("joey_head.png", "<b>Joey</b> is the chat's favorite trainer. His calls always lightened the mood. When we beat Red, we went back to fight Joey one last time."),
+		new Icon("tiny_mushroom.png", "The trip through Telefang after our journey through Johto may or may not have been a <b>Tiny Mushroom</b> induced dream of Joey's..."),
+		new Icon("slowpoke_tail.png", "We purchased a <b>Slowpoke Tail</b> with the last of our money, and it spent the rest of the game changing hands in our party."),
 	],
 	
 	badges_info : {

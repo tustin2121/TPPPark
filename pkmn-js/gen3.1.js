@@ -421,12 +421,12 @@ addEvent(new Trainer({
 	// 	"<br/>"+
 	// 	"",
 	icons : [
-		"img/icn/teachy_tv.png",
-		"img/icn/dome_fossil.png",
-		"img/icn/poke_doll.png",
-		"img/icn/amber_charizard.png",
-		"img/pkmn/potato.png",
-		null,// "img/icn/slowpoke_tail.png",
+		new Icon("teachy_tv.png", "We spent a whole hour or two in democracy watching <b>Teachy TV</b>, where we met Pokedude, learned how to catch pokemon by retrieving balls from the Ball Pokcet, and found out he is a COOL-type dude!"),
+		new Icon("dome_fossil.png", "While Red consulted the Helix Fossil, Alice, the antithesis of Red in many ways, picked up the <b>Dome Fossil</b>. Democracy was a big part of FireRed."),
+		new Icon("poke_doll.png", "We picked up a pokedoll during the Safari Zone Grand Prix. The doll featured in some art."),
+		new Icon("amber_charizard.png", "Due to the randomization, <b>Old Amber</b> was revived into a <b>Charizard!</b>"),
+		new Icon("potato.png", 'POTATO! To help us (or punish us) while facing Mr. Giovanni\'s Wild Ride, the streamer implemented Chat-To-Speech. "This is madness. No, this. Is. Potato!"'),
+		// null,// "img/icn/slowpoke_tail.png",
 	],
 	
 	badges_info : {
