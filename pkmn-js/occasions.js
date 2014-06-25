@@ -60,7 +60,7 @@ Have a banner draped on the stage (a la the congrats sign on the Game Corner)
 //Occasion Manager GO!!
 (function(){
 	var currOccasion = undefined;
-	var currGame = new GameTime(2014, 05, 24+1, 0);
+	var currGame = new GameTime(2014, 06-1, 15+1, 0);
 	var OCCASION_LIST = [];
 	
 	window.parseOccasionHash = function(hash) {
