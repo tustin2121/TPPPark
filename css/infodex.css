@@ -135,6 +135,12 @@
 #infodex .sheet h3 {
 	margin: 6px 0 10px 0;
 }
+#infodex .sheet divimg {
+	float: right;
+	background-image: url(attr(src));
+	width: attr(width);
+	height: attr(height);
+}
 
 
 #infodex .tabs {

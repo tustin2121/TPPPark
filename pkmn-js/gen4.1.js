@@ -83,7 +83,7 @@ addEvent(new MultiEvent({
 	
 	ribbons : [
 		new Released_Ribbon("0d 6h 1m"),
-		new Record_Ribbon("Only Release in TPP FR"),
+		new Record_Ribbon("Only Release in TPP FireRed"),
 	],
 }))
 );
@@ -145,7 +145,12 @@ addEvent(new Pokemon({
 	],
 }));
 
-addEvent(new Pokemon({
+addEvent(new MultiEvent({
+	name: "Armor and Skull Sparring",
+	sprite: "img/pkmn/armor_skull_battle.gif",
+	x: 32, y: 24,
+	
+}).addSubEvent("0,0,35,31", new Pokemon({
 	name: "Lord Armor",
 	sprite: "img/pkmn/!deity_shield_pkmn.png",
 	x: -151, y:-74, z: 8,
@@ -169,9 +174,7 @@ addEvent(new Pokemon({
 		new HallOfFame_Ribbon("11d 9h 9m"),
 		new HallOfFame_Ribbon("16d 12h 56m (Rematch)"),
 	],
-}));
-
-addEvent(new Pokemon({
+})).addSubEvent("35,0,68,31", new Pokemon({
 	name: "Lord Skull",
 	sprite: "img/pkmn/!deity_skull_pkmn.png",
 	x: -139, y:-74, z: 8,
@@ -197,7 +200,12 @@ addEvent(new Pokemon({
 		new HallOfFame_Ribbon("11d 9h 9m"),
 		new HallOfFame_Ribbon("16d 12h 56m (Rematch)"),
 	],
-}));
+}))
+);
+
+;
+
+;
 
 addEvent(new Pokemon({
 	skipme: true,

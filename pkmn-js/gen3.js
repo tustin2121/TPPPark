@@ -682,6 +682,12 @@ addEvent(new Person({
 		"Wahahahahahahaha!",
 		"Wahahahahahahahahaha! See you again soon!", //OmegaRuby and AlphaSapphire!
 	],
+	
+	infodex_entry: new InfodexEntry({
+		title: "A Wattson",
+		sprite: "img/pkdx/b/Spr_B2W2_Wattson.png",
+		html: '<h1>Wattson</h1><h3>The Man behind the Measure</h3><p>Wattson is the third gym leader in the Hoenn Pokemon League. A man of great merriment, he laughs at every chance and finds joy in everything. But to TwitchPlaysPokemon, he is much more sinister, and much closer to our hearts. Wattson was measurably the hardest gym leader we ever fought, and the term "measurably" is meant literally.</p><p>Beating him took 23 attempts. He and he alone took those 23 attempt to beat. It didn\'t help that we were using M4, the water type pokemon, to do these attempt, and that our party was in a terrible mess at the time. And it didn\'t help that we lost Zexxy during this time either. We were stuck in Mauville for those 23 attempts, and before each attempt, he laughed at us, in our face. He laughed at our repeated failure to defeat him. WAHAHAHAHAHAHAHAHA!</p><p>On the 23rd attempt, we finally won. In his honor, we created a unit of measurement: The Wattson. 1 Wattson = 23 attempts. No single trainer has ever come close to matching Wattson\'s prowess with a pokeball.</p><p>The user /u/VillainousWattson, whom you will find in the community center, was created so Wattson could continue to follow us on our journey, and continue to laugh at us in our face. And we love him all the more for it.</p>',
+	}),
 }));
 
 

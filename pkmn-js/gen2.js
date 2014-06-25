@@ -486,7 +486,7 @@ addEvent(new Pokemon({
 	x: -44, y: -5,
 	animation: null,
 	
-	dex : "img/pkdx/dex_aaaaa.png",
+	dex : "img/pkdx/b/Spr_2c_130_s.gif",
 	sources : {
 		"Pokemon Sprite by /u/carlotta4th" : "",
 	},
@@ -495,7 +495,7 @@ addEvent(new Pokemon({
 	gender: 1,
 	gamename : "Gyarados",
 	pokename : "Gyarados",
-	level : "??",
+	level : 30,
 }));
 
 
