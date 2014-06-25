@@ -441,10 +441,6 @@ addEvent(new Trainer({
 	],
 	
 	sources: {
-		"Fossil Badge by /u/KingdomXathers" : "http://www.reddit.com/r/twitchplayspokemon/comments/23qqwb/rocktype_blaines_badge_the_fossil_badge_name/",
-		"Snowflake Badge by /u/tpphypemachine" : "http://www.reddit.com/r/twitchplayspokemon/comments/23lsw6/i_adjusted_the_snowflake_badge/",
-		"Harmony Badge by /u/KingdomXathers" : "http://www.reddit.com/r/twitchplayspokemon/comments/23iywq/sabrinas_harmony_badge/",
-		"Other Badges by /u/Booster137" : "http://www.reddit.com/r/twitchplayspokemon/comments/2318l8/i_decided_to_try_and_make_custom_badges_to_fit/",
 	},
 	
 	activeZone: {

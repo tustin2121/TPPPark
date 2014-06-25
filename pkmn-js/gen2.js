@@ -541,8 +541,8 @@ addEvent(new Trainer({
 	
 	badges_info : {
 		img: "img/icn/badges_crystal.png",
-		frame_width: 16,
-		frame_height: 16,
+		frame_width: 26,
+		frame_height: 26,
 	},
 	badges : [
 		new Badge({ name: "Zephyr Badge", leader: "Falkner", type: "Flying" }),
@@ -561,7 +561,7 @@ addEvent(new Trainer({
 		new Badge({ name: "Soul Badge", leader: "Janine", type: "Poison" }),
 		new Badge({ name: "Marsh Badge", leader: "Sabrina", type: "Psychic" }),
 		new Badge({ name: "Volcano Badge", leader: "Blaine", type: "Fire" }),
-		new Badge({ name: "Earth Badge", leader: "Blue", type: "--" }),
+		new Badge({ name: "Earth Badge", leader: "Blue", type: "No" }),
 	],
 	
 	activeZone: {
@@ -623,6 +623,11 @@ addEvent(new Person({
 	name: "Joey",
 	spritesheet : "img/trainers/joey.png",
 	x: 21, y: 0,
+	
+	infodex_entry: new InfodexEntry({
+		title: "Love Interest",
+		html: "<h1>The Chat's First Love</h1><p>Though many players of Crystal hate Joey and his constant calling and constant talking about his Ratatta, the chat fell in love with him. Any time he would call, the chat would explode with heart emoticons and proposals to do things to Joey that are best left unsaid.</p><p>Granted, Joey, and in fact, anyone who called during TPP Crystal, was still annoying: they always seemed to call on the hour, and the other thing that happened on the hour was Democracy mode. So often times, Democracy mode was just starting and someone like Joey would call interrupt Democracy's plan, often falling back to Anarchy due to a vote split.</p><p>These occurrences also lead many to believe that AJ loved Joey, because he would always stop for his calls, and his calls allowed a brief respite from the constant commands of the voices. After the events atop Mt. Silver, AJ went back to Joey for one last battle, and after that last battle, after the TPP Crystal stream came to a close, the lore states that AJ and Joey lived the rest of their lives together, as close friends at first, but as lovers when they came to adulthood.</p>",
+	}),
 	
 	smitten : false,
 	aj : null,

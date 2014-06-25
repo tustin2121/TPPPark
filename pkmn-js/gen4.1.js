@@ -368,12 +368,12 @@ addEvent(new Trainer({
 	
 	idnum : "28412",
 	nickname : "Aoooo",
-	altnicks : "Aurora",
-	playtime: "0d 0h 0m",
-	pokedex : "0 own/0 seen",
-	releasecount : 0,
-	catchcount : 0,
-	e4attempts : 0,
+	altnicks : "Aurora, Werewolf",
+	playtime: "18d 20h 33m",
+	pokedex : "125 own/436 seen",
+	releasecount : 3,
+	catchcount : 154,
+	e4attempts : "26 (1st), 24 (2nd)",
 	blackouts : "???",
 	
 	personality: 'Aoooo is a werewolf; she constantly glitched out during the game, drawing cries of "AOOOOOOOO!" from the chat. She is naive and likes catching more friends with the thousands of pokeballs she\'s bought.',
@@ -391,7 +391,7 @@ addEvent(new Trainer({
 	icons : [
 		null, //"img/icn/coin_case.png",
 		null, //"img/icn/air_mail.png",
-		null, //"img/icn/poke_ball.png",
+		new Icon("poke_ball.png", "Aoooo far surpassed Napoleon in the number of pokeballs that she bought, and the number of pokemon she caught with them."),
 		null, //"img/icn/shiny_stone.png",
 		null, //"img/icn/contest_pass.png",
 		null, //"img/icn/sun_stone.png",

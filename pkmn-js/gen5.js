@@ -14,13 +14,120 @@ showGameClock("TPP Black Game Clock<br/>", new Date(Date.UTC(2014, 06-1, 15, 0+4
 // defined in the "other" events file. See there for his event definition.
 //
 
+addEvent(new Pokemon({
+	name : "Cat",
+	sprite: "img/pkmn/cat.png",
+	x: -2, y: 36,
+	adj_flip: true, adj_x: 6,
+	
+	dex : "img/pkdx/b/Spr_5b_509.png",
+	sources : {
+		"Sprite from Bulbapedia" : "",
+		"Pokedex Image from Bulbapedia" : "",
+	},
+	
+	OT: "GMYC&nbsp;&nbsp;",
+	gender: 2,
+	gamename : "B66_4ssidb",
+	pokename : "Purrloin",
+	nicknames : "",
+	level : 12,
+	// memo : "",
+	
+	ribbons : [
+		new Pokerus_Ribbon(),
+		new Released_Ribbon("1d 14h 16m"),
+		new MondayMassacre_Ribbon(),
+	],
+}));
 
+addEvent(new Pokemon({
+	name : "Puppy",
+	sprite: "img/pkmn/puppy.png",
+	x: -3, y: 36,
+	adj_flip: true, adj_x: 2,
+	
+	dex : "img/pkdx/b/Spr_5b_506.png",
+	sources : {
+		"Sprite from Bulbapedia" : "",
+		"Pokedex Image from Bulbapedia" : "",
+	},
+	
+	OT: "GMYC&nbsp;&nbsp;",
+	gender: 1,
+	gamename : "Lillipup",
+	pokename : "Lillipup",
+	nicknames : "",
+	level : 16,
+	// memo : "",
+	
+	ribbons : [
+		new Pokerus_Ribbon(),
+		new Released_Ribbon("1d 13h 38m"),
+		new MondayMassacre_Ribbon(),
+	],
+}));
+
+addEvent(new Pokemon({
+	name : "BBQ",
+	sprite: "img/pkmn/bbq.png",
+	x: -4, y: 36,
+	adj_flip: true, adj_x: -2,
+	
+	dex : "img/pkdx/b/Spr_5b_511.png",
+	sources : {
+		"Sprite from Bulbapedia" : "",
+		"Pokedex Image from Bulbapedia" : "",
+	},
+	
+	OT: "GMYC&nbsp;&nbsp;",
+	gender: 1,
+	gamename : "mbbqUU FG",
+	pokename : "Pansage",
+	nicknames : "",
+	level : 27,
+	// memo : "",
+	
+	ribbons : [
+		new Pokerus_Ribbon(),
+		new Released_Ribbon("1d 14h 2m"),
+		new MondayMassacre_Ribbon(),
+	],
+}));
+
+addEvent(new Pokemon({
+	name : "Tympole",
+	sprite: "img/pkmn/tympole.png",
+	x: -5, y: 36,
+	adj_flip: true, adj_x: -6,
+	
+	dex : "img/pkdx/b/Spr_5b_535.png",
+	sources : {
+		"Sprite from Bulbapedia" : "",
+		"Pokedex Image from Bulbapedia" : "",
+	},
+	
+	OT: "GMYC&nbsp;&nbsp;",
+	gender: 1,
+	gamename : "Tympole",
+	pokename : "Tympole",
+	nicknames : "",
+	level : 14,
+	memo : "Seen as one of the causes of the Monday Massacre: we were only trying to box the two Tympole...",
+	
+	ribbons : [
+		new Pokerus_Ribbon(),
+		new Released_Ribbon("1d 14h 40m"),
+		new MondayMassacre_Ribbon(),
+	],
+}));
 
 
 
 
 // Jimmy!!
 addEvent(new Trainer({
+	skipme: true,
 	name : "GMYC&nbsp;&nbsp;",
 	spritesheet : "img/trainers/napoleon.png",
 	x: -9, y: 13,

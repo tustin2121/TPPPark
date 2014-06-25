@@ -396,6 +396,11 @@ addEvent(new Trainer({
 	dex : "img/pkdx/trainer_alice.png",
 	sources : {
 		"Alice Sprite by /u/KingdomXathers":"http://www.reddit.com/r/twitchplayspokemon/comments/23tl7o/made_a_sprite_for_aalice_this_is_more_of_a_wip/", 
+		"Amberzard Icon is Flair by /u/RT-Pickred": "",
+		"Fossil Badge by /u/KingdomXathers" : "http://www.reddit.com/r/twitchplayspokemon/comments/23qqwb/rocktype_blaines_badge_the_fossil_badge_name/",
+		"Snowflake Badge by /u/tpphypemachine" : "http://www.reddit.com/r/twitchplayspokemon/comments/23lsw6/i_adjusted_the_snowflake_badge/",
+		"Harmony Badge by /u/KingdomXathers" : "http://www.reddit.com/r/twitchplayspokemon/comments/23iywq/sabrinas_harmony_badge/",
+		"Other Badges by /u/Booster137" : "http://www.reddit.com/r/twitchplayspokemon/comments/2318l8/i_decided_to_try_and_make_custom_badges_to_fit/",
 	},
 	
 	idnum : "56171",
@@ -414,12 +419,6 @@ addEvent(new Trainer({
 		new Record_Ribbon("Lowest Release Count"),
 	],
 	
-	// info_html : 
-	// 	"Number of E4 Attempts: 8<br/>"+
-	// 	"Times Blacked Out: 89+<br/>"+
-	// 	"<br/>"+
-	// 	"<br/>"+
-	// 	"",
 	icons : [
 		new Icon("teachy_tv.png", "We spent a whole hour or two in democracy watching <b>Teachy TV</b>, where we met Pokedude, learned how to catch pokemon by retrieving balls from the Ball Pokcet, and found out he is a COOL-type dude!"),
 		new Icon("dome_fossil.png", "While Red consulted the Helix Fossil, Alice, the antithesis of Red in many ways, picked up the <b>Dome Fossil</b>. Democracy was a big part of FireRed."),
@@ -492,6 +491,6 @@ addEvent(new MovingPokemon({
 addEvent(new Building({
 	name: "Crime Scene",
 	sprite: "img/bld/crime_scene.png",
-	x: 19, y: -40,
-	warp_x: 0, warp_y: 0,
+	x: 19, y: -41,
+	warp_x: 0, warp_y: -16,
 }));

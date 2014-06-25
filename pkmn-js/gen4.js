@@ -551,12 +551,12 @@ addEvent(new Trainer({
 	// 	"Number of Times Time Traveled: 2<br/>"+
 	// 	"Number of Pokeballs Bought: 400+",
 	icons : [
-		new Icon("coin_case.png", ""),
-		new Icon("air_mail.png", ""),
-		new Icon("poke_ball.png", ""),
-		new Icon("shiny_stone.png", ""),
-		new Icon("contest_pass.png", ""),
-		new Icon("sun_stone.png", ""),
+		new Icon("coin_case.png", "Napeolon loved to gamble. He cherished and used his coin case more than any other protagonist, and he won a lot of money. It didn't help that the chat loved to have dance parties to the music in the casino."),
+		new Icon("air_mail.png", "Napoleon was the first to use mail to guard against pokemon deposit and release in the PC. It helped to prevent many possible PC shuffles, instead opting for Daycare shuffles, which lead to two babies."),
+		new Icon("poke_ball.png", "Napoleon was the PokeMart's top customer, buying hundreds of balls from them. He couldn't keep the title when Aoooo came on the scene, however."),
+		new Icon("shiny_stone.png", "Napoleon successfully used the <b>Shiny Stone</b> to evolve his Roselia."),
+		new Icon("contest_pass.png", "Where A failed, Napoleon succeeded: he participated, dressed formally in suit and tie, in several Contests. He didn't win any, however."),
+		// new Icon("sun_stone.png", ""),
 	],
 	
 	badges_info : {

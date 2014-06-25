@@ -258,7 +258,7 @@ addEvent(new SignPost({
 	
 	infodex_entry: new InfodexEntry({
 		title: "The Pantheon",
-		html: "<p>Since the resurrection of the Helix Fossil in Red, TwitchPlaysPokemon has followed a different set of legendary gods than the games themselves. These gods form a Pantheon of Fossils, and the addition of each new set of Fossils has brought into being lesser gods beyond the Helix, the Dome, and Old Amber. Click on the gods on the mountain to learn more about the TwitchPlaysPokemon Pantheon.</p><img src='img/pkdx/b/Fossil_Sprites.png' style='width:100%' />",
+		html: "<h1>The Pantheon</h1><p>Since the resurrection of the Helix Fossil in Red, TwitchPlaysPokemon has followed a different set of legendary gods than the games themselves. These gods form a Pantheon of Fossils, and the addition of each new set of Fossils has brought into being lesser gods beyond the Helix, the Dome, and Old Amber. Click on the gods on the mountain to learn more about the TwitchPlaysPokemon Pantheon.</p><img src='img/pkdx/b/Fossil_Sprites.png' style='width:100%' />",
 	}),
 }));
 

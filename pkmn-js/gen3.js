@@ -686,7 +686,7 @@ addEvent(new Person({
 	infodex_entry: new InfodexEntry({
 		title: "A Wattson",
 		sprite: "img/pkdx/b/Spr_B2W2_Wattson.png",
-		html: '<h1>Wattson</h1><h3>The Man behind the Measure</h3><p>Wattson is the third gym leader in the Hoenn Pokemon League. A man of great merriment, he laughs at every chance and finds joy in everything. But to TwitchPlaysPokemon, he is much more sinister, and much closer to our hearts. Wattson was measurably the hardest gym leader we ever fought, and the term "measurably" is meant literally.</p><p>Beating him took 23 attempts. He and he alone took those 23 attempt to beat. It didn\'t help that we were using M4, the water type pokemon, to do these attempt, and that our party was in a terrible mess at the time. And it didn\'t help that we lost Zexxy during this time either. We were stuck in Mauville for those 23 attempts, and before each attempt, he laughed at us, in our face. He laughed at our repeated failure to defeat him. WAHAHAHAHAHAHAHAHA!</p><p>On the 23rd attempt, we finally won. In his honor, we created a unit of measurement: The Wattson. 1 Wattson = 23 attempts. No single trainer has ever come close to matching Wattson\'s prowess with a pokeball.</p><p>The user /u/VillainousWattson, whom you will find in the community center, was created so Wattson could continue to follow us on our journey, and continue to laugh at us in our face. And we love him all the more for it.</p>',
+		html: '<h1>Wattson</h1><h3>The Man behind the Measure</h3><p>Wattson is the third gym leader in the Hoenn Pokemon League. A man of great merriment, he laughs at every chance and finds joy in everything. But to TwitchPlaysPokemon, he is much more sinister, and much closer to our hearts. Wattson was measurably the hardest gym leader we ever fought, and the term "measurably" is meant literally.</p><p>Beating him took 23 attempts. He and he alone took those 23 attempt to beat. It didn\'t help that we were using M4, the water type pokemon, to do these attempts. It didn\'t help that our party was in a terrible mess at the time due to the recent discovery of the PC Lottery. And it didn\'t help that we lost Zexxy during this time either. We were stuck in Mauville for those 23 attempts, and before each attempt, he laughed at us, in our face. He laughed at our repeated failure to defeat him. WAHAHAHAHAHAHAHAHA!</p><p>On the 23rd attempt, we finally won. In his honor, we created a unit of measurement: The Wattson. 1 Wattson = 23 attempts. No single trainer has ever come close to matching Wattson\'s prowess with a pokeball.</p><p>The user /u/VillainousWattson, whom you will find in the community center, was created so Wattson could continue to follow us on our journey, and continue to laugh at us in our face. And we love him all the more for it.</p>',
 	}),
 }));
 
@@ -732,12 +732,12 @@ addEvent(new MultiEvent({
 	// 	"Poochyena Caught: 7<br/>"+
 	// 	"Boyfriend: Brendan T. Birch",
 	icons : [
-		new Icon("good_rod.png", ""),
-		new Icon("goggles.png", ""),
-		new Icon("../pkmn/oddish_1.png", ""),
-		new Icon("cat_head.png", ""),
-		new Icon("contest_pass.png", ""),
-		new Icon("clock.png", ""),
+		new Icon("good_rod.png", "A loved to <b>Fish</b> all the time, when it was registered to the SELECT button. She was most famous for fishing right next to the world-destroying battle between Kyroge and Groudon."),
+		// new Icon("goggles.png", ""), //they weren't THAT important, actually...
+		new Icon("../pkmn/oddish_1.png", "The <b>Great Cabbage Harvest</b> happened when A walked into the Safari Zone one day and threw a pokeball at everything that moved. She ended up mostly with Oddishes."),
+		new Icon("cat_head.png", "Speculation in the lore states that A was likely the little girl in the game <b>Catz</b> before Emerald started. She killed several cats out of an inability to feed them or take care of them."),
+		new Icon("contest_pass.png", "A was the first protagonist who could enter a <b>Contest</b>, and we very much wanted to enter several. Unfortunately, the most she ever did was enter perhaps one and cook a few horrendous pokeblocks."),
+		new Icon("clock.png", "When A started out, she spent almost an hour rebelling against her mother, who insisted that she <b>set the Clock</b> in her room. After many escape attempts all halted by her mother, she did set it."),
 	],
 	
 	badges_info : {
