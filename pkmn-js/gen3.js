@@ -682,6 +682,12 @@ addEvent(new Person({
 		"Wahahahahahahaha!",
 		"Wahahahahahahahahaha! See you again soon!", //OmegaRuby and AlphaSapphire!
 	],
+	
+	infodex_entry: new InfodexEntry({
+		title: "A Wattson",
+		sprite: "img/pkdx/b/Spr_B2W2_Wattson.png",
+		html: '<h1>Wattson</h1><h3>The Man behind the Measure</h3><p>Wattson is the third gym leader in the Hoenn Pokemon League. A man of great merriment, he laughs at every chance and finds joy in everything. But to TwitchPlaysPokemon, he is much more sinister, and much closer to our hearts. Wattson was measurably the hardest gym leader we ever fought, and the term "measurably" is meant literally.</p><p>Beating him took 23 attempts. He and he alone took those 23 attempt to beat. It didn\'t help that we were using M4, the water type pokemon, to do these attempts. It didn\'t help that our party was in a terrible mess at the time due to the recent discovery of the PC Lottery. And it didn\'t help that we lost Zexxy during this time either. We were stuck in Mauville for those 23 attempts, and before each attempt, he laughed at us, in our face. He laughed at our repeated failure to defeat him. WAHAHAHAHAHAHAHAHA!</p><p>On the 23rd attempt, we finally won. In his honor, we created a unit of measurement: The Wattson. 1 Wattson = 23 attempts. No single trainer has ever come close to matching Wattson\'s prowess with a pokeball.</p><p>The user /u/VillainousWattson, whom you will find in the community center, was created so Wattson could continue to follow us on our journey, and continue to laugh at us in our face. And we love him all the more for it.</p>',
+	}),
 }));
 
 
@@ -700,28 +706,56 @@ addEvent(new MultiEvent({
 		"Sprite based on Artwork by /u/Variis" : "http://www.reddit.com/r/twitchplayspokemon/comments/215jvk/dark_rituals/",
 	},
 	
-	nickname : "<strike>M</strike>ay (M = Silent)",
+	idnum : "61415",
+	nickname : "<strike>M</strike>ay (the M is Silent)",
 	playtime: "21d 19h 27m",
 	pokedex : "40 own/164 seen",
 	releasecount : 5,
-	idnum : "61415",
+	catchcount : 0,
+	e4attempts : 103,
+	blackouts : "89+",
 	
-	info_html : 
-		"Number of E4 Attempts: 103<br/>"+
-		"Times Blacked Out: 89+<br/>"+
+	personality: "A is a rebel, opting to disobey the voices at every chance and do things like catch loads of Oddish instead of training mon, or go fishing next to the cataclysmic legendary pokemon battles instead of help stop them.",
+	notable: 
 		"Oddish Caught: 29<br/>"+
 		"Poochyena Caught: 7<br/>"+
 		"Boyfriend: Brendan T. Birch",
-	icons : [
-		"img/icn/good_rod.png",
-		"img/icn/goggles.png",
-		"img/pkmn/oddish_1.png",
-		"img/icn/cat_head.png",
-		"img/icn/contest_pass.png",
-		"img/icn/clock.png",
+	ribbons: [
+		new Record_Ribbon("Highest number of E4 attempts"),
+		new Record_Ribbon("Highest number of attempts againt a single trainer: Wattson"),
 	],
 	
-	badge_html : "",
+	// info_html : 
+	// 	"Number of E4 Attempts: 103<br/>"+
+	// 	"Times Blacked Out: 89+<br/>"+
+	// 	"Oddish Caught: 29<br/>"+
+	// 	"Poochyena Caught: 7<br/>"+
+	// 	"Boyfriend: Brendan T. Birch",
+	icons : [
+		new Icon("good_rod.png", "A loved to <b>Fish</b> all the time, when it was registered to the SELECT button. She was most famous for fishing right next to the world-destroying battle between Kyroge and Groudon."),
+		// new Icon("goggles.png", ""), //they weren't THAT important, actually...
+		new Icon("../pkmn/oddish_1.png", "The <b>Great Cabbage Harvest</b> happened when A walked into the Safari Zone one day and threw a pokeball at everything that moved. She ended up mostly with Oddishes."),
+		new Icon("cat_head.png", "Speculation in the lore states that A was likely the little girl in the game <b>Catz</b> before Emerald started. She killed several cats out of an inability to feed them or take care of them."),
+		new Icon("contest_pass.png", "A was the first protagonist who could enter a <b>Contest</b>, and we very much wanted to enter several. Unfortunately, the most she ever did was enter perhaps one and cook a few horrendous pokeblocks."),
+		new Icon("clock.png", "When A started out, she spent almost an hour rebelling against her mother, who insisted that she <b>set the Clock</b> in her room. After many escape attempts all halted by her mother, she did set it."),
+	],
+	
+	badges_info : {
+		img: "img/icn/badges_emerald.png",
+		frame_width: 16,
+		frame_height: 16,
+	},
+	badges : [
+		new Badge({ name: "Stone Badge", leader: "Roxanne", type: "Rock" }),
+		new Badge({ name: "Knuckle Badge", leader: "Brawly", type: "Fighting" }),
+		new Badge({ name: "Dynamo Badge", leader: "Wattson", type: "Electric" }),
+		new Badge({ name: "Heat Badge", leader: "Flannery", type: "Fire" }),
+		new Badge({ name: "Balance Badge", leader: "Norman", type: "Normal" }),
+		new Badge({ name: "Feather Badge", leader: "Winona", type: "Flying" }),
+		new Badge({ name: "Mind Badge", leader: "Tate and Liza", type: "Psychic" }),
+		new Badge({ name: "Rain Badge", leader: "Juan", type: "Water" }),
+	],
+	
 })).addSubEvent("16,1,30,13", new Pokemon({ //top pooch
 	name : "A Doge",
 	

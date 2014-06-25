@@ -72,7 +72,7 @@ addEvent(new MultiEvent({
 addEvent(new MultiEvent({
 	name : "B-Ball Game",
 	sprite: "img/pkmn/bballgame.gif",
-	x : 0, y : 38, z:-8,
+	x : -9, y : 38, z:-8,
 }).addSubEvent("2,24,32,52", new Pokemon({
 	name : "King Fonz",
 	
@@ -132,7 +132,7 @@ addEvent(new Pokemon({
 	level : 81,
 	caught : "With Masterball 10d 7h 49m",
 	ball : "master",
-	memo : "Attempts at retreival caused Bloody Sunday. Invaluable at Elite Four.",
+	memo : "Attempts at retrieval caused Bloody Sunday. Invaluable at Elite Four.",
 	
 	ribbons : [
 		new HallOfFame_Ribbon("16d 7h 45m"),
@@ -395,27 +395,53 @@ addEvent(new Trainer({
 	
 	dex : "img/pkdx/trainer_red.png",
 	nickname : "Red",
-	playtime: "16d 7h 45m",
-	pokedex : "30 own/132 seen",
-	releasecount : 16,
 	idnum : "20152",
+	playtime: "16d 7h 45m",
+	pokedex : "30 own / 132 seen",
+	releasecount : 16,
+	catchcount : 0,
+	e4attempts : 22,
+	blackouts : "???",
 	
-	info_html : 
-		"Number of E4 Attempts: 22<br/>"+
-		"Times Blacked Out: ???<br/>"+
-		"<br/>"+
-		"<br/>"+
-		"",
-	icons : [
-		"img/icn/helix_fossil.png",
-		"img/icn/ss_ticket.png",
-		"img/icn/lift_key.png",
-		"img/icn/poke_flute.png",
-		"img/icn/rocket_pad.png",
-		"img/icn/master_ball.png",
+	personality: "Often characterized as a robot, Red was silent and had no notable personality during his run.",
+	notable : "TPP received <a href='http://www.mcmbuzz.com/2014/06/15/twitch-plays-pokemon-wins-a-guinness-world-record/'>a Guinness World Record</a> for the most participants on a single-player online video game: 1,165,140",
+	ribbons : [
+		new Record_Ribbon("Won a Guinness World Record"),
 	],
 	
-	badge_html : "",
+	// info_html : 
+	// 	"Number of E4 Attempts: 22<br/>"+
+	// 	"Times Blacked Out: ???<br/>"+
+	// 	"<br/>"+
+	// 	"<br/>"+
+	// 	"",
+	icons : [
+		new Icon("helix_fossil.png", "<b>CONSULT THE HELIX FOSSIL!</b> We \"worshiped\" the fossil by selecting it in battle all the time. Oak's words echoed,\"There's a time and place for everything! But not now.\" "),
+		new Icon("ss_ticket.png", "<b>The SS Ticket</b> we also worshiped as a lesser idol. Oak's words echoed,\"There's a time and place for everything! But not now.\" "),
+		new Icon("lift_key.png", "<b>The Rocket Lift</b> key was also worshiped as a lessor idol. Oak's words echoed,\"There's a time and place for everything! But not now.\" "),
+		new Icon("poke_flute.png", "We played <b>The Pokeflute</b> many times, and always when it wasn't necessary. Now that's a catchy tune!"),
+		new Icon("rocket_pad.png", "We spent 24 hours in <b>Mr. Giovanni's Wild Ride</b> before democracy was implemented."),
+		new Icon("master_ball.png", "Our one and only use of the <b>Master Ball</b> to catch a legendary pokemon, Zapdos."),
+	],
+	
+	badges_info : {
+		img: "img/icn/badges_red.png",
+		frame_width: 16,
+		frame_height: 16,
+	},
+	badges : [
+		new Badge({ name: "Boulder Badge", leader: "Brock", type: "Rock" }),
+		new Badge({ name: "Cascade Badge", leader: "Misty", type: "Water" }),
+		new Badge({ name: "Thunder Badge", leader: "Lt. Surge", type: "Electric" }),
+		new Badge({ name: "Rainbow Badge", leader: "Erika", type: "Grass" }),
+		new Badge({ name: "Soul Badge", leader: "Koga", type: "Poison" }),
+		new Badge({ name: "Marsh Badge", leader: "Sabrina", type: "Psychic" }),
+		new Badge({ name: "Volcano Badge", leader: "Blaine", type: "Fire" }),
+		new Badge({ name: "Earth Badge", leader: "Giovanni", type: "Ground" }),
+	],
+	
+	sources: {
+	},
 	
 	activeZone: {
 		left: -10, right: -10,

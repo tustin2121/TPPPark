@@ -7,17 +7,29 @@
 addEvent(new Building({
 	name : "Released Starter Campfire Base",
 	sprite : "img/bld/campfire.gif",
-	x: -13, y: -31,
+	x: -13, y: -28,
 	
 	warp_x: 24, warp_y: -6,
+}));
+
+addEvent(new SignPost({
+	name: "Released Campfire Troop Sign",
+	x: -15, y: -24,
+	sprite: 2,
+	message: "Scout Troop #6<br/>Released Starter Campfire",
+	
+	infodex_entry: new InfodexEntry({
+		title: "The Curse",
+		html: '<h1>The Starter Curse</h1><p>With the release of Abby, TwitchPlaysPokemon has always been cursed when it came to their starters. The Fire Starter Curse is the most well known; it blights every fire starter pokemon we obtain with threat of release, and it has never failed to deliver on its threat, whether by pure chaos or self-fulfilling prophecy.</p><p>The fire starter curse was extended to every fire-typed pokemon, starting with Flareon the False Prophet, and presumably ending with Solareon of Platinum fame when he entered the hall of fame.</p><p>The Starter Curse could be more than just Fire pokemon, however, as TPP has shown an affinity for dealing with the various types of pokemon it gets. TPP was never good with the glass cannons that are Fire Type pokemon, and they are often boxed or released. Water Type pokemon, however, will often survive to the Hall of Fame, as they seem to work well with TPP\'s style of tanking damage. A Grass starter has never been chosen, though TPP has shown an affinity when working with Grass Type\'s special attack abilities.</p><p>Regardless of the above, the chaos of the first day of a run means the most often chosen starter is the Fire type, and the most often released starter is the same type.</p>',
+	}),
 }));
 
 addEvent(new MultiEvent({
 	name : "Released Starter Campfire Pokemon",
 	sprite : "img/pkmn/campfire_pokes.gif",
-	x: -13, y: -29,
+	x: -13, y: -26,
 	
-	adj_x: -5, adj_y: 5,
+	adj_x: -3, adj_y: 7,
 	
 }).forOccasion("bloodysunday", {
 	breakme: true,
@@ -49,7 +61,7 @@ addEvent(new MultiEvent({
 	x: -16, y: -14,
 	adj_flip: true,
 })
-).addSubEvent("56,24,72,42", new Pokemon({
+).addSubEvent("18,0,36,20", new Pokemon({
 	name: "Zexy",
 	sprite: "img/pkmn/zexxy.png",
 	x : -14, y : -29,
@@ -93,7 +105,35 @@ addEvent(new MultiEvent({
 }).forOccasion("bloodysunday", {
 	x: -19, y: -12,
 	adj_flip: true,
-})));
+})
+).addSubEvent("53,26,81,45", new Pokemon({
+	name : "Commander Bacon",
+	sprite: "img/pkmn/tepig.png",
+	x: -12, y: -16,
+	
+	dex : "img/pkdx/b/Spr_5b_498.png",
+	sources : {
+		"Pokedex Image by /u/carlotta4th" : "http://www.reddit.com/r/twitchplayspokemon/comments/252a2b/tpp_sprites/",
+	},
+	
+	OT: "GMYC&nbsp;&nbsp;",
+	gender: 1,
+	gamename : ",",
+	pokename : "Tepig",
+	nicknames : "Commander Kevin Bacon",
+	level : 15,
+	// memo : "",
+	
+	ribbons : [
+		new Starter_Ribbon(),
+		new Pokerus_Ribbon(),
+		new Released_Ribbon("1d 13h 36m"),
+	],
+}).forOccasion("bloodysunday", {
+	x: -16, y: -14,
+	adj_flip: true,
+})
+));
 
 ///////////////// Train Station ////////////////////
 // I like trains!

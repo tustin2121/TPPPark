@@ -20,10 +20,10 @@ addEvent(new Pokemon({
 	gamename: ",",
 	pokename: "Vibrava",
 	nicknames: "Trumprava, Vibrator, Trumpnich, MC Hammer",
-	caught: "Recieved at 0d 0h 6m.",
+	caught: "Received at 0d 0h 6m.",
 	level: 86,
 	ball: "poke",
-	memo: "Known for its signiture moves: Trump Card and Hammer Arm (the latter of which it had since the beginning).",
+	memo: "Known for its signature moves: Trump Card and Hammer Arm (the latter of which it had since the beginning).",
 	
 	ribbons: [
 		new Starter_Ribbon(),
@@ -32,7 +32,13 @@ addEvent(new Pokemon({
 	],
 }));
 
-addEvent(new Pokemon({
+addEvent(new MultiEvent({
+	name: "Ice Cream Stand",
+	sprite: "img/pkmn/zigzag_lard_helix.gif",
+	x: 1, y: 36,
+	adj_x: -4,
+	
+}).addSubEvent("1,34,30,62", new Pokemon({
 	name: "Lard Helix",
 	sprite: "img/pkmn/lard_helix.png",
 	x: -19, y: 20,
@@ -48,16 +54,39 @@ addEvent(new Pokemon({
 	gamename: "Omastar",
 	pokename: "Omastar",
 	nicknames: "Lore Helix",
-	caught: "In the harbor of Vermillion City, 11d 17h 56m",
+	caught: "In the harbor of Vermilion City, 11d 17h 56m",
 	level: 100,
 	ball: "quick",
-	memo: "Ability: Thick Fat. He is, lorewise, the same Lord Helix as was revived by Red, after lazing around, eating cheeseburgers for 4.5 generations.",
+	memo: "Ability: Thick Fat. He is, lore-wise, the same Lord Helix as was revived by Red, after lazing around, eating cheeseburgers for 4.5 generations.",
 	
 	ribbons: [
 		new HallOfFame_Ribbon("16d 12h 56m (Rematch)"),
 		new Record_Ribbon("Second Lvl 100 Pokemon"),
 	],
-}));
+})).addSubEvent("27,26,46,40", new Pokemon({
+	name : "Trizagoon",
+	sprite: "img/pkmn/agent_zigzagoon.png",
+	x: 7, y: -30,
+	
+	dex : "img/pkdx/frdex_zigzagoon.png",
+	sources : {
+		"Pokedex Image from /u/Kelcyus's Twitch Pokedex Project" : "http://www.reddit.com/r/twitchplayspokemon/comments/25gcrh/twitch_pokedex_205_entries/",
+	},
+	
+	OT: "Alice",
+	gender: 1,
+	gamename : "Zigzagoon",
+	pokename : "Zigzagoon",
+	nicknames : "Special Agent Zigzagoon",
+	level : 33,
+	memo : "Agent of Bill. Immensely incompetent. But knew Tri Attack.",
+	
+	ribbons : [
+		new Released_Ribbon("0d 6h 1m"),
+		new Record_Ribbon("Only Release in TPP FireRed"),
+	],
+}))
+);
 
 addEvent(new Pokemon({
 	skipme: true,
@@ -79,7 +108,7 @@ addEvent(new Pokemon({
 	caught: "As a Bonsley.",
 	level: 80,
 	ball: "net",
-	memo: "Ability: Sniper. Holds: Scope Lens. Known for its Rock Wreaker attack and its Sniper ability. Knows Surf. <p>Named Treesus after a Sudowoodo in Stadium Mimic'ed the attack Fly.</p>",
+	memo: "Ability: Sniper. Holds: Scope Lens. Known for its Rock Wrecker attack and its Sniper ability. Knows Surf. <p>Named Treesus after a Sudowoodo in Stadium Mimic'ed the attack Fly.</p>",
 	
 	ribbons: [
 		new HallOfFame_Ribbon("11d 9h 9m"),
@@ -89,7 +118,7 @@ addEvent(new Pokemon({
 
 addEvent(new Pokemon({
 	name: "The Oracle",
-	sprite: "img/pkmn/xatu.png",
+	sprite: "img/pkmn/shiny-xatu.gif",
 	x: -39, y: -12,
 	
 	dex: "img/pkdx/hgdex_xatu.png",
@@ -112,11 +141,16 @@ addEvent(new Pokemon({
 		new Record_Ribbon("First Shiny Caught"),
 		new HallOfFame_Ribbon("11d 9h 9m"),
 		new HallOfFame_Ribbon("16d 12h 56m (Rematch)"),
-		new Record_Ribbon("Second Lvl 100 Pokemon"),
+		new Record_Ribbon("Third Lvl 100 Pokemon"),
 	],
 }));
 
-addEvent(new Pokemon({
+addEvent(new MultiEvent({
+	name: "Armor and Skull Sparring",
+	sprite: "img/pkmn/armor_skull_battle.gif",
+	x: 32, y: 24,
+	
+}).addSubEvent("0,0,35,31", new Pokemon({
 	name: "Lord Armor",
 	sprite: "img/pkmn/!deity_shield_pkmn.png",
 	x: -151, y:-74, z: 8,
@@ -140,9 +174,7 @@ addEvent(new Pokemon({
 		new HallOfFame_Ribbon("11d 9h 9m"),
 		new HallOfFame_Ribbon("16d 12h 56m (Rematch)"),
 	],
-}));
-
-addEvent(new Pokemon({
+})).addSubEvent("35,0,68,31", new Pokemon({
 	name: "Lord Skull",
 	sprite: "img/pkmn/!deity_skull_pkmn.png",
 	x: -139, y:-74, z: 8,
@@ -168,7 +200,12 @@ addEvent(new Pokemon({
 		new HallOfFame_Ribbon("11d 9h 9m"),
 		new HallOfFame_Ribbon("16d 12h 56m (Rematch)"),
 	],
-}));
+}))
+);
+
+;
+
+;
 
 addEvent(new Pokemon({
 	skipme: true,
@@ -329,22 +366,32 @@ addEvent(new Trainer({
 		"Lyra Sprite from Bulbapedia":"", 
 	},
 	
-	nickname : "Aoooo",
-	playtime: "0d 0h 0m",
-	pokedex : "0 own/0 seen",
-	releasecount : 0,
 	idnum : "28412",
+	nickname : "Aoooo",
+	altnicks : "Aurora, Werewolf",
+	playtime: "18d 20h 33m",
+	pokedex : "125 own/436 seen",
+	releasecount : 3,
+	catchcount : 154,
+	e4attempts : "26 (1st), 24 (2nd)",
+	blackouts : "???",
 	
-	info_html : 
-		"Number of E4 Attempts: ??<br/>"+
-		"Times Blacked Out: ???<br/>"+
-		"<br/>"+
-		"<br/>"+
-		"",
+	personality: 'Aoooo is a werewolf; she constantly glitched out during the game, drawing cries of "AOOOOOOOO!" from the chat. She is naive and likes catching more friends with the thousands of pokeballs she\'s bought.',
+	notable: "",
+	ribbons: [
+		
+	],
+	
+	// info_html : 
+	// 	"Number of E4 Attempts: ??<br/>"+
+	// 	"Times Blacked Out: ???<br/>"+
+	// 	"<br/>"+
+	// 	"<br/>"+
+	// 	"",
 	icons : [
 		null, //"img/icn/coin_case.png",
 		null, //"img/icn/air_mail.png",
-		null, //"img/icn/poke_ball.png",
+		new Icon("poke_ball.png", "Aoooo far surpassed Napoleon in the number of pokeballs that she bought, and the number of pokemon she caught with them."),
 		null, //"img/icn/shiny_stone.png",
 		null, //"img/icn/contest_pass.png",
 		null, //"img/icn/sun_stone.png",

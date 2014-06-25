@@ -480,6 +480,24 @@ addEvent(new Pokemon({
 }));
 
 
+addEvent(new Pokemon({
+	name : "--",
+	sprite: "img/pkmn/shiny-gyrados.gif",
+	x: -44, y: -5,
+	animation: null,
+	
+	dex : "img/pkdx/b/Spr_2c_130_s.gif",
+	sources : {
+		"Pokemon Sprite by /u/carlotta4th" : "",
+	},
+	
+	OT: "--",
+	gender: 1,
+	gamename : "Gyarados",
+	pokename : "Gyarados",
+	level : 30,
+}));
+
 
 // And finally, AJ and Joey <3
 addEvent(new Trainer({
@@ -492,28 +510,59 @@ addEvent(new Trainer({
 		"Trainer Sprite by /u/CyberDork35" : "http://www.reddit.com/r/twitchplayspokemon/comments/230qbl/im_making_custom_twitch_plays_pokemon_trainer/",
 	},
 	
+	idnum : "47901",
 	nickname : "AJ Downs",
 	playtime: "13d 2h 2m",
-	pokedex : "32 own/200 seen",
+	pokedex : "32 own / 200 seen",
 	releasecount : 4,
-	idnum : "47901",
+	catchcount : 0,
+	e4attempts : 38,
+	blackouts : 41,
 	
-	info_html : 
-		"Number of E4 Attempts: 38<br/>"+
-		"Times Blacked Out: 41<br/>"+
-		"Boyfriend: Joey<br/>"+
-		"<br/>"+
-		"",
-	icons : [
-		"img/icn/slowpoke_search.png",
-		"img/icn/expshare.png",
-		"img/icn/leftovers.png",
-		"img/icn/joey_head.png",
-		"img/icn/tiny_mushroom.png",
-		"img/icn/slowpoke_tail.png",
+	personality: "Thought of as the youngest of our protagonists. He's a bit of a mommy's boy. He loves getting calls from Joey, and loves being with Joey.",
+	notable: "Boyfriend: Joey",
+	ribbons: [
 	],
 	
-	badge_html : "",
+	// info_html : 
+	// 	"Number of E4 Attempts: 38<br/>"+
+	// 	"Times Blacked Out: 41<br/>"+
+	// 	"Boyfriend: Joey<br/>"+
+	// 	"<br/>"+
+	// 	"",
+	icons : [
+		new Icon("slowpoke_search.png", "<b>Slowpoke</b> was always there in the Pokedex, where we'd spend our time searching for type combinations or names that didn't exist."),
+		new Icon("expshare.png", "Our use of the <b>Exp Share</b> allowed our team to become balanced one again after LazorGator hogged a lot of Exp."),
+		new Icon("leftovers.png", "The <b>Leftovers</b> which we gave to Solid Snake allowed him to tank our way to the top of Mt. Silver to bear Red."),
+		new Icon("joey_head.png", "<b>Joey</b> is the chat's favorite trainer. His calls always lightened the mood. When we beat Red, we went back to fight Joey one last time."),
+		new Icon("tiny_mushroom.png", "The trip through Telefang after our journey through Johto may or may not have been a <b>Tiny Mushroom</b> induced dream of Joey's..."),
+		new Icon("slowpoke_tail.png", "We purchased a <b>Slowpoke Tail</b> with the last of our money, and it spent the rest of the game changing hands in our party."),
+	],
+	
+	badges_info : {
+		img: "img/icn/badges_crystal.png",
+		frame_width: 26,
+		frame_height: 26,
+	},
+	badges : [
+		new Badge({ name: "Zephyr Badge", leader: "Falkner", type: "Flying" }),
+		new Badge({ name: "Hive Badge", leader: "Bugsy", type: "Bug" }),
+		new Badge({ name: "Plain Badge", leader: "Whitney", type: "Normal" }),
+		new Badge({ name: "Fog Badge", leader: "Morty", type: "Ghost" }),
+		new Badge({ name: "Storm Badge", leader: "Chuck", type: "Fighting" }),
+		new Badge({ name: "Mineral Badge", leader: "Jasmine", type: "Steel" }),
+		new Badge({ name: "Glacier Badge", leader: "Pryce", type: "Ice" }),
+		new Badge({ name: "Rising Badge", leader: "Clair", type: "Dragon" }),
+		
+		new Badge({ name: "Boulder Badge", leader: "Brock", type: "Rock" }),
+		new Badge({ name: "Cascade Badge", leader: "Misty", type: "Water" }),
+		new Badge({ name: "Thunder Badge", leader: "Lt. Surge", type: "Electric" }),
+		new Badge({ name: "Rainbow Badge", leader: "Erika", type: "Grass" }),
+		new Badge({ name: "Soul Badge", leader: "Janine", type: "Poison" }),
+		new Badge({ name: "Marsh Badge", leader: "Sabrina", type: "Psychic" }),
+		new Badge({ name: "Volcano Badge", leader: "Blaine", type: "Fire" }),
+		new Badge({ name: "Earth Badge", leader: "Blue", type: "No" }),
+	],
 	
 	activeZone: {
 		left: 12, right: 18,
@@ -574,6 +623,11 @@ addEvent(new Person({
 	name: "Joey",
 	spritesheet : "img/trainers/joey.png",
 	x: 21, y: 0,
+	
+	infodex_entry: new InfodexEntry({
+		title: "Love Interest",
+		html: "<h1>The Chat's First Love</h1><p>Though many players of Crystal hate Joey and his constant calling and constant talking about his Ratatta, the chat fell in love with him. Any time he would call, the chat would explode with heart emoticons and proposals to do things to Joey that are best left unsaid.</p><p>Granted, Joey, and in fact, anyone who called during TPP Crystal, was still annoying: they always seemed to call on the hour, and the other thing that happened on the hour was Democracy mode. So often times, Democracy mode was just starting and someone like Joey would call interrupt Democracy's plan, often falling back to Anarchy due to a vote split.</p><p>These occurrences also lead many to believe that AJ loved Joey, because he would always stop for his calls, and his calls allowed a brief respite from the constant commands of the voices. After the events atop Mt. Silver, AJ went back to Joey for one last battle, and after that last battle, after the TPP Crystal stream came to a close, the lore states that AJ and Joey lived the rest of their lives together, as close friends at first, but as lovers when they came to adulthood.</p>",
+	}),
 	
 	smitten : false,
 	aj : null,

@@ -182,32 +182,13 @@ addEvent(new Pokemon({
 	pokename : "Quagsire",
 	nicknames : "Cavesire",
 	level : 24,
-	memo : "Ability: Indimidate. Knew Bone Club as a Wooper. Holds some Black Glasses (his Swag).",
+	memo : "Ability: Intimidate. Knew Bone Club as a Wooper. Holds some Black Glasses (his Swag).",
 }));
 
-addEvent(new Pokemon({
-	name : "Trizagoon",
-	sprite: "img/pkmn/agent_zigzagoon.png",
-	x: 7, y: -30,
-	
-	dex : "img/pkdx/frdex_zigzagoon.png",
-	sources : {
-		"Pokedex Image from /u/Kelcyus's Twitch Pokedex Project" : "http://www.reddit.com/r/twitchplayspokemon/comments/25gcrh/twitch_pokedex_205_entries/",
-	},
-	
-	OT: "Alice",
-	gender: 1,
-	gamename : "Zigzagoon",
-	pokename : "Zigzagoon",
-	nicknames : "Special Agent Zigzagoon",
-	level : 33,
-	memo : "Agent of Bill. Immensely incompetent. But knew Tri Attack.",
-	
-	ribbons : [
-		new Released_Ribbon("0d 6h 1m"),
-		new Record_Ribbon("Only Release in TPP FR"),
-	],
-}));
+//
+// Note: Trizagoon is attached to the Ice Cream Truck multi-event defined
+// in the Gen 4.1 file. See there for his details.
+//
 
 
 addEvent(new Pokemon({
@@ -274,7 +255,7 @@ addEvent(new Pokemon({
 	gamename : "Jumpluff ",
 	pokename : "Jumpluff ",
 	level : 25,
-	memo : "Recieved from the Fighting Dojo instead of Hitmonchan.",
+	memo : "Received from the Fighting Dojo instead of Hitmonchan.",
 }));
 
 
@@ -306,7 +287,7 @@ addEvent(new Person({
 		"If you don't know how type matchups work, battles will be tough!",
 		"For the COOL-type POK&eacute; DUDE, AWESOME-type kids like you match up perfectly!",
 		"FOCUS PUNCH doesn't sound like anything a bird or fish POK&eacute;MON can learn. So, try using it on a POK&eacute;MON with arms that can throw punches!",
-		"You've given yourself one-touch access to TEACHY TV! That kind of attention is a little embarrasing!",
+		"You've given yourself one-touch access to TEACHY TV! That kind of attention is a little embarrassing!",
 	],
 }));
 
@@ -415,30 +396,53 @@ addEvent(new Trainer({
 	dex : "img/pkdx/trainer_alice.png",
 	sources : {
 		"Alice Sprite by /u/KingdomXathers":"http://www.reddit.com/r/twitchplayspokemon/comments/23tl7o/made_a_sprite_for_aalice_this_is_more_of_a_wip/", 
+		"Amberzard Icon is Flair by /u/RT-Pickred": "",
+		"Fossil Badge by /u/KingdomXathers" : "http://www.reddit.com/r/twitchplayspokemon/comments/23qqwb/rocktype_blaines_badge_the_fossil_badge_name/",
+		"Snowflake Badge by /u/tpphypemachine" : "http://www.reddit.com/r/twitchplayspokemon/comments/23lsw6/i_adjusted_the_snowflake_badge/",
+		"Harmony Badge by /u/KingdomXathers" : "http://www.reddit.com/r/twitchplayspokemon/comments/23iywq/sabrinas_harmony_badge/",
+		"Other Badges by /u/Booster137" : "http://www.reddit.com/r/twitchplayspokemon/comments/2318l8/i_decided_to_try_and_make_custom_badges_to_fit/",
 	},
 	
+	idnum : "56171",
 	nickname : "Alice",
 	playtime: "15d 2h 2m",
 	pokedex : "56 own/303 seen",
 	releasecount : 1,
-	idnum : "56171",
+	catchcount : 0,
+	e4attempts : 8,
+	blackouts : "89+",
 	
-	info_html : 
-		"Number of E4 Attempts: 8<br/>"+
-		"Times Blacked Out: 89+<br/>"+
-		"<br/>"+
-		"<br/>"+
-		"",
-	icons : [
-		"img/icn/teachy_tv.png",
-		"img/icn/dome_fossil.png",
-		"img/icn/poke_doll.png",
-		"img/icn/amber_charizard.png",
-		"img/pkmn/potato.png",
-		null,// "img/icn/slowpoke_tail.png",
+	personality: "Alice is more of a researcher than a pokemon trainer. The voices coming to her simply gave her an excuse to go adventuring through the land of randomized Kanto, taking notes all the way. The name Alice came from <em>Alice in Wonderland</em>, since Randomized Kanto was pretty much that.",
+	notable: "",
+	ribbons: [
+		new Record_Ribbon("Shortest E4 Run"),
+		new Record_Ribbon("Lowest Release Count"),
 	],
 	
-	badge_html : "",
+	icons : [
+		new Icon("teachy_tv.png", "We spent a whole hour or two in democracy watching <b>Teachy TV</b>, where we met Pokedude, learned how to catch pokemon by retrieving balls from the Ball Pokcet, and found out he is a COOL-type dude!"),
+		new Icon("dome_fossil.png", "While Red consulted the Helix Fossil, Alice, the antithesis of Red in many ways, picked up the <b>Dome Fossil</b>. Democracy was a big part of FireRed."),
+		new Icon("poke_doll.png", "We picked up a pokedoll during the Safari Zone Grand Prix. The doll featured in some art."),
+		new Icon("amber_charizard.png", "Due to the randomization, <b>Old Amber</b> was revived into a <b>Charizard!</b>"),
+		new Icon("potato.png", 'POTATO! To help us (or punish us) while facing Mr. Giovanni\'s Wild Ride, the streamer implemented Chat-To-Speech. "This is madness. No, this. Is. Potato!"'),
+		// null,// "img/icn/slowpoke_tail.png",
+	],
+	
+	badges_info : {
+		img: "img/icn/badges_firered.png",
+		frame_width: 16,
+		frame_height: 16,
+	},
+	badges : [
+		new Badge({ name: "Cocoon Badge", leader: "Brock", type: "Bug" }),
+		new Badge({ name: "Chemical Badge", leader: "Misty", type: "Poison" }),
+		new Badge({ name: "Shale Badge", leader: "Lt. Surge", type: "Ground" }),
+		new Badge({ name: "Snowflake Badge", leader: "Erika", type: "Ice" }),
+		new Badge({ name: "Wind Badge", leader: "Koga", type: "Flying" }),
+		new Badge({ name: "Harmony Badge", leader: "Sabrina", type: "Normal" }),
+		new Badge({ name: "Fossil Badge", leader: "Blaine", type: "Rock" }),
+		new Badge({ name: "Impact Badge", leader: "Giovanni", type: "Fighing" }),
+	],
 	
 	behavior: behavior.meander,
 	behavArg : {
@@ -487,6 +491,6 @@ addEvent(new MovingPokemon({
 addEvent(new Building({
 	name: "Crime Scene",
 	sprite: "img/bld/crime_scene.png",
-	x: 19, y: -40,
-	warp_x: 0, warp_y: 0,
+	x: 19, y: -41,
+	warp_x: 0, warp_y: -16,
 }));

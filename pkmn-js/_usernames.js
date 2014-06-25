@@ -81,13 +81,17 @@
 		{ name: "nasian_",	 		style: 41-1, },
 		{ name: "shotgunninja", 	style: 22-1, },
 		{ name: "pokechampjoey ", 	style: 43-1, },
-		
 		{ name: "Nick-Tr", 			style: 42-1, },
 		{ name: "PokemonGod777", 	style: 27-1, },//dialog: random("HELLO", "WORLD", "AND", "ALL")},
 		{ name: "Sparkray", 		style: 39-1, },
 		{ name: "Zeldafoof", 		style: 37-1, },
 		{ name: "Mayorofpyroland", 	style: 38-1, dialog: "This stadium is TENATTATEN!",},
 		{ name: "jacobstx", 		style: 43-1, },
+		
+		{ name: "sohippy", 			style: 25-1, },
+		// { name: "", 		style: -1, },
+		// { name: "", 		style: -1, },
+		// { name: "", 		style: -1, },
 		// { name: "", 		style: -1, },
 		// { name: "", 		style: -1, },
 	];

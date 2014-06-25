@@ -330,7 +330,7 @@ addEvent(new Pokemon({
 	pokename : "Bibarel",
 	nicknames : "",
 	level : 93,
-	memo : "Had a baby bidoof with Solareon. Some say as a sorrogate mother.",
+	memo : "Had a baby bidoof with Solareon. Some say as a surrogate mother.",
 	
 	ribbons : [
 		// new Pokerus_Ribbon(), //caught after the outbreak
@@ -524,28 +524,56 @@ addEvent(new Trainer({
 		"Lucas Sprite from Bulbapedia":"", 
 	},
 	
+	idnum : "12339",
 	nickname : "Napoleon",
+	altnicks : "Nipple",
 	playtime: "17d 11h 39m",
 	pokedex : "52 own/206 seen",
 	releasecount : "4 (+22)",
-	idnum : "12339",
+	catchcount : 0,
+	e4attempts : 49,
+	blackouts : 173,
 	
-	info_html : 
-		"Number of E4 Attempts: 49<br/>"+
-		"Times Blacked Out: 173<br/>"+
+	personality: "Napoleon hates pokemon, or he did at the start of his adventure. He is a quiet, reserved 'dandy', more concerned with keeping himself looking fabulous than any adventure at hand. He's also a habitual gambler.",
+	notable: 
 		"Number of Wooper Caught: 20<br/>"+
-		"Number of Times Time Traveled: 2<br/>"+
-		"Number of Pokeballs Bought: 400+",
-	icons : [
-		"img/icn/coin_case.png",
-		"img/icn/air_mail.png",
-		"img/icn/poke_ball.png",
-		"img/icn/shiny_stone.png",
-		"img/icn/contest_pass.png",
-		"img/icn/sun_stone.png",
+		"Number of Pokeballs Bought: 400+<br/>"+
+		"Number of Times Time Traveled: 2",
+	ribbons: [
+		new Ribbon({ cssclass: "rb-pokerus", name: "Infected", desc: "Died from the Pokérus virus, freezing the game."}),
+		new Record_Ribbon("Paradoxical: Had to load a previous save file."),
 	],
 	
-	badge_html : "",
+	// info_html : 
+	// 	"Number of E4 Attempts: 49<br/>"+
+	// 	"Times Blacked Out: 173<br/>"+
+	// 	"Number of Wooper Caught: 20<br/>"+
+	// 	"Number of Times Time Traveled: 2<br/>"+
+	// 	"Number of Pokeballs Bought: 400+",
+	icons : [
+		new Icon("coin_case.png", "Napeolon loved to gamble. He cherished and used his coin case more than any other protagonist, and he won a lot of money. It didn't help that the chat loved to have dance parties to the music in the casino."),
+		new Icon("air_mail.png", "Napoleon was the first to use mail to guard against pokemon deposit and release in the PC. It helped to prevent many possible PC shuffles, instead opting for Daycare shuffles, which lead to two babies."),
+		new Icon("poke_ball.png", "Napoleon was the PokeMart's top customer, buying hundreds of balls from them. He couldn't keep the title when Aoooo came on the scene, however."),
+		new Icon("shiny_stone.png", "Napoleon successfully used the <b>Shiny Stone</b> to evolve his Roselia."),
+		new Icon("contest_pass.png", "Where A failed, Napoleon succeeded: he participated, dressed formally in suit and tie, in several Contests. He didn't win any, however."),
+		// new Icon("sun_stone.png", ""),
+	],
+	
+	badges_info : {
+		img: "img/icn/badges_platinum.png",
+		frame_width: 16,
+		frame_height: 16,
+	},
+	badges : [
+		new Badge({ name: "Coal Badge", leader: "Rorak", type: "Rock" }),
+		new Badge({ name: "Forest Badge", leader: "Gardenia", type: "Grass" }),
+		new Badge({ name: "Cobble Badge", leader: "Maylene", type: "Fighting" }),
+		new Badge({ name: "Fen Badge", leader: "Crasher Wake", type: "Water" }),
+		new Badge({ name: "Relic Badge", leader: "Fantina", type: "Ghost" }),
+		new Badge({ name: "Mine Badge", leader: "Byron", type: "Steel" }),
+		new Badge({ name: "Icicle Badge", leader: "Candice", type: "Ice" }),
+		new Badge({ name: "Beacon Badge", leader: "Volkner", type: "Electric" }),
+	],
 	
 	behavior: behavior.look,
 	
@@ -557,10 +585,10 @@ addEvent(new Trainer({
 	],
 	dialog_assignment: "random",
 	
-	doClick : function(){
-		Person.fn.doClick.call(this);
-		this.openTrainerCard();
-	},
+	// doClick : function(){
+	// 	Person.fn.doClick.call(this);
+	// 	this.openTrainerCard();
+	// },
 }));
 
 //And his very own Game Corner!
