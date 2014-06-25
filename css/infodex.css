@@ -129,6 +129,12 @@
 #infodex .sheet p {
 	margin: 0 0 0.6em 0;
 }
+#infodex .sheet h1 {
+	margin: 6px 0 10px 0;
+}
+#infodex .sheet h3 {
+	margin: 6px 0 10px 0;
+}
 
 
 #infodex .tabs {
