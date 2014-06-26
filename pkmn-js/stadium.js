@@ -1019,7 +1019,25 @@
 							bottom: 0,
 						}, 150);
 						
-						submitChatter("ヽ༼ຈل͜ຈ༽ﾉ RIOT ヽ༼ຈل͜ຈ༽ﾉ");
+						var n = Math.random();
+						var chatter = "ヽ༼ຈل͜ຈ༽ﾉ RIOT ヽ༼ຈل͜ຈ༽ﾉ";
+						if (n > 0.95) {
+							n = Math.floor(n*1219) % 11;
+							switch (n) {
+								case 0: chatter = "ヽ༼ຈل͜ຈ༽ﾉ EMUTE ヽ༼ຈل͜ຈ༽ﾉ"; break;
+								case 1: chatter = "ヽ༼ຈل͜ರೃ༽ﾉ Civil disobedience ヽ༼ຈل͜ರೃ༽ﾉ"; break;
+								case 2: chatter = "♫ ┌༼ຈل͜ຈ༽┘ ♪ PARTY LIKE ITS 10PM ♪ └༼ຈل͜ຈ༽┐♫ "; break;
+								case 3: chatter = "♫ ┌༼ຈل͜ຈ༽┘ ♪ DANCE RIOT ♪ └༼ຈل͜ຈ༽┐♫ "; break;
+								case 4: chatter = "ヽ༼ຈل͜ຈ༽ﾉ REGRET ヽ༼ຈل͜ຈ༽ﾉ"; break;
+								case 5: chatter = "AERIAL ACE Kreygasm"; break;
+								case 6: chatter = "ヽ༼ຈل͜ຈ༽ﾉ start9 ヽ༼ຈل͜ຈ༽ﾉ"; break;
+								case 7: chatter = "JOOOOOORRRRRSUUUUUUUUUUUUUUUUNNNNN"; break;
+								case 8: chatter = "ヽ༼ຈل͜ຈ༽ﾉ RIOT OR RIOT ヽ༼ຈل͜ຈ༽ﾉ"; break;
+								case 9: chatter = "ヽ༼ຈل͜ຈ༽ﾉ GOOD BIKE OR RIOT ヽ༼ຈل͜ຈ༽ﾉ"; break;
+								case 10:chatter = "ヽ༼ຈل͜ຈ༽ﾉ GET KIRLIA ヽ༼ຈل͜ຈ༽ﾉ"; break;
+							}
+						}
+						submitChatter(chatter);
 					}
 					
 					this.delayBehaviorTimer = Math.random()*4;

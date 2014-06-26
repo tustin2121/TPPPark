@@ -12,7 +12,7 @@ addEvent(new SignPost({
 	infodex_entry: new InfodexEntry({
 		title: "The Anarchy Quagmire",
 		html: function(){
-			return $("<div>").append('<h1>The Wild Ride</h1><h3>"I want to get off Mr. Giovanni\'s Wild Ride!</h3><p>The Anarchy Quagmire represents some of the worst puzzles TwitchPlaysPokemon has ever seen.</p>')
+			return $("<div>").append('<h1>The Wild Ride</h1><h3>"I want to get off Giovanni\'s Wild Ride!</h3><p>The Anarchy Quagmire represents some of the worst puzzles TwitchPlaysPokemon has ever seen.</p>')
 			.append("")
 			// .append("<h3></h3><p></p>")
 			;
