@@ -992,7 +992,7 @@
 							case 0: chat = "Back in the 100 club..."; break;
 							case 1: chat = "RIP in peace Money"; break;
 							case 2: chat = "I lost my money!"; break;
-							case 3: chat = "Never go al in..."; break;
+							case 3: chat = "Never go all in..."; break;
 							case 4: chat = "NOOOOOOOOOO"; break;
 							case 5: chat = "noooooooooooooooo"; break;
 							case 6: chat = "Noooooo!!"; break;

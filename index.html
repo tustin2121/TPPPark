@@ -4,36 +4,6 @@
 	<meta charset="utf-8">
 	
 	<link rel="stylesheet" type="text/css" href="tpppark.css">
-	<link rel="stylesheet" type="text/css" href="css/infodex.css">
-	<script src="lib/jquery.min.js"></script>
-	<script src="lib/jquery.cookie.js"></script>
-	<script src="lib/jquery.mobile.touch.min.js"></script>
-	<script src="lib/jquery-ui-1.10.4.effectscore.min.js"></script>
-	<script src="lib/tpppark.js"></script>
-	<script src="lib/pokedata.js"></script>
-	<script src="lib/infodex.js"></script>
-	<script src="lib/changelog.js"></script>
-	
-	<script src="fanfic/fanfic.js"></script>
-	<script src="pkmn-js/occasions.js"></script>
-	
-	<script src="pkmn-js/gen1.js"></script>
-	<script src="pkmn-js/gen2.js"></script>
-	<script src="pkmn-js/gen3.js"></script>
-	<script src="pkmn-js/gen3.1.js"></script>
-	<script src="pkmn-js/gen4.js"></script>
-	<script src="pkmn-js/gen4.1.js"></script>
-	<script src="pkmn-js/gen5.js"></script>
-	<script src="pkmn-js/pantheon.js"></script>
-	<script src="pkmn-js/quagmire.js"></script>
-	<script src="pkmn-js/other.js"></script>
-	
-	<script src="pkmn-js/stadium.js"></script>
-	<script src="pkmn-js/community.js"></script>
-	<script src="pkmn-js/_usernames.js"></script>
-	
-	<script src="lib/jquery.tinytimer.min.js"></script>
-	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<meta property="og:image" content="http://tustin2121.github.io/TPPPark/img/ui/park_logo.png" />
 	<title>Twitch Plays Pokemon Park!</title>
@@ -43,73 +13,14 @@
 	<div id="start-screen">
 		<div class="shove"></div>
 		<div class="content">
-			<span class="sprite tustin2121"></span>
-			<strong>Tustin2121 and Carlotta4th</strong>
-			<span class="sprite carlotta4th"></span>
-			<br/>
-			present<br/>
+			<span style="font-size:1.4em;">(ﾉ`Д´)ﾉ︵﻿</span>
 			<img alt="Twitch Plays Pokemon Park" width="190" height="200"
-				src="img/ui/park_logo.png" />
+				src="img/ui/park_logo.png" class="flip-y" 
+				style="margin-bottom:-40px;"/></br>
+			UNBAN INABOX AND HAFKIE!
 		</div>
-		<noscript>This site is compleately powered by Javascript, and your browser has it disabled right now. Please allow an exception in your script-blocking extension for this site. Thank you.</noscript>
 	</div>
 	<div id="start-skrim"></div>
-	
-	<div class="ui sidebar">
-		<img id="uibtn-center" src="img/ui/helix_center.png" alt="Center on Church of Helix" title="Center on Church of Helix" />
-		<img id="uibtn-zoom" src="img/ui/zoom-in.png" alt="Toggle Zoom" title="Toggle Zoom" />
-		<img id="uibtn-pin" src="img/ui/pin_btn.png" alt="Pin Tile" title="Pin Tile" />
-		<div class="spacer"></div>
-	</div>
-	<div class="ui countdown"></div>
-	<div class="ui footnote"></div>
-	<div class="ui creditnote">
-		Code by /u/Tustin2121. Custom Pokemon Sprites by /u/Carlotta4th.<br/>
-		<span id="curr-sources"></span>
-		Feedback? <a href="http://redd.it/26204l">Click here for the Reddit Discussion Thread!</a>
-	</div>
-	<div class="ui latest-update">
-		<button class="btn-close">Close</button>
-		<p>
-			<strong>Update Information</strong><br/>
-			<span class="timestamp"></span>
-		</p>
-		<!-- Put latest update information in changelog.js! -->
 		
-		<script>
-		$(function(){
-			if (window.getCurrentOccasion && window.getCurrentOccasion() == "bloodysunday")
-			{
-				$(".bloodysundaydisclaimer").show();
-				
-				//HACK!! Make proper part of occasions later
-				centerPoint = [1, -18]; //Doesn't actually work. Don't care right now.
-			}
-		});
-		</script>
-	</div>
-	
-	<div id="anchor">
-		<div id="dialog-box"></div>
-	</div>
-	
-	<div id="infodex">
-		<div class="topbar"><div class="gem"></div></div>
-		<div class="sidedrop"></div>
-		<div class="holo"><div class="sprite"><img /></div></div>
-		<section class="page-title"></section>
-		<div class="sheet"></div>
-		<div class="tabs"></div>
-	</div>
-	
-	<div id="buritto-frame" class="ui">
-		<button class="btn-close">Close</button>
-		<div class="frame top"></div>
-		<div class="frame bottom"></div>
-		<div class="frame left"></div>
-		<div class="frame right"></div>
-		<div class="content"></div>
-	</div>
-	
 </body>
 </html>
