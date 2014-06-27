@@ -3,7 +3,7 @@
 //
 
 //showTimer
-showGameClock("TPP Black Game Clock<br/>", new Date(Date.UTC(2014, 06-1, 15, 0+4)));
+// showGameClock("TPP Black Game Clock<br/>", new Date(Date.UTC(2014, 06-1, 15, 0+4)));
 
 
 
