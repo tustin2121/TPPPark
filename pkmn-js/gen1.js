@@ -494,6 +494,13 @@ addEvent(new Person({
 
 
 //Fatman Island
+addEvent(new SignPost({
+	name: "Fatman Sign",
+	x: -7, y: -7,
+	sprite: 2,
+	message: "Fatman Island: Red was glad they weren't hungry when he got stuck here...",
+}));
+
 addEvent(new Person({
 	name : "Fatman 1",
 	spritesheet : "img/trainers/fatman.png",

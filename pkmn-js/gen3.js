@@ -530,7 +530,7 @@ addEvent(new MultiEvent({
 	gender: 0,
 	gamename : "???",
 	pokename : "Egg",
-	level : 1, //No one cares about the oddish's levels
+	level : 5, //No one cares about the oddish's levels
 	memo : "Unhatched baby of a daycare family.",
 	
 	ribbons : [
