@@ -253,6 +253,12 @@ body.x2 #anchor {
 	-webkit-transform: scale(-1, 1);
 }
 
+.flip-y {
+	transform: scale(1, -1);
+	-ms-transform: scale(1, -1);
+	-webkit-transform: scale(1, -1);
+}
+
 .event-base .banner {
 	position: absolute;
 	width: 256px; height: 24px;

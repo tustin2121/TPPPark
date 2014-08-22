@@ -12,7 +12,7 @@ addEvent(new SignPost({
 	infodex_entry: new InfodexEntry({
 		title: "The Anarchy Quagmire",
 		html: function(){
-			return $("<div>").append('<h1>The Wild Ride</h1><h3>"I want to get off Mr. Giovanni\'s Wild Ride!</h3><p>The Anarchy Quagmire represents some of the worst puzzles TwitchPlaysPokemon has ever seen.</p>')
+			return $("<div>").append('<h1>The Wild Ride</h1><h3>"I want to get off Giovanni\'s Wild Ride!</h3><p>The Anarchy Quagmire represents some of the worst puzzles TwitchPlaysPokemon has ever seen.</p>')
 			.append("")
 			// .append("<h3></h3><p></p>")
 			;
@@ -106,6 +106,17 @@ addEvent(new SignPost({
 	infodex_entry: new InfodexEntry({
 		title: "The Anarchy Quagmire",
 		html: "<h3>The C-Gear</h3><p>Not represented here, the C-Gear was not a puzzle, but a constant annoyance that the stream could not overcome. It took two taps on the touch screen to use the C-Gear to take us to the Entralink, and then two hours or so to find the exit back to where we were at the time. And often times, leaving the Entralink meant returning mere moments later. It was a obstacle that was always present and couldn't be turned off for long.</p><p>The stream could not beat the C-Gear, and the Streamer disabled it after almost 24 hours via a Action Replay cheat discovered by /u/tustin2121, so the TPP Black run could continue unhindered. We made over 30 trips to the Entralink from the time we acquired the C-Gear till the time it was disabled.</p>",
+	}),
+}));
+addEvent(new SignPost({
+	name : "Grave Sign 4",
+	x: 212, y:-245,
+	sprite: 2,
+	message: "In memory of a worthy foe: The Sootopolis Gym<br/>Don't step in the same place twice.",
+	
+	infodex_entry: new InfodexEntry({
+		title: "The Anarchy Quagmire",
+		html: "<h3>Sootopolis Gym</h3><p>Not represented here, the Sootopolis Gym was the one place where Democracy was necessary in Emerald, which had been an all-Anarchy run until then. The gym required you to not step on the same tile twice, which <a target='_blank' href='http://i.imgur.com/DmKg7vH.png'>was a difficult feat for TPP</a>.<p></p>What made things more difficult once Democracy was implemented was the odd bug where if A was already facing, say, upward, and up was inputted, the input program would input long enough for A to walk TWO tiles instead of just one. This made it so a complicated path had to be planned out that required A to bump into a wall while walking, simply so she would go 1 tile along the path afterward.</p><p>This was also location of the infamous Sootopolis Pact, where the Democrats in chat agreed to allow the Anarchists in chat to try at the impossible gym puzzle for two hours if they allowed the Democrats to use Democracy to teach a few TMs. The supposed pact was broken 1 hour later.</p>",
 	}),
 }));
 
