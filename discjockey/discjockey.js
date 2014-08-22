@@ -53,6 +53,14 @@
 			localsong: "24zjjp_Welcome_Home_by_AgainTheSaga.mp3",
 			lyrics: "24zjjp_WelcomeHome.html",
 		},
+		{
+			name: "May I Stay?",
+			singer: "/u/AgainTheSaga",
+			song_post: "http://www.reddit.com/r/twitchplayspokemon/comments/2cuvmh/song_may_i_stay_twitchplayspokemon_red_lyrics/",
+			embedsong: '<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/162060727&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>',
+			localsong: "2cuvmh_May_I_Stay_by_AgainTheSaga.mp3",
+			lyrics: "2cuvmh_MayIStay.html",
+		},
 		
 		//TPP Crystal
 		{
@@ -131,7 +139,13 @@
 			lyrics: "28uokg_TPPersLament.html",
 		}, 
 		
-		//TPP Black 2
+		//TPP Blaze Black 2
+		
+		//TPP X
+		
+		//TPP ORAS
+		
+		//TPP Anniversary
 		
 //		{
 //			name: "Song Name",

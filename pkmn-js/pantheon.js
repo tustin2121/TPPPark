@@ -180,8 +180,8 @@ addEvent(new Event({
 					"margin-right": 14,
 					float: "left", 
 				})
-			).append("<h1>Root</h1><h3>God of Speech</h3><p>Lesser Domains: communication, connections, earth, humor, potatoes</p>")
-			.append("<p>Lord Root appeared during FireRed, around the same time that  Chat-To-Speech was implemented into the stream. He is therefore often associated with the Speech system, with potato both being a root and the most said word in the text to speech system.</p>");
+			).append("<h1>Root</h1><h3>God of Speech</h3><p>Lesser Domains: communication, connections, earth, humor, potatoes, hiding</p>")
+			.append("<p>Lord Root appeared during FireRed, around the same time that  Chat-To-Speech was implemented into the stream. He is therefore often associated with the Speech system, with potato both being a root and the most said word in the text to speech system.</p><p>It has become a common easter egg to include Root (as its first evolution) in artwork, after someone claimed a background plant in a comic by the prominent artist Everyle was Root, and Everyle, not sure what they were talking about, denied its existence. Root than began <em>actually</em> appearing in comics and artwork, but his presence was still denied.</p>");
 		},
 	}),
 }));
@@ -204,7 +204,7 @@ addEvent(new Event({
 					float: "left", 
 				})
 			).append("<h1>Claw</h1><h3>God of Silence</h3><p>Lesser Domains: isolation, air, contemplation, stealth</p>")
-			.append("<p>The Claw Fossil first appeared in the pokemon series in the same generation as Root, and therefore the two are paired off, with Lord Claw being associated with the opposite ideals of Lore Root.</p>");
+			.append("<p>The Claw Fossil first appeared in the pokemon series in the same generation as Root, and therefore the two are paired off, with Lord Claw being associated with the opposite ideals of Lord Root.</p>");
 		},
 	}),
 }));

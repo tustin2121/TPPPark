@@ -61,6 +61,7 @@ addEvent(new MultiEvent({
 	x: -16, y: -14,
 	adj_flip: true,
 })
+
 ).addSubEvent("18,0,36,20", new Pokemon({
 	name: "Zexy",
 	sprite: "img/pkmn/zexxy.png",
@@ -83,6 +84,7 @@ addEvent(new MultiEvent({
 }).forOccasion("bloodysunday", {
 	x: -14, y: -15,
 })
+
 ).addSubEvent("2,19,32,41", new Pokemon({
 	name: "Abby",
 	sprite: "img/pkmn/abby-gen1.png",
@@ -106,6 +108,7 @@ addEvent(new MultiEvent({
 	x: -19, y: -12,
 	adj_flip: true,
 })
+
 ).addSubEvent("53,26,81,45", new Pokemon({
 	name : "Commander Bacon",
 	sprite: "img/pkmn/tepig.png",
@@ -130,7 +133,7 @@ addEvent(new MultiEvent({
 		new Released_Ribbon("1d 13h 36m"),
 	],
 }).forOccasion("bloodysunday", {
-	x: -16, y: -14,
+	x: -11, y: -16,
 	adj_flip: true,
 })
 ));

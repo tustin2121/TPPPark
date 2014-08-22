@@ -153,8 +153,6 @@ addEvent(new Trainer({
 		"Number of Pokeballs Bought: 400+<br/>"+
 		"Number of Times Time Traveled: 2",
 	ribbons: [
-		new Ribbon({ cssclass: "rb-pokerus", name: "Infected", desc: "Died from the Pokérus virus, freezing the game."}),
-		new Record_Ribbon("Paradoxical: Had to load a previous save file."),
 	],
 	
 	// info_html : 

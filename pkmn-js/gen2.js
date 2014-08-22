@@ -42,7 +42,7 @@ addEvent(new MultiEvent({
 	pokename : "Feraligatr",
 	level : 84,
 	nicknames : "General Gator",
-	memo : "Knew Leer early on, which looked like laser beams.",
+	memo : "Knew Leer early on, which looked like laser beams. His EXP sponge ways were the cause of the first Gator Wars, in which Omelette died. Defeated Lance in a clutch victory, and went on to take down Red atop Mt. Silver",
 	
 	ribbons : [
 		new Starter_Ribbon(),
@@ -62,7 +62,7 @@ addEvent(new MultiEvent({
 	pokename : "Togepi",
 	level : 12,
 	nicknames : "Prince Omelette",
-	memo : "Once used Sacred Fire via Metronome.",
+	memo : "Once used Sacred Fire via Metronome. Was released in the first Gator Wars, which soon brought about the end of the wars.",
 	
 	ribbons : [
 		new Released_Ribbon("3d 15h 24m"),
@@ -87,7 +87,7 @@ addEvent(new MultiEvent({
 	pokename : "Venomoth",
 	level : 39,
 	nicknames : "All-Terrain Venomoth<br/>The Dragonslayer",
-	memo : "Once took down Lance's Dragonite singlehandedly.",
+	memo : "Once took down Lance's Dragonite singlehandedly; due to a bug in the enemy AI, the enemy Dragonite never attacked ATV.",
 	
 	ribbons : [
 		new HallOfFame_Ribbon("16d 7h 45m"),
@@ -164,7 +164,7 @@ addEvent(new MovingPokemon({
 	gamename : "BBBBBD",
 	pokename : "Pidgeot",
 	level : 64,
-	memo : "Lived in the shadow of Bird Jesus",
+	memo : "Lived in the shadow of Bird Jesus, but eventually came into his own.",
 	
 	ribbons : [
 		new Daycare_Ribbon("Breakout Fighter"),
@@ -215,7 +215,7 @@ addEvent(new Pokemon({
 	pokename : "Steelix",
 	nicknames : "Solid Snake, Metal Gear",
 	level : 72,
-	memo: "Holds: Leftovers. Excellent Tank vs Mt. Silver.",
+	memo: "Holds: Leftovers. Excellent Tank vs Mt. Silver. Was evolved from an Onix on level up due to the Crystal ROM Hack we were playing that changed trade evolutions into level up evolutions.",
 	
 	ribbons : [
 		new HallOfFame_Ribbon("9d 21h 24m"),
@@ -303,11 +303,6 @@ addEvent(new Pokemon({
 				bottom: 10, left: 32-25,
 			})
 			.hide()
-			// .on("vclick", function(e){
-			// 	console.log("Click SNAAAAAKE!!!", isDragging);
-			// 	if (!isDragging)
-			// 		eventobj.doClick(e);
-			// })
 			.appendTo(clip);
 		
 		this.domGrass = $("<img>").attr("src", "img/pkmn/solid_snake_grass.gif")
@@ -316,11 +311,6 @@ addEvent(new Pokemon({
 				bottom: 0, left: 22,
 				"z-index": 10,
 			})
-			// .on("vclick", function(e){
-			// 	console.log("Click SNAAAAAKE!!!", isDragging);
-			// 	if (!isDragging)
-			// 		eventobj.doClick(e);
-			// })
 			.appendTo(clip);
 		
 		this.domExclaim = $("<img>").attr("src", "img/pkmn/solid_snake_exclaim.png")
@@ -626,6 +616,7 @@ addEvent(new Person({
 	
 	infodex_entry: new InfodexEntry({
 		title: "Love Interest",
+		sprite: "img/pkdx/b/Spr_HGSS_Youngster.png",
 		html: "<h1>The Chat's First Love</h1><p>Though many players of Crystal hate Joey and his constant calling and constant talking about his Ratatta, the chat fell in love with him. Any time he would call, the chat would explode with heart emoticons and proposals to do things to Joey that are best left unsaid.</p><p>Granted, Joey, and in fact, anyone who called during TPP Crystal, was still annoying: they always seemed to call on the hour, and the other thing that happened on the hour was Democracy mode. So often times, Democracy mode was just starting and someone like Joey would call interrupt Democracy's plan, often falling back to Anarchy due to a vote split.</p><p>These occurrences also lead many to believe that AJ loved Joey, because he would always stop for his calls, and his calls allowed a brief respite from the constant commands of the voices. After the events atop Mt. Silver, AJ went back to Joey for one last battle, and after that last battle, after the TPP Crystal stream came to a close, the lore states that AJ and Joey lived the rest of their lives together, as close friends at first, but as lovers when they came to adulthood.</p>",
 	}),
 	

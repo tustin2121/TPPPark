@@ -149,7 +149,7 @@ Have a banner draped on the stage (a la the congrats sign on the Game Corner)
 						"background-position": "0px -"+(24*this.bannerSize)+"px",
 						left: -112, top: -26,
 					})
-					.text(this.lowerBannerText);
+					.html(this.lowerBannerText);
 				this.domLower = lower;
 				base.append(lower);
 			}
@@ -161,7 +161,7 @@ Have a banner draped on the stage (a la the congrats sign on the Game Corner)
 						"background-position": "0px 0px",
 						left: -112, top: -45,
 					})
-					.text(this.upperBannerText);
+					.html(this.upperBannerText);
 				this.domUpper = upper;
 				base.append(upper);
 			}
@@ -317,10 +317,40 @@ Have a banner draped on the stage (a la the congrats sign on the Game Corner)
 		***************************************************/
 
 		addOccasion("protagturni", function(date) {
-			return (date.getDay() == 3)
+			return (date.getDay() == 3);
 		});
 
 
+	}{	/*****************************************************
+		Thurs, Every Week: Musical and Contest Day!
+			During the day, Contests are had
+				M4 loses the Smart Contest, Others compete in other contests
+			During the night, Musicals are had!
+				Lilli and Cover perform in the musical
+		*****************************************************/
+		
+		addOccasion("contestday", function(date) {
+			return (date.getDay() == 4 && date.getHour() < 16); //5pm
+		});
+		addOccasion("musicalday", function(date) {
+			return (date.getDay() == 4 && date.getHour() >= 16); //5pm
+		});
+	}{	/*****************************************************
+		Saturday, Every Week: 100 Club Dance Party!
+			
+		*****************************************************/
+		
+		addOccasion("100club", function(){
+			return (date.getDay() == 6 && date.getHour() > 22 //10pm
+				|| date.getDay() == 0 && date.getHour() < 3 ); //3am
+		});
+		
+		banner.forOccasion("100club", {
+			skipme: false,
+			upperBannerText: "The 100 Club",
+			lowerBannerText: '<em>CAN\'T GET ANY HIGHER!</em>', 
+			bannerSize: 2,
+		})
 	}
 })();
 
