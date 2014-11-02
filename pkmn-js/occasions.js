@@ -206,14 +206,14 @@ Have a banner draped on the stage (a la the congrats sign on the Game Corner)
 		***************************************************/
 		addOccasion("bloodysaturday", function(date){ //set up for it
 			return ( (currGame.day(date) == 10 && currGame.hour(date) > 0 && currGame.hour(date) < 7)
-				 || (date.getMonth() == 2 && date.getDate() == 22)
-				 || (date.getMonth() == 11 && date.getDate() == 1)
+				 || (date.getMonth() == 1 && date.getDate() == 22)
+				 || (date.getMonth() == 10 && date.getDate() == 1)
 			);
 		}, 10);
 		addOccasion("bloodysunday", function(date) {
 			return ( (currGame.day(date) == 10 && currGame.hour(date) > 7 && currGame.hour(date) < 16)
-				 || (date.getMonth() == 2 && date.getDate() == 23)
-				 || (date.getMonth() == 11 && date.getDate() == 2)
+				 || (date.getMonth() == 1 && date.getDate() == 23)
+				 || (date.getMonth() == 10 && date.getDate() == 2)
 			);
 		}, 100);
 
