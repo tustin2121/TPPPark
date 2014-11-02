@@ -205,16 +205,16 @@ Have a banner draped on the stage (a la the congrats sign on the Game Corner)
 			The three mon with ribbons stand on the bridge, overlooking the lake.
 		***************************************************/
 		addOccasion("bloodysaturday", function(date){ //set up for it
-			return ((currGame.day(date) == 10
-				 && currGame.hour(date) > 0 && currGame.hour(date) < 7)
+			return ( (currGame.day(date) == 10 && currGame.hour(date) > 0 && currGame.hour(date) < 7)
 				 || (date.getMonth() == 2 && date.getDate() == 22)
-				 || (date.getMonth() == 11 && date.getDate() == 1))
+				 || (date.getMonth() == 11 && date.getDate() == 1)
+			);
 		}, 10);
 		addOccasion("bloodysunday", function(date) {
-			return ((currGame.day(date) == 10
-				 && currGame.hour(date) > 7 && currGame.hour(date) < 16)
+			return ( (currGame.day(date) == 10 && currGame.hour(date) > 7 && currGame.hour(date) < 16)
 				 || (date.getMonth() == 2 && date.getDate() == 23)
 				 || (date.getMonth() == 11 && date.getDate() == 2)
+			);
 		}, 100);
 
 		//TODO: Break the multi-events M4 Bowling
