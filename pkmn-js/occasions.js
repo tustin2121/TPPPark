@@ -199,6 +199,7 @@ Have a banner draped on the stage (a la the congrats sign on the Game Corner)
 	}{	/***************************************************
 		 Feb 23rd: Bloody Sunday Rememberance Day
 			(Also every run, from 10d7h to 10d16h)
+			(Also on Nov 2nd)
 			The banner put up recognizes the day
 			11 candles, for each mon, are put on the lake, bobbing about.
 			The three mon with ribbons stand on the bridge, overlooking the lake.
@@ -206,12 +207,14 @@ Have a banner draped on the stage (a la the congrats sign on the Game Corner)
 		addOccasion("bloodysaturday", function(date){ //set up for it
 			return ((currGame.day(date) == 10
 				 && currGame.hour(date) > 0 && currGame.hour(date) < 7)
-				 || (date.getMonth() == 2 && date.getDate() == 22))
+				 || (date.getMonth() == 2 && date.getDate() == 22)
+				 || (date.getMonth() == 11 && date.getDate() == 1))
 		}, 10);
 		addOccasion("bloodysunday", function(date) {
 			return ((currGame.day(date) == 10
 				 && currGame.hour(date) > 7 && currGame.hour(date) < 16)
-				 || (date.getMonth() == 2 && date.getDate() == 23))
+				 || (date.getMonth() == 2 && date.getDate() == 23)
+				 || (date.getMonth() == 11 && date.getDate() == 2)
 		}, 100);
 
 		//TODO: Break the multi-events M4 Bowling
