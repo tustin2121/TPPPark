@@ -199,19 +199,22 @@ Have a banner draped on the stage (a la the congrats sign on the Game Corner)
 	}{	/***************************************************
 		 Feb 23rd: Bloody Sunday Rememberance Day
 			(Also every run, from 10d7h to 10d16h)
+			(Also on Nov 2nd)
 			The banner put up recognizes the day
 			11 candles, for each mon, are put on the lake, bobbing about.
 			The three mon with ribbons stand on the bridge, overlooking the lake.
 		***************************************************/
 		addOccasion("bloodysaturday", function(date){ //set up for it
-			return ((currGame.day(date) == 10
-				 && currGame.hour(date) > 0 && currGame.hour(date) < 7)
-				 || (date.getMonth() == 2 && date.getDate() == 22))
+			return ( (currGame.day(date) == 10 && currGame.hour(date) > 0 && currGame.hour(date) < 7)
+				 || (date.getMonth() == 1 && date.getDate() == 22)
+				 || (date.getMonth() == 10 && date.getDate() == 1)
+			);
 		}, 10);
 		addOccasion("bloodysunday", function(date) {
-			return ((currGame.day(date) == 10
-				 && currGame.hour(date) > 7 && currGame.hour(date) < 16)
-				 || (date.getMonth() == 2 && date.getDate() == 23))
+			return ( (currGame.day(date) == 10 && currGame.hour(date) > 7 && currGame.hour(date) < 16)
+				 || (date.getMonth() == 1 && date.getDate() == 23)
+				 || (date.getMonth() == 10 && date.getDate() == 2)
+			);
 		}, 100);
 
 		//TODO: Break the multi-events M4 Bowling
@@ -330,19 +333,19 @@ Have a banner draped on the stage (a la the congrats sign on the Game Corner)
 		*****************************************************/
 		
 		addOccasion("contestday", function(date) {
-			return (date.getDay() == 4 && date.getHour() < 16); //5pm
+			return (date.getDay() == 4 && date.getHours() < 16); //5pm
 		});
 		addOccasion("musicalday", function(date) {
-			return (date.getDay() == 4 && date.getHour() >= 16); //5pm
+			return (date.getDay() == 4 && date.getHours() >= 16); //5pm
 		});
 	}{	/*****************************************************
 		Saturday, Every Week: 100 Club Dance Party!
 			
 		*****************************************************/
 		
-		addOccasion("100club", function(){
-			return (date.getDay() == 6 && date.getHour() > 22 //10pm
-				|| date.getDay() == 0 && date.getHour() < 3 ); //3am
+		addOccasion("100club", function(date){
+			return ((date.getDay() == 6 && date.getHours() > 22) //10pm
+				|| (date.getDay() == 0 && date.getHours() < 3 )); //3am
 		});
 		
 		banner.forOccasion("100club", {
